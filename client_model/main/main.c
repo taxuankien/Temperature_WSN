@@ -41,7 +41,7 @@ static void temp_sensor_task(void *arg) {
             device_sensor_data.high_bsline = high_baseline;
             // strcpy(device_sensor_data.device_name, "TEST");
 
-            // ble_mesh_custom_sensor_client_model_message_set(device_sensor_data);
+            ble_mesh_custom_sensor_client_model_message_set(device_sensor_data);
             // ble_mesh_custom_sensor_client_model_message_get();
 
             ticks = 0;
