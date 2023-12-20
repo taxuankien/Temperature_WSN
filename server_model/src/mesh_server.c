@@ -245,7 +245,7 @@ static void ble_mesh_custom_sensor_server_model_cb(esp_ble_mesh_model_cb_event_t
                     // if (err) {
                     //     ESP_LOGE(TAG, "%s -- Failed to send response with OPCODE 0x%06x", __func__, ESP_BLE_MESH_CUSTOM_SENSOR_MODEL_OP_STATUS);
                     // }
-                    // _server_model_state.temperature ++;
+                    _server_model_state.temperature ++;
                     // server_send_to_client(_server_model_state);
                 break;
 
