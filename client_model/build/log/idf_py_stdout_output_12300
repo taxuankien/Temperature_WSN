@@ -1,0 +1,315 @@
+[1/11] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/__/src/mesh_client.c.obj
+[2/11] Performing build step for 'bootloader'
+[1/1] cmd.exe /C "cd /D D:\Espressif\frameworks\WSN_project\client_model\build\bootloader\esp-idf\esptool_py && D:\Espressif\python_env\idf5.1_py3.11_env\Scripts\python.exe D:/Espressif/frameworks/esp-idf-v5.1.1/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 D:/Espressif/frameworks/WSN_project/client_model/build/bootloader/bootloader.bin"
+Bootloader binary size 0x6480 bytes. 0xb80 bytes (10%) free.
+[3/9] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+FAILED: esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj 
+ccache D:\Espressif\tools\xtensa-esp32-elf\esp-12.2.0_20230208\xtensa-esp32-elf\bin\xtensa-esp32-elf-gcc.exe -DESP_PLATFORM -DIDF_VER=\"v5.1.1-dirty\" -DMBEDTLS_CONFIG_FILE=\"mbedtls/esp_config.h\" -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DUNITY_INCLUDE_CONFIG_H -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -ID:/Espressif/frameworks/WSN_project/client_model/build/config -ID:/Espressif/frameworks/WSN_project/client_model/main -ID:/Espressif/frameworks/WSN_project/client_model/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/newlib/platform_include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos/FreeRTOS-Kernel/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos/esp_additions/include/freertos -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos/esp_additions/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos/esp_additions/arch/xtensa/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_hw_support/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_hw_support/include/soc -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_hw_support/include/soc/esp32 -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_hw_support/port/esp32/. -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_hw_support/port/esp32/private_include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/heap/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/soc/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/soc/esp32 -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/soc/esp32/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/hal/esp32/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/hal/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/hal/platform_port/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_rom/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_rom/include/esp32 -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_rom/esp32 -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_common/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/soc -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/include/private -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/xtensa/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/xtensa/esp32/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/lwip/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/lwip/include/apps -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/lwip/include/apps/sntp -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/lwip/lwip/src/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/lwip/port/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/lwip/port/freertos/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/lwip/port/esp32xx/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/lwip/port/esp32xx/include/arch -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_ringbuf/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/efuse/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/efuse/esp32/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/driver/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/driver/deprecated -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/driver/analog_comparator/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/driver/dac/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/driver/gpio/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/driver/gptimer/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/driver/i2c/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/driver/i2s/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/driver/ledc/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/driver/mcpwm/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/driver/parlio/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/driver/pcnt/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/driver/rmt/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/driver/sdio_slave/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/driver/sdmmc/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/driver/sigma_delta/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/driver/spi/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/driver/temperature_sensor/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/driver/touch_sensor/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/driver/twai/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/driver/uart/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/driver/usb_serial_jtag/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/driver/touch_sensor/esp32/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_pm/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/mbedtls/port/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/mbedtls/mbedtls/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/mbedtls/mbedtls/library -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/mbedtls/esp_crt_bundle/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_app_format/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/bootloader_support/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/bootloader_support/bootloader_flash/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_partition/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/app_update/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_mm/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/spi_flash/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/pthread/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_timer/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/app_trace/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_event/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/nvs_flash/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_phy/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_phy/esp32/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/vfs/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_netif/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/wpa_supplicant/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/wpa_supplicant/port/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/wpa_supplicant/esp_supplicant/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_coex/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_wifi/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_wifi/wifi_apps/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/bt/include/esp32/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/bt/common/osi/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/bt/common/api/include/api -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/bt/common/btc/profile/esp/blufi/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/bt/common/btc/profile/esp/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/bt/host/bluedroid/api/include/api -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/bt/esp_ble_mesh/mesh_common/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/bt/esp_ble_mesh/mesh_common/tinycrypt/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/bt/esp_ble_mesh/mesh_core -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/bt/esp_ble_mesh/mesh_core/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/bt/esp_ble_mesh/mesh_core/storage -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/bt/esp_ble_mesh/btc/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/bt/esp_ble_mesh/mesh_models/common/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/bt/esp_ble_mesh/mesh_models/client/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/bt/esp_ble_mesh/mesh_models/server/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/bt/esp_ble_mesh/api/core/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/bt/esp_ble_mesh/api/models/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/bt/esp_ble_mesh/api -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/bt/porting/ext/tinycrypt/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/unity/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/unity/unity/src -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/cmock/CMock/src -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/console -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/http_parser -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp-tls -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp-tls/esp-tls-crypto -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_adc/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_adc/interface -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_adc/esp32/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_adc/deprecated/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_eth/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_gdbstub/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_hid/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/tcp_transport/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_http_client/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_http_server/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_https_ota/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_psram/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_lcd/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_lcd/interface -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/protobuf-c/protobuf-c -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/protocomm/include/common -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/protocomm/include/security -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/protocomm/include/transports -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_local_ctrl/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/espcoredump/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/espcoredump/include/port/xtensa -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/wear_levelling/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/sdmmc/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/fatfs/diskio -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/fatfs/vfs -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/fatfs/src -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/idf_test/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/idf_test/include/esp32 -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/ieee802154/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/json/cJSON -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/mqtt/esp-mqtt/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/perfmon/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/spiffs/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/components/wifi_provisioning/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/examples/bluetooth/esp_ble_mesh/common_components/button -ID:/Espressif/frameworks/esp-idf-v5.1.1/examples/bluetooth/esp_ble_mesh/common_components/button/include -ID:/Espressif/frameworks/esp-idf-v5.1.1/examples/bluetooth/esp_ble_mesh/common_components/example_init -ID:/Espressif/frameworks/esp-idf-v5.1.1/examples/bluetooth/esp_ble_mesh/common_components/example_nvs -mlongcalls -Wno-frame-address  -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Og -fmacro-prefix-map=D:/Espressif/frameworks/WSN_project/client_model=. -fmacro-prefix-map=D:/Espressif/frameworks/esp-idf-v5.1.1=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -DconfigENABLE_FREERTOS_DEBUG_OCDAWARE=1 -std=gnu17 -Wno-old-style-declaration -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj -MF esp-idf\main\CMakeFiles\__idf_main.dir\main.c.obj.d -o esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj -c D:/Espressif/frameworks/WSN_project/client_model/main/main.c
+In file included from D:/Espressif/frameworks/WSN_project/client_model/main/main.c:4:
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c: In function 'temp_sensor_task':
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:32:69: error: format '%f' expects argument of type 'double', but argument 6 has type 'int' [-Werror=format=]
+   32 |     ESP_LOGI(TAG, "LOW: %f,  HIGH: %f",  low_baseline, high_baseline);
+      |                                                                     ^
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:282:59: note: in definition of macro 'LOG_FORMAT'
+  282 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                                           ^~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:432:41: note: in expansion of macro 'ESP_LOG_LEVEL'
+  432 |         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                         ^~~~~~~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:342:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  342 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:32:5: note: in expansion of macro 'ESP_LOGI'
+   32 |     ESP_LOGI(TAG, "LOW: %f,  HIGH: %f",  low_baseline, high_baseline);
+      |     ^~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:32:69: error: format '%f' expects argument of type 'double', but argument 7 has type 'int' [-Werror=format=]
+   32 |     ESP_LOGI(TAG, "LOW: %f,  HIGH: %f",  low_baseline, high_baseline);
+      |                                                                     ^
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:282:59: note: in definition of macro 'LOG_FORMAT'
+  282 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                                           ^~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:432:41: note: in expansion of macro 'ESP_LOG_LEVEL'
+  432 |         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                         ^~~~~~~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:342:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  342 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:32:5: note: in expansion of macro 'ESP_LOGI'
+   32 |     ESP_LOGI(TAG, "LOW: %f,  HIGH: %f",  low_baseline, high_baseline);
+      |     ^~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:32:1: error: format '%f' expects argument of type 'double', but argument 6 has type 'int' [-Werror=format=]
+   32 |     ESP_LOGI(TAG, "LOW: %f,  HIGH: %f",  low_baseline, high_baseline);
+      | ^   ~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:282:59: note: in definition of macro 'LOG_FORMAT'
+  282 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                                           ^~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:432:41: note: in expansion of macro 'ESP_LOG_LEVEL'
+  432 |         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                         ^~~~~~~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:342:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  342 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:32:5: note: in expansion of macro 'ESP_LOGI'
+   32 |     ESP_LOGI(TAG, "LOW: %f,  HIGH: %f",  low_baseline, high_baseline);
+      |     ^~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:32:1: error: format '%f' expects argument of type 'double', but argument 7 has type 'int' [-Werror=format=]
+   32 |     ESP_LOGI(TAG, "LOW: %f,  HIGH: %f",  low_baseline, high_baseline);
+      | ^   ~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:282:59: note: in definition of macro 'LOG_FORMAT'
+  282 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                                           ^~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:432:41: note: in expansion of macro 'ESP_LOG_LEVEL'
+  432 |         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                         ^~~~~~~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:342:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  342 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:32:5: note: in expansion of macro 'ESP_LOGI'
+   32 |     ESP_LOGI(TAG, "LOW: %f,  HIGH: %f",  low_baseline, high_baseline);
+      |     ^~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:32:1: error: format '%f' expects argument of type 'double', but argument 6 has type 'int' [-Werror=format=]
+   32 |     ESP_LOGI(TAG, "LOW: %f,  HIGH: %f",  low_baseline, high_baseline);
+      | ^   ~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:282:59: note: in definition of macro 'LOG_FORMAT'
+  282 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                                           ^~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:432:41: note: in expansion of macro 'ESP_LOG_LEVEL'
+  432 |         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                         ^~~~~~~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:342:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  342 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:32:5: note: in expansion of macro 'ESP_LOGI'
+   32 |     ESP_LOGI(TAG, "LOW: %f,  HIGH: %f",  low_baseline, high_baseline);
+      |     ^~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:32:1: error: format '%f' expects argument of type 'double', but argument 7 has type 'int' [-Werror=format=]
+   32 |     ESP_LOGI(TAG, "LOW: %f,  HIGH: %f",  low_baseline, high_baseline);
+      | ^   ~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:282:59: note: in definition of macro 'LOG_FORMAT'
+  282 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                                           ^~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:432:41: note: in expansion of macro 'ESP_LOG_LEVEL'
+  432 |         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                         ^~~~~~~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:342:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  342 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:32:5: note: in expansion of macro 'ESP_LOGI'
+   32 |     ESP_LOGI(TAG, "LOW: %f,  HIGH: %f",  low_baseline, high_baseline);
+      |     ^~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:32:1: error: format '%f' expects argument of type 'double', but argument 6 has type 'int' [-Werror=format=]
+   32 |     ESP_LOGI(TAG, "LOW: %f,  HIGH: %f",  low_baseline, high_baseline);
+      | ^   ~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:282:59: note: in definition of macro 'LOG_FORMAT'
+  282 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                                           ^~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:432:41: note: in expansion of macro 'ESP_LOG_LEVEL'
+  432 |         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                         ^~~~~~~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:342:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  342 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:32:5: note: in expansion of macro 'ESP_LOGI'
+   32 |     ESP_LOGI(TAG, "LOW: %f,  HIGH: %f",  low_baseline, high_baseline);
+      |     ^~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:32:1: error: format '%f' expects argument of type 'double', but argument 7 has type 'int' [-Werror=format=]
+   32 |     ESP_LOGI(TAG, "LOW: %f,  HIGH: %f",  low_baseline, high_baseline);
+      | ^   ~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:282:59: note: in definition of macro 'LOG_FORMAT'
+  282 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                                           ^~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:432:41: note: in expansion of macro 'ESP_LOG_LEVEL'
+  432 |         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                         ^~~~~~~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:342:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  342 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:32:5: note: in expansion of macro 'ESP_LOGI'
+   32 |     ESP_LOGI(TAG, "LOW: %f,  HIGH: %f",  low_baseline, high_baseline);
+      |     ^~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:32:1: error: format '%f' expects argument of type 'double', but argument 6 has type 'int' [-Werror=format=]
+   32 |     ESP_LOGI(TAG, "LOW: %f,  HIGH: %f",  low_baseline, high_baseline);
+      | ^   ~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:282:59: note: in definition of macro 'LOG_FORMAT'
+  282 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                                           ^~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:432:41: note: in expansion of macro 'ESP_LOG_LEVEL'
+  432 |         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                         ^~~~~~~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:342:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  342 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:32:5: note: in expansion of macro 'ESP_LOGI'
+   32 |     ESP_LOGI(TAG, "LOW: %f,  HIGH: %f",  low_baseline, high_baseline);
+      |     ^~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:32:1: error: format '%f' expects argument of type 'double', but argument 7 has type 'int' [-Werror=format=]
+   32 |     ESP_LOGI(TAG, "LOW: %f,  HIGH: %f",  low_baseline, high_baseline);
+      | ^   ~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:282:59: note: in definition of macro 'LOG_FORMAT'
+  282 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                                           ^~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:432:41: note: in expansion of macro 'ESP_LOG_LEVEL'
+  432 |         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                         ^~~~~~~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:342:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  342 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:32:5: note: in expansion of macro 'ESP_LOGI'
+   32 |     ESP_LOGI(TAG, "LOW: %f,  HIGH: %f",  low_baseline, high_baseline);
+      |     ^~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:41:81: error: format '%f' expects argument of type 'double', but argument 6 has type 'int' [-Werror=format=]
+   41 |             ESP_LOGI(TAG, "LOW: %.1f,  HIGH: %.1f",  low_baseline, high_baseline);
+      |                                                                                 ^
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:282:59: note: in definition of macro 'LOG_FORMAT'
+  282 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                                           ^~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:432:41: note: in expansion of macro 'ESP_LOG_LEVEL'
+  432 |         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                         ^~~~~~~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:342:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  342 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:41:13: note: in expansion of macro 'ESP_LOGI'
+   41 |             ESP_LOGI(TAG, "LOW: %.1f,  HIGH: %.1f",  low_baseline, high_baseline);
+      |             ^~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:41:81: error: format '%f' expects argument of type 'double', but argument 7 has type 'int' [-Werror=format=]
+   41 |             ESP_LOGI(TAG, "LOW: %.1f,  HIGH: %.1f",  low_baseline, high_baseline);
+      |                                                                                 ^
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:282:59: note: in definition of macro 'LOG_FORMAT'
+  282 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                                           ^~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:432:41: note: in expansion of macro 'ESP_LOG_LEVEL'
+  432 |         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                         ^~~~~~~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:342:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  342 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:41:13: note: in expansion of macro 'ESP_LOGI'
+   41 |             ESP_LOGI(TAG, "LOW: %.1f,  HIGH: %.1f",  low_baseline, high_baseline);
+      |             ^~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:41:1: error: format '%f' expects argument of type 'double', but argument 6 has type 'int' [-Werror=format=]
+   41 |             ESP_LOGI(TAG, "LOW: %.1f,  HIGH: %.1f",  low_baseline, high_baseline);
+      | ^          
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:282:59: note: in definition of macro 'LOG_FORMAT'
+  282 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                                           ^~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:432:41: note: in expansion of macro 'ESP_LOG_LEVEL'
+  432 |         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                         ^~~~~~~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:342:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  342 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:41:13: note: in expansion of macro 'ESP_LOGI'
+   41 |             ESP_LOGI(TAG, "LOW: %.1f,  HIGH: %.1f",  low_baseline, high_baseline);
+      |             ^~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:41:1: error: format '%f' expects argument of type 'double', but argument 7 has type 'int' [-Werror=format=]
+   41 |             ESP_LOGI(TAG, "LOW: %.1f,  HIGH: %.1f",  low_baseline, high_baseline);
+      | ^          
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:282:59: note: in definition of macro 'LOG_FORMAT'
+  282 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                                           ^~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:432:41: note: in expansion of macro 'ESP_LOG_LEVEL'
+  432 |         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                         ^~~~~~~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:342:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  342 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:41:13: note: in expansion of macro 'ESP_LOGI'
+   41 |             ESP_LOGI(TAG, "LOW: %.1f,  HIGH: %.1f",  low_baseline, high_baseline);
+      |             ^~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:41:1: error: format '%f' expects argument of type 'double', but argument 6 has type 'int' [-Werror=format=]
+   41 |             ESP_LOGI(TAG, "LOW: %.1f,  HIGH: %.1f",  low_baseline, high_baseline);
+      | ^          
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:282:59: note: in definition of macro 'LOG_FORMAT'
+  282 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                                           ^~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:432:41: note: in expansion of macro 'ESP_LOG_LEVEL'
+  432 |         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                         ^~~~~~~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:342:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  342 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:41:13: note: in expansion of macro 'ESP_LOGI'
+   41 |             ESP_LOGI(TAG, "LOW: %.1f,  HIGH: %.1f",  low_baseline, high_baseline);
+      |             ^~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:41:1: error: format '%f' expects argument of type 'double', but argument 7 has type 'int' [-Werror=format=]
+   41 |             ESP_LOGI(TAG, "LOW: %.1f,  HIGH: %.1f",  low_baseline, high_baseline);
+      | ^          
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:282:59: note: in definition of macro 'LOG_FORMAT'
+  282 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                                           ^~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:432:41: note: in expansion of macro 'ESP_LOG_LEVEL'
+  432 |         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                         ^~~~~~~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:342:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  342 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:41:13: note: in expansion of macro 'ESP_LOGI'
+   41 |             ESP_LOGI(TAG, "LOW: %.1f,  HIGH: %.1f",  low_baseline, high_baseline);
+      |             ^~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:41:1: error: format '%f' expects argument of type 'double', but argument 6 has type 'int' [-Werror=format=]
+   41 |             ESP_LOGI(TAG, "LOW: %.1f,  HIGH: %.1f",  low_baseline, high_baseline);
+      | ^          
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:282:59: note: in definition of macro 'LOG_FORMAT'
+  282 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                                           ^~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:432:41: note: in expansion of macro 'ESP_LOG_LEVEL'
+  432 |         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                         ^~~~~~~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:342:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  342 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:41:13: note: in expansion of macro 'ESP_LOGI'
+   41 |             ESP_LOGI(TAG, "LOW: %.1f,  HIGH: %.1f",  low_baseline, high_baseline);
+      |             ^~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:41:1: error: format '%f' expects argument of type 'double', but argument 7 has type 'int' [-Werror=format=]
+   41 |             ESP_LOGI(TAG, "LOW: %.1f,  HIGH: %.1f",  low_baseline, high_baseline);
+      | ^          
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:282:59: note: in definition of macro 'LOG_FORMAT'
+  282 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                                           ^~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:432:41: note: in expansion of macro 'ESP_LOG_LEVEL'
+  432 |         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                         ^~~~~~~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:342:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  342 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:41:13: note: in expansion of macro 'ESP_LOGI'
+   41 |             ESP_LOGI(TAG, "LOW: %.1f,  HIGH: %.1f",  low_baseline, high_baseline);
+      |             ^~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:41:1: error: format '%f' expects argument of type 'double', but argument 6 has type 'int' [-Werror=format=]
+   41 |             ESP_LOGI(TAG, "LOW: %.1f,  HIGH: %.1f",  low_baseline, high_baseline);
+      | ^          
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:282:59: note: in definition of macro 'LOG_FORMAT'
+  282 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                                           ^~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:432:41: note: in expansion of macro 'ESP_LOG_LEVEL'
+  432 |         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                         ^~~~~~~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:342:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  342 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:41:13: note: in expansion of macro 'ESP_LOGI'
+   41 |             ESP_LOGI(TAG, "LOW: %.1f,  HIGH: %.1f",  low_baseline, high_baseline);
+      |             ^~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:41:1: error: format '%f' expects argument of type 'double', but argument 7 has type 'int' [-Werror=format=]
+   41 |             ESP_LOGI(TAG, "LOW: %.1f,  HIGH: %.1f",  low_baseline, high_baseline);
+      | ^          
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:282:59: note: in definition of macro 'LOG_FORMAT'
+  282 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                                           ^~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:432:41: note: in expansion of macro 'ESP_LOG_LEVEL'
+  432 |         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                         ^~~~~~~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/include/esp_log.h:342:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  342 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:41:13: note: in expansion of macro 'ESP_LOGI'
+   41 |             ESP_LOGI(TAG, "LOW: %.1f,  HIGH: %.1f",  low_baseline, high_baseline);
+      |             ^~~~~~~~
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c: At top level:
+D:/Espressif/frameworks/WSN_project/client_model/main/main.c:24:13: warning: 'temp_sensor_task' defined but not used [-Wunused-function]
+   24 | static void temp_sensor_task(void *arg) {
+      |             ^~~~~~~~~~~~~~~~
+cc1.exe: some warnings being treated as errors
+ninja: build stopped: subcommand failed.

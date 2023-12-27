@@ -1,0 +1,442 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6172
+ho 0 tail 12 room 4
+load:0x40078000,len:15584
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+I (31) boot: ESP-IDF v5.1.1-dirty 2nd stage bootloader
+I (31) boot: compile time Dec  9 2023 15:22:29
+I (31) boot: Multicore bootloader
+I (33) boot: chip revision: v3.1
+I (36) boot.esp32: SPI Speed      : 40MHz
+I (40) boot.esp32: SPI Mode       : DIO
+I (43) boot.esp32: SPI Flash Size : 2MB
+I (47) boot: Enabling RNG early entropy source...
+I (51) boot: Partition Table:
+I (54) boot: ## Label            Usage          Type ST Offset   Length
+I (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (73) boot:  2 factory          factory app      00 00 00010000 00100000
+I (80) boot: End of partition table
+I (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=28568h (165224) map
+I (150) esp_image: segment 1: paddr=00038590 vaddr=3ffbdb60 size=04d18h ( 19736) load
+I (158) esp_image: segment 2: paddr=0003d2b0 vaddr=40080000 size=02d68h ( 11624) load
+I (163) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a3a24h (670244) map
+I (406) esp_image: segment 4: paddr=000e3a4c vaddr=40082d68 size=15600h ( 87552) load
+I (455) boot: Loaded app from partition at offset 0x10000
+I (455) boot: Disabling RNG early entropy source...
+I (464) cpu_start: Multicore app
+I (465) cpu_start: Pro cpu up.
+I (465) cpu_start: Starting app cpu, entry point is 0x40081388
+I (0) cpu_start: App cpu up.
+I (479) cpu_start: Pro cpu start user code
+I (479) cpu_start: cpu freq: 160000000 Hz
+I (479) cpu_start: Application information:
+I (481) cpu_start: Project name:     client_model
+I (485) cpu_start: App version:      bedab08-dirty
+I (490) cpu_start: Compile time:     Dec 21 2023 21:50:09
+I (495) cpu_start: ELF file SHA256:  7d6d4cf11ae7011b...
+I (500) cpu_start: ESP-IDF:          v5.1.1-dirty
+I (504) cpu_start: Min chip rev:     v0.0
+I (508) cpu_start: Max chip rev:     v3.99 
+I (512) cpu_start: Chip rev:         v3.1
+I (516) heap_init: Initializing. RAM available for dynamic allocation:
+I (522) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM
+I (527) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM
+I (532) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM
+I (537) heap_init: At 3FFCA060 len 00015FA0 (87 KiB): DRAM
+I (543) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (548) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (553) heap_init: At 40098368 len 00007C98 (31 KiB): IRAM
+I (560) spi_flash: detected chip: generic
+I (562) spi_flash: flash io: dio
+W (565) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.
+I (578) coexist: coex firmware version: 80b0d89
+I (582) app_start: Starting scheduler on CPU0
+I (586)I (586) app_start: Starting scheduler on CPU1
+ main_task: Started on CPU0
+I (596) main_task: Calling app_main()
+I (596) MAIN: Initializing...
+I (626) BTDM_INIT: BT controller compile version [946b762]
+I (626) BTDM_INIT: Bluetooth MAC: a0:a3:b3:2b:73:0e
+I (636) phy_init: phy_version 4670,719f9f6,Feb 18 2021,17:07:07
+W (1146) BLE_MESH: bt_mesh_proxy_server_prov_disable, Already
+I (1176) MESH_CLIENT: ESP_BLE_MESH_NODE_PROV_COMPLETE_EVT
+I (1176) MESH_CLIENT: net_idx: 0x0000, addr: 0x0022
+I (1176) MESH_CLIENT: flags: 0x00, iv_index: 0x00000000
+I (1176) MESH_CLIENT: Device provisioned
+I (1176) MESH_CLIENT: ESP_BLE_MESH_PROV_REGISTER_COMP_EVT, err_code 0
+I (1186) MESH_CLIENT: ESP_BLE_MESH_NODE_SET_UNPROV_DEV_NAME_COMP_EVT, Name: BLE Mesh, err_code 0
+W (1196) BLE_MESH: bt_mesh_prov_enable, Already
+I (1196) MESH_CLIENT: ESP_BLE_MESH_NODE_PROV_ENABLE_COMP_EVT, err_code -120
+I (1206) MESH_CLIENT: BLE Mesh Node initialized
+I (1206) main_task: Returned from app_main()
+I (6816) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (6816) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (6816) MESH_CLIENT: 69 64 5f 33 00 60 b0 41 00 00 18 42 00 00 80 41 
+W (6826) PARSED_DATA: Device Name = id_3
+W (6826) PARSED_DATA: Temperature = 22.046875
+W (6826) PARSED DATA: Warning low temperature = 38.000000
+W (6836) PARSED DATA: Warning high temperature = 16.000000
+I (6836) MESH_CLIENT: High: 16.000000, Low: 38.000000!
+I (6866) MESH_CLIENT: Send message opcode 0xc102e5 success!
+I (10406) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (10406) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (10406) MESH_CLIENT: 69 64 5f 33 00 a0 b0 41 00 00 18 42 00 00 80 41 
+W (10416) PARSED_DATA: Device Name = id_3
+W (10416) PARSED_DATA: Temperature = 22.078125
+W (10416) PARSED DATA: Warning low temperature = 38.000000
+W (10426) PARSED DATA: Warning high temperature = 16.000000
+I (10436) MESH_CLIENT: High: 16.000000, Low: 38.000000!
+I (10456) MESH_CLIENT: Send message opcode 0xc102e5 success!
+I (20296) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (20296) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (20296) MESH_CLIENT: 69 64 5f 33 00 e0 b0 41 00 00 18 42 00 00 80 41 
+W (20306) PARSED_DATA: Device Name = id_3
+W (20306) PARSED_DATA: Temperature = 22.109375
+W (20306) PARSED DATA: Warning low temperature = 38.000000
+W (20316) PARSED DATA: Warning high temperature = 16.000000
+I (20326) MESH_CLIENT: High: 16.000000, Low: 38.000000!
+I (20346) MESH_CLIENT: Send message opcode 0xc102e5 success!
+I (30236) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (30236) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (30236) MESH_CLIENT: 69 64 5f 33 00 80 b0 41 00 00 18 42 00 00 80 41 
+W (30246) PARSED_DATA: Device Name = id_3
+W (30246) PARSED_DATA: Temperature = 22.062500
+W (30256) PARSED DATA: Warning low temperature = 38.000000
+W (30256) PARSED DATA: Warning high temperature = 16.000000
+I (30266) MESH_CLIENT: High: 16.000000, Low: 38.000000!
+I (30286) MESH_CLIENT: Send message opcode 0xc102e5 success!
+I (40176) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (40176) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (40176) MESH_CLIENT: 69 64 5f 33 00 c0 b0 41 00 00 18 42 00 00 80 41 
+W (40186) PARSED_DATA: Device Name = id_3
+W (40186) PARSED_DATA: Temperature = 22.093750
+W (40186) PARSED DATA: Warning low temperature = 38.000000
+W (40196) PARSED DATA: Warning high temperature = 16.000000
+I (40206) MESH_CLIENT: High: 16.000000, Low: 38.000000!
+I (40226) MESH_CLIENT: Send message opcode 0xc102e5 success!
+I (50136) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (50136) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (50136) MESH_CLIENT: 69 64 5f 33 00 c0 b0 41 00 00 18 42 00 00 80 41 
+W (50146) PARSED_DATA: Device Name = id_3
+W (50146) PARSED_DATA: Temperature = 22.093750
+W (50146) PARSED DATA: Warning low temperature = 38.000000
+W (50156) PARSED DATA: Warning high temperature = 16.000000
+I (50166) MESH_CLIENT: High: 16.000000, Low: 38.000000!
+I (50186) MESH_CLIENT: Send message opcode 0xc102e5 success!
+I (60076) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (60076) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (60076) MESH_CLIENT: 69 64 5f 33 00 00 b1 41 00 00 18 42 00 00 80 41 
+W (60086) PARSED_DATA: Device Name = id_3
+W (60086) PARSED_DATA: Temperature = 22.125000
+W (60086) PARSED DATA: Warning low temperature = 38.000000
+W (60096) PARSED DATA: Warning high temperature = 16.000000
+I (60106) MESH_CLIENT: High: 16.000000, Low: 38.000000!
+I (60126) MESH_CLIENT: Send message opcode 0xc102e5 success!
+I (70036) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (70036) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (70036) MESH_CLIENT: 69 64 5f 33 00 a0 b0 41 00 00 18 42 00 00 80 41 
+W (70046) PARSED_DATA: Device Name = id_3
+W (70046) PARSED_DATA: Temperature = 22.078125
+W (70046) PARSED DATA: Warning low temperature = 38.000000
+W (70056) PARSED DATA: Warning high temperature = 16.000000
+I (70066) MESH_CLIENT: High: 16.000000, Low: 38.000000!
+I (70086) MESH_CLIENT: Send message opcode 0xc102e5 success!
+I (79956) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (79956) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (79956) MESH_CLIENT: 69 64 5f 33 00 c0 b0 41 00 00 18 42 00 00 80 41 
+W (79966) PARSED_DATA: Device Name = id_3
+W (79966) PARSED_DATA: Temperature = 22.093750
+W (79966) PARSED DATA: Warning low temperature = 38.000000
+W (79976) PARSED DATA: Warning high temperature = 16.000000
+I (79986) MESH_CLIENT: High: 16.000000, Low: 38.000000!
+I (80006) MESH_CLIENT: Send message opcode 0xc102e5 success!
+I (89916) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (89916) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (89916) MESH_CLIENT: 69 64 5f 33 00 c0 b0 41 00 00 18 42 00 00 80 41 
+W (89926) PARSED_DATA: Device Name = id_3
+W (89926) PARSED_DATA: Temperature = 22.093750
+W (89926) PARSED DATA: Warning low temperature = 38.000000
+W (89936) PARSED DATA: Warning high temperature = 16.000000
+I (89946) MESH_CLIENT: High: 16.000000, Low: 38.000000!
+I (89966) MESH_CLIENT: Send message opcode 0xc102e5 success!
+I (99876) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (99876) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (99876) MESH_CLIENT: 69 64 5f 33 00 e0 b0 41 00 00 18 42 00 00 80 41 
+W (99886) PARSED_DATA: Device Name = id_3
+W (99886) PARSED_DATA: Temperature = 22.109375
+W (99886) PARSED DATA: Warning low temperature = 38.000000
+W (99896) PARSED DATA: Warning high temperature = 16.000000
+I (99906) MESH_CLIENT: High: 16.000000, Low: 38.000000!
+I (99926) MESH_CLIENT: Send message opcode 0xc102e5 success!
+I (109816) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (109816) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (109816) MESH_CLIENT: 69 64 5f 33 00 e0 b0 41 00 00 18 42 00 00 80 41 
+W (109826) PARSED_DATA: Device Name = id_3
+W (109826) PARSED_DATA: Temperature = 22.109375
+W (109836) PARSED DATA: Warning low temperature = 38.000000
+W (109836) PARSED DATA: Warning high temperature = 16.000000
+I (109846) MESH_CLIENT: High: 16.000000, Low: 38.000000!
+I (109866) MESH_CLIENT: Send message opcode 0xc102e5 success!
+I (119756) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (119756) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (119756) MESH_CLIENT: 69 64 5f 33 00 00 b1 41 00 00 18 42 00 00 80 41 
+W (119766) PARSED_DATA: Device Name = id_3
+W (119766) PARSED_DATA: Temperature = 22.125000
+W (119776) PARSED DATA: Warning low temperature = 38.000000
+W (119776) PARSED DATA: Warning high temperature = 16.000000
+I (119786) MESH_CLIENT: High: 16.000000, Low: 38.000000!
+I (119826) MESH_CLIENT: Send message opcode 0xc102e5 success!
+I (129696) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (129696) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (129696) MESH_CLIENT: 69 64 5f 33 00 e0 b0 41 00 00 18 42 00 00 80 41 
+W (129706) PARSED_DATA: Device Name = id_3
+W (129706) PARSED_DATA: Temperature = 22.109375
+W (129716) PARSED DATA: Warning low temperature = 38.000000
+W (129716) PARSED DATA: Warning high temperature = 16.000000
+I (129726) MESH_CLIENT: High: 16.000000, Low: 38.000000!
+I (129746) MESH_CLIENT: Send message opcode 0xc102e5 success!
+I (139656) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (139656) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (139656) MESH_CLIENT: 69 64 5f 33 00 e0 b0 41 00 00 18 42 00 00 80 41 
+W (139666) PARSED_DATA: Device Name = id_3
+W (139666) PARSED_DATA: Temperature = 22.109375
+W (139676) PARSED DATA: Warning low temperature = 38.000000
+W (139676) PARSED DATA: Warning high temperature = 16.000000
+I (139686) MESH_CLIENT: High: 16.000000, Low: 38.000000!
+I (139706) MESH_CLIENT: Send message opcode 0xc102e5 success!
+I (163556) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (163556) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (163556) MESH_CLIENT: 69 64 5f 33 00 c0 b0 41 00 00 00 00 00 00 00 00 
+W (163566) PARSED_DATA: Device Name = id_3
+W (163566) PARSED_DATA: Temperature = 22.093750
+W (163576) PARSED DATA: Warning low temperature = 0.000000
+W (163576) PARSED DATA: Warning high temperature = 0.000000
+I (163586) MESH_CLIENT: High: 0.000000, Low: 0.000000!
+I (163606) MESH_CLIENT: Send message opcode 0xc102e5 success!
+I (173576) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (173576) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (173576) MESH_CLIENT: 69 64 5f 33 00 a0 b0 41 00 00 80 41 00 00 18 42 
+W (173586) PARSED_DATA: Device Name = id_3
+W (173586) PARSED_DATA: Temperature = 22.078125
+W (173596) PARSED DATA: Warning low temperature = 16.000000
+W (173596) PARSED DATA: Warning high temperature = 38.000000
+I (183456) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (183456) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (183456) MESH_CLIENT: 69 64 5f 33 00 e0 b0 41 00 00 80 41 00 00 18 42 
+W (183466) PARSED_DATA: Device Name = id_3
+W (183466) PARSED_DATA: Temperature = 22.109375
+W (183476) PARSED DATA: Warning low temperature = 16.000000
+W (183476) PARSED DATA: Warning high temperature = 38.000000
+I (193396) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (193396) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (193396) MESH_CLIENT: 69 64 5f 33 00 c0 b0 41 00 00 80 41 00 00 18 42 
+W (193406) PARSED_DATA: Device Name = id_3
+W (193406) PARSED_DATA: Temperature = 22.093750
+W (193416) PARSED DATA: Warning low temperature = 16.000000
+W (193416) PARSED DATA: Warning high temperature = 38.000000
+I (203336) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (203336) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (203336) MESH_CLIENT: 69 64 5f 33 00 c0 b0 41 00 00 80 41 00 00 18 42 
+W (203346) PARSED_DATA: Device Name = id_3
+W (203346) PARSED_DATA: Temperature = 22.093750
+W (203356) PARSED DATA: Warning low temperature = 16.000000
+W (203356) PARSED DATA: Warning high temperature = 38.000000
+I (213296) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (213296) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (213296) MESH_CLIENT: 69 64 5f 33 00 c0 b0 41 00 00 80 41 00 00 18 42 
+W (213306) PARSED_DATA: Device Name = id_3
+W (213306) PARSED_DATA: Temperature = 22.093750
+W (213316) PARSED DATA: Warning low temperature = 16.000000
+W (213316) PARSED DATA: Warning high temperature = 38.000000
+I (223256) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (223256) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (223256) MESH_CLIENT: 69 64 5f 33 00 e0 b0 41 00 00 80 41 00 00 18 42 
+W (223266) PARSED_DATA: Device Name = id_3
+W (223266) PARSED_DATA: Temperature = 22.109375
+W (223276) PARSED DATA: Warning low temperature = 16.000000
+W (223276) PARSED DATA: Warning high temperature = 38.000000
+W (1238166) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00000b
+W (1238406) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00000d
+W (1238566) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00000e
+W (1244586) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00000f
+W (1244686) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000010
+W (1244866) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000011
+W (1244926) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000012
+W (1245086) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000013
+W (1245186) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000014
+W (1248096) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000015
+W (1248196) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000016
+W (1248366) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000017
+W (1248466) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000018
+W (1254566) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000019
+W (1254626) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00001a
+W (1254786) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00001b
+W (1254946) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00001c
+W (1255086) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00001d
+W (1255126) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00001e
+W (1258046) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00001f
+W (1258146) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000020
+W (1258306) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000021
+W (1258426) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000022
+W (1264486) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000023
+W (1264586) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000024
+W (1264766) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000025
+W (1264826) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000026
+W (1264986) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000027
+W (1265086) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000028
+W (1268026) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000029
+W (1268086) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00002a
+W (1268246) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00002b
+W (1268346) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00002c
+W (1273946) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00002d
+W (1274046) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00002e
+W (1274236) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00002f
+W (1274286) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000030
+W (1280406) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000031
+W (1280466) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000032
+W (1280626) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000033
+W (1280726) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000034
+W (1280866) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000035
+W (1280966) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000036
+W (1283926) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000037
+W (1283986) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000038
+W (1284146) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000039
+W (1284246) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00003a
+W (1290346) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00003b
+W (1290406) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00003c
+W (1290566) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00003d
+W (1290666) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00003e
+W (1290806) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00003f
+W (1290906) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000040
+W (1293826) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000041
+W (1293926) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000042
+W (1294086) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000043
+W (1294186) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000044
+W (1300266) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000045
+W (1300366) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000046
+W (1300586) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000047
+W (1300606) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000048
+W (1300766) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000049
+W (1300866) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00004a
+W (1303806) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00004b
+W (1303866) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00004c
+W (1304026) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00004d
+W (1304126) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00004e
+W (1310206) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00004f
+W (1310306) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000050
+W (1310466) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000051
+W (1310576) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000052
+W (1310706) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000053
+W (1310806) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000054
+W (1313726) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000055
+W (1313826) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000056
+W (1313986) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000057
+W (1314106) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000058
+W (1320166) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000059
+W (1320266) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00005a
+W (1320426) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00005b
+W (1320546) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00005c
+W (1320666) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00005d
+W (1320766) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00005e
+W (1323686) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00005f
+W (1323786) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000060
+W (1323946) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000061
+W (1324086) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000062
+W (1330106) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000063
+W (1330206) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000064
+W (1330366) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000065
+W (1330486) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000066
+W (1330606) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000067
+W (1330706) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000068
+W (1333626) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000069
+W (1333726) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00006a
+W (1333886) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00006b
+W (1334006) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00006c
+W (1340056) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00006d
+W (1340166) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00006e
+W (1340306) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00006f
+W (1340396) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000070
+W (1340566) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000071
+W (1340666) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000072
+W (1343566) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000073
+W (1343666) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000074
+W (1343826) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000075
+W (1343926) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000076
+W (1350006) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000077
+W (1350106) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000078
+W (1350246) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000079
+W (1350346) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00007a
+W (1350506) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00007b
+W (1350606) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00007c
+W (1360946) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00007d
+W (1361046) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00007e
+W (1361226) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00007f
+W (1361286) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000080
+W (1367426) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000081
+W (1367466) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000082
+W (1367626) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000083
+W (1367716) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000084
+W (1367906) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000085
+W (1367966) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000086
+W (1370886) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000087
+W (1370986) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000088
+W (1371166) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000089
+W (1371226) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00008a
+W (1377346) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00008b
+W (1377406) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00008c
+W (1377566) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00008d
+W (1377656) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00008e
+W (1377806) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00008f
+W (1377906) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000090
+W (1380816) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000091
+W (1380916) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000092
+W (1381066) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000093
+W (1381166) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000094
+W (1387266) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000095
+W (1387366) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000096
+W (1387546) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000097
+W (1387606) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000098
+W (1387766) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x000099
+W (1387866) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00009a
+W (1390766) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00009b
+W (1390866) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00009c
+W (1391026) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00009d
+W (1391126) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00009e
+W (1397196) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x00009f
+W (1397306) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x0000a0
+W (1397466) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x0000a1
+W (1397546) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x0000a2
+W (1397706) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x0000a3
+W (1397806) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x0000a4
+W (1400726) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x0000a5
+W (1400826) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x0000a6
+W (1400986) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x0000a7
+W (1401066) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x0000a8
+W (1407146) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x0000a9
+W (1407246) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x0000aa
+W (1407406) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x0000ab
+W (1407506) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x0000ac
+W (1407646) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x0000ad
+W (1407746) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x0000ae
+W (1410666) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x0000af
+W (1410766) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x0000b0
+W (1410926) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x0000b1
+W (1411026) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x0000b2
+W (1417106) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x0000b3
+W (1417196) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x0000b4
+W (1417386) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x0000b5
+W (1417446) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x0000b6
+W (1417606) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x0000b7
+W (1417706) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x0000b8
+W (1439466) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x0000b9
+W (1439566) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x0000ba
+W (1439766) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x0000bb
+W (1439826) BLE_MESH: Replay: src 0x0023 dst 0xc001 seq 0x0000bc

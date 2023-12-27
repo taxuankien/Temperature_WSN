@@ -1,0 +1,2329 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6172
+ho 0 tail 12 room 4
+load:0x40078000,len:15584
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+I (31) boot: ESP-IDF v5.1.1-dirty 2nd stage bootloader
+I (31) boot: compile time Dec  9 2023 15:22:29
+I (31) boot: Multicore bootloader
+I (33) boot: chip revision: v3.1
+I (36) boot.esp32: SPI Speed      : 40MHz
+I (40) boot.esp32: SPI Mode       : DIO
+I (43) boot.esp32: SPI Flash Size : 2MB
+I (47) boot: Enabling RNG early entropy source...
+I (51) boot: Partition Table:
+I (54) boot: ## Label            Usage          Type ST Offset   Length
+I (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (73) boot:  2 factory          factory app      00 00 00010000 00100000
+I (80) boot: End of partition table
+I (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=28578h (165240) map
+I (150) esp_image: segment 1: paddr=000385a0 vaddr=3ffbdb60 size=04d18h ( 19736) load
+I (158) esp_image: segment 2: paddr=0003d2c0 vaddr=40080000 size=02d58h ( 11608) load
+I (163) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a3904h (669956) map
+I (406) esp_image: segment 4: paddr=000e392c vaddr=40082d58 size=15610h ( 87568) load
+I (455) boot: Loaded app from partition at offset 0x10000
+I (455) boot: Disabling RNG early entropy source...
+I (464) cpu_start: Multicore app
+I (465) cpu_start: Pro cpu up.
+I (465) cpu_start: Starting app cpu, entry point is 0x40081388
+I (0) cpu_start: App cpu up.
+I (479) cpu_start: Pro cpu start user code
+I (479) cpu_start: cpu freq: 160000000 Hz
+I (479) cpu_start: Application information:
+I (481) cpu_start: Project name:     client_model
+I (485) cpu_start: App version:      9bcbf09-dirty
+I (490) cpu_start: Compile time:     Dec  9 2023 15:21:42
+I (495) cpu_start: ELF file SHA256:  be41f717478f7ac8...
+I (500) cpu_start: ESP-IDF:          v5.1.1-dirty
+I (504) cpu_start: Min chip rev:     v0.0
+I (508) cpu_start: Max chip rev:     v3.99 
+I (512) cpu_start: Chip rev:         v3.1
+I (516) heap_init: Initializing. RAM available for dynamic allocation:
+I (522) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM
+I (527) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM
+I (532) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM
+I (537) heap_init: At 3FFCA060 len 00015FA0 (87 KiB): DRAM
+I (542) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (548) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (553) heap_init: At 40098368 len 00007C98 (31 KiB): IRAM
+I (560) spi_flash: detected chip: generic
+I (562) spi_flash: flash io: dio
+W (565) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.
+I (578) coexist: coex firmware version: 80b0d89
+I (582) app_start: Starting scheduler on CPU0
+I (586I (586) app_start: Starting scheduler on CPU1
+) main_task: Started on CPU0
+I (596) main_task: Calling app_main()
+I (596) MAIN: Initializing...
+I (626) BTDM_INIT: BT controller compile version [946b762]
+I (626) BTDM_INIT: Bluetooth MAC: a0:b7:65:4a:b4:e6
+I (636) phy_init: phy_version 4670,719f9f6,Feb 18 2021,17:07:07
+W (1146) BLE_MESH: bt_mesh_proxy_server_prov_disable, Already
+I (1176) MESH_CLIENT: ESP_BLE_MESH_NODE_PROV_COMPLETE_EVT
+I (1176) MESH_CLIENT: net_idx: 0x0000, addr: 0x000d
+I (1176) MESH_CLIENT: flags: 0x00, iv_index: 0x00000000
+I (1186) MESH_CLIENT: Device provisioned
+I (1186) MESH_CLIENT: ESP_BLE_MESH_PROV_REGISTER_COMP_EVT, err_code 0
+I (1196) MESH_CLIENT: ESP_BLE_MESH_NODE_SET_UNPROV_DEV_NAME_COMP_EVT, Name: BLE Mesh, err_code 0
+W (1196) BLE_MESH: bt_mesh_prov_enable, Already
+I (1206) MESH_CLIENT: ESP_BLE_MESH_NODE_PROV_ENABLE_COMP_EVT, err_code -120
+I (1216) MESH_CLIENT: BLE Mesh Node initialized
+I (1216) main_task: Returned from app_main()
+I (1256) MESH_CLIENT: Send message opcode 0xc102e5 success!
+W (1266) BLE_MESH: Relaying packet. TTL is now 4
+W (1356) BLE_MESH: Relaying packet. TTL is now 4
+W (1486) BLE_MESH: Relaying packet. TTL is now 4
+I (1486) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (1486) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (1496) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (1496) MESH_CLIENT: 00 00 00 
+W (1496) PARSED_DATA: Device Name = esp_3
+W (1516) PARSED_DATA: Temperature = 0.000000
+W (1516) PARSED DATA: Warning low temperature = 0.000000
+W (1516) PARSED DATA: Warning high temperature = 0.000000
+W (1826) BLE_MESH: Relaying packet. TTL is now 4
+W (1926) BLE_MESH: Relaying packet. TTL is now 4
+W (2016) BLE_MESH: Relaying packet. TTL is now 4
+W (2626) BLE_MESH: Relaying packet. TTL is now 4
+W (2666) BLE_MESH: Relaying packet. TTL is now 4
+W (2766) BLE_MESH: Relaying packet. TTL is now 4
+W (3366) BLE_MESH: Relaying packet. TTL is now 4
+W (3486) BLE_MESH: Relaying packet. TTL is now 4
+W (3546) BLE_MESH: Relaying packet. TTL is now 4
+W (4976) BLE_MESH: Relaying packet. TTL is now 4
+W (5076) BLE_MESH: Relaying packet. TTL is now 4
+W (5206) BLE_MESH: Relaying packet. TTL is now 4
+I (5206) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (5206) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (5216) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (5216) MESH_CLIENT: 18 42 00 
+W (5216) PARSED_DATA: Device Name = esp_3
+W (5226) PARSED_DATA: Temperature = 0.000000
+W (5226) PARSED DATA: Warning low temperature = 16.000000
+W (5236) PARSED DATA: Warning high temperature = 38.000000
+W (5326) BLE_MESH: Relaying packet. TTL is now 4
+W (5446) BLE_MESH: Relaying packet. TTL is now 4
+W (5546) BLE_MESH: Relaying packet. TTL is now 4
+W (5666) BLE_MESH: Relaying packet. TTL is now 4
+W (5766) BLE_MESH: Relaying packet. TTL is now 4
+W (5956) BLE_MESH: Relaying packet. TTL is now 4
+W (6026) BLE_MESH: Relaying packet. TTL is now 4
+W (6106) BLE_MESH: Relaying packet. TTL is now 4
+W (6226) BLE_MESH: Relaying packet. TTL is now 4
+W (6346) BLE_MESH: Relaying packet. TTL is now 4
+W (6506) BLE_MESH: Relaying packet. TTL is now 4
+W (6566) BLE_MESH: Relaying packet. TTL is now 4
+W (8916) BLE_MESH: Relaying packet. TTL is now 4
+W (9056) BLE_MESH: Relaying packet. TTL is now 4
+W (9126) BLE_MESH: Relaying packet. TTL is now 4
+I (9126) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (9126) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (9136) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (9136) MESH_CLIENT: 18 42 00 
+W (9136) PARSED_DATA: Device Name = esp_3
+W (9146) PARSED_DATA: Temperature = 0.000000
+W (9146) PARSED DATA: Warning low temperature = 16.000000
+W (9156) PARSED DATA: Warning high temperature = 38.000000
+W (9266) BLE_MESH: Relaying packet. TTL is now 4
+W (9386) BLE_MESH: Relaying packet. TTL is now 4
+W (9446) BLE_MESH: Relaying packet. TTL is now 4
+W (9606) BLE_MESH: Relaying packet. TTL is now 4
+W (9726) BLE_MESH: Relaying packet. TTL is now 4
+W (9786) BLE_MESH: Relaying packet. TTL is now 4
+W (9936) BLE_MESH: Relaying packet. TTL is now 4
+W (10066) BLE_MESH: Relaying packet. TTL is now 4
+W (10126) BLE_MESH: Relaying packet. TTL is now 4
+W (10286) BLE_MESH: Relaying packet. TTL is now 4
+W (10406) BLE_MESH: Relaying packet. TTL is now 4
+W (10466) BLE_MESH: Relaying packet. TTL is now 4
+W (12916) BLE_MESH: Relaying packet. TTL is now 4
+W (13036) BLE_MESH: Relaying packet. TTL is now 4
+W (13106) BLE_MESH: Relaying packet. TTL is now 4
+I (13106) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (13106) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (13116) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (13116) MESH_CLIENT: 18 42 00 
+W (13116) PARSED_DATA: Device Name = esp_3
+W (13126) PARSED_DATA: Temperature = 0.000000
+W (13126) PARSED DATA: Warning low temperature = 16.000000
+W (13136) PARSED DATA: Warning high temperature = 38.000000
+W (13266) BLE_MESH: Relaying packet. TTL is now 4
+W (13386) BLE_MESH: Relaying packet. TTL is now 4
+W (13446) BLE_MESH: Relaying packet. TTL is now 4
+W (13616) BLE_MESH: Relaying packet. TTL is now 4
+W (13786) BLE_MESH: Relaying packet. TTL is now 4
+W (13966) BLE_MESH: Relaying packet. TTL is now 4
+W (14086) BLE_MESH: Relaying packet. TTL is now 4
+W (14146) BLE_MESH: Relaying packet. TTL is now 4
+W (14286) BLE_MESH: Relaying packet. TTL is now 4
+W (14386) BLE_MESH: Relaying packet. TTL is now 4
+W (14486) BLE_MESH: Relaying packet. TTL is now 4
+W (16916) BLE_MESH: Relaying packet. TTL is now 4
+W (17076) BLE_MESH: Relaying packet. TTL is now 4
+W (17106) BLE_MESH: Relaying packet. TTL is now 4
+I (17106) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (17106) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (17116) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (17116) MESH_CLIENT: 18 42 00 
+W (17116) PARSED_DATA: Device Name = esp_3
+W (17126) PARSED_DATA: Temperature = 0.000000
+W (17126) PARSED DATA: Warning low temperature = 16.000000
+W (17136) PARSED DATA: Warning high temperature = 38.000000
+W (17256) BLE_MESH: Relaying packet. TTL is now 4
+W (17426) BLE_MESH: Relaying packet. TTL is now 4
+W (17436) BLE_MESH: Relaying packet. TTL is now 4
+W (17606) BLE_MESH: Relaying packet. TTL is now 4
+W (17726) BLE_MESH: Relaying packet. TTL is now 4
+W (17786) BLE_MESH: Relaying packet. TTL is now 4
+W (17946) BLE_MESH: Relaying packet. TTL is now 4
+W (18086) BLE_MESH: Relaying packet. TTL is now 4
+W (18116) BLE_MESH: Relaying packet. TTL is now 4
+W (18376) BLE_MESH: Relaying packet. TTL is now 4
+W (18416) BLE_MESH: Relaying packet. TTL is now 4
+W (18486) BLE_MESH: Relaying packet. TTL is now 4
+W (20916) BLE_MESH: Relaying packet. TTL is now 4
+W (21026) BLE_MESH: Relaying packet. TTL is now 4
+W (21106) BLE_MESH: Relaying packet. TTL is now 4
+I (21106) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (21106) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (21116) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (21116) MESH_CLIENT: 18 42 00 
+W (21116) PARSED_DATA: Device Name = esp_3
+W (21126) PARSED_DATA: Temperature = 0.000000
+W (21126) PARSED DATA: Warning low temperature = 16.000000
+W (21136) PARSED DATA: Warning high temperature = 38.000000
+W (21286) BLE_MESH: Relaying packet. TTL is now 4
+W (21406) BLE_MESH: Relaying packet. TTL is now 4
+W (21456) BLE_MESH: Relaying packet. TTL is now 4
+W (21606) BLE_MESH: Relaying packet. TTL is now 4
+W (21726) BLE_MESH: Relaying packet. TTL is now 4
+W (21806) BLE_MESH: Relaying packet. TTL is now 4
+W (21946) BLE_MESH: Relaying packet. TTL is now 4
+W (22166) BLE_MESH: Relaying packet. TTL is now 4
+W (22286) BLE_MESH: Relaying packet. TTL is now 4
+W (22406) BLE_MESH: Relaying packet. TTL is now 4
+W (22466) BLE_MESH: Relaying packet. TTL is now 4
+W (24916) BLE_MESH: Relaying packet. TTL is now 4
+W (25026) BLE_MESH: Relaying packet. TTL is now 4
+W (30856) BLE_MESH: Duplicate SDU from src 0x0019
+W (30856) BLE_MESH: Relaying packet. TTL is now 4
+W (31056) BLE_MESH: Relaying packet. TTL is now 4
+W (31236) BLE_MESH: Received already received fragment
+W (31236) BLE_MESH: Relaying packet. TTL is now 4
+W (31306) BLE_MESH: Relaying packet. TTL is now 4
+I (31306) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (31306) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (31316) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (31316) MESH_CLIENT: 68 bc 00 
+W (31316) PARSED_DATA: Device Name = esp_3
+W (31326) PARSED_DATA: Temperature = 0.000000
+W (31326) PARSED DATA: Warning low temperature = 0.000000
+W (31336) PARSED DATA: Warning high temperature = -0.014160
+W (31426) BLE_MESH: Relaying packet. TTL is now 4
+W (31546) BLE_MESH: Relaying packet. TTL is now 4
+W (31646) BLE_MESH: Relaying packet. TTL is now 4
+W (31716) BLE_MESH: Relaying packet. TTL is now 4
+W (31906) BLE_MESH: Relaying packet. TTL is now 4
+W (31966) BLE_MESH: Relaying packet. TTL is now 4
+W (32066) BLE_MESH: Relaying packet. TTL is now 4
+W (32326) BLE_MESH: Relaying packet. TTL is now 4
+W (34856) BLE_MESH: Relaying packet. TTL is now 4
+W (34956) BLE_MESH: Relaying packet. TTL is now 4
+W (35046) BLE_MESH: Relaying packet. TTL is now 4
+I (35046) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (35046) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (35056) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (35056) MESH_CLIENT: 68 bc 00 
+W (35056) PARSED_DATA: Device Name = esp_3
+W (35066) PARSED_DATA: Temperature = 0.000000
+W (35066) PARSED DATA: Warning low temperature = 0.000000
+W (35076) PARSED DATA: Warning high temperature = -0.014160
+W (35196) BLE_MESH: Relaying packet. TTL is now 4
+W (35286) BLE_MESH: Relaying packet. TTL is now 4
+W (35386) BLE_MESH: Relaying packet. TTL is now 4
+W (35546) BLE_MESH: Relaying packet. TTL is now 4
+W (35646) BLE_MESH: Relaying packet. TTL is now 4
+W (35726) BLE_MESH: Relaying packet. TTL is now 4
+W (35886) BLE_MESH: Relaying packet. TTL is now 4
+W (35986) BLE_MESH: Relaying packet. TTL is now 4
+W (36066) BLE_MESH: Relaying packet. TTL is now 4
+W (36226) BLE_MESH: Relaying packet. TTL is now 4
+W (36326) BLE_MESH: Relaying packet. TTL is now 4
+W (36406) BLE_MESH: Relaying packet. TTL is now 4
+W (38846) BLE_MESH: Relaying packet. TTL is now 4
+W (38946) BLE_MESH: Relaying packet. TTL is now 4
+W (39036) BLE_MESH: Relaying packet. TTL is now 4
+I (39036) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (39036) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (39046) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (39046) MESH_CLIENT: 68 bc 00 
+W (39046) PARSED_DATA: Device Name = esp_3
+W (39056) PARSED_DATA: Temperature = 0.000000
+W (39056) PARSED DATA: Warning low temperature = 0.000000
+W (39066) PARSED DATA: Warning high temperature = -0.014160
+W (39206) BLE_MESH: Relaying packet. TTL is now 4
+W (39306) BLE_MESH: Relaying packet. TTL is now 4
+W (39386) BLE_MESH: Relaying packet. TTL is now 4
+W (39616) BLE_MESH: Relaying packet. TTL is now 4
+W (39646) BLE_MESH: Relaying packet. TTL is now 4
+W (39716) BLE_MESH: Relaying packet. TTL is now 4
+W (39886) BLE_MESH: Relaying packet. TTL is now 4
+W (39986) BLE_MESH: Relaying packet. TTL is now 4
+W (40066) BLE_MESH: Relaying packet. TTL is now 4
+W (40226) BLE_MESH: Relaying packet. TTL is now 4
+W (40336) BLE_MESH: Relaying packet. TTL is now 4
+W (40396) BLE_MESH: Relaying packet. TTL is now 4
+W (42956) BLE_MESH: Relaying packet. TTL is now 4
+W (43016) BLE_MESH: Relaying packet. TTL is now 4
+W (43126) BLE_MESH: Relaying packet. TTL is now 4
+I (43126) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (43126) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (43136) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (43136) MESH_CLIENT: 68 bc 00 
+W (43136) PARSED_DATA: Device Name = esp_3
+W (43146) PARSED_DATA: Temperature = 0.000000
+W (43146) PARSED DATA: Warning low temperature = 0.000000
+W (43156) PARSED DATA: Warning high temperature = -0.014160
+W (43306) BLE_MESH: Relaying packet. TTL is now 4
+W (43366) BLE_MESH: Relaying packet. TTL is now 4
+W (43466) BLE_MESH: Relaying packet. TTL is now 4
+W (43606) BLE_MESH: Relaying packet. TTL is now 4
+W (43706) BLE_MESH: Relaying packet. TTL is now 4
+W (43796) BLE_MESH: Relaying packet. TTL is now 4
+W (43946) BLE_MESH: Relaying packet. TTL is now 4
+W (44046) BLE_MESH: Relaying packet. TTL is now 4
+W (44146) BLE_MESH: Relaying packet. TTL is now 4
+W (44286) BLE_MESH: Relaying packet. TTL is now 4
+W (44386) BLE_MESH: Relaying packet. TTL is now 4
+W (44486) BLE_MESH: Relaying packet. TTL is now 4
+W (46856) BLE_MESH: Relaying packet. TTL is now 4
+W (46956) BLE_MESH: Relaying packet. TTL is now 4
+W (47046) BLE_MESH: Relaying packet. TTL is now 4
+I (47046) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (47046) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (47056) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (47056) MESH_CLIENT: 68 bc 00 
+W (47056) PARSED_DATA: Device Name = esp_3
+W (47066) PARSED_DATA: Temperature = 0.000000
+W (47066) PARSED DATA: Warning low temperature = 0.000000
+W (47076) PARSED DATA: Warning high temperature = -0.014160
+W (47206) BLE_MESH: Relaying packet. TTL is now 4
+W (47306) BLE_MESH: Relaying packet. TTL is now 4
+W (47386) BLE_MESH: Relaying packet. TTL is now 4
+W (47546) BLE_MESH: Relaying packet. TTL is now 4
+W (47646) BLE_MESH: Relaying packet. TTL is now 4
+W (47716) BLE_MESH: Relaying packet. TTL is now 4
+W (47886) BLE_MESH: Relaying packet. TTL is now 4
+W (47986) BLE_MESH: Relaying packet. TTL is now 4
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6172
+ho 0 tail 12 room 4
+load:0x40078000,len:15584
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+I (31) boot: ESP-IDF v5.1.1-dirty 2nd stage bootloader
+I (31) boot: compile time Dec  9 2023 15:22:29
+I (31) boot: Multicore bootloader
+I (33) boot: chip revision: v3.1
+I (36) boot.esp32: SPI Speed      : 40MHz
+I (40) boot.esp32: SPI Mode       : DIO
+I (43) boot.esp32: SPI Flash Size : 2MB
+I (47) boot: Enabling RNG early entropy source...
+I (51) boot: Partition Table:
+I (54) boot: ## Label            Usage          Type ST Offset   Length
+I (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (73) boot:  2 factory          factory app      00 00 00010000 00100000
+I (80) boot: End of partition table
+I (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=28578h (165240) map
+I (150) esp_image: segment 1: paddr=000385a0 vaddr=3ffbdb60 size=04d18h ( 19736) load
+I (158) esp_image: segment 2: paddr=0003d2c0 vaddr=40080000 size=02d58h ( 11608) load
+I (163) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a3904h (669956) map
+I (406) esp_image: segment 4: paddr=000e392c vaddr=40082d58 size=15610h ( 87568) load
+I (455) boot: Loaded app from partition at offset 0x10000
+I (455) boot: Disabling RNG early entropy source...
+I (464) cpu_start: Multicore app
+I (465) cpu_start: Pro cpu up.
+I (465) cpu_start: Starting app cpu, entry point is 0x40081388
+I (0) cpu_start: App cpu up.
+I (479) cpu_start: Pro cpu start user code
+I (479) cpu_start: cpu freq: 160000000 Hz
+I (479) cpu_start: Application information:
+I (481) cpu_start: Project name:     client_model
+I (485) cpu_start: App version:      9bcbf09-dirty
+I (490) cpu_start: Compile time:     Dec  9 2023 15:21:42
+I (495) cpu_start: ELF file SHA256:  be41f717478f7ac8...
+I (500) cpu_start: ESP-IDF:          v5.1.1-dirty
+I (504) cpu_start: Min chip rev:     v0.0
+I (508) cpu_start: Max chip rev:     v3.99 
+I (512) cpu_start: Chip rev:         v3.1
+I (516) heap_init: Initializing. RAM available for dynamic allocation:
+I (522) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM
+I (527) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM
+I (532) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM
+I (537) heap_init: At 3FFCA060 len 00015FA0 (87 KiB): DRAM
+I (542) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (548) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (553) heap_init: At 40098368 len 00007C98 (31 KiB): IRAM
+I (560) spi_flash: detected chip: generic
+I (562) spi_flash: flash io: dio
+W (565) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.
+I (578) coexist: coex firmware version: 80b0d89
+I (582) app_start: Starting scheduler on CPU0
+I (586I (586) app_start: Starting scheduler on CPU1
+) main_task: Started on CPU0
+I (596) main_task: Calling app_main()
+I (596) MAIN: Initializing...
+I (626) BTDM_INIT: BT controller compile version [946b762]
+I (626) BTDM_INIT: Bluetooth MAC: a0:b7:65:4a:b4:e6
+I (636) phy_init: phy_version 4670,719f9f6,Feb 18 2021,17:07:07
+W (1146) BLE_MESH: bt_mesh_proxy_server_prov_disable, Already
+I (1176) MESH_CLIENT: ESP_BLE_MESH_NODE_PROV_COMPLETE_EVT
+I (1176) MESH_CLIENT: net_idx: 0x0000, addr: 0x000d
+I (1176) MESH_CLIENT: flags: 0x00, iv_index: 0x00000000
+I (1176) MESH_CLIENT: Device provisioned
+I (1186) MESH_CLIENT: ESP_BLE_MESH_PROV_REGISTER_COMP_EVT, err_code 0
+I (1186) MESH_CLIENT: ESP_BLE_MESH_NODE_SET_UNPROV_DEV_NAME_COMP_EVT, Name: BLE Mesh, err_code 0
+W (1196) BLE_MESH: bt_mesh_prov_enable, Already
+I (1196) MESH_CLIENT: ESP_BLE_MESH_NODE_PROV_ENABLE_COMP_EVT, err_code -120
+I (1206) MESH_CLIENT: BLE Mesh Node initialized
+I (1216) main_task: Returned from app_main()
+I (1256) MESH_CLIENT: Send message opcode 0xc102e5 success!
+W (2666) BLE_MESH: Relaying packet. TTL is now 4
+W (2926) BLE_MESH: Relaying packet. TTL is now 4
+W (3016) BLE_MESH: Relaying packet. TTL is now 4
+I (3016) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (3016) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (3016) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (3026) MESH_CLIENT: 18 42 00 
+W (3026) PARSED_DATA: Device Name = esp_3
+W (3036) PARSED_DATA: Temperature = 0.000000
+W (3036) PARSED DATA: Warning low temperature = 16.000000
+W (3046) PARSED DATA: Warning high temperature = 38.000000
+W (3196) BLE_MESH: Relaying packet. TTL is now 4
+W (3286) BLE_MESH: Relaying packet. TTL is now 4
+W (3376) BLE_MESH: Relaying packet. TTL is now 4
+W (3536) BLE_MESH: Relaying packet. TTL is now 4
+W (3636) BLE_MESH: Relaying packet. TTL is now 4
+W (3716) BLE_MESH: Relaying packet. TTL is now 4
+W (3876) BLE_MESH: Relaying packet. TTL is now 4
+W (3976) BLE_MESH: Relaying packet. TTL is now 4
+W (4056) BLE_MESH: Relaying packet. TTL is now 4
+W (4216) BLE_MESH: Relaying packet. TTL is now 4
+W (4316) BLE_MESH: Relaying packet. TTL is now 4
+W (4436) BLE_MESH: Relaying packet. TTL is now 4
+W (6666) BLE_MESH: Relaying packet. TTL is now 4
+W (6726) BLE_MESH: Relaying packet. TTL is now 4
+W (6836) BLE_MESH: Relaying packet. TTL is now 4
+I (6836) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (6836) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (6836) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (6846) MESH_CLIENT: 18 42 00 
+W (6846) PARSED_DATA: Device Name = esp_3
+W (6856) PARSED_DATA: Temperature = 0.000000
+W (6856) PARSED DATA: Warning low temperature = 16.000000
+W (6866) PARSED DATA: Warning high temperature = 38.000000
+W (7036) BLE_MESH: Relaying packet. TTL is now 4
+W (7076) BLE_MESH: Relaying packet. TTL is now 4
+W (7176) BLE_MESH: Relaying packet. TTL is now 4
+W (7356) BLE_MESH: Relaying packet. TTL is now 4
+W (7416) BLE_MESH: Relaying packet. TTL is now 4
+W (7516) BLE_MESH: Relaying packet. TTL is now 4
+W (7696) BLE_MESH: Relaying packet. TTL is now 4
+W (7756) BLE_MESH: Relaying packet. TTL is now 4
+W (7856) BLE_MESH: Relaying packet. TTL is now 4
+W (8036) BLE_MESH: Relaying packet. TTL is now 4
+W (8096) BLE_MESH: Relaying packet. TTL is now 4
+W (8196) BLE_MESH: Relaying packet. TTL is now 4
+W (10686) BLE_MESH: Relaying packet. TTL is now 4
+W (10726) BLE_MESH: Relaying packet. TTL is now 4
+W (10836) BLE_MESH: Relaying packet. TTL is now 4
+I (10836) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (10836) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (10846) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (10846) MESH_CLIENT: 18 42 00 
+W (10846) PARSED_DATA: Device Name = esp_3
+W (10856) PARSED_DATA: Temperature = 0.000000
+W (10856) PARSED DATA: Warning low temperature = 16.000000
+W (10866) PARSED DATA: Warning high temperature = 38.000000
+W (11016) BLE_MESH: Relaying packet. TTL is now 4
+W (11076) BLE_MESH: Relaying packet. TTL is now 4
+W (11176) BLE_MESH: Relaying packet. TTL is now 4
+W (11396) BLE_MESH: Relaying packet. TTL is now 4
+W (11426) BLE_MESH: Relaying packet. TTL is now 4
+W (11506) BLE_MESH: Relaying packet. TTL is now 4
+W (11776) BLE_MESH: Relaying packet. TTL is now 4
+W (11816) BLE_MESH: Relaying packet. TTL is now 4
+W (11916) BLE_MESH: Relaying packet. TTL is now 4
+W (12166) BLE_MESH: Relaying packet. TTL is now 4
+W (12176) BLE_MESH: Relaying packet. TTL is now 4
+W (12246) BLE_MESH: Relaying packet. TTL is now 4
+W (14666) BLE_MESH: Relaying packet. TTL is now 4
+W (14726) BLE_MESH: Relaying packet. TTL is now 4
+W (14836) BLE_MESH: Relaying packet. TTL is now 4
+I (14836) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (14836) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (14846) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (14846) MESH_CLIENT: 18 42 00 
+W (14846) PARSED_DATA: Device Name = esp_3
+W (14856) PARSED_DATA: Temperature = 0.000000
+W (14856) PARSED DATA: Warning low temperature = 16.000000
+W (14866) PARSED DATA: Warning high temperature = 38.000000
+W (15016) BLE_MESH: Relaying packet. TTL is now 4
+W (15076) BLE_MESH: Relaying packet. TTL is now 4
+W (15176) BLE_MESH: Relaying packet. TTL is now 4
+W (15356) BLE_MESH: Relaying packet. TTL is now 4
+W (15416) BLE_MESH: Relaying packet. TTL is now 4
+W (15536) BLE_MESH: Relaying packet. TTL is now 4
+W (15696) BLE_MESH: Relaying packet. TTL is now 4
+W (15756) BLE_MESH: Relaying packet. TTL is now 4
+W (15856) BLE_MESH: Relaying packet. TTL is now 4
+W (16056) BLE_MESH: Relaying packet. TTL is now 4
+W (16096) BLE_MESH: Relaying packet. TTL is now 4
+W (16196) BLE_MESH: Relaying packet. TTL is now 4
+W (18666) BLE_MESH: Relaying packet. TTL is now 4
+W (18726) BLE_MESH: Relaying packet. TTL is now 4
+W (18836) BLE_MESH: Relaying packet. TTL is now 4
+I (18836) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (18836) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (18846) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (18846) MESH_CLIENT: 18 42 00 
+W (18846) PARSED_DATA: Device Name = esp_3
+W (18856) PARSED_DATA: Temperature = 0.000000
+W (18856) PARSED DATA: Warning low temperature = 16.000000
+W (18866) PARSED DATA: Warning high temperature = 38.000000
+W (19036) BLE_MESH: Relaying packet. TTL is now 4
+W (19076) BLE_MESH: Relaying packet. TTL is now 4
+W (19166) BLE_MESH: Relaying packet. TTL is now 4
+W (19356) BLE_MESH: Relaying packet. TTL is now 4
+W (19416) BLE_MESH: Relaying packet. TTL is now 4
+W (19516) BLE_MESH: Relaying packet. TTL is now 4
+W (19736) BLE_MESH: Relaying packet. TTL is now 4
+W (19766) BLE_MESH: Relaying packet. TTL is now 4
+W (19856) BLE_MESH: Relaying packet. TTL is now 4
+W (20036) BLE_MESH: Relaying packet. TTL is now 4
+W (20096) BLE_MESH: Relaying packet. TTL is now 4
+W (20196) BLE_MESH: Relaying packet. TTL is now 4
+W (22686) BLE_MESH: Relaying packet. TTL is now 4
+W (22726) BLE_MESH: Relaying packet. TTL is now 4
+W (22836) BLE_MESH: Relaying packet. TTL is now 4
+I (22836) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (22836) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (22846) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (22846) MESH_CLIENT: 18 42 00 
+W (22846) PARSED_DATA: Device Name = esp_3
+W (22856) PARSED_DATA: Temperature = 0.000000
+W (22856) PARSED DATA: Warning low temperature = 16.000000
+W (22866) PARSED DATA: Warning high temperature = 38.000000
+W (23016) BLE_MESH: Relaying packet. TTL is now 4
+W (23076) BLE_MESH: Relaying packet. TTL is now 4
+W (23166) BLE_MESH: Relaying packet. TTL is now 4
+W (23396) BLE_MESH: Relaying packet. TTL is now 4
+W (23486) BLE_MESH: Relaying packet. TTL is now 4
+W (23576) BLE_MESH: Relaying packet. TTL is now 4
+W (23736) BLE_MESH: Relaying packet. TTL is now 4
+W (23836) BLE_MESH: Relaying packet. TTL is now 4
+W (23916) BLE_MESH: Relaying packet. TTL is now 4
+W (24076) BLE_MESH: Relaying packet. TTL is now 4
+W (24176) BLE_MESH: Relaying packet. TTL is now 4
+W (24256) BLE_MESH: Relaying packet. TTL is now 4
+W (26686) BLE_MESH: Relaying packet. TTL is now 4
+W (26726) BLE_MESH: Relaying packet. TTL is now 4
+W (26906) BLE_MESH: Relaying packet. TTL is now 4
+I (26906) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (26906) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (26916) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (26916) MESH_CLIENT: 18 42 00 
+W (26916) PARSED_DATA: Device Name = esp_3
+W (26926) PARSED_DATA: Temperature = 0.000000
+W (26926) PARSED DATA: Warning low temperature = 16.000000
+W (26936) PARSED DATA: Warning high temperature = 38.000000
+W (27016) BLE_MESH: Relaying packet. TTL is now 4
+W (27076) BLE_MESH: Relaying packet. TTL is now 4
+W (27166) BLE_MESH: Relaying packet. TTL is now 4
+W (27356) BLE_MESH: Relaying packet. TTL is now 4
+W (27416) BLE_MESH: Relaying packet. TTL is now 4
+W (27516) BLE_MESH: Relaying packet. TTL is now 4
+W (27696) BLE_MESH: Relaying packet. TTL is now 4
+W (27756) BLE_MESH: Relaying packet. TTL is now 4
+W (27856) BLE_MESH: Relaying packet. TTL is now 4
+W (28036) BLE_MESH: Relaying packet. TTL is now 4
+W (28096) BLE_MESH: Relaying packet. TTL is now 4
+W (28196) BLE_MESH: Relaying packet. TTL is now 4
+W (30666) BLE_MESH: Relaying packet. TTL is now 4
+W (30726) BLE_MESH: Relaying packet. TTL is now 4
+W (30836) BLE_MESH: Relaying packet. TTL is now 4
+I (30836) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (30836) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (30846) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (30846) MESH_CLIENT: 18 42 00 
+W (30846) PARSED_DATA: Device Name = esp_3
+W (30856) PARSED_DATA: Temperature = 0.000000
+W (30856) PARSED DATA: Warning low temperature = 16.000000
+W (30866) PARSED DATA: Warning high temperature = 38.000000
+W (31016) BLE_MESH: Relaying packet. TTL is now 4
+W (31076) BLE_MESH: Relaying packet. TTL is now 4
+W (31176) BLE_MESH: Relaying packet. TTL is now 4
+W (31356) BLE_MESH: Relaying packet. TTL is now 4
+W (31416) BLE_MESH: Relaying packet. TTL is now 4
+W (31516) BLE_MESH: Relaying packet. TTL is now 4
+W (31696) BLE_MESH: Relaying packet. TTL is now 4
+W (31756) BLE_MESH: Relaying packet. TTL is now 4
+W (31856) BLE_MESH: Relaying packet. TTL is now 4
+W (32026) BLE_MESH: Relaying packet. TTL is now 4
+W (32096) BLE_MESH: Relaying packet. TTL is now 4
+W (32196) BLE_MESH: Relaying packet. TTL is now 4
+W (34666) BLE_MESH: Relaying packet. TTL is now 4
+W (34726) BLE_MESH: Relaying packet. TTL is now 4
+W (34836) BLE_MESH: Relaying packet. TTL is now 4
+I (34836) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (34836) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (34846) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (34846) MESH_CLIENT: 18 42 00 
+W (34846) PARSED_DATA: Device Name = esp_3
+W (34856) PARSED_DATA: Temperature = 0.000000
+W (34856) PARSED DATA: Warning low temperature = 16.000000
+W (34866) PARSED DATA: Warning high temperature = 38.000000
+W (35016) BLE_MESH: Relaying packet. TTL is now 4
+W (35076) BLE_MESH: Relaying packet. TTL is now 4
+W (35166) BLE_MESH: Relaying packet. TTL is now 4
+W (35356) BLE_MESH: Relaying packet. TTL is now 4
+W (35416) BLE_MESH: Relaying packet. TTL is now 4
+W (35516) BLE_MESH: Relaying packet. TTL is now 4
+W (35696) BLE_MESH: Relaying packet. TTL is now 4
+W (35756) BLE_MESH: Relaying packet. TTL is now 4
+W (35856) BLE_MESH: Relaying packet. TTL is now 4
+W (36026) BLE_MESH: Relaying packet. TTL is now 4
+W (36096) BLE_MESH: Relaying packet. TTL is now 4
+W (36196) BLE_MESH: Relaying packet. TTL is now 4
+W (38706) BLE_MESH: Relaying packet. TTL is now 4
+W (38726) BLE_MESH: Relaying packet. TTL is now 4
+W (38836) BLE_MESH: Relaying packet. TTL is now 4
+I (38836) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (38836) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (38846) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (38846) MESH_CLIENT: 18 42 00 
+W (38846) PARSED_DATA: Device Name = esp_3
+W (38856) PARSED_DATA: Temperature = 0.000000
+W (38856) PARSED DATA: Warning low temperature = 16.000000
+W (38866) PARSED DATA: Warning high temperature = 38.000000
+W (39036) BLE_MESH: Relaying packet. TTL is now 4
+W (39146) BLE_MESH: Relaying packet. TTL is now 4
+W (39156) BLE_MESH: Relaying packet. TTL is now 4
+W (39376) BLE_MESH: Relaying packet. TTL is now 4
+W (39416) BLE_MESH: Relaying packet. TTL is now 4
+W (39516) BLE_MESH: Relaying packet. TTL is now 4
+W (39696) BLE_MESH: Relaying packet. TTL is now 4
+W (39756) BLE_MESH: Relaying packet. TTL is now 4
+W (39856) BLE_MESH: Relaying packet. TTL is now 4
+W (40076) BLE_MESH: Relaying packet. TTL is now 4
+W (40106) BLE_MESH: Relaying packet. TTL is now 4
+W (40196) BLE_MESH: Relaying packet. TTL is now 4
+W (42666) BLE_MESH: Relaying packet. TTL is now 4
+W (42786) BLE_MESH: Relaying packet. TTL is now 4
+W (42836) BLE_MESH: Relaying packet. TTL is now 4
+I (42836) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (42836) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (42846) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (42846) MESH_CLIENT: 18 42 00 
+W (42846) PARSED_DATA: Device Name = esp_3
+W (42856) PARSED_DATA: Temperature = 0.000000
+W (42856) PARSED DATA: Warning low temperature = 16.000000
+W (42866) PARSED DATA: Warning high temperature = 38.000000
+W (43016) BLE_MESH: Relaying packet. TTL is now 4
+W (43076) BLE_MESH: Relaying packet. TTL is now 4
+W (43176) BLE_MESH: Relaying packet. TTL is now 4
+W (43356) BLE_MESH: Relaying packet. TTL is now 4
+W (43416) BLE_MESH: Relaying packet. TTL is now 4
+W (43516) BLE_MESH: Relaying packet. TTL is now 4
+W (43696) BLE_MESH: Relaying packet. TTL is now 4
+W (43756) BLE_MESH: Relaying packet. TTL is now 4
+W (43856) BLE_MESH: Relaying packet. TTL is now 4
+W (44056) BLE_MESH: Relaying packet. TTL is now 4
+W (44096) BLE_MESH: Relaying packet. TTL is now 4
+W (44196) BLE_MESH: Relaying packet. TTL is now 4
+W (46666) BLE_MESH: Relaying packet. TTL is now 4
+W (46726) BLE_MESH: Relaying packet. TTL is now 4
+W (46836) BLE_MESH: Relaying packet. TTL is now 4
+I (46836) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (46836) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (46846) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (46846) MESH_CLIENT: 18 42 00 
+W (46846) PARSED_DATA: Device Name = esp_3
+W (46856) PARSED_DATA: Temperature = 0.000000
+W (46856) PARSED DATA: Warning low temperature = 16.000000
+W (46866) PARSED DATA: Warning high temperature = 38.000000
+W (47016) BLE_MESH: Relaying packet. TTL is now 4
+W (47076) BLE_MESH: Relaying packet. TTL is now 4
+W (47176) BLE_MESH: Relaying packet. TTL is now 4
+W (47356) BLE_MESH: Relaying packet. TTL is now 4
+W (47416) BLE_MESH: Relaying packet. TTL is now 4
+W (47516) BLE_MESH: Relaying packet. TTL is now 4
+W (47696) BLE_MESH: Relaying packet. TTL is now 4
+W (47756) BLE_MESH: Relaying packet. TTL is now 4
+W (47856) BLE_MESH: Relaying packet. TTL is now 4
+W (48036) BLE_MESH: Relaying packet. TTL is now 4
+W (48096) BLE_MESH: Relaying packet. TTL is now 4
+W (48186) BLE_MESH: Relaying packet. TTL is now 4
+W (50686) BLE_MESH: Relaying packet. TTL is now 4
+W (50726) BLE_MESH: Relaying packet. TTL is now 4
+W (50856) BLE_MESH: Relaying packet. TTL is now 4
+I (50856) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (50856) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (50866) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (50866) MESH_CLIENT: 18 42 00 
+W (50866) PARSED_DATA: Device Name = esp_3
+W (50876) PARSED_DATA: Temperature = 0.000000
+W (50876) PARSED DATA: Warning low temperature = 16.000000
+W (50886) PARSED DATA: Warning high temperature = 38.000000
+W (51016) BLE_MESH: Relaying packet. TTL is now 4
+W (51076) BLE_MESH: Relaying packet. TTL is now 4
+W (51176) BLE_MESH: Relaying packet. TTL is now 4
+W (51416) BLE_MESH: Relaying packet. TTL is now 4
+W (51426) BLE_MESH: Relaying packet. TTL is now 4
+W (51516) BLE_MESH: Relaying packet. TTL is now 4
+W (51736) BLE_MESH: Relaying packet. TTL is now 4
+W (51766) BLE_MESH: Relaying packet. TTL is now 4
+W (51856) BLE_MESH: Relaying packet. TTL is now 4
+W (52036) BLE_MESH: Relaying packet. TTL is now 4
+W (52096) BLE_MESH: Relaying packet. TTL is now 4
+W (52196) BLE_MESH: Relaying packet. TTL is now 4
+W (54666) BLE_MESH: Relaying packet. TTL is now 4
+W (54726) BLE_MESH: Relaying packet. TTL is now 4
+W (54836) BLE_MESH: Relaying packet. TTL is now 4
+I (54836) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (54836) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (54846) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (54846) MESH_CLIENT: 18 42 00 
+W (54846) PARSED_DATA: Device Name = esp_3
+W (54856) PARSED_DATA: Temperature = 0.000000
+W (54856) PARSED DATA: Warning low temperature = 16.000000
+W (54866) PARSED DATA: Warning high temperature = 38.000000
+W (55016) BLE_MESH: Relaying packet. TTL is now 4
+W (55076) BLE_MESH: Relaying packet. TTL is now 4
+W (55176) BLE_MESH: Relaying packet. TTL is now 4
+W (55356) BLE_MESH: Relaying packet. TTL is now 4
+W (55416) BLE_MESH: Relaying packet. TTL is now 4
+W (55516) BLE_MESH: Relaying packet. TTL is now 4
+W (55736) BLE_MESH: Relaying packet. TTL is now 4
+W (55836) BLE_MESH: Relaying packet. TTL is now 4
+W (55916) BLE_MESH: Relaying packet. TTL is now 4
+W (56066) BLE_MESH: Relaying packet. TTL is now 4
+W (56166) BLE_MESH: Relaying packet. TTL is now 4
+W (56256) BLE_MESH: Relaying packet. TTL is now 4
+W (58826) BLE_MESH: Relaying packet. TTL is now 4
+W (59066) BLE_MESH: Relaying packet. TTL is now 4
+W (59186) BLE_MESH: Received already received fragment
+W (59186) BLE_MESH: Relaying packet. TTL is now 4
+W (59376) BLE_MESH: Relaying packet. TTL is now 4
+I (59376) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (59376) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (59386) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (59386) MESH_CLIENT: 18 42 00 
+W (59386) PARSED_DATA: Device Name = esp_3
+W (59396) PARSED_DATA: Temperature = 0.000000
+W (59396) PARSED DATA: Warning low temperature = 16.000000
+W (59406) PARSED DATA: Warning high temperature = 38.000000
+W (59416) BLE_MESH: Relaying packet. TTL is now 4
+W (59516) BLE_MESH: Relaying packet. TTL is now 4
+W (59696) BLE_MESH: Relaying packet. TTL is now 4
+W (59756) BLE_MESH: Relaying packet. TTL is now 4
+W (59856) BLE_MESH: Relaying packet. TTL is now 4
+W (60056) BLE_MESH: Relaying packet. TTL is now 4
+W (60096) BLE_MESH: Relaying packet. TTL is now 4
+W (60196) BLE_MESH: Relaying packet. TTL is now 4
+W (62686) BLE_MESH: Relaying packet. TTL is now 4
+W (62726) BLE_MESH: Relaying packet. TTL is now 4
+W (62836) BLE_MESH: Relaying packet. TTL is now 4
+I (62836) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (62836) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (62846) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (62846) MESH_CLIENT: 18 42 00 
+W (62846) PARSED_DATA: Device Name = esp_3
+W (62856) PARSED_DATA: Temperature = 0.000000
+W (62856) PARSED DATA: Warning low temperature = 16.000000
+W (62866) PARSED DATA: Warning high temperature = 38.000000
+W (63036) BLE_MESH: Relaying packet. TTL is now 4
+W (63076) BLE_MESH: Relaying packet. TTL is now 4
+W (63176) BLE_MESH: Relaying packet. TTL is now 4
+W (63376) BLE_MESH: Relaying packet. TTL is now 4
+W (63416) BLE_MESH: Relaying packet. TTL is now 4
+W (63516) BLE_MESH: Relaying packet. TTL is now 4
+W (63696) BLE_MESH: Relaying packet. TTL is now 4
+W (63776) BLE_MESH: Relaying packet. TTL is now 4
+W (63856) BLE_MESH: Relaying packet. TTL is now 4
+W (64066) BLE_MESH: Relaying packet. TTL is now 4
+W (64096) BLE_MESH: Relaying packet. TTL is now 4
+W (64196) BLE_MESH: Relaying packet. TTL is now 4
+W (66666) BLE_MESH: Relaying packet. TTL is now 4
+W (66726) BLE_MESH: Relaying packet. TTL is now 4
+W (66836) BLE_MESH: Relaying packet. TTL is now 4
+I (66836) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (66836) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (66846) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (66846) MESH_CLIENT: 18 42 00 
+W (66846) PARSED_DATA: Device Name = esp_3
+W (66856) PARSED_DATA: Temperature = 0.000000
+W (66856) PARSED DATA: Warning low temperature = 16.000000
+W (66866) PARSED DATA: Warning high temperature = 38.000000
+W (67036) BLE_MESH: Relaying packet. TTL is now 4
+W (67076) BLE_MESH: Relaying packet. TTL is now 4
+W (67176) BLE_MESH: Relaying packet. TTL is now 4
+W (67356) BLE_MESH: Relaying packet. TTL is now 4
+W (67416) BLE_MESH: Relaying packet. TTL is now 4
+W (67516) BLE_MESH: Relaying packet. TTL is now 4
+W (67696) BLE_MESH: Relaying packet. TTL is now 4
+W (67756) BLE_MESH: Relaying packet. TTL is now 4
+W (67856) BLE_MESH: Relaying packet. TTL is now 4
+W (68036) BLE_MESH: Relaying packet. TTL is now 4
+W (68096) BLE_MESH: Relaying packet. TTL is now 4
+W (68186) BLE_MESH: Relaying packet. TTL is now 4
+W (70666) BLE_MESH: Relaying packet. TTL is now 4
+W (70726) BLE_MESH: Relaying packet. TTL is now 4
+W (70856) BLE_MESH: Relaying packet. TTL is now 4
+I (70856) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (70856) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (70866) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (70866) MESH_CLIENT: 18 42 00 
+W (70866) PARSED_DATA: Device Name = esp_3
+W (70876) PARSED_DATA: Temperature = 0.000000
+W (70876) PARSED DATA: Warning low temperature = 16.000000
+W (70886) PARSED DATA: Warning high temperature = 38.000000
+W (71036) BLE_MESH: Relaying packet. TTL is now 4
+W (71076) BLE_MESH: Relaying packet. TTL is now 4
+W (71176) BLE_MESH: Relaying packet. TTL is now 4
+W (71356) BLE_MESH: Relaying packet. TTL is now 4
+W (71456) BLE_MESH: Relaying packet. TTL is now 4
+W (71516) BLE_MESH: Relaying packet. TTL is now 4
+W (71696) BLE_MESH: Relaying packet. TTL is now 4
+W (71756) BLE_MESH: Relaying packet. TTL is now 4
+W (71856) BLE_MESH: Relaying packet. TTL is now 4
+W (72036) BLE_MESH: Relaying packet. TTL is now 4
+W (72096) BLE_MESH: Relaying packet. TTL is now 4
+W (72196) BLE_MESH: Relaying packet. TTL is now 4
+W (74686) BLE_MESH: Relaying packet. TTL is now 4
+W (74726) BLE_MESH: Relaying packet. TTL is now 4
+W (74836) BLE_MESH: Relaying packet. TTL is now 4
+I (74836) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (74836) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (74846) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (74846) MESH_CLIENT: 18 42 00 
+W (74846) PARSED_DATA: Device Name = esp_3
+W (74856) PARSED_DATA: Temperature = 0.000000
+W (74856) PARSED DATA: Warning low temperature = 16.000000
+W (74866) PARSED DATA: Warning high temperature = 38.000000
+W (75036) BLE_MESH: Relaying packet. TTL is now 4
+W (75076) BLE_MESH: Relaying packet. TTL is now 4
+W (75176) BLE_MESH: Relaying packet. TTL is now 4
+W (75356) BLE_MESH: Relaying packet. TTL is now 4
+W (75416) BLE_MESH: Relaying packet. TTL is now 4
+W (75516) BLE_MESH: Relaying packet. TTL is now 4
+W (75696) BLE_MESH: Relaying packet. TTL is now 4
+W (75756) BLE_MESH: Relaying packet. TTL is now 4
+W (75856) BLE_MESH: Relaying packet. TTL is now 4
+W (76036) BLE_MESH: Relaying packet. TTL is now 4
+W (76096) BLE_MESH: Relaying packet. TTL is now 4
+W (76266) BLE_MESH: Relaying packet. TTL is now 4
+W (78666) BLE_MESH: Relaying packet. TTL is now 4
+W (78766) BLE_MESH: Relaying packet. TTL is now 4
+W (78836) BLE_MESH: Relaying packet. TTL is now 4
+I (78836) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (78836) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (78846) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (78846) MESH_CLIENT: 18 42 00 
+W (78846) PARSED_DATA: Device Name = esp_3
+W (78856) PARSED_DATA: Temperature = 0.000000
+W (78856) PARSED DATA: Warning low temperature = 16.000000
+W (78866) PARSED DATA: Warning high temperature = 38.000000
+W (79016) BLE_MESH: Relaying packet. TTL is now 4
+W (79076) BLE_MESH: Relaying packet. TTL is now 4
+W (79176) BLE_MESH: Relaying packet. TTL is now 4
+W (79356) BLE_MESH: Relaying packet. TTL is now 4
+W (79416) BLE_MESH: Relaying packet. TTL is now 4
+W (79516) BLE_MESH: Relaying packet. TTL is now 4
+W (79696) BLE_MESH: Relaying packet. TTL is now 4
+W (79756) BLE_MESH: Relaying packet. TTL is now 4
+W (79856) BLE_MESH: Relaying packet. TTL is now 4
+W (80056) BLE_MESH: Relaying packet. TTL is now 4
+W (80096) BLE_MESH: Relaying packet. TTL is now 4
+W (80196) BLE_MESH: Relaying packet. TTL is now 4
+W (82666) BLE_MESH: Relaying packet. TTL is now 4
+W (82726) BLE_MESH: Relaying packet. TTL is now 4
+W (82836) BLE_MESH: Relaying packet. TTL is now 4
+I (82836) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (82836) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (82846) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (82846) MESH_CLIENT: 18 42 00 
+W (82846) PARSED_DATA: Device Name = esp_3
+W (82856) PARSED_DATA: Temperature = 0.000000
+W (82856) PARSED DATA: Warning low temperature = 16.000000
+W (82866) PARSED DATA: Warning high temperature = 38.000000
+W (83016) BLE_MESH: Relaying packet. TTL is now 4
+W (83076) BLE_MESH: Relaying packet. TTL is now 4
+W (83176) BLE_MESH: Relaying packet. TTL is now 4
+W (83356) BLE_MESH: Relaying packet. TTL is now 4
+W (83416) BLE_MESH: Relaying packet. TTL is now 4
+W (83516) BLE_MESH: Relaying packet. TTL is now 4
+W (83716) BLE_MESH: Relaying packet. TTL is now 4
+W (83756) BLE_MESH: Relaying packet. TTL is now 4
+W (83856) BLE_MESH: Relaying packet. TTL is now 4
+W (84036) BLE_MESH: Relaying packet. TTL is now 4
+W (84096) BLE_MESH: Relaying packet. TTL is now 4
+W (84196) BLE_MESH: Relaying packet. TTL is now 4
+W (86666) BLE_MESH: Relaying packet. TTL is now 4
+W (86726) BLE_MESH: Relaying packet. TTL is now 4
+W (86836) BLE_MESH: Relaying packet. TTL is now 4
+I (86836) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (86836) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (86846) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (86846) MESH_CLIENT: 18 42 00 
+W (86846) PARSED_DATA: Device Name = esp_3
+W (86856) PARSED_DATA: Temperature = 0.000000
+W (86856) PARSED DATA: Warning low temperature = 16.000000
+W (86866) PARSED DATA: Warning high temperature = 38.000000
+W (87006) BLE_MESH: Relaying packet. TTL is now 4
+W (87076) BLE_MESH: Relaying packet. TTL is now 4
+W (87176) BLE_MESH: Relaying packet. TTL is now 4
+W (87376) BLE_MESH: Relaying packet. TTL is now 4
+W (87416) BLE_MESH: Relaying packet. TTL is now 4
+W (87516) BLE_MESH: Relaying packet. TTL is now 4
+W (87716) BLE_MESH: Relaying packet. TTL is now 4
+W (87756) BLE_MESH: Relaying packet. TTL is now 4
+W (87856) BLE_MESH: Relaying packet. TTL is now 4
+W (88076) BLE_MESH: Relaying packet. TTL is now 4
+W (88176) BLE_MESH: Relaying packet. TTL is now 4
+W (88256) BLE_MESH: Relaying packet. TTL is now 4
+W (90676) BLE_MESH: Relaying packet. TTL is now 4
+W (90726) BLE_MESH: Relaying packet. TTL is now 4
+W (90836) BLE_MESH: Relaying packet. TTL is now 4
+I (90836) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (90836) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (90846) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (90846) MESH_CLIENT: 18 42 00 
+W (90846) PARSED_DATA: Device Name = esp_3
+W (90856) PARSED_DATA: Temperature = 0.000000
+W (90856) PARSED DATA: Warning low temperature = 16.000000
+W (90866) PARSED DATA: Warning high temperature = 38.000000
+W (91106) BLE_MESH: Relaying packet. TTL is now 4
+W (91116) BLE_MESH: Relaying packet. TTL is now 4
+W (91176) BLE_MESH: Relaying packet. TTL is now 4
+W (91396) BLE_MESH: Relaying packet. TTL is now 4
+W (91416) BLE_MESH: Relaying packet. TTL is now 4
+W (91516) BLE_MESH: Relaying packet. TTL is now 4
+W (91696) BLE_MESH: Relaying packet. TTL is now 4
+W (91756) BLE_MESH: Relaying packet. TTL is now 4
+W (91846) BLE_MESH: Relaying packet. TTL is now 4
+W (92036) BLE_MESH: Relaying packet. TTL is now 4
+W (92096) BLE_MESH: Relaying packet. TTL is now 4
+W (92196) BLE_MESH: Relaying packet. TTL is now 4
+W (94666) BLE_MESH: Relaying packet. TTL is now 4
+W (94726) BLE_MESH: Relaying packet. TTL is now 4
+W (94836) BLE_MESH: Relaying packet. TTL is now 4
+I (94836) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (94836) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (94846) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (94846) MESH_CLIENT: 18 42 00 
+W (94846) PARSED_DATA: Device Name = esp_3
+W (94856) PARSED_DATA: Temperature = 0.000000
+W (94856) PARSED DATA: Warning low temperature = 16.000000
+W (94866) PARSED DATA: Warning high temperature = 38.000000
+W (95016) BLE_MESH: Relaying packet. TTL is now 4
+W (95076) BLE_MESH: Relaying packet. TTL is now 4
+W (95176) BLE_MESH: Relaying packet. TTL is now 4
+W (95356) BLE_MESH: Relaying packet. TTL is now 4
+W (95416) BLE_MESH: Relaying packet. TTL is now 4
+W (95516) BLE_MESH: Relaying packet. TTL is now 4
+W (95696) BLE_MESH: Relaying packet. TTL is now 4
+W (95756) BLE_MESH: Relaying packet. TTL is now 4
+W (95856) BLE_MESH: Relaying packet. TTL is now 4
+W (96036) BLE_MESH: Relaying packet. TTL is now 4
+W (96096) BLE_MESH: Relaying packet. TTL is now 4
+W (96186) BLE_MESH: Relaying packet. TTL is now 4
+W (98666) BLE_MESH: Relaying packet. TTL is now 4
+W (98726) BLE_MESH: Relaying packet. TTL is now 4
+W (98836) BLE_MESH: Relaying packet. TTL is now 4
+I (98836) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (98836) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (98846) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (98846) MESH_CLIENT: 18 42 00 
+W (98846) PARSED_DATA: Device Name = esp_3
+W (98856) PARSED_DATA: Temperature = 0.000000
+W (98856) PARSED DATA: Warning low temperature = 16.000000
+W (98866) PARSED DATA: Warning high temperature = 38.000000
+W (99016) BLE_MESH: Relaying packet. TTL is now 4
+W (99076) BLE_MESH: Relaying packet. TTL is now 4
+W (99176) BLE_MESH: Relaying packet. TTL is now 4
+W (99356) BLE_MESH: Relaying packet. TTL is now 4
+W (99416) BLE_MESH: Relaying packet. TTL is now 4
+W (99516) BLE_MESH: Relaying packet. TTL is now 4
+W (99696) BLE_MESH: Relaying packet. TTL is now 4
+W (99756) BLE_MESH: Relaying packet. TTL is now 4
+W (99856) BLE_MESH: Relaying packet. TTL is now 4
+W (100036) BLE_MESH: Relaying packet. TTL is now 4
+W (100096) BLE_MESH: Relaying packet. TTL is now 4
+W (100196) BLE_MESH: Relaying packet. TTL is now 4
+W (102666) BLE_MESH: Relaying packet. TTL is now 4
+W (102726) BLE_MESH: Relaying packet. TTL is now 4
+W (102836) BLE_MESH: Relaying packet. TTL is now 4
+I (102836) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (102836) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (102846) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (102846) MESH_CLIENT: 18 42 00 
+W (102846) PARSED_DATA: Device Name = esp_3
+W (102856) PARSED_DATA: Temperature = 0.000000
+W (102856) PARSED DATA: Warning low temperature = 16.000000
+W (102866) PARSED DATA: Warning high temperature = 38.000000
+W (103016) BLE_MESH: Relaying packet. TTL is now 4
+W (103156) BLE_MESH: Relaying packet. TTL is now 4
+W (103256) BLE_MESH: Relaying packet. TTL is now 4
+W (103356) BLE_MESH: Relaying packet. TTL is now 4
+W (103416) BLE_MESH: Relaying packet. TTL is now 4
+W (103516) BLE_MESH: Relaying packet. TTL is now 4
+W (103716) BLE_MESH: Relaying packet. TTL is now 4
+W (103756) BLE_MESH: Relaying packet. TTL is now 4
+W (103856) BLE_MESH: Relaying packet. TTL is now 4
+W (104036) BLE_MESH: Relaying packet. TTL is now 4
+W (104096) BLE_MESH: Relaying packet. TTL is now 4
+W (104216) BLE_MESH: Relaying packet. TTL is now 4
+W (106686) BLE_MESH: Relaying packet. TTL is now 4
+W (106726) BLE_MESH: Relaying packet. TTL is now 4
+W (106836) BLE_MESH: Relaying packet. TTL is now 4
+I (106836) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (106836) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (106846) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (106846) MESH_CLIENT: 18 42 00 
+W (106846) PARSED_DATA: Device Name = esp_3
+W (106856) PARSED_DATA: Temperature = 0.000000
+W (106856) PARSED DATA: Warning low temperature = 16.000000
+W (106866) PARSED DATA: Warning high temperature = 38.000000
+W (107016) BLE_MESH: Relaying packet. TTL is now 4
+W (107076) BLE_MESH: Relaying packet. TTL is now 4
+W (107176) BLE_MESH: Relaying packet. TTL is now 4
+W (107316) BLE_MESH: Relaying packet. TTL is now 4
+W (107416) BLE_MESH: Relaying packet. TTL is now 4
+W (107506) BLE_MESH: Relaying packet. TTL is now 4
+W (107696) BLE_MESH: Relaying packet. TTL is now 4
+W (107756) BLE_MESH: Relaying packet. TTL is now 4
+W (107856) BLE_MESH: Relaying packet. TTL is now 4
+W (108036) BLE_MESH: Relaying packet. TTL is now 4
+W (108096) BLE_MESH: Relaying packet. TTL is now 4
+W (108196) BLE_MESH: Relaying packet. TTL is now 4
+W (110686) BLE_MESH: Relaying packet. TTL is now 4
+W (110726) BLE_MESH: Relaying packet. TTL is now 4
+W (110836) BLE_MESH: Relaying packet. TTL is now 4
+I (110836) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (110836) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (110846) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (110846) MESH_CLIENT: 18 42 00 
+W (110846) PARSED_DATA: Device Name = esp_3
+W (110856) PARSED_DATA: Temperature = 0.000000
+W (110856) PARSED DATA: Warning low temperature = 16.000000
+W (110866) PARSED DATA: Warning high temperature = 38.000000
+W (111036) BLE_MESH: Relaying packet. TTL is now 4
+W (111076) BLE_MESH: Relaying packet. TTL is now 4
+W (111176) BLE_MESH: Relaying packet. TTL is now 4
+W (111356) BLE_MESH: Relaying packet. TTL is now 4
+W (111416) BLE_MESH: Relaying packet. TTL is now 4
+W (111516) BLE_MESH: Relaying packet. TTL is now 4
+W (111696) BLE_MESH: Relaying packet. TTL is now 4
+W (111756) BLE_MESH: Relaying packet. TTL is now 4
+W (111856) BLE_MESH: Relaying packet. TTL is now 4
+W (112036) BLE_MESH: Relaying packet. TTL is now 4
+W (112096) BLE_MESH: Relaying packet. TTL is now 4
+W (112196) BLE_MESH: Relaying packet. TTL is now 4
+W (114666) BLE_MESH: Relaying packet. TTL is now 4
+W (114726) BLE_MESH: Relaying packet. TTL is now 4
+W (114836) BLE_MESH: Relaying packet. TTL is now 4
+I (114836) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (114836) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (114846) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (114846) MESH_CLIENT: 18 42 00 
+W (114846) PARSED_DATA: Device Name = esp_3
+W (114856) PARSED_DATA: Temperature = 0.000000
+W (114856) PARSED DATA: Warning low temperature = 16.000000
+W (114866) PARSED DATA: Warning high temperature = 38.000000
+W (115016) BLE_MESH: Relaying packet. TTL is now 4
+W (115076) BLE_MESH: Relaying packet. TTL is now 4
+W (115176) BLE_MESH: Relaying packet. TTL is now 4
+W (115376) BLE_MESH: Relaying packet. TTL is now 4
+W (115486) BLE_MESH: Relaying packet. TTL is now 4
+W (115516) BLE_MESH: Relaying packet. TTL is now 4
+W (115686) BLE_MESH: Relaying packet. TTL is now 4
+W (115756) BLE_MESH: Relaying packet. TTL is now 4
+W (115856) BLE_MESH: Relaying packet. TTL is now 4
+W (116036) BLE_MESH: Relaying packet. TTL is now 4
+W (116096) BLE_MESH: Relaying packet. TTL is now 4
+W (116196) BLE_MESH: Relaying packet. TTL is now 4
+W (118646) BLE_MESH: Relaying packet. TTL is now 4
+W (118726) BLE_MESH: Relaying packet. TTL is now 4
+W (118826) BLE_MESH: Relaying packet. TTL is now 4
+I (118826) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (118826) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (118836) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (118836) MESH_CLIENT: 18 42 00 
+W (118836) PARSED_DATA: Device Name = esp_3
+W (118846) PARSED_DATA: Temperature = 0.000000
+W (118846) PARSED DATA: Warning low temperature = 16.000000
+W (118856) PARSED DATA: Warning high temperature = 38.000000
+W (119016) BLE_MESH: Relaying packet. TTL is now 4
+W (119076) BLE_MESH: Relaying packet. TTL is now 4
+W (119176) BLE_MESH: Relaying packet. TTL is now 4
+W (119376) BLE_MESH: Relaying packet. TTL is now 4
+W (119416) BLE_MESH: Relaying packet. TTL is now 4
+W (119516) BLE_MESH: Relaying packet. TTL is now 4
+W (119656) BLE_MESH: Relaying packet. TTL is now 4
+W (119756) BLE_MESH: Relaying packet. TTL is now 4
+W (119856) BLE_MESH: Relaying packet. TTL is now 4
+W (119996) BLE_MESH: Relaying packet. TTL is now 4
+W (120096) BLE_MESH: Relaying packet. TTL is now 4
+W (120196) BLE_MESH: Relaying packet. TTL is now 4
+W (122706) BLE_MESH: Relaying packet. TTL is now 4
+W (122796) BLE_MESH: Relaying packet. TTL is now 4
+W (122896) BLE_MESH: Relaying packet. TTL is now 4
+I (122896) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (122896) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (122906) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (122906) MESH_CLIENT: 18 42 00 
+W (122906) PARSED_DATA: Device Name = esp_3
+W (122916) PARSED_DATA: Temperature = 0.000000
+W (122916) PARSED DATA: Warning low temperature = 16.000000
+W (122926) PARSED DATA: Warning high temperature = 38.000000
+W (123056) BLE_MESH: Relaying packet. TTL is now 4
+W (123156) BLE_MESH: Relaying packet. TTL is now 4
+W (123236) BLE_MESH: Relaying packet. TTL is now 4
+W (123396) BLE_MESH: Relaying packet. TTL is now 4
+W (123496) BLE_MESH: Relaying packet. TTL is now 4
+W (123576) BLE_MESH: Relaying packet. TTL is now 4
+W (123736) BLE_MESH: Relaying packet. TTL is now 4
+W (123836) BLE_MESH: Relaying packet. TTL is now 4
+W (123916) BLE_MESH: Relaying packet. TTL is now 4
+W (124076) BLE_MESH: Relaying packet. TTL is now 4
+W (124176) BLE_MESH: Relaying packet. TTL is now 4
+W (124256) BLE_MESH: Relaying packet. TTL is now 4
+W (126656) BLE_MESH: Relaying packet. TTL is now 4
+W (126726) BLE_MESH: Relaying packet. TTL is now 4
+W (126826) BLE_MESH: Relaying packet. TTL is now 4
+I (126826) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (126826) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (126836) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (126836) MESH_CLIENT: 18 42 00 
+W (126836) PARSED_DATA: Device Name = esp_3
+W (126846) PARSED_DATA: Temperature = 0.000000
+W (126846) PARSED DATA: Warning low temperature = 16.000000
+W (126856) PARSED DATA: Warning high temperature = 38.000000
+W (127036) BLE_MESH: Relaying packet. TTL is now 4
+W (127076) BLE_MESH: Relaying packet. TTL is now 4
+W (127176) BLE_MESH: Relaying packet. TTL is now 4
+W (127356) BLE_MESH: Relaying packet. TTL is now 4
+W (127416) BLE_MESH: Relaying packet. TTL is now 4
+W (127516) BLE_MESH: Relaying packet. TTL is now 4
+W (127786) BLE_MESH: Relaying packet. TTL is now 4
+W (127796) BLE_MESH: Relaying packet. TTL is now 4
+W (127856) BLE_MESH: Relaying packet. TTL is now 4
+W (127996) BLE_MESH: Relaying packet. TTL is now 4
+W (128096) BLE_MESH: Relaying packet. TTL is now 4
+W (128196) BLE_MESH: Relaying packet. TTL is now 4
+W (130626) BLE_MESH: Relaying packet. TTL is now 4
+W (130726) BLE_MESH: Relaying packet. TTL is now 4
+W (130836) BLE_MESH: Relaying packet. TTL is now 4
+I (130836) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (130836) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (130846) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (130846) MESH_CLIENT: 18 42 00 
+W (130846) PARSED_DATA: Device Name = esp_3
+W (130856) PARSED_DATA: Temperature = 0.000000
+W (130856) PARSED DATA: Warning low temperature = 16.000000
+W (130866) PARSED DATA: Warning high temperature = 38.000000
+W (130976) BLE_MESH: Relaying packet. TTL is now 4
+W (131076) BLE_MESH: Relaying packet. TTL is now 4
+W (131176) BLE_MESH: Relaying packet. TTL is now 4
+W (131376) BLE_MESH: Relaying packet. TTL is now 4
+W (131416) BLE_MESH: Relaying packet. TTL is now 4
+W (131516) BLE_MESH: Relaying packet. TTL is now 4
+W (131696) BLE_MESH: Relaying packet. TTL is now 4
+W (131756) BLE_MESH: Relaying packet. TTL is now 4
+W (131856) BLE_MESH: Relaying packet. TTL is now 4
+W (132026) BLE_MESH: Relaying packet. TTL is now 4
+W (132096) BLE_MESH: Relaying packet. TTL is now 4
+W (132196) BLE_MESH: Relaying packet. TTL is now 4
+W (134666) BLE_MESH: Relaying packet. TTL is now 4
+W (134726) BLE_MESH: Relaying packet. TTL is now 4
+W (134836) BLE_MESH: Relaying packet. TTL is now 4
+I (134836) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (134836) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (134846) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (134846) MESH_CLIENT: 18 42 00 
+W (134846) PARSED_DATA: Device Name = esp_3
+W (134856) PARSED_DATA: Temperature = 0.000000
+W (134856) PARSED DATA: Warning low temperature = 16.000000
+W (134866) PARSED DATA: Warning high temperature = 38.000000
+W (135016) BLE_MESH: Relaying packet. TTL is now 4
+W (135076) BLE_MESH: Relaying packet. TTL is now 4
+W (135176) BLE_MESH: Relaying packet. TTL is now 4
+W (135316) BLE_MESH: Relaying packet. TTL is now 4
+W (135456) BLE_MESH: Relaying packet. TTL is now 4
+W (135516) BLE_MESH: Relaying packet. TTL is now 4
+W (135656) BLE_MESH: Relaying packet. TTL is now 4
+W (135756) BLE_MESH: Relaying packet. TTL is now 4
+W (135856) BLE_MESH: Relaying packet. TTL is now 4
+W (136036) BLE_MESH: Relaying packet. TTL is now 4
+W (136096) BLE_MESH: Relaying packet. TTL is now 4
+W (136196) BLE_MESH: Relaying packet. TTL is now 4
+W (138666) BLE_MESH: Relaying packet. TTL is now 4
+W (138726) BLE_MESH: Relaying packet. TTL is now 4
+W (138836) BLE_MESH: Relaying packet. TTL is now 4
+I (138836) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (138836) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (138846) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (138846) MESH_CLIENT: 18 42 00 
+W (138846) PARSED_DATA: Device Name = esp_3
+W (138856) PARSED_DATA: Temperature = 0.000000
+W (138856) PARSED DATA: Warning low temperature = 16.000000
+W (138866) PARSED DATA: Warning high temperature = 38.000000
+W (139016) BLE_MESH: Relaying packet. TTL is now 4
+W (139076) BLE_MESH: Relaying packet. TTL is now 4
+W (139166) BLE_MESH: Relaying packet. TTL is now 4
+W (139316) BLE_MESH: Relaying packet. TTL is now 4
+W (139416) BLE_MESH: Relaying packet. TTL is now 4
+W (139516) BLE_MESH: Relaying packet. TTL is now 4
+W (139656) BLE_MESH: Relaying packet. TTL is now 4
+W (139756) BLE_MESH: Relaying packet. TTL is now 4
+W (139926) BLE_MESH: Relaying packet. TTL is now 4
+W (139996) BLE_MESH: Relaying packet. TTL is now 4
+W (140096) BLE_MESH: Relaying packet. TTL is now 4
+W (140196) BLE_MESH: Relaying packet. TTL is now 4
+W (142666) BLE_MESH: Relaying packet. TTL is now 4
+W (142726) BLE_MESH: Relaying packet. TTL is now 4
+W (142836) BLE_MESH: Relaying packet. TTL is now 4
+I (142836) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (142836) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (142846) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (142846) MESH_CLIENT: 18 42 00 
+W (142846) PARSED_DATA: Device Name = esp_3
+W (142856) PARSED_DATA: Temperature = 0.000000
+W (142856) PARSED DATA: Warning low temperature = 16.000000
+W (142866) PARSED DATA: Warning high temperature = 38.000000
+W (143016) BLE_MESH: Relaying packet. TTL is now 4
+W (143076) BLE_MESH: Relaying packet. TTL is now 4
+W (143176) BLE_MESH: Relaying packet. TTL is now 4
+W (143376) BLE_MESH: Relaying packet. TTL is now 4
+W (143416) BLE_MESH: Relaying packet. TTL is now 4
+W (143516) BLE_MESH: Relaying packet. TTL is now 4
+W (143686) BLE_MESH: Relaying packet. TTL is now 4
+W (143756) BLE_MESH: Relaying packet. TTL is now 4
+W (143856) BLE_MESH: Relaying packet. TTL is now 4
+W (143996) BLE_MESH: Relaying packet. TTL is now 4
+W (144096) BLE_MESH: Relaying packet. TTL is now 4
+W (144186) BLE_MESH: Relaying packet. TTL is now 4
+W (146666) BLE_MESH: Relaying packet. TTL is now 4
+W (146726) BLE_MESH: Relaying packet. TTL is now 4
+W (146836) BLE_MESH: Relaying packet. TTL is now 4
+I (146836) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (146836) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (146846) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (146846) MESH_CLIENT: 18 42 00 
+W (146846) PARSED_DATA: Device Name = esp_3
+W (146856) PARSED_DATA: Temperature = 0.000000
+W (146856) PARSED DATA: Warning low temperature = 16.000000
+W (146866) PARSED DATA: Warning high temperature = 38.000000
+W (146976) BLE_MESH: Relaying packet. TTL is now 4
+W (147076) BLE_MESH: Relaying packet. TTL is now 4
+W (147176) BLE_MESH: Relaying packet. TTL is now 4
+W (147346) BLE_MESH: Relaying packet. TTL is now 4
+W (147416) BLE_MESH: Relaying packet. TTL is now 4
+W (147516) BLE_MESH: Relaying packet. TTL is now 4
+W (147696) BLE_MESH: Relaying packet. TTL is now 4
+W (147756) BLE_MESH: Relaying packet. TTL is now 4
+W (147856) BLE_MESH: Relaying packet. TTL is now 4
+W (147996) BLE_MESH: Relaying packet. TTL is now 4
+W (148096) BLE_MESH: Relaying packet. TTL is now 4
+W (148186) BLE_MESH: Relaying packet. TTL is now 4
+W (150686) BLE_MESH: Relaying packet. TTL is now 4
+W (150726) BLE_MESH: Relaying packet. TTL is now 4
+W (150836) BLE_MESH: Relaying packet. TTL is now 4
+I (150836) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (150836) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (150846) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (150846) MESH_CLIENT: 18 42 00 
+W (150846) PARSED_DATA: Device Name = esp_3
+W (150856) PARSED_DATA: Temperature = 0.000000
+W (150856) PARSED DATA: Warning low temperature = 16.000000
+W (150866) PARSED DATA: Warning high temperature = 38.000000
+W (150976) BLE_MESH: Relaying packet. TTL is now 4
+W (151076) BLE_MESH: Relaying packet. TTL is now 4
+W (151176) BLE_MESH: Relaying packet. TTL is now 4
+W (151356) BLE_MESH: Relaying packet. TTL is now 4
+W (151416) BLE_MESH: Relaying packet. TTL is now 4
+W (151516) BLE_MESH: Relaying packet. TTL is now 4
+W (151656) BLE_MESH: Relaying packet. TTL is now 4
+W (151756) BLE_MESH: Relaying packet. TTL is now 4
+W (151856) BLE_MESH: Relaying packet. TTL is now 4
+W (151996) BLE_MESH: Relaying packet. TTL is now 4
+W (152166) BLE_MESH: Relaying packet. TTL is now 4
+W (152196) BLE_MESH: Relaying packet. TTL is now 4
+W (154686) BLE_MESH: Relaying packet. TTL is now 4
+W (154726) BLE_MESH: Relaying packet. TTL is now 4
+W (154836) BLE_MESH: Relaying packet. TTL is now 4
+I (154836) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (154836) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (154846) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 80 41 00 00 
+I (154846) MESH_CLIENT: 18 42 00 
+W (154846) PARSED_DATA: Device Name = esp_3
+W (154856) PARSED_DATA: Temperature = 0.000000
+W (154856) PARSED DATA: Warning low temperature = 16.000000
+W (154866) PARSED DATA: Warning high temperature = 38.000000
+W (155056) BLE_MESH: Relaying packet. TTL is now 4
+W (155156) BLE_MESH: Relaying packet. TTL is now 4
+W (155236) BLE_MESH: Relaying packet. TTL is now 4
+W (155396) BLE_MESH: Relaying packet. TTL is now 4
+W (155496) BLE_MESH: Relaying packet. TTL is now 4
+W (155576) BLE_MESH: Relaying packet. TTL is now 4
+W (155736) BLE_MESH: Relaying packet. TTL is now 4
+W (155836) BLE_MESH: Relaying packet. TTL is now 4
+W (155916) BLE_MESH: Relaying packet. TTL is now 4
+W (156076) BLE_MESH: Relaying packet. TTL is now 4
+W (179446) BLE_MESH: Relaying packet. TTL is now 4
+W (179546) BLE_MESH: Relaying packet. TTL is now 4
+W (179636) BLE_MESH: Relaying packet. TTL is now 4
+I (179636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (179636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (179646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (179646) MESH_CLIENT: 00 00 00 
+W (179646) PARSED_DATA: Device Name = esp_3
+W (179656) PARSED_DATA: Temperature = 0.000000
+W (179656) PARSED DATA: Warning low temperature = 0.000000
+W (179666) PARSED DATA: Warning high temperature = 0.000000
+W (179796) BLE_MESH: Relaying packet. TTL is now 4
+W (179916) BLE_MESH: Relaying packet. TTL is now 4
+W (179976) BLE_MESH: Relaying packet. TTL is now 4
+W (180136) BLE_MESH: Relaying packet. TTL is now 4
+W (180236) BLE_MESH: Relaying packet. TTL is now 4
+W (180316) BLE_MESH: Relaying packet. TTL is now 4
+W (180476) BLE_MESH: Relaying packet. TTL is now 4
+W (180576) BLE_MESH: Relaying packet. TTL is now 4
+W (180656) BLE_MESH: Relaying packet. TTL is now 4
+W (180806) BLE_MESH: Relaying packet. TTL is now 4
+W (180916) BLE_MESH: Relaying packet. TTL is now 4
+W (180996) BLE_MESH: Relaying packet. TTL is now 4
+W (183446) BLE_MESH: Relaying packet. TTL is now 4
+W (183536) BLE_MESH: Relaying packet. TTL is now 4
+W (183636) BLE_MESH: Relaying packet. TTL is now 4
+I (183636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (183636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (183646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (183646) MESH_CLIENT: 00 00 00 
+W (183646) PARSED_DATA: Device Name = esp_3
+W (183656) PARSED_DATA: Temperature = 0.000000
+W (183656) PARSED DATA: Warning low temperature = 0.000000
+W (183666) PARSED DATA: Warning high temperature = 0.000000
+W (183796) BLE_MESH: Relaying packet. TTL is now 4
+W (183896) BLE_MESH: Relaying packet. TTL is now 4
+W (183976) BLE_MESH: Relaying packet. TTL is now 4
+W (184136) BLE_MESH: Relaying packet. TTL is now 4
+W (184236) BLE_MESH: Relaying packet. TTL is now 4
+W (184316) BLE_MESH: Relaying packet. TTL is now 4
+W (184496) BLE_MESH: Relaying packet. TTL is now 4
+W (184576) BLE_MESH: Relaying packet. TTL is now 4
+W (184656) BLE_MESH: Relaying packet. TTL is now 4
+W (184836) BLE_MESH: Relaying packet. TTL is now 4
+W (184916) BLE_MESH: Relaying packet. TTL is now 4
+W (184996) BLE_MESH: Relaying packet. TTL is now 4
+W (187446) BLE_MESH: Relaying packet. TTL is now 4
+W (187536) BLE_MESH: Relaying packet. TTL is now 4
+W (187636) BLE_MESH: Relaying packet. TTL is now 4
+I (187636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (187636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (187646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (187646) MESH_CLIENT: 00 00 00 
+W (187646) PARSED_DATA: Device Name = esp_3
+W (187656) PARSED_DATA: Temperature = 0.000000
+W (187656) PARSED DATA: Warning low temperature = 0.000000
+W (187666) PARSED DATA: Warning high temperature = 0.000000
+W (187796) BLE_MESH: Relaying packet. TTL is now 4
+W (187966) BLE_MESH: Relaying packet. TTL is now 4
+W (187976) BLE_MESH: Relaying packet. TTL is now 4
+W (188136) BLE_MESH: Relaying packet. TTL is now 4
+W (188236) BLE_MESH: Relaying packet. TTL is now 4
+W (188316) BLE_MESH: Relaying packet. TTL is now 4
+W (188476) BLE_MESH: Relaying packet. TTL is now 4
+W (188596) BLE_MESH: Relaying packet. TTL is now 4
+W (188656) BLE_MESH: Relaying packet. TTL is now 4
+W (188816) BLE_MESH: Relaying packet. TTL is now 4
+W (188916) BLE_MESH: Relaying packet. TTL is now 4
+W (188996) BLE_MESH: Relaying packet. TTL is now 4
+W (191446) BLE_MESH: Relaying packet. TTL is now 4
+W (191546) BLE_MESH: Relaying packet. TTL is now 4
+W (191636) BLE_MESH: Relaying packet. TTL is now 4
+I (191636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (191636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (191646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (191646) MESH_CLIENT: 00 00 00 
+W (191646) PARSED_DATA: Device Name = esp_3
+W (191656) PARSED_DATA: Temperature = 0.000000
+W (191656) PARSED DATA: Warning low temperature = 0.000000
+W (191666) PARSED DATA: Warning high temperature = 0.000000
+W (191796) BLE_MESH: Relaying packet. TTL is now 4
+W (191896) BLE_MESH: Relaying packet. TTL is now 4
+W (191976) BLE_MESH: Relaying packet. TTL is now 4
+W (192126) BLE_MESH: Relaying packet. TTL is now 4
+W (192236) BLE_MESH: Relaying packet. TTL is now 4
+W (192316) BLE_MESH: Relaying packet. TTL is now 4
+W (192476) BLE_MESH: Relaying packet. TTL is now 4
+W (192566) BLE_MESH: Relaying packet. TTL is now 4
+W (192656) BLE_MESH: Relaying packet. TTL is now 4
+W (192816) BLE_MESH: Relaying packet. TTL is now 4
+W (192916) BLE_MESH: Relaying packet. TTL is now 4
+W (192996) BLE_MESH: Relaying packet. TTL is now 4
+W (195446) BLE_MESH: Relaying packet. TTL is now 4
+W (195546) BLE_MESH: Relaying packet. TTL is now 4
+W (195636) BLE_MESH: Relaying packet. TTL is now 4
+I (195636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (195636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (195646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (195646) MESH_CLIENT: 00 00 00 
+W (195646) PARSED_DATA: Device Name = esp_3
+W (195656) PARSED_DATA: Temperature = 0.000000
+W (195656) PARSED DATA: Warning low temperature = 0.000000
+W (195666) PARSED DATA: Warning high temperature = 0.000000
+W (195796) BLE_MESH: Relaying packet. TTL is now 4
+W (195916) BLE_MESH: Relaying packet. TTL is now 4
+W (195976) BLE_MESH: Relaying packet. TTL is now 4
+W (196136) BLE_MESH: Relaying packet. TTL is now 4
+W (196236) BLE_MESH: Relaying packet. TTL is now 4
+W (196316) BLE_MESH: Relaying packet. TTL is now 4
+W (196476) BLE_MESH: Relaying packet. TTL is now 4
+W (196576) BLE_MESH: Relaying packet. TTL is now 4
+W (196676) BLE_MESH: Relaying packet. TTL is now 4
+W (196816) BLE_MESH: Relaying packet. TTL is now 4
+W (196916) BLE_MESH: Relaying packet. TTL is now 4
+W (196996) BLE_MESH: Relaying packet. TTL is now 4
+W (199436) BLE_MESH: Relaying packet. TTL is now 4
+W (199546) BLE_MESH: Relaying packet. TTL is now 4
+W (199636) BLE_MESH: Relaying packet. TTL is now 4
+I (199636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (199636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (199646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (199646) MESH_CLIENT: 00 00 00 
+W (199646) PARSED_DATA: Device Name = esp_3
+W (199656) PARSED_DATA: Temperature = 0.000000
+W (199656) PARSED DATA: Warning low temperature = 0.000000
+W (199666) PARSED DATA: Warning high temperature = 0.000000
+W (199796) BLE_MESH: Relaying packet. TTL is now 4
+W (199896) BLE_MESH: Relaying packet. TTL is now 4
+W (199976) BLE_MESH: Relaying packet. TTL is now 4
+W (200206) BLE_MESH: Relaying packet. TTL is now 4
+W (200236) BLE_MESH: Relaying packet. TTL is now 4
+W (200316) BLE_MESH: Relaying packet. TTL is now 4
+W (200476) BLE_MESH: Relaying packet. TTL is now 4
+W (200576) BLE_MESH: Relaying packet. TTL is now 4
+W (200656) BLE_MESH: Relaying packet. TTL is now 4
+W (200816) BLE_MESH: Relaying packet. TTL is now 4
+W (200916) BLE_MESH: Relaying packet. TTL is now 4
+W (200996) BLE_MESH: Relaying packet. TTL is now 4
+W (203436) BLE_MESH: Relaying packet. TTL is now 4
+W (203546) BLE_MESH: Relaying packet. TTL is now 4
+W (203636) BLE_MESH: Relaying packet. TTL is now 4
+I (203636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (203636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (203646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (203646) MESH_CLIENT: 00 00 00 
+W (203646) PARSED_DATA: Device Name = esp_3
+W (203656) PARSED_DATA: Temperature = 0.000000
+W (203656) PARSED DATA: Warning low temperature = 0.000000
+W (203666) PARSED DATA: Warning high temperature = 0.000000
+W (203796) BLE_MESH: Relaying packet. TTL is now 4
+W (203896) BLE_MESH: Relaying packet. TTL is now 4
+W (203976) BLE_MESH: Relaying packet. TTL is now 4
+W (204136) BLE_MESH: Relaying packet. TTL is now 4
+W (204236) BLE_MESH: Relaying packet. TTL is now 4
+W (204316) BLE_MESH: Relaying packet. TTL is now 4
+W (204476) BLE_MESH: Relaying packet. TTL is now 4
+W (204576) BLE_MESH: Relaying packet. TTL is now 4
+W (204656) BLE_MESH: Relaying packet. TTL is now 4
+W (204816) BLE_MESH: Relaying packet. TTL is now 4
+W (204916) BLE_MESH: Relaying packet. TTL is now 4
+W (204996) BLE_MESH: Relaying packet. TTL is now 4
+W (207446) BLE_MESH: Relaying packet. TTL is now 4
+W (207546) BLE_MESH: Relaying packet. TTL is now 4
+W (207636) BLE_MESH: Relaying packet. TTL is now 4
+I (207636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (207636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (207646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (207646) MESH_CLIENT: 00 00 00 
+W (207646) PARSED_DATA: Device Name = esp_3
+W (207656) PARSED_DATA: Temperature = 0.000000
+W (207656) PARSED DATA: Warning low temperature = 0.000000
+W (207666) PARSED DATA: Warning high temperature = 0.000000
+W (207796) BLE_MESH: Relaying packet. TTL is now 4
+W (207896) BLE_MESH: Relaying packet. TTL is now 4
+W (207976) BLE_MESH: Relaying packet. TTL is now 4
+W (208236) BLE_MESH: Relaying packet. TTL is now 4
+W (208296) BLE_MESH: Relaying packet. TTL is now 4
+W (208396) BLE_MESH: Relaying packet. TTL is now 4
+W (208576) BLE_MESH: Relaying packet. TTL is now 4
+W (208676) BLE_MESH: Relaying packet. TTL is now 4
+W (208726) BLE_MESH: Relaying packet. TTL is now 4
+W (208916) BLE_MESH: Relaying packet. TTL is now 4
+W (208976) BLE_MESH: Relaying packet. TTL is now 4
+W (209076) BLE_MESH: Relaying packet. TTL is now 4
+W (211446) BLE_MESH: Relaying packet. TTL is now 4
+W (211546) BLE_MESH: Relaying packet. TTL is now 4
+W (211636) BLE_MESH: Relaying packet. TTL is now 4
+I (211636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (211636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (211646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (211646) MESH_CLIENT: 00 00 00 
+W (211646) PARSED_DATA: Device Name = esp_3
+W (211656) PARSED_DATA: Temperature = 0.000000
+W (211656) PARSED DATA: Warning low temperature = 0.000000
+W (211666) PARSED DATA: Warning high temperature = 0.000000
+W (211796) BLE_MESH: Relaying packet. TTL is now 4
+W (211896) BLE_MESH: Relaying packet. TTL is now 4
+W (211976) BLE_MESH: Relaying packet. TTL is now 4
+W (212136) BLE_MESH: Relaying packet. TTL is now 4
+W (212236) BLE_MESH: Relaying packet. TTL is now 4
+W (212376) BLE_MESH: Relaying packet. TTL is now 4
+W (212476) BLE_MESH: Relaying packet. TTL is now 4
+W (212576) BLE_MESH: Relaying packet. TTL is now 4
+W (212656) BLE_MESH: Relaying packet. TTL is now 4
+W (212816) BLE_MESH: Relaying packet. TTL is now 4
+W (212916) BLE_MESH: Relaying packet. TTL is now 4
+W (212996) BLE_MESH: Relaying packet. TTL is now 4
+W (215436) BLE_MESH: Relaying packet. TTL is now 4
+W (215546) BLE_MESH: Relaying packet. TTL is now 4
+W (215636) BLE_MESH: Relaying packet. TTL is now 4
+I (215636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (215636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (215646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (215646) MESH_CLIENT: 00 00 00 
+W (215646) PARSED_DATA: Device Name = esp_3
+W (215656) PARSED_DATA: Temperature = 0.000000
+W (215656) PARSED DATA: Warning low temperature = 0.000000
+W (215666) PARSED DATA: Warning high temperature = 0.000000
+W (215796) BLE_MESH: Relaying packet. TTL is now 4
+W (215886) BLE_MESH: Relaying packet. TTL is now 4
+W (215976) BLE_MESH: Relaying packet. TTL is now 4
+W (216136) BLE_MESH: Relaying packet. TTL is now 4
+W (216236) BLE_MESH: Relaying packet. TTL is now 4
+W (216316) BLE_MESH: Relaying packet. TTL is now 4
+W (216476) BLE_MESH: Relaying packet. TTL is now 4
+W (216576) BLE_MESH: Relaying packet. TTL is now 4
+W (216656) BLE_MESH: Relaying packet. TTL is now 4
+W (216816) BLE_MESH: Relaying packet. TTL is now 4
+W (216916) BLE_MESH: Relaying packet. TTL is now 4
+W (216996) BLE_MESH: Relaying packet. TTL is now 4
+W (219446) BLE_MESH: Relaying packet. TTL is now 4
+W (219546) BLE_MESH: Relaying packet. TTL is now 4
+W (219636) BLE_MESH: Relaying packet. TTL is now 4
+I (219636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (219636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (219646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (219646) MESH_CLIENT: 00 00 00 
+W (219646) PARSED_DATA: Device Name = esp_3
+W (219656) PARSED_DATA: Temperature = 0.000000
+W (219656) PARSED DATA: Warning low temperature = 0.000000
+W (219666) PARSED DATA: Warning high temperature = 0.000000
+W (219796) BLE_MESH: Relaying packet. TTL is now 4
+W (219896) BLE_MESH: Relaying packet. TTL is now 4
+W (219976) BLE_MESH: Relaying packet. TTL is now 4
+W (220126) BLE_MESH: Relaying packet. TTL is now 4
+W (220236) BLE_MESH: Relaying packet. TTL is now 4
+W (220316) BLE_MESH: Relaying packet. TTL is now 4
+W (220476) BLE_MESH: Relaying packet. TTL is now 4
+W (220576) BLE_MESH: Relaying packet. TTL is now 4
+W (220656) BLE_MESH: Relaying packet. TTL is now 4
+W (220816) BLE_MESH: Relaying packet. TTL is now 4
+W (220916) BLE_MESH: Relaying packet. TTL is now 4
+W (220996) BLE_MESH: Relaying packet. TTL is now 4
+W (223446) BLE_MESH: Relaying packet. TTL is now 4
+W (223546) BLE_MESH: Relaying packet. TTL is now 4
+W (223636) BLE_MESH: Relaying packet. TTL is now 4
+I (223636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (223636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (223646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (223646) MESH_CLIENT: 00 00 00 
+W (223646) PARSED_DATA: Device Name = esp_3
+W (223656) PARSED_DATA: Temperature = 0.000000
+W (223656) PARSED DATA: Warning low temperature = 0.000000
+W (223666) PARSED DATA: Warning high temperature = 0.000000
+W (223796) BLE_MESH: Relaying packet. TTL is now 4
+W (223896) BLE_MESH: Relaying packet. TTL is now 4
+W (223976) BLE_MESH: Relaying packet. TTL is now 4
+W (224136) BLE_MESH: Relaying packet. TTL is now 4
+W (224236) BLE_MESH: Relaying packet. TTL is now 4
+W (224316) BLE_MESH: Relaying packet. TTL is now 4
+W (224476) BLE_MESH: Relaying packet. TTL is now 4
+W (224626) BLE_MESH: Relaying packet. TTL is now 4
+W (224656) BLE_MESH: Relaying packet. TTL is now 4
+W (224816) BLE_MESH: Relaying packet. TTL is now 4
+W (224906) BLE_MESH: Relaying packet. TTL is now 4
+W (224996) BLE_MESH: Relaying packet. TTL is now 4
+W (227446) BLE_MESH: Relaying packet. TTL is now 4
+W (227546) BLE_MESH: Relaying packet. TTL is now 4
+W (227636) BLE_MESH: Relaying packet. TTL is now 4
+I (227636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (227636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (227646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (227646) MESH_CLIENT: 00 00 00 
+W (227646) PARSED_DATA: Device Name = esp_3
+W (227656) PARSED_DATA: Temperature = 0.000000
+W (227656) PARSED DATA: Warning low temperature = 0.000000
+W (227666) PARSED DATA: Warning high temperature = 0.000000
+W (227796) BLE_MESH: Relaying packet. TTL is now 4
+W (227896) BLE_MESH: Relaying packet. TTL is now 4
+W (227976) BLE_MESH: Relaying packet. TTL is now 4
+W (228136) BLE_MESH: Relaying packet. TTL is now 4
+W (228236) BLE_MESH: Relaying packet. TTL is now 4
+W (228316) BLE_MESH: Relaying packet. TTL is now 4
+W (228476) BLE_MESH: Relaying packet. TTL is now 4
+W (228576) BLE_MESH: Relaying packet. TTL is now 4
+W (228656) BLE_MESH: Relaying packet. TTL is now 4
+W (228816) BLE_MESH: Relaying packet. TTL is now 4
+W (228916) BLE_MESH: Relaying packet. TTL is now 4
+W (228996) BLE_MESH: Relaying packet. TTL is now 4
+W (231446) BLE_MESH: Relaying packet. TTL is now 4
+W (231546) BLE_MESH: Relaying packet. TTL is now 4
+W (231636) BLE_MESH: Relaying packet. TTL is now 4
+I (231636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (231636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (231646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (231646) MESH_CLIENT: 00 00 00 
+W (231646) PARSED_DATA: Device Name = esp_3
+W (231656) PARSED_DATA: Temperature = 0.000000
+W (231656) PARSED DATA: Warning low temperature = 0.000000
+W (231666) PARSED DATA: Warning high temperature = 0.000000
+W (231796) BLE_MESH: Relaying packet. TTL is now 4
+W (231896) BLE_MESH: Relaying packet. TTL is now 4
+W (231976) BLE_MESH: Relaying packet. TTL is now 4
+W (232136) BLE_MESH: Relaying packet. TTL is now 4
+W (232236) BLE_MESH: Relaying packet. TTL is now 4
+W (232316) BLE_MESH: Relaying packet. TTL is now 4
+W (232476) BLE_MESH: Relaying packet. TTL is now 4
+W (232576) BLE_MESH: Relaying packet. TTL is now 4
+W (232656) BLE_MESH: Relaying packet. TTL is now 4
+W (232816) BLE_MESH: Relaying packet. TTL is now 4
+W (232936) BLE_MESH: Relaying packet. TTL is now 4
+W (232996) BLE_MESH: Relaying packet. TTL is now 4
+W (235466) BLE_MESH: Relaying packet. TTL is now 4
+W (235546) BLE_MESH: Relaying packet. TTL is now 4
+W (235636) BLE_MESH: Relaying packet. TTL is now 4
+I (235636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (235636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (235646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (235646) MESH_CLIENT: 00 00 00 
+W (235646) PARSED_DATA: Device Name = esp_3
+W (235656) PARSED_DATA: Temperature = 0.000000
+W (235656) PARSED DATA: Warning low temperature = 0.000000
+W (235666) PARSED DATA: Warning high temperature = 0.000000
+W (235796) BLE_MESH: Relaying packet. TTL is now 4
+W (235896) BLE_MESH: Relaying packet. TTL is now 4
+W (235976) BLE_MESH: Relaying packet. TTL is now 4
+W (236136) BLE_MESH: Relaying packet. TTL is now 4
+W (236236) BLE_MESH: Relaying packet. TTL is now 4
+W (236316) BLE_MESH: Relaying packet. TTL is now 4
+W (236476) BLE_MESH: Relaying packet. TTL is now 4
+W (236566) BLE_MESH: Relaying packet. TTL is now 4
+W (236656) BLE_MESH: Relaying packet. TTL is now 4
+W (236866) BLE_MESH: Relaying packet. TTL is now 4
+W (236916) BLE_MESH: Relaying packet. TTL is now 4
+W (237056) BLE_MESH: Relaying packet. TTL is now 4
+W (239446) BLE_MESH: Relaying packet. TTL is now 4
+W (239546) BLE_MESH: Relaying packet. TTL is now 4
+W (239636) BLE_MESH: Relaying packet. TTL is now 4
+I (239636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (239636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (239646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (239646) MESH_CLIENT: 00 00 00 
+W (239646) PARSED_DATA: Device Name = esp_3
+W (239656) PARSED_DATA: Temperature = 0.000000
+W (239656) PARSED DATA: Warning low temperature = 0.000000
+W (239666) PARSED DATA: Warning high temperature = 0.000000
+W (239796) BLE_MESH: Relaying packet. TTL is now 4
+W (239896) BLE_MESH: Relaying packet. TTL is now 4
+W (239976) BLE_MESH: Relaying packet. TTL is now 4
+W (240156) BLE_MESH: Relaying packet. TTL is now 4
+W (240236) BLE_MESH: Relaying packet. TTL is now 4
+W (240316) BLE_MESH: Relaying packet. TTL is now 4
+W (240576) BLE_MESH: Relaying packet. TTL is now 4
+W (240636) BLE_MESH: Relaying packet. TTL is now 4
+W (240736) BLE_MESH: Relaying packet. TTL is now 4
+W (240916) BLE_MESH: Relaying packet. TTL is now 4
+W (240976) BLE_MESH: Relaying packet. TTL is now 4
+W (241076) BLE_MESH: Relaying packet. TTL is now 4
+W (243446) BLE_MESH: Relaying packet. TTL is now 4
+W (243546) BLE_MESH: Relaying packet. TTL is now 4
+W (243636) BLE_MESH: Relaying packet. TTL is now 4
+I (243636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (243636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (243646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (243646) MESH_CLIENT: 00 00 00 
+W (243646) PARSED_DATA: Device Name = esp_3
+W (243656) PARSED_DATA: Temperature = 0.000000
+W (243656) PARSED DATA: Warning low temperature = 0.000000
+W (243666) PARSED DATA: Warning high temperature = 0.000000
+W (243796) BLE_MESH: Relaying packet. TTL is now 4
+W (243896) BLE_MESH: Relaying packet. TTL is now 4
+W (243976) BLE_MESH: Relaying packet. TTL is now 4
+W (244126) BLE_MESH: Relaying packet. TTL is now 4
+W (244236) BLE_MESH: Relaying packet. TTL is now 4
+W (244316) BLE_MESH: Relaying packet. TTL is now 4
+W (244476) BLE_MESH: Relaying packet. TTL is now 4
+W (244576) BLE_MESH: Relaying packet. TTL is now 4
+W (244656) BLE_MESH: Relaying packet. TTL is now 4
+W (244816) BLE_MESH: Relaying packet. TTL is now 4
+W (244916) BLE_MESH: Relaying packet. TTL is now 4
+W (244996) BLE_MESH: Relaying packet. TTL is now 4
+W (247446) BLE_MESH: Relaying packet. TTL is now 4
+W (247546) BLE_MESH: Relaying packet. TTL is now 4
+W (247636) BLE_MESH: Relaying packet. TTL is now 4
+I (247636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (247636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (247646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (247646) MESH_CLIENT: 00 00 00 
+W (247646) PARSED_DATA: Device Name = esp_3
+W (247656) PARSED_DATA: Temperature = 0.000000
+W (247656) PARSED DATA: Warning low temperature = 0.000000
+W (247666) PARSED DATA: Warning high temperature = 0.000000
+W (247796) BLE_MESH: Relaying packet. TTL is now 4
+W (247896) BLE_MESH: Relaying packet. TTL is now 4
+W (247976) BLE_MESH: Relaying packet. TTL is now 4
+W (248136) BLE_MESH: Relaying packet. TTL is now 4
+W (248236) BLE_MESH: Relaying packet. TTL is now 4
+W (248316) BLE_MESH: Relaying packet. TTL is now 4
+W (248476) BLE_MESH: Relaying packet. TTL is now 4
+W (248576) BLE_MESH: Relaying packet. TTL is now 4
+W (248656) BLE_MESH: Relaying packet. TTL is now 4
+W (248816) BLE_MESH: Relaying packet. TTL is now 4
+W (248916) BLE_MESH: Relaying packet. TTL is now 4
+W (249066) BLE_MESH: Relaying packet. TTL is now 4
+W (251446) BLE_MESH: Relaying packet. TTL is now 4
+W (251546) BLE_MESH: Relaying packet. TTL is now 4
+W (251636) BLE_MESH: Relaying packet. TTL is now 4
+I (251636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (251636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (251646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (251646) MESH_CLIENT: 00 00 00 
+W (251646) PARSED_DATA: Device Name = esp_3
+W (251656) PARSED_DATA: Temperature = 0.000000
+W (251656) PARSED DATA: Warning low temperature = 0.000000
+W (251666) PARSED DATA: Warning high temperature = 0.000000
+W (251796) BLE_MESH: Relaying packet. TTL is now 4
+W (251896) BLE_MESH: Relaying packet. TTL is now 4
+W (251976) BLE_MESH: Relaying packet. TTL is now 4
+W (252136) BLE_MESH: Relaying packet. TTL is now 4
+W (252236) BLE_MESH: Relaying packet. TTL is now 4
+W (252316) BLE_MESH: Relaying packet. TTL is now 4
+W (252476) BLE_MESH: Relaying packet. TTL is now 4
+W (252576) BLE_MESH: Relaying packet. TTL is now 4
+W (252656) BLE_MESH: Relaying packet. TTL is now 4
+W (252816) BLE_MESH: Relaying packet. TTL is now 4
+W (252916) BLE_MESH: Relaying packet. TTL is now 4
+W (252996) BLE_MESH: Relaying packet. TTL is now 4
+W (255486) BLE_MESH: Relaying packet. TTL is now 4
+W (255546) BLE_MESH: Relaying packet. TTL is now 4
+W (255656) BLE_MESH: Relaying packet. TTL is now 4
+I (255656) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (255656) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (255666) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (255666) MESH_CLIENT: 00 00 00 
+W (255666) PARSED_DATA: Device Name = esp_3
+W (255676) PARSED_DATA: Temperature = 0.000000
+W (255676) PARSED DATA: Warning low temperature = 0.000000
+W (255686) PARSED DATA: Warning high temperature = 0.000000
+W (255836) BLE_MESH: Relaying packet. TTL is now 4
+W (255896) BLE_MESH: Relaying packet. TTL is now 4
+W (255996) BLE_MESH: Relaying packet. TTL is now 4
+W (256136) BLE_MESH: Relaying packet. TTL is now 4
+W (256236) BLE_MESH: Relaying packet. TTL is now 4
+W (256336) BLE_MESH: Relaying packet. TTL is now 4
+W (256516) BLE_MESH: Relaying packet. TTL is now 4
+W (256576) BLE_MESH: Relaying packet. TTL is now 4
+W (256696) BLE_MESH: Relaying packet. TTL is now 4
+W (256856) BLE_MESH: Relaying packet. TTL is now 4
+W (256916) BLE_MESH: Relaying packet. TTL is now 4
+W (257016) BLE_MESH: Relaying packet. TTL is now 4
+W (259446) BLE_MESH: Relaying packet. TTL is now 4
+W (259546) BLE_MESH: Relaying packet. TTL is now 4
+W (259636) BLE_MESH: Relaying packet. TTL is now 4
+I (259636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (259636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (259646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (259646) MESH_CLIENT: 00 00 00 
+W (259646) PARSED_DATA: Device Name = esp_3
+W (259656) PARSED_DATA: Temperature = 0.000000
+W (259656) PARSED DATA: Warning low temperature = 0.000000
+W (259666) PARSED DATA: Warning high temperature = 0.000000
+W (259796) BLE_MESH: Relaying packet. TTL is now 4
+W (259896) BLE_MESH: Relaying packet. TTL is now 4
+W (259976) BLE_MESH: Relaying packet. TTL is now 4
+W (260136) BLE_MESH: Relaying packet. TTL is now 4
+W (260236) BLE_MESH: Relaying packet. TTL is now 4
+W (260316) BLE_MESH: Relaying packet. TTL is now 4
+W (260476) BLE_MESH: Relaying packet. TTL is now 4
+W (260576) BLE_MESH: Relaying packet. TTL is now 4
+W (260656) BLE_MESH: Relaying packet. TTL is now 4
+W (260816) BLE_MESH: Relaying packet. TTL is now 4
+W (260906) BLE_MESH: Relaying packet. TTL is now 4
+W (260996) BLE_MESH: Relaying packet. TTL is now 4
+W (263446) BLE_MESH: Relaying packet. TTL is now 4
+W (263546) BLE_MESH: Relaying packet. TTL is now 4
+W (263636) BLE_MESH: Relaying packet. TTL is now 4
+I (263636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (263636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (263646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (263646) MESH_CLIENT: 00 00 00 
+W (263646) PARSED_DATA: Device Name = esp_3
+W (263656) PARSED_DATA: Temperature = 0.000000
+W (263656) PARSED DATA: Warning low temperature = 0.000000
+W (263666) PARSED DATA: Warning high temperature = 0.000000
+W (263866) BLE_MESH: Relaying packet. TTL is now 4
+W (263916) BLE_MESH: Relaying packet. TTL is now 4
+W (263976) BLE_MESH: Relaying packet. TTL is now 4
+W (264136) BLE_MESH: Relaying packet. TTL is now 4
+W (264236) BLE_MESH: Relaying packet. TTL is now 4
+W (264316) BLE_MESH: Relaying packet. TTL is now 4
+W (264476) BLE_MESH: Relaying packet. TTL is now 4
+W (264576) BLE_MESH: Relaying packet. TTL is now 4
+W (264656) BLE_MESH: Relaying packet. TTL is now 4
+W (264816) BLE_MESH: Relaying packet. TTL is now 4
+W (264916) BLE_MESH: Relaying packet. TTL is now 4
+W (264996) BLE_MESH: Relaying packet. TTL is now 4
+W (267446) BLE_MESH: Relaying packet. TTL is now 4
+W (267546) BLE_MESH: Relaying packet. TTL is now 4
+W (267636) BLE_MESH: Relaying packet. TTL is now 4
+I (267636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (267636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (267646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (267646) MESH_CLIENT: 00 00 00 
+W (267646) PARSED_DATA: Device Name = esp_3
+W (267656) PARSED_DATA: Temperature = 0.000000
+W (267656) PARSED DATA: Warning low temperature = 0.000000
+W (267666) PARSED DATA: Warning high temperature = 0.000000
+W (267796) BLE_MESH: Relaying packet. TTL is now 4
+W (267896) BLE_MESH: Relaying packet. TTL is now 4
+W (267976) BLE_MESH: Relaying packet. TTL is now 4
+W (268136) BLE_MESH: Relaying packet. TTL is now 4
+W (268226) BLE_MESH: Relaying packet. TTL is now 4
+W (268316) BLE_MESH: Relaying packet. TTL is now 4
+W (268476) BLE_MESH: Relaying packet. TTL is now 4
+W (268576) BLE_MESH: Relaying packet. TTL is now 4
+W (268656) BLE_MESH: Relaying packet. TTL is now 4
+W (268816) BLE_MESH: Relaying packet. TTL is now 4
+W (268916) BLE_MESH: Relaying packet. TTL is now 4
+W (268996) BLE_MESH: Relaying packet. TTL is now 4
+W (271446) BLE_MESH: Relaying packet. TTL is now 4
+W (271546) BLE_MESH: Relaying packet. TTL is now 4
+W (271636) BLE_MESH: Relaying packet. TTL is now 4
+I (271636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (271636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (271646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (271646) MESH_CLIENT: 00 00 00 
+W (271646) PARSED_DATA: Device Name = esp_3
+W (271656) PARSED_DATA: Temperature = 0.000000
+W (271656) PARSED DATA: Warning low temperature = 0.000000
+W (271666) PARSED DATA: Warning high temperature = 0.000000
+W (271796) BLE_MESH: Relaying packet. TTL is now 4
+W (271886) BLE_MESH: Relaying packet. TTL is now 4
+W (272016) BLE_MESH: Relaying packet. TTL is now 4
+W (272136) BLE_MESH: Relaying packet. TTL is now 4
+W (272236) BLE_MESH: Relaying packet. TTL is now 4
+W (272316) BLE_MESH: Relaying packet. TTL is now 4
+W (272476) BLE_MESH: Relaying packet. TTL is now 4
+W (272576) BLE_MESH: Relaying packet. TTL is now 4
+W (272656) BLE_MESH: Relaying packet. TTL is now 4
+W (272916) BLE_MESH: Relaying packet. TTL is now 4
+W (272976) BLE_MESH: Relaying packet. TTL is now 4
+W (273076) BLE_MESH: Relaying packet. TTL is now 4
+W (275526) BLE_MESH: Relaying packet. TTL is now 4
+W (275546) BLE_MESH: Relaying packet. TTL is now 4
+W (275656) BLE_MESH: Relaying packet. TTL is now 4
+I (275656) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (275656) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (275666) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (275666) MESH_CLIENT: 00 00 00 
+W (275666) PARSED_DATA: Device Name = esp_3
+W (275676) PARSED_DATA: Temperature = 0.000000
+W (275676) PARSED DATA: Warning low temperature = 0.000000
+W (275686) PARSED DATA: Warning high temperature = 0.000000
+W (275856) BLE_MESH: Relaying packet. TTL is now 4
+W (275896) BLE_MESH: Relaying packet. TTL is now 4
+W (276056) BLE_MESH: Relaying packet. TTL is now 4
+W (276216) BLE_MESH: Relaying packet. TTL is now 4
+W (276246) BLE_MESH: Relaying packet. TTL is now 4
+W (276356) BLE_MESH: Relaying packet. TTL is now 4
+W (276516) BLE_MESH: Relaying packet. TTL is now 4
+W (276576) BLE_MESH: Relaying packet. TTL is now 4
+W (276676) BLE_MESH: Relaying packet. TTL is now 4
+W (276876) BLE_MESH: Relaying packet. TTL is now 4
+W (276916) BLE_MESH: Relaying packet. TTL is now 4
+W (277016) BLE_MESH: Relaying packet. TTL is now 4
+W (279446) BLE_MESH: Relaying packet. TTL is now 4
+W (279546) BLE_MESH: Relaying packet. TTL is now 4
+W (279636) BLE_MESH: Relaying packet. TTL is now 4
+I (279636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (279636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (279646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (279646) MESH_CLIENT: 00 00 00 
+W (279646) PARSED_DATA: Device Name = esp_3
+W (279656) PARSED_DATA: Temperature = 0.000000
+W (279656) PARSED DATA: Warning low temperature = 0.000000
+W (279666) PARSED DATA: Warning high temperature = 0.000000
+W (279796) BLE_MESH: Relaying packet. TTL is now 4
+W (279896) BLE_MESH: Relaying packet. TTL is now 4
+W (279976) BLE_MESH: Relaying packet. TTL is now 4
+W (280136) BLE_MESH: Relaying packet. TTL is now 4
+W (280236) BLE_MESH: Relaying packet. TTL is now 4
+W (280316) BLE_MESH: Relaying packet. TTL is now 4
+W (280476) BLE_MESH: Relaying packet. TTL is now 4
+W (280576) BLE_MESH: Relaying packet. TTL is now 4
+W (280656) BLE_MESH: Relaying packet. TTL is now 4
+W (280816) BLE_MESH: Relaying packet. TTL is now 4
+W (280916) BLE_MESH: Relaying packet. TTL is now 4
+W (280996) BLE_MESH: Relaying packet. TTL is now 4
+W (283446) BLE_MESH: Relaying packet. TTL is now 4
+W (283536) BLE_MESH: Relaying packet. TTL is now 4
+W (283636) BLE_MESH: Relaying packet. TTL is now 4
+I (283636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (283636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (283646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (283646) MESH_CLIENT: 00 00 00 
+W (283646) PARSED_DATA: Device Name = esp_3
+W (283656) PARSED_DATA: Temperature = 0.000000
+W (283656) PARSED DATA: Warning low temperature = 0.000000
+W (283666) PARSED DATA: Warning high temperature = 0.000000
+W (283796) BLE_MESH: Relaying packet. TTL is now 4
+W (283896) BLE_MESH: Relaying packet. TTL is now 4
+W (283976) BLE_MESH: Relaying packet. TTL is now 4
+W (284136) BLE_MESH: Relaying packet. TTL is now 4
+W (284236) BLE_MESH: Relaying packet. TTL is now 4
+W (284316) BLE_MESH: Relaying packet. TTL is now 4
+W (284476) BLE_MESH: Relaying packet. TTL is now 4
+W (284576) BLE_MESH: Relaying packet. TTL is now 4
+W (284656) BLE_MESH: Relaying packet. TTL is now 4
+W (284816) BLE_MESH: Relaying packet. TTL is now 4
+W (284906) BLE_MESH: Relaying packet. TTL is now 4
+W (284996) BLE_MESH: Relaying packet. TTL is now 4
+W (287446) BLE_MESH: Relaying packet. TTL is now 4
+W (287546) BLE_MESH: Relaying packet. TTL is now 4
+W (287636) BLE_MESH: Relaying packet. TTL is now 4
+I (287636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (287636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (287646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (287646) MESH_CLIENT: 00 00 00 
+W (287656) PARSED_DATA: Device Name = esp_3
+W (287656) PARSED_DATA: Temperature = 0.000000
+W (287656) PARSED DATA: Warning low temperature = 0.000000
+W (287666) PARSED DATA: Warning high temperature = 0.000000
+W (287796) BLE_MESH: Relaying packet. TTL is now 4
+W (287896) BLE_MESH: Relaying packet. TTL is now 4
+W (287976) BLE_MESH: Relaying packet. TTL is now 4
+W (288136) BLE_MESH: Relaying packet. TTL is now 4
+W (288306) BLE_MESH: Relaying packet. TTL is now 4
+W (288316) BLE_MESH: Relaying packet. TTL is now 4
+W (288476) BLE_MESH: Relaying packet. TTL is now 4
+W (288576) BLE_MESH: Relaying packet. TTL is now 4
+W (288656) BLE_MESH: Relaying packet. TTL is now 4
+W (288816) BLE_MESH: Relaying packet. TTL is now 4
+W (288906) BLE_MESH: Relaying packet. TTL is now 4
+W (288996) BLE_MESH: Relaying packet. TTL is now 4
+W (291446) BLE_MESH: Relaying packet. TTL is now 4
+W (291536) BLE_MESH: Relaying packet. TTL is now 4
+W (291636) BLE_MESH: Relaying packet. TTL is now 4
+I (291636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (291636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (291646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (291646) MESH_CLIENT: 00 00 00 
+W (291646) PARSED_DATA: Device Name = esp_3
+W (291656) PARSED_DATA: Temperature = 0.000000
+W (291656) PARSED DATA: Warning low temperature = 0.000000
+W (291666) PARSED DATA: Warning high temperature = 0.000000
+W (291796) BLE_MESH: Relaying packet. TTL is now 4
+W (291896) BLE_MESH: Relaying packet. TTL is now 4
+W (291976) BLE_MESH: Relaying packet. TTL is now 4
+W (292136) BLE_MESH: Relaying packet. TTL is now 4
+W (292236) BLE_MESH: Relaying packet. TTL is now 4
+W (292316) BLE_MESH: Relaying packet. TTL is now 4
+W (292476) BLE_MESH: Relaying packet. TTL is now 4
+W (292576) BLE_MESH: Relaying packet. TTL is now 4
+W (292656) BLE_MESH: Relaying packet. TTL is now 4
+W (292816) BLE_MESH: Relaying packet. TTL is now 4
+W (292916) BLE_MESH: Relaying packet. TTL is now 4
+W (292996) BLE_MESH: Relaying packet. TTL is now 4
+W (295466) BLE_MESH: Relaying packet. TTL is now 4
+W (295546) BLE_MESH: Relaying packet. TTL is now 4
+W (295656) BLE_MESH: Relaying packet. TTL is now 4
+I (295656) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (295656) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (295666) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (295666) MESH_CLIENT: 00 00 00 
+W (295666) PARSED_DATA: Device Name = esp_3
+W (295676) PARSED_DATA: Temperature = 0.000000
+W (295676) PARSED DATA: Warning low temperature = 0.000000
+W (295686) PARSED DATA: Warning high temperature = 0.000000
+W (295856) BLE_MESH: Relaying packet. TTL is now 4
+W (295896) BLE_MESH: Relaying packet. TTL is now 4
+W (295996) BLE_MESH: Relaying packet. TTL is now 4
+W (296176) BLE_MESH: Relaying packet. TTL is now 4
+W (296236) BLE_MESH: Relaying packet. TTL is now 4
+W (296336) BLE_MESH: Relaying packet. TTL is now 4
+W (296536) BLE_MESH: Relaying packet. TTL is now 4
+W (296576) BLE_MESH: Relaying packet. TTL is now 4
+W (296676) BLE_MESH: Relaying packet. TTL is now 4
+W (296856) BLE_MESH: Relaying packet. TTL is now 4
+W (296916) BLE_MESH: Relaying packet. TTL is now 4
+W (297006) BLE_MESH: Relaying packet. TTL is now 4
+W (299446) BLE_MESH: Relaying packet. TTL is now 4
+W (299546) BLE_MESH: Relaying packet. TTL is now 4
+W (299636) BLE_MESH: Relaying packet. TTL is now 4
+I (299636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (299636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (299646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (299646) MESH_CLIENT: 00 00 00 
+W (299646) PARSED_DATA: Device Name = esp_3
+W (299656) PARSED_DATA: Temperature = 0.000000
+W (299656) PARSED DATA: Warning low temperature = 0.000000
+W (299666) PARSED DATA: Warning high temperature = 0.000000
+W (299796) BLE_MESH: Relaying packet. TTL is now 4
+W (299896) BLE_MESH: Relaying packet. TTL is now 4
+W (299976) BLE_MESH: Relaying packet. TTL is now 4
+W (300136) BLE_MESH: Relaying packet. TTL is now 4
+W (300236) BLE_MESH: Relaying packet. TTL is now 4
+W (300316) BLE_MESH: Relaying packet. TTL is now 4
+W (300546) BLE_MESH: Relaying packet. TTL is now 4
+W (300576) BLE_MESH: Relaying packet. TTL is now 4
+W (300656) BLE_MESH: Relaying packet. TTL is now 4
+W (300816) BLE_MESH: Relaying packet. TTL is now 4
+W (300916) BLE_MESH: Relaying packet. TTL is now 4
+W (300996) BLE_MESH: Relaying packet. TTL is now 4
+W (303446) BLE_MESH: Relaying packet. TTL is now 4
+W (303546) BLE_MESH: Relaying packet. TTL is now 4
+W (303636) BLE_MESH: Relaying packet. TTL is now 4
+I (303636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (303636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (303646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (303646) MESH_CLIENT: 00 00 00 
+W (303646) PARSED_DATA: Device Name = esp_3
+W (303656) PARSED_DATA: Temperature = 0.000000
+W (303656) PARSED DATA: Warning low temperature = 0.000000
+W (303666) PARSED DATA: Warning high temperature = 0.000000
+W (303796) BLE_MESH: Relaying packet. TTL is now 4
+W (303886) BLE_MESH: Relaying packet. TTL is now 4
+W (303976) BLE_MESH: Relaying packet. TTL is now 4
+W (304136) BLE_MESH: Relaying packet. TTL is now 4
+W (304236) BLE_MESH: Relaying packet. TTL is now 4
+W (304316) BLE_MESH: Relaying packet. TTL is now 4
+W (304476) BLE_MESH: Relaying packet. TTL is now 4
+W (304576) BLE_MESH: Relaying packet. TTL is now 4
+W (304656) BLE_MESH: Relaying packet. TTL is now 4
+W (304816) BLE_MESH: Relaying packet. TTL is now 4
+W (304916) BLE_MESH: Relaying packet. TTL is now 4
+W (304996) BLE_MESH: Relaying packet. TTL is now 4
+W (307546) BLE_MESH: Relaying packet. TTL is now 4
+W (307606) BLE_MESH: Relaying packet. TTL is now 4
+W (307716) BLE_MESH: Relaying packet. TTL is now 4
+I (307716) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (307716) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (307726) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (307726) MESH_CLIENT: 00 00 00 
+W (307726) PARSED_DATA: Device Name = esp_3
+W (307736) PARSED_DATA: Temperature = 0.000000
+W (307736) PARSED DATA: Warning low temperature = 0.000000
+W (307746) PARSED DATA: Warning high temperature = 0.000000
+W (307896) BLE_MESH: Relaying packet. TTL is now 4
+W (307956) BLE_MESH: Relaying packet. TTL is now 4
+W (308056) BLE_MESH: Relaying packet. TTL is now 4
+W (308236) BLE_MESH: Relaying packet. TTL is now 4
+W (308296) BLE_MESH: Relaying packet. TTL is now 4
+W (308396) BLE_MESH: Relaying packet. TTL is now 4
+W (308576) BLE_MESH: Relaying packet. TTL is now 4
+W (308636) BLE_MESH: Relaying packet. TTL is now 4
+W (308736) BLE_MESH: Relaying packet. TTL is now 4
+W (308906) BLE_MESH: Relaying packet. TTL is now 4
+W (308976) BLE_MESH: Relaying packet. TTL is now 4
+W (309076) BLE_MESH: Relaying packet. TTL is now 4
+W (311446) BLE_MESH: Relaying packet. TTL is now 4
+W (311546) BLE_MESH: Relaying packet. TTL is now 4
+W (311636) BLE_MESH: Relaying packet. TTL is now 4
+I (311636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (311636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (311646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (311646) MESH_CLIENT: 00 00 00 
+W (311646) PARSED_DATA: Device Name = esp_3
+W (311656) PARSED_DATA: Temperature = 0.000000
+W (311656) PARSED DATA: Warning low temperature = 0.000000
+W (311666) PARSED DATA: Warning high temperature = 0.000000
+W (311796) BLE_MESH: Relaying packet. TTL is now 4
+W (311896) BLE_MESH: Relaying packet. TTL is now 4
+W (311976) BLE_MESH: Relaying packet. TTL is now 4
+W (312136) BLE_MESH: Relaying packet. TTL is now 4
+W (312236) BLE_MESH: Relaying packet. TTL is now 4
+W (312316) BLE_MESH: Relaying packet. TTL is now 4
+W (312476) BLE_MESH: Relaying packet. TTL is now 4
+W (312576) BLE_MESH: Relaying packet. TTL is now 4
+W (312726) BLE_MESH: Relaying packet. TTL is now 4
+W (312816) BLE_MESH: Relaying packet. TTL is now 4
+W (312916) BLE_MESH: Relaying packet. TTL is now 4
+W (312996) BLE_MESH: Relaying packet. TTL is now 4
+W (315446) BLE_MESH: Relaying packet. TTL is now 4
+W (315566) BLE_MESH: Relaying packet. TTL is now 4
+W (315636) BLE_MESH: Relaying packet. TTL is now 4
+I (315636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (315636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (315646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (315646) MESH_CLIENT: 00 00 00 
+W (315646) PARSED_DATA: Device Name = esp_3
+W (315656) PARSED_DATA: Temperature = 0.000000
+W (315656) PARSED DATA: Warning low temperature = 0.000000
+W (315666) PARSED DATA: Warning high temperature = 0.000000
+W (315796) BLE_MESH: Relaying packet. TTL is now 4
+W (315896) BLE_MESH: Relaying packet. TTL is now 4
+W (315976) BLE_MESH: Relaying packet. TTL is now 4
+W (316136) BLE_MESH: Relaying packet. TTL is now 4
+W (316236) BLE_MESH: Relaying packet. TTL is now 4
+W (316316) BLE_MESH: Relaying packet. TTL is now 4
+W (316476) BLE_MESH: Relaying packet. TTL is now 4
+W (316576) BLE_MESH: Relaying packet. TTL is now 4
+W (316656) BLE_MESH: Relaying packet. TTL is now 4
+W (316816) BLE_MESH: Relaying packet. TTL is now 4
+W (316916) BLE_MESH: Relaying packet. TTL is now 4
+W (317056) BLE_MESH: Relaying packet. TTL is now 4
+W (319446) BLE_MESH: Relaying packet. TTL is now 4
+W (319536) BLE_MESH: Relaying packet. TTL is now 4
+W (319656) BLE_MESH: Relaying packet. TTL is now 4
+I (319656) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (319656) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (319666) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (319666) MESH_CLIENT: 00 00 00 
+W (319666) PARSED_DATA: Device Name = esp_3
+W (319676) PARSED_DATA: Temperature = 0.000000
+W (319676) PARSED DATA: Warning low temperature = 0.000000
+W (319686) PARSED DATA: Warning high temperature = 0.000000
+W (319796) BLE_MESH: Relaying packet. TTL is now 4
+W (319896) BLE_MESH: Relaying packet. TTL is now 4
+W (319976) BLE_MESH: Relaying packet. TTL is now 4
+W (320136) BLE_MESH: Relaying packet. TTL is now 4
+W (320236) BLE_MESH: Relaying packet. TTL is now 4
+W (320316) BLE_MESH: Relaying packet. TTL is now 4
+W (320476) BLE_MESH: Relaying packet. TTL is now 4
+W (320596) BLE_MESH: Relaying packet. TTL is now 4
+W (320656) BLE_MESH: Relaying packet. TTL is now 4
+W (320816) BLE_MESH: Relaying packet. TTL is now 4
+W (320916) BLE_MESH: Relaying packet. TTL is now 4
+W (320996) BLE_MESH: Relaying packet. TTL is now 4
+W (323446) BLE_MESH: Relaying packet. TTL is now 4
+W (323546) BLE_MESH: Relaying packet. TTL is now 4
+W (323636) BLE_MESH: Relaying packet. TTL is now 4
+I (323636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (323636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (323646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (323646) MESH_CLIENT: 00 00 00 
+W (323646) PARSED_DATA: Device Name = esp_3
+W (323656) PARSED_DATA: Temperature = 0.000000
+W (323656) PARSED DATA: Warning low temperature = 0.000000
+W (323666) PARSED DATA: Warning high temperature = 0.000000
+W (323796) BLE_MESH: Relaying packet. TTL is now 4
+W (323916) BLE_MESH: Relaying packet. TTL is now 4
+W (323976) BLE_MESH: Relaying packet. TTL is now 4
+W (324136) BLE_MESH: Relaying packet. TTL is now 4
+W (324236) BLE_MESH: Relaying packet. TTL is now 4
+W (324316) BLE_MESH: Relaying packet. TTL is now 4
+W (324476) BLE_MESH: Relaying packet. TTL is now 4
+W (324576) BLE_MESH: Relaying packet. TTL is now 4
+W (324656) BLE_MESH: Relaying packet. TTL is now 4
+W (324816) BLE_MESH: Relaying packet. TTL is now 4
+W (324986) BLE_MESH: Relaying packet. TTL is now 4
+W (324996) BLE_MESH: Relaying packet. TTL is now 4
+W (327446) BLE_MESH: Relaying packet. TTL is now 4
+W (327546) BLE_MESH: Relaying packet. TTL is now 4
+W (327636) BLE_MESH: Relaying packet. TTL is now 4
+I (327636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (327636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (327646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (327646) MESH_CLIENT: 00 00 00 
+W (327646) PARSED_DATA: Device Name = esp_3
+W (327656) PARSED_DATA: Temperature = 0.000000
+W (327656) PARSED DATA: Warning low temperature = 0.000000
+W (327666) PARSED DATA: Warning high temperature = 0.000000
+W (327796) BLE_MESH: Relaying packet. TTL is now 4
+W (327896) BLE_MESH: Relaying packet. TTL is now 4
+W (327976) BLE_MESH: Relaying packet. TTL is now 4
+W (328136) BLE_MESH: Relaying packet. TTL is now 4
+W (328236) BLE_MESH: Relaying packet. TTL is now 4
+W (328316) BLE_MESH: Relaying packet. TTL is now 4
+W (328476) BLE_MESH: Relaying packet. TTL is now 4
+W (328576) BLE_MESH: Relaying packet. TTL is now 4
+W (328706) BLE_MESH: Relaying packet. TTL is now 4
+W (328806) BLE_MESH: Relaying packet. TTL is now 4
+W (328906) BLE_MESH: Relaying packet. TTL is now 4
+W (328996) BLE_MESH: Relaying packet. TTL is now 4
+W (331446) BLE_MESH: Relaying packet. TTL is now 4
+W (331546) BLE_MESH: Relaying packet. TTL is now 4
+W (331636) BLE_MESH: Relaying packet. TTL is now 4
+I (331636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (331636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (331646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (331646) MESH_CLIENT: 00 00 00 
+W (331646) PARSED_DATA: Device Name = esp_3
+W (331656) PARSED_DATA: Temperature = 0.000000
+W (331656) PARSED DATA: Warning low temperature = 0.000000
+W (331666) PARSED DATA: Warning high temperature = 0.000000
+W (331796) BLE_MESH: Relaying packet. TTL is now 4
+W (331896) BLE_MESH: Relaying packet. TTL is now 4
+W (331976) BLE_MESH: Relaying packet. TTL is now 4
+W (332136) BLE_MESH: Relaying packet. TTL is now 4
+W (332236) BLE_MESH: Relaying packet. TTL is now 4
+W (332316) BLE_MESH: Relaying packet. TTL is now 4
+W (332476) BLE_MESH: Relaying packet. TTL is now 4
+W (332576) BLE_MESH: Relaying packet. TTL is now 4
+W (332656) BLE_MESH: Relaying packet. TTL is now 4
+W (332816) BLE_MESH: Relaying packet. TTL is now 4
+W (332916) BLE_MESH: Relaying packet. TTL is now 4
+W (332996) BLE_MESH: Relaying packet. TTL is now 4
+W (335446) BLE_MESH: Relaying packet. TTL is now 4
+W (335546) BLE_MESH: Relaying packet. TTL is now 4
+W (335636) BLE_MESH: Relaying packet. TTL is now 4
+I (335636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (335636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (335646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (335646) MESH_CLIENT: 00 00 00 
+W (335646) PARSED_DATA: Device Name = esp_3
+W (335656) PARSED_DATA: Temperature = 0.000000
+W (335656) PARSED DATA: Warning low temperature = 0.000000
+W (335666) PARSED DATA: Warning high temperature = 0.000000
+W (335796) BLE_MESH: Relaying packet. TTL is now 4
+W (335896) BLE_MESH: Relaying packet. TTL is now 4
+W (335976) BLE_MESH: Relaying packet. TTL is now 4
+W (336136) BLE_MESH: Relaying packet. TTL is now 4
+W (336236) BLE_MESH: Relaying packet. TTL is now 4
+W (336316) BLE_MESH: Relaying packet. TTL is now 4
+W (336476) BLE_MESH: Relaying packet. TTL is now 4
+W (336576) BLE_MESH: Relaying packet. TTL is now 4
+W (336656) BLE_MESH: Relaying packet. TTL is now 4
+W (336816) BLE_MESH: Relaying packet. TTL is now 4
+W (336916) BLE_MESH: Relaying packet. TTL is now 4
+W (336996) BLE_MESH: Relaying packet. TTL is now 4
+W (339446) BLE_MESH: Relaying packet. TTL is now 4
+W (339546) BLE_MESH: Relaying packet. TTL is now 4
+W (339726) BLE_MESH: Relaying packet. TTL is now 4
+I (339726) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (339726) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (339736) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (339736) MESH_CLIENT: 00 00 00 
+W (339736) PARSED_DATA: Device Name = esp_3
+W (339746) PARSED_DATA: Temperature = 0.000000
+W (339746) PARSED DATA: Warning low temperature = 0.000000
+W (339756) PARSED DATA: Warning high temperature = 0.000000
+W (339896) BLE_MESH: Relaying packet. TTL is now 4
+W (339956) BLE_MESH: Relaying packet. TTL is now 4
+W (340076) BLE_MESH: Relaying packet. TTL is now 4
+W (340376) BLE_MESH: Relaying packet. TTL is now 4
+W (340616) BLE_MESH: Relaying packet. TTL is now 4
+W (340916) BLE_MESH: Relaying packet. TTL is now 4
+W (340976) BLE_MESH: Relaying packet. TTL is now 4
+W (341096) BLE_MESH: Relaying packet. TTL is now 4
+W (343446) BLE_MESH: Relaying packet. TTL is now 4
+W (343546) BLE_MESH: Relaying packet. TTL is now 4
+W (343636) BLE_MESH: Relaying packet. TTL is now 4
+I (343636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (343636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (343646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (343646) MESH_CLIENT: 00 00 00 
+W (343646) PARSED_DATA: Device Name = esp_3
+W (343656) PARSED_DATA: Temperature = 0.000000
+W (343656) PARSED DATA: Warning low temperature = 0.000000
+W (343666) PARSED DATA: Warning high temperature = 0.000000
+W (343796) BLE_MESH: Relaying packet. TTL is now 4
+W (343896) BLE_MESH: Relaying packet. TTL is now 4
+W (343976) BLE_MESH: Relaying packet. TTL is now 4
+W (344136) BLE_MESH: Relaying packet. TTL is now 4
+W (344236) BLE_MESH: Relaying packet. TTL is now 4
+W (344316) BLE_MESH: Relaying packet. TTL is now 4
+W (344476) BLE_MESH: Relaying packet. TTL is now 4
+W (344576) BLE_MESH: Relaying packet. TTL is now 4
+W (344656) BLE_MESH: Relaying packet. TTL is now 4
+W (344816) BLE_MESH: Relaying packet. TTL is now 4
+W (344916) BLE_MESH: Relaying packet. TTL is now 4
+W (344996) BLE_MESH: Relaying packet. TTL is now 4
+W (347466) BLE_MESH: Relaying packet. TTL is now 4
+W (347546) BLE_MESH: Relaying packet. TTL is now 4
+W (347636) BLE_MESH: Relaying packet. TTL is now 4
+I (347636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (347636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (347646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (347646) MESH_CLIENT: 00 00 00 
+W (347646) PARSED_DATA: Device Name = esp_3
+W (347656) PARSED_DATA: Temperature = 0.000000
+W (347656) PARSED DATA: Warning low temperature = 0.000000
+W (347666) PARSED DATA: Warning high temperature = 0.000000
+W (347796) BLE_MESH: Relaying packet. TTL is now 4
+W (347886) BLE_MESH: Relaying packet. TTL is now 4
+W (347976) BLE_MESH: Relaying packet. TTL is now 4
+W (348136) BLE_MESH: Relaying packet. TTL is now 4
+W (348236) BLE_MESH: Relaying packet. TTL is now 4
+W (348376) BLE_MESH: Relaying packet. TTL is now 4
+W (348476) BLE_MESH: Relaying packet. TTL is now 4
+W (348576) BLE_MESH: Relaying packet. TTL is now 4
+W (348656) BLE_MESH: Relaying packet. TTL is now 4
+W (348816) BLE_MESH: Relaying packet. TTL is now 4
+W (348916) BLE_MESH: Relaying packet. TTL is now 4
+W (348996) BLE_MESH: Relaying packet. TTL is now 4
+W (351436) BLE_MESH: Relaying packet. TTL is now 4
+W (351536) BLE_MESH: Relaying packet. TTL is now 4
+W (351636) BLE_MESH: Relaying packet. TTL is now 4
+I (351636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (351636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (351646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (351646) MESH_CLIENT: 00 00 00 
+W (351646) PARSED_DATA: Device Name = esp_3
+W (351656) PARSED_DATA: Temperature = 0.000000
+W (351656) PARSED DATA: Warning low temperature = 0.000000
+W (351666) PARSED DATA: Warning high temperature = 0.000000
+W (351796) BLE_MESH: Relaying packet. TTL is now 4
+W (351896) BLE_MESH: Relaying packet. TTL is now 4
+W (351976) BLE_MESH: Relaying packet. TTL is now 4
+W (352136) BLE_MESH: Relaying packet. TTL is now 4
+W (352236) BLE_MESH: Relaying packet. TTL is now 4
+W (352386) BLE_MESH: Relaying packet. TTL is now 4
+W (352476) BLE_MESH: Relaying packet. TTL is now 4
+W (352576) BLE_MESH: Relaying packet. TTL is now 4
+W (352656) BLE_MESH: Relaying packet. TTL is now 4
+W (352816) BLE_MESH: Relaying packet. TTL is now 4
+W (352906) BLE_MESH: Relaying packet. TTL is now 4
+W (352996) BLE_MESH: Relaying packet. TTL is now 4
+W (355446) BLE_MESH: Relaying packet. TTL is now 4
+W (355546) BLE_MESH: Relaying packet. TTL is now 4
+W (355636) BLE_MESH: Relaying packet. TTL is now 4
+I (355636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (355636) MESH_CLIENT: src: 0x0019, dst: 0xc001, ttl: 5
+I (355646) MESH_CLIENT: 65 73 70 5f 33 00 00 00 00 00 00 00 00 00 00 00 
+I (355646) MESH_CLIENT: 00 00 00 
+W (355646) PARSED_DATA: Device Name = esp_3
+W (355656) PARSED_DATA: Temperature = 0.000000
+W (355656) PARSED DATA: Warning low temperature = 0.000000
+W (355666) PARSED DATA: Warning high temperature = 0.000000
+W (355796) BLE_MESH: Relaying packet. TTL is now 4
+W (355896) BLE_MESH: Relaying packet. TTL is now 4
+W (355976) BLE_MESH: Relaying packet. TTL is now 4
+W (356136) BLE_MESH: Relaying packet. TTL is now 4
+W (356236) BLE_MESH: Relaying packet. TTL is now 4
+W (356316) BLE_MESH: Relaying packet. TTL is now 4
+W (356476) BLE_MESH: Relaying packet. TTL is now 4
+W (356576) BLE_MESH: Relaying packet. TTL is now 4
+W (356656) BLE_MESH: Relaying packet. TTL is now 4
+W (356816) BLE_MESH: Relaying packet. TTL is now 4
+W (356916) BLE_MESH: Relaying packet. TTL is now 4
+W (356996) BLE_MESH: Relaying packet. TTL is now 4

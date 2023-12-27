@@ -1,0 +1,1201 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6172
+ho 0 tail 12 room 4
+load:0x40078000,len:15584
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+I (31) boot: ESP-IDF v5.1.1-dirty 2nd stage bootloader
+I (31) boot: compile time Dec  9 2023 15:22:29
+I (31) boot: Multicore bootloader
+I (33) boot: chip revision: v3.1
+I (36) boot.esp32: SPI Speed      : 40MHz
+I (40) boot.esp32: SPI Mode       : DIO
+I (43) boot.esp32: SPI Flash Size : 2MB
+I (47) boot: Enabling RNG early entropy source...
+I (51) boot: Partition Table:
+I (54) boot: ## Label            Usage          Type ST Offset   Length
+I (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (73) boot:  2 factory          factory app      00 00 00010000 00100000
+I (80) boot: End of partition table
+I (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=28578h (165240) map
+I (150) esp_image: segment 1: paddr=000385a0 vaddr=3ffbdb60 size=04d18h ( 19736) load
+I (158) esp_image: segment 2: paddr=0003d2c0 vaddr=40080000 size=02d58h ( 11608) load
+I (163) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a3994h (670100) map
+I (406) esp_image: segment 4: paddr=000e39bc vaddr=40082d58 size=15610h ( 87568) load
+I (455) boot: Loaded app from partition at offset 0x10000
+I (455) boot: Disabling RNG early entropy source...
+I (464) cpu_start: Multicore app
+I (465) cpu_start: Pro cpu up.
+I (465) cpu_start: Starting app cpu, entry point is 0x40081388
+I (0) cpu_start: App cpu up.
+I (479) cpu_start: Pro cpu start user code
+I (479) cpu_start: cpu freq: 160000000 Hz
+I (479) cpu_start: Application information:
+I (481) cpu_start: Project name:     client_model
+I (485) cpu_start: App version:      9bcbf09-dirty
+I (490) cpu_start: Compile time:     Dec  9 2023 15:21:42
+I (495) cpu_start: ELF file SHA256:  784c4a5f3bb30146...
+I (500) cpu_start: ESP-IDF:          v5.1.1-dirty
+I (504) cpu_start: Min chip rev:     v0.0
+I (508) cpu_start: Max chip rev:     v3.99 
+I (512) cpu_start: Chip rev:         v3.1
+I (516) heap_init: Initializing. RAM available for dynamic allocation:
+I (522) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM
+I (527) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM
+I (532) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM
+I (537) heap_init: At 3FFCA068 len 00015F98 (87 KiB): DRAM
+I (542) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (548) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (553) heap_init: At 40098368 len 00007C98 (31 KiB): IRAM
+I (560) spi_flash: detected chip: generic
+I (562) spi_flash: flash io: dio
+W (565) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.
+I (578) coexist: coex firmware version: 80b0d89
+I (582) app_start: Starting scheduler on CPU0
+I (586I (586) app_start: Starting scheduler on CPU1
+) main_task: Started on CPU0
+I (596) main_task: Calling app_main()
+I (596) MAIN: Initializing...
+I (626) BTDM_INIT: BT controller compile version [946b762]
+I (626) BTDM_INIT: Bluetooth MAC: a0:b7:65:4a:b4:e6
+I (636) phy_init: phy_version 4670,719f9f6,Feb 18 2021,17:07:07
+W (1136) BLE_MESH: bt_mesh_proxy_server_prov_disable, Already
+I (1166) MESH_CLIENT: ESP_BLE_MESH_NODE_PROV_COMPLETE_EVT
+I (1166) MESH_CLIENT: net_idx: 0x0000, addr: 0x000d
+I (1166) MESH_CLIENT: flags: 0x00, iv_index: 0x00000000
+I (1176) MESH_CLIENT: Device provisioned
+I (1176) MESH_CLIENT: ESP_BLE_MESH_PROV_REGISTER_COMP_EVT, err_code 0
+I (1186) MESH_CLIENT: ESP_BLE_MESH_NODE_SET_UNPROV_DEV_NAME_COMP_EVT, Name: BLE Mesh, err_code 0
+W (1196) BLE_MESH: bt_mesh_prov_enable, Already
+I (1196) MESH_CLIENT: ESP_BLE_MESH_NODE_PROV_ENABLE_COMP_EVT, err_code -120
+I (1206) MESH_CLIENT: BLE Mesh Node initialized
+
+assert failed: xQueueReceive queue.c:1475 (( pxQueue ))
+
+
+Backtrace: 0x40081a32:0x3ffbba60 0x40090f71:0x3ffbba80 0x40096731:0x3ffbbaa0 0x4009179b:0x3ffbbbc0 0x400d821d:0x3ffbbc00 0x40171b73:0x3ffbbc50 0x400936b1:0x3ffbbc80
+
+
+
+
+ELF file SHA256: 784c4a5f3bb30146
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6172
+ho 0 tail 12 room 4
+load:0x40078000,len:15584
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+I (31) boot: ESP-IDF v5.1.1-dirty 2nd stage bootloader
+I (31) boot: compile time Dec  9 2023 15:22:29
+I (31) boot: Multicore bootloader
+I (33) boot: chip revision: v3.1
+I (36) boot.esp32: SPI Speed      : 40MHz
+I (40) boot.esp32: SPI Mode       : DIO
+I (43) boot.esp32: SPI Flash Size : 2MB
+I (47) boot: Enabling RNG early entropy source...
+I (51) boot: Partition Table:
+I (54) boot: ## Label            Usage          Type ST Offset   Length
+I (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (73) boot:  2 factory          factory app      00 00 00010000 00100000
+I (80) boot: End of partition table
+I (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=28578h (165240) map
+I (150) esp_image: segment 1: paddr=000385a0 vaddr=3ffbdb60 size=04d18h ( 19736) load
+I (158) esp_image: segment 2: paddr=0003d2c0 vaddr=40080000 size=02d58h ( 11608) load
+I (163) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a3994h (670100) map
+I (406) esp_image: segment 4: paddr=000e39bc vaddr=40082d58 size=15610h ( 87568) load
+I (455) boot: Loaded app from partition at offset 0x10000
+I (455) boot: Disabling RNG early entropy source...
+I (464) cpu_start: Multicore app
+I (465) cpu_start: Pro cpu up.
+I (465) cpu_start: Starting app cpu, entry point is 0x40081388
+I (450) cpu_start: App cpu up.
+I (479) cpu_start: Pro cpu start user code
+I (479) cpu_start: cpu freq: 160000000 Hz
+I (479) cpu_start: Application information:
+I (481) cpu_start: Project name:     client_model
+I (485) cpu_start: App version:      9bcbf09-dirty
+I (490) cpu_start: Compile time:     Dec  9 2023 15:21:42
+I (495) cpu_start: ELF file SHA256:  784c4a5f3bb30146...
+I (500) cpu_start: ESP-IDF:          v5.1.1-dirty
+I (504) cpu_start: Min chip rev:     v0.0
+I (508) cpu_start: Max chip rev:     v3.99 
+I (512) cpu_start: Chip rev:         v3.1
+I (516) heap_init: Initializing. RAM available for dynamic allocation:
+I (522) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM
+I (527) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM
+I (532) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM
+I (537) heap_init: At 3FFCA068 len 00015F98 (87 KiB): DRAM
+I (543) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (548) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (553) heap_init: At 40098368 len 00007C98 (31 KiB): IRAM
+I (560) spi_flash: detected chip: generic
+I (562) spi_flash: flash io: dio
+W (565) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.
+I (578) coexist: coex firmware version: 80b0d89
+I (582) app_start: Starting scheduler on CPU0
+I (586I (586) app_start: Starting scheduler on CPU1
+) main_task: Started on CPU0
+I (596) main_task: Calling app_main()
+I (596) MAIN: Initializing...
+I (626) BTDM_INIT: BT controller compile version [946b762]
+I (626) BTDM_INIT: Bluetooth MAC: a0:b7:65:4a:b4:e6
+I (636) phy_init: phy_version 4670,719f9f6,Feb 18 2021,17:07:07
+W (1146) BLE_MESH: bt_mesh_proxy_server_prov_disable, Already
+I (1176) MESH_CLIENT: ESP_BLE_MESH_NODE_PROV_COMPLETE_EVT
+I (1176) MESH_CLIENT: net_idx: 0x0000, addr: 0x000d
+I (1176) MESH_CLIENT: flags: 0x00, iv_index: 0x00000000
+I (1186) MESH_CLIENT: Device provisioned
+I (1186) MESH_CLIENT: ESP_BLE_MESH_PROV_REGISTER_COMP_EVT, err_code 0
+I (1196) MESH_CLIENT: ESP_BLE_MESH_NODE_SET_UNPROV_DEV_NAME_COMP_EVT, Name: BLE Mesh, err_code 0
+W (1196) BLE_MESH: bt_mesh_prov_enable, Already
+I (1206) MESH_CLIENT: ESP_BLE_MESH_NODE_PROV_ENABLE_COMP_EVT, err_code -120
+W (1216) BLE_MESH: Relaying packet. TTL is now 4
+I (1216) MESH_CLIENT: BLE Mesh Node initialized
+
+assert failed: xQueueReceive queue.c:1475 (( pxQueue ))
+
+
+Backtrace: 0x40081a32:0x3ffbba60 0x40090f71:0x3ffbba80 0x40096731:0x3ffbbaa0 0x4009179b:0x3ffbbbc0 0x400d821d:0x3ffbbc00 0x40171b73:0x3ffbbc50 0x400936b1:0x3ffbbc80
+
+
+
+
+ELF file SHA256: 784c4a5f3bb30146
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6172
+ho 0 tail 12 room 4
+load:0x40078000,len:15584
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+I (31) boot: ESP-IDF v5.1.1-dirty 2nd stage bootloader
+I (31) boot: compile time Dec  9 2023 15:22:29
+I (31) boot: Multicore bootloader
+I (33) boot: chip revision: v3.1
+I (36) boot.esp32: SPI Speed      : 40MHz
+I (40) boot.esp32: SPI Mode       : DIO
+I (43) boot.esp32: SPI Flash Size : 2MB
+I (47) boot: Enabling RNG early entropy source...
+I (51) boot: Partition Table:
+I (54) boot: ## Label            Usage          Type ST Offset   Length
+I (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (73) boot:  2 factory          factory app      00 00 00010000 00100000
+I (80) boot: End of partition table
+I (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=28578h (165240) map
+I (150) esp_image: segment 1: paddr=000385a0 vaddr=3ffbdb60 size=04d18h ( 19736) load
+I (158) esp_image: segment 2: paddr=0003d2c0 vaddr=40080000 size=02d58h ( 11608) load
+I (163) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a3994h (670100) map
+I (406) esp_image: segment 4: paddr=000e39bc vaddr=40082d58 size=15610h ( 87568) load
+I (455) boot: Loaded app from partition at offset 0x10000
+I (455) boot: Disabling RNG early entropy source...
+I (464) cpu_start: Multicore app
+I (465) cpu_start: Pro cpu up.
+I (465) cpu_start: Starting app cpu, entry point is 0x40081388
+I (451) cpu_start: App cpu up.
+I (481) cpu_start: Pro cpu start user code
+I (481) cpu_start: cpu freq: 160000000 Hz
+I (481) cpu_start: Application information:
+I (483) cpu_start: Project name:     client_model
+I (487) cpu_start: App version:      9bcbf09-dirty
+I (492) cpu_start: Compile time:     Dec  9 2023 15:21:42
+I (497) cpu_start: ELF file SHA256:  784c4a5f3bb30146...
+I (502) cpu_start: ESP-IDF:          v5.1.1-dirty
+I (507) cpu_start: Min chip rev:     v0.0
+I (510) cpu_start: Max chip rev:     v3.99 
+I (514) cpu_start: Chip rev:         v3.1
+I (518) heap_init: Initializing. RAM available for dynamic allocation:
+I (524) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM
+I (529) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM
+I (534) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM
+I (540) heap_init: At 3FFCA068 len 00015F98 (87 KiB): DRAM
+I (545) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (550) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (556) heap_init: At 40098368 len 00007C98 (31 KiB): IRAM
+I (562) spi_flash: detected chip: generic
+I (565) spi_flash: flash io: dio
+W (568) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.
+I (581) coexist: coex firmware version: 80b0d89
+I (585) app_start: Starting scheduler on CPU0
+I (588I (588) app_start: Starting scheduler on CPU1
+) main_task: Started on CPU0
+I (598) main_task: Calling app_main()
+I (598) MAIN: Initializing...
+I (628) BTDM_INIT: BT controller compile version [946b762]
+I (628) BTDM_INIT: Bluetooth MAC: a0:b7:65:4a:b4:e6
+I (638) phy_init: phy_version 4670,719f9f6,Feb 18 2021,17:07:07
+W (1158) BLE_MESH: bt_mesh_proxy_server_prov_disable, Already
+I (1188) MESH_CLIENT: ESP_BLE_MESH_NODE_PROV_COMPLETE_EVT
+I (1188) MESH_CLIENT: net_idx: 0x0000, addr: 0x000d
+I (1188) MESH_CLIENT: flags: 0x00, iv_index: 0x00000000
+I (1188) MESH_CLIENT: Device provisioned
+I (1198) MESH_CLIENT: ESP_BLE_MESH_PROV_REGISTER_COMP_EVT, err_code 0
+I (1198) MESH_CLIENT: ESP_BLE_MESH_NODE_SET_UNPROV_DEV_NAME_COMP_EVT, Name: BLE Mesh, err_code 0
+W (1208) BLE_MESH: bt_mesh_prov_enable, Already
+I (1208) MESH_CLIENT: ESP_BLE_MESH_NODE_PROV_ENABLE_COMP_EVT, err_code -120
+I (1218) MESH_CLIENT: BLE Mesh Node initialized
+
+assert failed: xQueueReceive queue.c:1475 (( pxQueue ))
+
+
+Backtrace: 0x40081a32:0x3ffbba60 0x40090f71:0x3ffbba80 0x40096731:0x3ffbbaa0 0x4009179b:0x3ffbbbc0 0x400d821d:0x3ffbbc00 0x40171b73:0x3ffbbc50 0x400936b1:0x3ffbbc80
+
+
+
+
+ELF file SHA256: 784c4a5f3bb30146
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6172
+ho 0 tail 12 room 4
+load:0x40078000,len:15584
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+I (31) boot: ESP-IDF v5.1.1-dirty 2nd stage bootloader
+I (31) boot: compile time Dec  9 2023 15:22:29
+I (31) boot: Multicore bootloader
+I (33) boot: chip revision: v3.1
+I (36) boot.esp32: SPI Speed      : 40MHz
+I (40) boot.esp32: SPI Mode       : DIO
+I (43) boot.esp32: SPI Flash Size : 2MB
+I (47) boot: Enabling RNG early entropy source...
+I (51) boot: Partition Table:
+I (54) boot: ## Label            Usage          Type ST Offset   Length
+I (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (73) boot:  2 factory          factory app      00 00 00010000 00100000
+I (80) boot: End of partition table
+I (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=28578h (165240) map
+I (150) esp_image: segment 1: paddr=000385a0 vaddr=3ffbdb60 size=04d18h ( 19736) load
+I (158) esp_image: segment 2: paddr=0003d2c0 vaddr=40080000 size=02d58h ( 11608) load
+I (163) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a3994h (670100) map
+I (406) esp_image: segment 4: paddr=000e39bc vaddr=40082d58 size=15610h ( 87568) load
+I (455) boot: Loaded app from partition at offset 0x10000
+I (455) boot: Disabling RNG early entropy source...
+I (464) cpu_start: Multicore app
+I (465) cpu_start: Pro cpu up.
+I (465) cpu_start: Starting app cpu, entry point is 0x40081388
+I (451) cpu_start: App cpu up.
+I (481) cpu_start: Pro cpu start user code
+I (481) cpu_start: cpu freq: 160000000 Hz
+I (481) cpu_start: Application information:
+I (483) cpu_start: Project name:     client_model
+I (487) cpu_start: App version:      9bcbf09-dirty
+I (492) cpu_start: Compile time:     Dec  9 2023 15:21:42
+I (497) cpu_start: ELF file SHA256:  784c4a5f3bb30146...
+I (502) cpu_start: ESP-IDF:          v5.1.1-dirty
+I (507) cpu_start: Min chip rev:     v0.0
+I (510) cpu_start: Max chip rev:     v3.99 
+I (514) cpu_start: Chip rev:         v3.1
+I (518) heap_init: Initializing. RAM available for dynamic allocation:
+I (524) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM
+I (529) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM
+I (534) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM
+I (540) heap_init: At 3FFCA068 len 00015F98 (87 KiB): DRAM
+I (545) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (550) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (556) heap_init: At 40098368 len 00007C98 (31 KiB): IRAM
+I (562) spi_flash: detected chip: generic
+I (565) spi_flash: flash io: dio
+W (568) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.
+I (581) coexist: coex firmware version: 80b0d89
+I (585) app_start: Starting scheduler on CPU0
+I (588I (588) app_start: Starting scheduler on CPU1
+) main_task: Started on CPU0
+I (598) main_task: Calling app_main()
+I (598) MAIN: Initializing...
+I (628) BTDM_INIT: BT controller compile version [946b762]
+I (628) BTDM_INIT: Bluetooth MAC: a0:b7:65:4a:b4:e6
+I (638) phy_init: phy_version 4670,719f9f6,Feb 18 2021,17:07:07
+W (1148) BLE_MESH: bt_mesh_proxy_server_prov_disable, Already
+I (1178) MESH_CLIENT: ESP_BLE_MESH_NODE_PROV_COMPLETE_EVT
+I (1178) MESH_CLIENT: net_idx: 0x0000, addr: 0x000d
+I (1178) MESH_CLIENT: flags: 0x00, iv_index: 0x00000000
+I (1178) MESH_CLIENT: Device provisioned
+I (1188) MESH_CLIENT: ESP_BLE_MESH_PROV_REGISTER_COMP_EVT, err_code 0
+I (1188) MESH_CLIENT: ESP_BLE_MESH_NODE_SET_UNPROV_DEV_NAME_COMP_EVT, Name: BLE Mesh, err_code 0
+W (1198) BLE_MESH: bt_mesh_prov_enable, Already
+I (1208) MESH_CLIENT: ESP_BLE_MESH_NODE_PROV_ENABLE_COMP_EVT, err_code -120
+I (1208) MESH_CLIENT: BLE Mesh Node initialized
+
+assert failed: xQueueReceive queue.c:1475 (( pxQueue ))
+
+
+Backtrace: 0x40081a32:0x3ffbba60 0x40090f71:0x3ffbba80 0x40096731:0x3ffbbaa0 0x4009179b:0x3ffbbbc0 0x400d821d:0x3ffbbc00 0x40171b73:0x3ffbbc50 0x400936b1:0x3ffbbc80
+
+
+
+
+ELF file SHA256: 784c4a5f3bb30146
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6172
+ho 0 tail 12 room 4
+load:0x40078000,len:15584
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+I (31) boot: ESP-IDF v5.1.1-dirty 2nd stage bootloader
+I (31) boot: compile time Dec  9 2023 15:22:29
+I (31) boot: Multicore bootloader
+I (33) boot: chip revision: v3.1
+I (36) boot.esp32: SPI Speed      : 40MHz
+I (40) boot.esp32: SPI Mode       : DIO
+I (43) boot.esp32: SPI Flash Size : 2MB
+I (47) boot: Enabling RNG early entropy source...
+I (51) boot: Partition Table:
+I (54) boot: ## Label            Usage          Type ST Offset   Length
+I (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (73) boot:  2 factory          factory app      00 00 00010000 00100000
+I (80) boot: End of partition table
+I (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=28578h (165240) map
+I (150) esp_image: segment 1: paddr=000385a0 vaddr=3ffbdb60 size=04d18h ( 19736) load
+I (158) esp_image: segment 2: paddr=0003d2c0 vaddr=40080000 size=02d58h ( 11608) load
+I (163) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a3994h (670100) map
+I (406) esp_image: segment 4: paddr=000e39bc vaddr=40082d58 size=15610h ( 87568) load
+I (455) boot: Loaded app from partition at offset 0x10000
+I (455) boot: Disabling RNG early entropy source...
+I (464) cpu_start: Multicore app
+I (465) cpu_start: Pro cpu up.
+I (465) cpu_start: Starting app cpu, entry point is 0x40081388
+I (450) cpu_start: App cpu up.
+I (479) cpu_start: Pro cpu start user code
+I (479) cpu_start: cpu freq: 160000000 Hz
+I (479) cpu_start: Application information:
+I (481) cpu_start: Project name:     client_model
+I (485) cpu_start: App version:      9bcbf09-dirty
+I (490) cpu_start: Compile time:     Dec  9 2023 15:21:42
+I (495) cpu_start: ELF file SHA256:  784c4a5f3bb30146...
+I (500) cpu_start: ESP-IDF:          v5.1.1-dirty
+I (504) cpu_start: Min chip rev:     v0.0
+I (508) cpu_start: Max chip rev:     v3.99 
+I (512) cpu_start: Chip rev:         v3.1
+I (516) heap_init: Initializing. RAM available for dynamic allocation:
+I (522) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM
+I (527) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM
+I (532) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM
+I (537) heap_init: At 3FFCA068 len 00015F98 (87 KiB): DRAM
+I (543) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (548) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (553) heap_init: At 40098368 len 00007C98 (31 KiB): IRAM
+I (560) spi_flash: detected chip: generic
+I (562) spi_flash: flash io: dio
+W (565) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.
+I (578) coexist: coex firmware version: 80b0d89
+I (582) app_start: Starting scheduler on CPU0
+I (586I (586) app_start: Starting scheduler on CPU1
+) main_task: Started on CPU0
+I (596) main_task: Calling app_main()
+I (596) MAIN: Initializing...
+I (626) BTDM_INIT: BT controller compile version [946b762]
+I (626) BTDM_INIT: Bluetooth MAC: a0:b7:65:4a:b4:e6
+I (636) phy_init: phy_version 4670,719f9f6,Feb 18 2021,17:07:07
+W (1146) BLE_MESH: bt_mesh_proxy_server_prov_disable, Already
+I (1176) MESH_CLIENT: ESP_BLE_MESH_NODE_PROV_COMPLETE_EVT
+I (1176) MESH_CLIENT: net_idx: 0x0000, addr: 0x000d
+I (1176) MESH_CLIENT: flags: 0x00, iv_index: 0x00000000
+I (1176) MESH_CLIENT: Device provisioned
+I (1186) MESH_CLIENT: ESP_BLE_MESH_PROV_REGISTER_COMP_EVT, err_code 0
+W (1186) BLE_MESH: Relaying packet. TTL is now 4
+I (1196) MESH_CLIENT: ESP_BLE_MESH_NODE_SET_UNPROV_DEV_NAME_COMP_EVT, Name: BLE Mesh, err_code 0
+W (1196) BLE_MESH: bt_mesh_prov_enable, Already
+I (1206) MESH_CLIENT: ESP_BLE_MESH_NODE_PROV_ENABLE_COMP_EVT, err_code -120
+I (1216) MESH_CLIENT: BLE Mesh Node initialized
+
+assert failed: xQueueReceive queue.c:1475 (( pxQueue ))
+
+
+Backtrace: 0x40081a32:0x3ffbba60 0x40090f71:0x3ffbba80 0x40096731:0x3ffbbaa0 0x4009179b:0x3ffbbbc0 0x400d821d:0x3ffbbc00 0x40171b73:0x3ffbbc50 0x400936b1:0x3ffbbc80
+
+
+
+
+ELF file SHA256: 784c4a5f3bb30146
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6172
+ho 0 tail 12 room 4
+load:0x40078000,len:15584
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+I (31) boot: ESP-IDF v5.1.1-dirty 2nd stage bootloader
+I (31) boot: compile time Dec  9 2023 15:22:29
+I (31) boot: Multicore bootloader
+I (33) boot: chip revision: v3.1
+I (36) boot.esp32: SPI Speed      : 40MHz
+I (40) boot.esp32: SPI Mode       : DIO
+I (43) boot.esp32: SPI Flash Size : 2MB
+I (47) boot: Enabling RNG early entropy source...
+I (51) boot: Partition Table:
+I (54) boot: ## Label            Usage          Type ST Offset   Length
+I (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (73) boot:  2 factory          factory app      00 00 00010000 00100000
+I (80) boot: End of partition table
+I (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=28578h (165240) map
+I (150) esp_image: segment 1: paddr=000385a0 vaddr=3ffbdb60 size=04d18h ( 19736) load
+I (158) esp_image: segment 2: paddr=0003d2c0 vaddr=40080000 size=02d58h ( 11608) load
+I (163) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a3994h (670100) map
+I (406) esp_image: segment 4: paddr=000e39bc vaddr=40082d58 size=15610h ( 87568) load
+I (455) boot: Loaded app from partition at offset 0x10000
+I (455) boot: Disabling RNG early entropy source...
+I (464) cpu_start: Multicore app
+I (465) cpu_start: Pro cpu up.
+I (465) cpu_start: Starting app cpu, entry point is 0x40081388
+I (450) cpu_start: App cpu up.
+I (479) cpu_start: Pro cpu start user code
+I (479) cpu_start: cpu freq: 160000000 Hz
+I (479) cpu_start: Application information:
+I (481) cpu_start: Project name:     client_model
+I (485) cpu_start: App version:      9bcbf09-dirty
+I (490) cpu_start: Compile time:     Dec  9 2023 15:21:42
+I (495) cpu_start: ELF file SHA256:  784c4a5f3bb30146...
+I (500) cpu_start: ESP-IDF:          v5.1.1-dirty
+I (504) cpu_start: Min chip rev:     v0.0
+I (508) cpu_start: Max chip rev:     v3.99 
+I (512) cpu_start: Chip rev:         v3.1
+I (516) heap_init: Initializing. RAM available for dynamic allocation:
+I (522) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM
+I (527) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM
+I (532) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM
+I (537) heap_init: At 3FFCA068 len 00015F98 (87 KiB): DRAM
+I (543) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (548) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (553) heap_init: At 40098368 len 00007C98 (31 KiB): IRAM
+I (560) spi_flash: detected chip: generic
+I (562) spi_flash: flash io: dio
+W (565) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.
+I (578) coexist: coex firmware version: 80b0d89
+I (582) app_start: Starting scheduler on CPU0
+I (586I (586) app_start: Starting scheduler on CPU1
+) main_task: Started on CPU0
+I (596) main_task: Calling app_main()
+I (596) MAIN: Initializing...
+I (626) BTDM_INIT: BT controller compile version [946b762]
+I (626) BTDM_INIT: Bluetooth MAC: a0:b7:65:4a:b4:e6
+I (636) phy_init: phy_version 4670,719f9f6,Feb 18 2021,17:07:07
+W (1136) BLE_MESH: bt_mesh_proxy_server_prov_disable, Already
+I (1166) MESH_CLIENT: ESP_BLE_MESH_NODE_PROV_COMPLETE_EVT
+I (1166) MESH_CLIENT: net_idx: 0x0000, addr: 0x000d
+I (1166) MESH_CLIENT: flags: 0x00, iv_index: 0x00000000
+I (1176) MESH_CLIENT: Device provisioned
+I (1176) MESH_CLIENT: ESP_BLE_MESH_PROV_REGISTER_COMP_EVT, err_code 0
+I (1186) MESH_CLIENT: ESP_BLE_MESH_NODE_SET_UNPROV_DEV_NAME_COMP_EVT, Name: BLE Mesh, err_code 0
+W (1186) BLE_MESH: bt_mesh_prov_enable, Already
+I (1196) MESH_CLIENT: ESP_BLE_MESH_NODE_PROV_ENABLE_COMP_EVT, err_code -120
+I (1206) MESH_CLIENT: BLE Mesh Node initialized
+
+assert failed: xQueueReceive queue.c:1475 (( pxQueue ))
+
+
+Backtrace: 0x40081a32:0x3ffbba60 0x40090f71:0x3ffbba80 0x40096731:0x3ffbbaa0 0x4009179b:0x3ffbbbc0 0x400d821d:0x3ffbbc00 0x40171b73:0x3ffbbc50 0x400936b1:0x3ffbbc80
+
+
+
+
+ELF file SHA256: 784c4a5f3bb30146
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6172
+ho 0 tail 12 room 4
+load:0x40078000,len:15584
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+I (31) boot: ESP-IDF v5.1.1-dirty 2nd stage bootloader
+I (31) boot: compile time Dec  9 2023 15:22:29
+I (31) boot: Multicore bootloader
+I (33) boot: chip revision: v3.1
+I (36) boot.esp32: SPI Speed      : 40MHz
+I (40) boot.esp32: SPI Mode       : DIO
+I (43) boot.esp32: SPI Flash Size : 2MB
+I (47) boot: Enabling RNG early entropy source...
+I (51) boot: Partition Table:
+I (54) boot: ## Label            Usage          Type ST Offset   Length
+I (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (73) boot:  2 factory          factory app      00 00 00010000 00100000
+I (80) boot: End of partition table
+I (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=28578h (165240) map
+I (150) esp_image: segment 1: paddr=000385a0 vaddr=3ffbdb60 size=04d18h ( 19736) load
+I (158) esp_image: segment 2: paddr=0003d2c0 vaddr=40080000 size=02d58h ( 11608) load
+I (163) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a3994h (670100) map
+I (406) esp_image: segment 4: paddr=000e39bc vaddr=40082d58 size=15610h ( 87568) load
+I (455) boot: Loaded app from partition at offset 0x10000
+I (455) boot: Disabling RNG early entropy source...
+I (464) cpu_start: Multicore app
+I (465) cpu_start: Pro cpu up.
+I (465) cpu_start: Starting app cpu, entry point is 0x40081388
+I (451) cpu_start: App cpu up.
+I (481) cpu_start: Pro cpu start user code
+I (481) cpu_start: cpu freq: 160000000 Hz
+I (481) cpu_start: Application information:
+I (483) cpu_start: Project name:     client_model
+I (487) cpu_start: App version:      9bcbf09-dirty
+I (492) cpu_start: Compile time:     Dec  9 2023 15:21:42
+I (497) cpu_start: ELF file SHA256:  784c4a5f3bb30146...
+I (502) cpu_start: ESP-IDF:          v5.1.1-dirty
+I (507) cpu_start: Min chip rev:     v0.0
+I (510) cpu_start: Max chip rev:     v3.99 
+I (514) cpu_start: Chip rev:         v3.1
+I (518) heap_init: Initializing. RAM available for dynamic allocation:
+I (524) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM
+I (529) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM
+I (534) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM
+I (540) heap_init: At 3FFCA068 len 00015F98 (87 KiB): DRAM
+I (545) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (550) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (556) heap_init: At 40098368 len 00007C98 (31 KiB): IRAM
+I (562) spi_flash: detected chip: generic
+I (565) spi_flash: flash io: dio
+W (568) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.
+I (581) coexist: coex firmware version: 80b0d89
+I (585) app_start: Starting scheduler on CPU0
+I (588I (588) app_start: Starting scheduler on CPU1
+) main_task: Started on CPU0
+I (598) main_task: Calling app_main()
+I (598) MAIN: Initializing...
+I (628) BTDM_INIT: BT controller compile version [946b762]
+I (628) BTDM_INIT: Bluetooth MAC: a0:b7:65:4a:b4:e6
+I (638) phy_init: phy_version 4670,719f9f6,Feb 18 2021,17:07:07
+W (1148) BLE_MESH: bt_mesh_proxy_server_prov_disable, Already
+I (1178) MESH_CLIENT: ESP_BLE_MESH_NODE_PROV_COMPLETE_EVT
+I (1178) MESH_CLIENT: net_idx: 0x0000, addr: 0x000d
+I (1178) MESH_CLIENT: flags: 0x00, iv_index: 0x00000000
+I (1178) MESH_CLIENT: Device provisioned
+I (1188) MESH_CLIENT: ESP_BLE_MESH_PROV_REGISTER_COMP_EVT, err_code 0
+I (1188) MESH_CLIENT: ESP_BLE_MESH_NODE_SET_UNPROV_DEV_NAME_COMP_EVT, Name: BLE Mesh, err_code 0
+W (1198) BLE_MESH: bt_mesh_prov_enable, Already
+I (1208) MESH_CLIENT: ESP_BLE_MESH_NODE_PROV_ENABLE_COMP_EVT, err_code -120
+I (1208) MESH_CLIENT: BLE Mesh Node initialized
+
+assert failed: xQueueReceive queue.c:1475 (( pxQueue ))
+
+
+Backtrace: 0x40081a32:0x3ffbba60 0x40090f71:0x3ffbba80 0x40096731:0x3ffbbaa0 0x4009179b:0x3ffbbbc0 0x400d821d:0x3ffbbc00 0x40171b73:0x3ffbbc50 0x400936b1:0x3ffbbc80
+
+
+
+
+ELF file SHA256: 784c4a5f3bb30146
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6172
+ho 0 tail 12 room 4
+load:0x40078000,len:15584
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+I (31) boot: ESP-IDF v5.1.1-dirty 2nd stage bootloader
+I (31) boot: compile time Dec  9 2023 15:22:29
+I (31) boot: Multicore bootloader
+I (33) boot: chip revision: v3.1
+I (36) boot.esp32: SPI Speed      : 40MHz
+I (40) boot.esp32: SPI Mode       : DIO
+I (43) boot.esp32: SPI Flash Size : 2MB
+I (47) boot: Enabling RNG early entropy source...
+I (51) boot: Partition Table:
+I (54) boot: ## Label            Usage          Type ST Offset   Length
+I (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (73) boot:  2 factory          factory app      00 00 00010000 00100000
+I (80) boot: End of partition table
+I (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=28578h (165240) map
+I (150) esp_image: segment 1: paddr=000385a0 vaddr=3ffbdb60 size=04d18h ( 19736) load
+I (158) esp_image: segment 2: paddr=0003d2c0 vaddr=40080000 size=02d58h ( 11608) load
+I (163) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a3994h (670100) map
+I (406) esp_image: segment 4: paddr=000e39bc vaddr=40082d58 size=15610h ( 87568) load
+I (455) boot: Loaded app from partition at offset 0x10000
+I (455) boot: Disabling RNG early entropy source...
+I (464) cpu_start: Multicore app
+I (465) cpu_start: Pro cpu up.
+I (465) cpu_start: Starting app cpu, entry point is 0x40081388
+I (450) cpu_start: App cpu up.
+I (479) cpu_start: Pro cpu start user code
+I (479) cpu_start: cpu freq: 160000000 Hz
+I (479) cpu_start: Application information:
+I (481) cpu_start: Project name:     client_model
+I (485) cpu_start: App version:      9bcbf09-dirty
+I (490) cpu_start: Compile time:     Dec  9 2023 15:21:42
+I (495) cpu_start: ELF file SHA256:  784c4a5f3bb30146...
+I (500) cpu_start: ESP-IDF:          v5.1.1-dirty
+I (504) cpu_start: Min chip rev:     v0.0
+I (508) cpu_start: Max chip rev:     v3.99 
+I (512) cpu_start: Chip rev:         v3.1
+I (516) heap_init: Initializing. RAM available for dynamic allocation:
+I (522) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM
+I (527) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM
+I (532) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM
+I (537) heap_init: At 3FFCA068 len 00015F98 (87 KiB): DRAM
+I (543) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (548) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (553) heap_init: At 40098368 len 00007C98 (31 KiB): IRAM
+I (560) spi_flash: detected chip: generic
+I (562) spi_flash: flash io: dio
+W (565) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.
+I (578) coexist: coex firmware version: 80b0d89
+I (582) app_start: Starting scheduler on CPU0
+I (586I (586) app_start: Starting scheduler on CPU1
+) main_task: Started on CPU0
+I (596) main_task: Calling app_main()
+I (596) MAIN: Initializing...
+I (626) BTDM_INIT: BT controller compile version [946b762]
+I (626) BTDM_INIT: Bluetooth MAC: a0:b7:65:4a:b4:e6
+I (636) phy_init: phy_version 4670,719f9f6,Feb 18 2021,17:07:07
+W (1156) BLE_MESH: bt_mesh_proxy_server_prov_disable, Already
+I (1186) MESH_CLIENT: ESP_BLE_MESH_NODE_PROV_COMPLETE_EVT
+I (1186) MESH_CLIENT: net_idx: 0x0000, addr: 0x000d
+I (1186) MESH_CLIENT: flags: 0x00, iv_index: 0x00000000
+I (1186) MESH_CLIENT: Device provisioned
+I (1196) MESH_CLIENT: ESP_BLE_MESH_PROV_REGISTER_COMP_EVT, err_code 0
+W (1196) BLE_MESH: Relaying packet. TTL is now 4
+I (1206) MESH_CLIENT: ESP_BLE_MESH_NODE_SET_UNPROV_DEV_NAME_COMP_EVT, Name: BLE Mesh, err_code 0
+W (1216) BLE_MESH: bt_mesh_prov_enable, Already
+I (1216) MESH_CLIENT: ESP_BLE_MESH_NODE_PROV_ENABLE_COMP_EVT, err_code -120
+I (1226) MESH_CLIENT: BLE Mesh Node initialized
+
+assert failed: xQueueReceive queue.c:1475 (( pxQueue ))
+
+
+Backtrace: 0x40081a32:0x3ffbba60 0x40090f71:0x3ffbba80 0x40096731:0x3ffbbaa0 0x4009179b:0x3ffbbbc0 0x400d821d:0x3ffbbc00 0x40171b73:0x3ffbbc50 0x400936b1:0x3ffbbc80
+
+
+
+
+ELF file SHA256: 784c4a5f3bb30146
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6172
+ho 0 tail 12 room 4
+load:0x40078000,len:15584
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+I (31) boot: ESP-IDF v5.1.1-dirty 2nd stage bootloader
+I (31) boot: compile time Dec  9 2023 15:22:29
+I (31) boot: Multicore bootloader
+I (33) boot: chip revision: v3.1
+I (36) boot.esp32: SPI Speed      : 40MHz
+I (40) boot.esp32: SPI Mode       : DIO
+I (43) boot.esp32: SPI Flash Size : 2MB
+I (47) boot: Enabling RNG early entropy source...
+I (51) boot: Partition Table:
+I (54) boot: ## Label            Usage          Type ST Offset   Length
+I (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (73) boot:  2 factory          factory app      00 00 00010000 00100000
+I (80) boot: End of partition table
+I (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=28578h (165240) map
+I (150) esp_image: segment 1: paddr=000385a0 vaddr=3ffbdb60 size=04d18h ( 19736) load
+I (158) esp_image: segment 2: paddr=0003d2c0 vaddr=40080000 size=02d58h ( 11608) load
+I (163) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a3994h (670100) map
+I (406) esp_image: segment 4: paddr=000e39bc vaddr=40082d58 size=15610h ( 87568) load
+I (455) boot: Loaded app from partition at offset 0x10000
+I (455) boot: Disabling RNG early entropy source...
+I (464) cpu_start: Multicore app
+I (465) cpu_start: Pro cpu up.
+I (465) cpu_start: Starting app cpu, entry point is 0x40081388
+I (451) cpu_start: App cpu up.
+I (481) cpu_start: Pro cpu start user code
+I (481) cpu_start: cpu freq: 160000000 Hz
+I (481) cpu_start: Application information:
+I (483) cpu_start: Project name:     client_model
+I (487) cpu_start: App version:      9bcbf09-dirty
+I (492) cpu_start: Compile time:     Dec  9 2023 15:21:42
+I (497) cpu_start: ELF file SHA256:  784c4a5f3bb30146...
+I (502) cpu_start: ESP-IDF:          v5.1.1-dirty
+I (507) cpu_start: Min chip rev:     v0.0
+I (510) cpu_start: Max chip rev:     v3.99 
+I (514) cpu_start: Chip rev:         v3.1
+I (518) heap_init: Initializing. RAM available for dynamic allocation:
+I (524) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM
+I (529) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM
+I (534) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM
+I (540) heap_init: At 3FFCA068 len 00015F98 (87 KiB): DRAM
+I (545) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (550) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (556) heap_init: At 40098368 len 00007C98 (31 KiB): IRAM
+I (562) spi_flash: detected chip: generic
+I (565) spi_flash: flash io: dio
+W (568) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.
+I (581) coexist: coex firmware version: 80b0d89
+I (585) app_start: Starting scheduler on CPU0
+I (588I (588) app_start: Starting scheduler on CPU1
+) main_task: Started on CPU0
+I (598) main_task: Calling app_main()
+I (598) MAIN: Initializing...
+I (628) BTDM_INIT: BT controller compile version [946b762]
+I (628) BTDM_INIT: Bluetooth MAC: a0:b7:65:4a:b4:e6
+I (638) phy_init: phy_version 4670,719f9f6,Feb 18 2021,17:07:07
+W (1158) BLE_MESH: bt_mesh_proxy_server_prov_disable, Already
+I (1188) MESH_CLIENT: ESP_BLE_MESH_NODE_PROV_COMPLETE_EVT
+I (1188) MESH_CLIENT: net_idx: 0x0000, addr: 0x000d
+I (1188) MESH_CLIENT: flags: 0x00, iv_index: 0x00000000
+I (1198) MESH_CLIENT: Device provisioned
+I (1198) MESH_CLIENT: ESP_BLE_MESH_PROV_REGISTER_COMP_EVT, err_code 0
+I (1208) MESH_CLIENT: ESP_BLE_MESH_NODE_SET_UNPROV_DEV_NAME_COMP_EVT, Name: BLE Mesh, err_code 0
+W (1218) BLE_MESH: bt_mesh_prov_enable, Already
+I (1218) MESH_CLIENT: ESP_BLE_MESH_NODE_PROV_ENABLE_COMP_EVT, err_code -120
+I (1228) MESH_CLIENT: BLE Mesh Node initialized
+
+assert failed: xQueueReceive queue.c:1475 (( pxQueue ))
+
+
+Backtrace: 0x40081a32:0x3ffbba60 0x40090f71:0x3ffbba80 0x40096731:0x3ffbbaa0 0x4009179b:0x3ffbbbc0 0x400d821d:0x3ffbbc00 0x40171b73:0x3ffbbc50 0x400936b1:0x3ffbbc80
+
+
+
+
+ELF file SHA256: 784c4a5f3bb30146
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6172
+ho 0 tail 12 room 4
+load:0x40078000,len:15584
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+I (31) boot: ESP-IDF v5.1.1-dirty 2nd stage bootloader
+I (31) boot: compile time Dec  9 2023 15:22:29
+I (31) boot: Multicore bootloader
+I (33) boot: chip revision: v3.1
+I (36) boot.esp32: SPI Speed      : 40MHz
+I (40) boot.esp32: SPI Mode       : DIO
+I (43) boot.esp32: SPI Flash Size : 2MB
+I (47) boot: Enabling RNG early entropy source...
+I (51) boot: Partition Table:
+I (54) boot: ## Label            Usage          Type ST Offset   Length
+I (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (73) boot:  2 factory          factory app      00 00 00010000 00100000
+I (80) boot: End of partition table
+I (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=28578h (165240) map
+I (150) esp_image: segment 1: paddr=000385a0 vaddr=3ffbdb60 size=04d18h ( 19736) load
+I (158) esp_image: segment 2: paddr=0003d2c0 vaddr=40080000 size=02d58h ( 11608) load
+I (163) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a3994h (670100) map
+I (406) esp_image: segment 4: paddr=000e39bc vaddr=40082d58 size=15610h ( 87568) load
+I (455) boot: Loaded app from partition at offset 0x10000
+I (455) boot: Disabling RNG early entropy source...
+I (464) cpu_start: Multicore app
+I (465) cpu_start: Pro cpu up.
+I (465) cpu_start: Starting app cpu, entry point is 0x40081388
+I (450) cpu_start: App cpu up.
+I (479) cpu_start: Pro cpu start user code
+I (479) cpu_start: cpu freq: 160000000 Hz
+I (479) cpu_start: Application information:
+I (481) cpu_start: Project name:     client_model
+I (485) cpu_start: App version:      9bcbf09-dirty
+I (490) cpu_start: Compile time:     Dec  9 2023 15:21:42
+I (495) cpu_start: ELF file SHA256:  784c4a5f3bb30146...
+I (500) cpu_start: ESP-IDF:          v5.1.1-dirty
+I (504) cpu_start: Min chip rev:     v0.0
+I (508) cpu_start: Max chip rev:     v3.99 
+I (512) cpu_start: Chip rev:         v3.1
+I (516) heap_init: Initializing. RAM available for dynamic allocation:
+I (522) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM
+I (527) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM
+I (532) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM
+I (537) heap_init: At 3FFCA068 len 00015F98 (87 KiB): DRAM
+I (543) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (548) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (553) heap_init: At 40098368 len 00007C98 (31 KiB): IRAM
+I (560) spi_flash: detected chip: generic
+I (562) spi_flash: flash io: dio
+W (565) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.
+I (578) coexist: coex firmware version: 80b0d89
+I (582) app_start: Starting scheduler on CPU0
+I (586I (586) app_start: Starting scheduler on CPU1
+) main_task: Started on CPU0
+I (596) main_task: Calling app_main()
+I (596) MAIN: Initializing...
+I (626) BTDM_INIT: BT controller compile version [946b762]
+I (626) BTDM_INIT: Bluetooth MAC: a0:b7:65:4a:b4:e6
+I (636) phy_init: phy_version 4670,719f9f6,Feb 18 2021,17:07:07
+W (1146) BLE_MESH: bt_mesh_proxy_server_prov_disable, Already
+I (1176) MESH_CLIENT: ESP_BLE_MESH_NODE_PROV_COMPLETE_EVT
+I (1176) MESH_CLIENT: net_idx: 0x0000, addr: 0x000d
+I (1176) MESH_CLIENT: flags: 0x00, iv_index: 0x00000000
+I (1176) MESH_CLIENT: Device provisioned
+I (1186) MESH_CLIENT: ESP_BLE_MESH_PROV_REGISTER_COMP_EVT, err_code 0
+I (1186) MESH_CLIENT: ESP_BLE_MESH_NODE_SET_UNPROV_DEV_NAME_COMP_EVT, Name: BLE Mesh, err_code 0
+W (1196) BLE_MESH: bt_mesh_prov_enable, Already
+I (1196) MESH_CLIENT: ESP_BLE_MESH_NODE_PROV_ENABLE_COMP_EVT, err_code -120
+I (1206) MESH_CLIENT: BLE Mesh Node initialized
+
+assert failed: xQueueReceive queue.c:1475 (( pxQueue ))
+
+
+Backtrace: 0x40081a32:0x3ffbba60 0x40090f71:0x3ffbba80 0x40096731:0x3ffbbaa0 0x4009179b:0x3ffbbbc0 0x400d821d:0x3ffbbc00 0x40171b73:0x3ffbbc50 0x400936b1:0x3ffbbc80
+
+
+
+
+ELF file SHA256: 784c4a5f3bb30146
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6172
+ho 0 tail 12 room 4
+load:0x40078000,len:15584
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+I (31) boot: ESP-IDF v5.1.1-dirty 2nd stage bootloader
+I (31) boot: compile time Dec  9 2023 15:22:29
+I (31) boot: Multicore bootloader
+I (33) boot: chip revision: v3.1
+I (36) boot.esp32: SPI Speed      : 40MHz
+I (40) boot.esp32: SPI Mode       : DIO
+I (43) boot.esp32: SPI Flash Size : 2MB
+I (47) boot: Enabling RNG early entropy source...
+I (51) boot: Partition Table:
+I (54) boot: ## Label            Usage          Type ST Offset   Length
+I (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (73) boot:  2 factory          factory app      00 00 00010000 00100000
+I (80) boot: End of partition table
+I (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=28578h (165240) map
+I (150) esp_image: segment 1: paddr=000385a0 vaddr=3ffbdb60 size=04d18h ( 19736) load
+I (158) esp_image: segment 2: paddr=0003d2c0 vaddr=40080000 size=02d58h ( 11608) load
+I (163) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a3994h (670100) map
+I (406) esp_image: segment 4: paddr=000e39bc vaddr=40082d58 size=15610h ( 87568) load
+I (455) boot: Loaded app from partition at offset 0x10000
+I (455) boot: Disabling RNG early entropy source...
+I (464) cpu_start: Multicore app
+I (465) cpu_start: Pro cpu up.
+I (465) cpu_start: Starting app cpu, entry point is 0x40081388
+I (451) cpu_start: App cpu up.
+I (481) cpu_start: Pro cpu start user code
+I (481) cpu_start: cpu freq: 160000000 Hz
+I (481) cpu_start: Application information:
+I (483) cpu_start: Project name:     client_model
+I (487) cpu_start: App version:      9bcbf09-dirty
+I (492) cpu_start: Compile time:     Dec  9 2023 15:21:42
+I (497) cpu_start: ELF file SHA256:  784c4a5f3bb30146...
+I (502) cpu_start: ESP-IDF:          v5.1.1-dirty
+I (507) cpu_start: Min chip rev:     v0.0
+I (510) cpu_start: Max chip rev:     v3.99 
+I (514) cpu_start: Chip rev:         v3.1
+I (518) heap_init: Initializing. RAM available for dynamic allocation:
+I (524) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM
+I (529) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM
+I (534) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM
+I (540) heap_init: At 3FFCA068 len 00015F98 (87 KiB): DRAM
+I (545) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (550) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (556) heap_init: At 40098368 len 00007C98 (31 KiB): IRAM
+I (562) spi_flash: detected chip: generic
+I (565) spi_flash: flash io: dio
+W (568) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.
+I (581) coexist: coex firmware version: 80b0d89
+I (585) app_start: Starting scheduler on CPU0
+I (588I (588) app_start: Starting scheduler on CPU1
+) main_task: Started on CPU0
+I (598) main_task: Calling app_main()
+I (598) MAIN: Initializing...
+I (628) BTDM_INIT: BT controller compile version [946b762]
+I (628) BTDM_INIT: Bluetooth MAC: a0:b7:65:4a:b4:e6
+I (638) phy_init: phy_version 4670,719f9f6,Feb 18 2021,17:07:07
+W (1138) BLE_MESH: bt_mesh_proxy_server_prov_disable, Already
+I (1168) MESH_CLIENT: ESP_BLE_MESH_NODE_PROV_COMPLETE_EVT
+I (1168) MESH_CLIENT: net_idx: 0x0000, addr: 0x000d
+I (1168) MESH_CLIENT: flags: 0x00, iv_index: 0x00000000
+I (1168) MESH_CLIENT: Device provisioned
+I (1178) MESH_CLIENT: ESP_BLE_MESH_PROV_REGISTER_COMP_EVT, err_code 0
+I (1178) MESH_CLIENT: ESP_BLE_MESH_NODE_SET_UNPROV_DEV_NAME_COMP_EVT, Name: BLE Mesh, err_code 0
+W (1188) BLE_MESH: bt_mesh_prov_enable, Already
+I (1198) MESH_CLIENT: ESP_BLE_MESH_NODE_PROV_ENABLE_COMP_EVT, err_code -120
+I (1198) MESH_CLIENT: BLE Mesh Node initialized
+
+assert failed: xQueueReceive queue.c:1475 (( pxQueue ))
+
+
+Backtrace: 0x40081a32:0x3ffbba60 0x40090f71:0x3ffbba80 0x40096731:0x3ffbbaa0 0x4009179b:0x3ffbbbc0 0x400d821d:0x3ffbbc00 0x40171b73:0x3ffbbc50 0x400936b1:0x3ffbbc80
+
+
+
+
+ELF file SHA256: 784c4a5f3bb30146
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6172
+ho 0 tail 12 room 4
+load:0x40078000,len:15584
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+I (31) boot: ESP-IDF v5.1.1-dirty 2nd stage bootloader
+I (31) boot: compile time Dec  9 2023 15:22:29
+I (31) boot: Multicore bootloader
+I (33) boot: chip revision: v3.1
+I (36) boot.esp32: SPI Speed      : 40MHz
+I (40) boot.esp32: SPI Mode       : DIO
+I (43) boot.esp32: SPI Flash Size : 2MB
+I (47) boot: Enabling RNG early entropy source...
+I (51) boot: Partition Table:
+I (54) boot: ## Label            Usage          Type ST Offset   Length
+I (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (73) boot:  2 factory          factory app      00 00 00010000 00100000
+I (80) boot: End of partition table
+I (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=28578h (165240) map
+I (150) esp_image: segment 1: paddr=000385a0 vaddr=3ffbdb60 size=04d18h ( 19736) load
+I (158) esp_image: segment 2: paddr=0003d2c0 vaddr=40080000 size=02d58h ( 11608) load
+I (163) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a3994h (670100) map
+I (406) esp_image: segment 4: paddr=000e39bc vaddr=40082d58 size=15610h ( 87568) load
+I (455) boot: Loaded app from partition at offset 0x10000
+I (455) boot: Disabling RNG early entropy source...
+I (464) cpu_start: Multicore app
+I (465) cpu_start: Pro cpu up.
+I (465) cpu_start: Starting app cpu, entry point is 0x40081388
+I (451) cpu_start: App cpu up.
+I (481) cpu_start: Pro cpu start user code
+I (481) cpu_start: cpu freq: 160000000 Hz
+I (481) cpu_start: Application information:
+I (483) cpu_start: Project name:     client_model
+I (487) cpu_start: App version:      9bcbf09-dirty
+I (492) cpu_start: Compile time:     Dec  9 2023 15:21:42
+I (497) cpu_start: ELF file SHA256:  784c4a5f3bb30146...
+I (502) cpu_start: ESP-IDF:          v5.1.1-dirty
+I (507) cpu_start: Min chip rev:     v0.0
+I (510) cpu_start: Max chip rev:     v3.99 
+I (514) cpu_start: Chip rev:         v3.1
+I (518) heap_init: Initializing. RAM available for dynamic allocation:
+I (524) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM
+I (529) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM
+I (534) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM
+I (540) heap_init: At 3FFCA068 len 00015F98 (87 KiB): DRAM
+I (545) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (550) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (556) heap_init: At 40098368 len 00007C98 (31 KiB): IRAM
+I (562) spi_flash: detected chip: generic
+I (565) spi_flash: flash io: dio
+W (568) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.
+I (581) coexist: coex firmware version: 80b0d89
+I (585) app_start: Starting scheduler on CPU0
+I (588I (588) app_start: Starting scheduler on CPU1
+) main_task: Started on CPU0
+I (598) main_task: Calling app_main()
+I (598) MAIN: Initializing...
+I (628) BTDM_INIT: BT controller compile version [946b762]
+I (628) BTDM_INIT: Bluetooth MAC: a0:b7:65:4a:b4:e6
+I (638) phy_init: phy_version 4670,719f9f6,Feb 18 2021,17:07:07
+W (1148) BLE_MESH: bt_mesh_proxy_server_prov_disable, Already
+I (1178) MESH_CLIENT: ESP_BLE_MESH_NODE_PROV_COMPLETE_EVT
+I (1178) MESH_CLIENT: net_idx: 0x0000, addr: 0x000d
+I (1178) MESH_CLIENT: flags: 0x00, iv_index: 0x00000000
+I (1178) MESH_CLIENT: Device provisioned
+I (1178) MESH_CLIENT: ESP_BLE_MESH_PROV_REGISTER_COMP_EVT, err_code 0
+W (1188) BLE_MESH: Relaying packet. TTL is now 4
+I (1198) MESH_CLIENT: ESP_BLE_MESH_NODE_SET_UNPROV_DEV_NAME_COMP_EVT, Name: BLE Mesh, err_code 0
+W (1198) BLE_MESH: bt_mesh_prov_enable, Already
+I (1208) MESH_CLIENT: ESP_BLE_MESH_NODE_PROV_ENABLE_COMP_EVT, err_code -120
+I (1208) MESH_CLIENT: BLE Mesh Node initialized
+
+assert failed: xQueueReceive queue.c:1475 (( pxQueue ))
+
+
+Backtrace: 0x40081a32:0x3ffbba60 0x40090f71:0x3ffbba80 0x40096731:0x3ffbbaa0 0x4009179b:0x3ffbbbc0 0x400d821d:0x3ffbbc00 0x40171b73:0x3ffbbc50 0x400936b1:0x3ffbbc80
+
+
+
+
+ELF file SHA256: 784c4a5f3bb30146
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6172
+ho 0 tail 12 room 4
+load:0x40078000,len:15584
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+I (31) boot: ESP-IDF v5.1.1-dirty 2nd stage bootloader
+I (31) boot: compile time Dec  9 2023 15:22:29
+I (31) boot: Multicore bootloader
+I (33) boot: chip revision: v3.1
+I (36) boot.esp32: SPI Speed      : 40MHz
+I (40) boot.esp32: SPI Mode       : DIO
+I (43) boot.esp32: SPI Flash Size : 2MB
+I (47) boot: Enabling RNG early entropy source...
+I (51) boot: Partition Table:
+I (54) boot: ## Label            Usage          Type ST Offset   Length
+I (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (73) boot:  2 factory          factory app      00 00 00010000 00100000
+I (80) boot: End of partition table
+I (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=28578h (165240) map
+I (150) esp_image: segment 1: paddr=000385a0 vaddr=3ffbdb60 size=04d18h ( 19736) load
+I (158) esp_image: segment 2: paddr=0003d2c0 vaddr=40080000 size=02d58h ( 11608) load
+I (163) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a3994h (670100) map
+I (406) esp_image: segment 4: paddr=000e39bc vaddr=40082d58 size=15610h ( 87568) load
+I (455) boot: Loaded app from partition at offset 0x10000
+I (455) boot: Disabling RNG early entropy source...
+I (464) cpu_start: Multicore app
+I (465) cpu_start: Pro cpu up.
+I (465) cpu_start: Starting app cpu, entry point is 0x40081388
+I (451) cpu_start: App cpu up.
+I (481) cpu_start: Pro cpu start user code
+I (481) cpu_start: cpu freq: 160000000 Hz
+I (481) cpu_start: Application information:
+I (483) cpu_start: Project name:     client_model
+I (487) cpu_start: App version:      9bcbf09-dirty
+I (492) cpu_start: Compile time:     Dec  9 2023 15:21:42
+I (497) cpu_start: ELF file SHA256:  784c4a5f3bb30146...
+I (502) cpu_start: ESP-IDF:          v5.1.1-dirty
+I (507) cpu_start: Min chip rev:     v0.0
+I (510) cpu_start: Max chip rev:     v3.99 
+I (514) cpu_start: Chip rev:         v3.1
+I (518) heap_init: Initializing. RAM available for dynamic allocation:
+I (524) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM
+I (529) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM
+I (534) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM
+I (540) heap_init: At 3FFCA068 len 00015F98 (87 KiB): DRAM
+I (545) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (550) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (556) heap_init: At 40098368 len 00007C98 (31 KiB): IRAM
+I (562) spi_flash: detected chip: generic
+I (565) spi_flash: flash io: dio
+W (568) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.
+I (581) coexist: coex firmware version: 80b0d89
+I (585) app_start: Starting scheduler on CPU0
+I (588I (588) app_start: Starting scheduler on CPU1
+) main_task: Started on CPU0
+I (598) main_task: Calling app_main()
+I (598) MAIN: Initializing...
+I (628) BTDM_INIT: BT controller compile version [946b762]
+I (628) BTDM_INIT: Bluetooth MAC: a0:b7:65:4a:b4:e6
+I (638) phy_init: phy_version 4670,719f9f6,Feb 18 2021,17:07:07
+W (1148) BLE_MESH: bt_mesh_proxy_server_prov_disable, Already
+I (1178) MESH_CLIENT: ESP_BLE_MESH_NODE_PROV_COMPLETE_EVT
+I (1178) MESH_CLIENT: net_idx: 0x0000, addr: 0x000d
+I (1178) MESH_CLIENT: flags: 0x00, iv_index: 0x00000000
+I (1188) MESH_CLIENT: Device provisioned
+I (1188) MESH_CLIENT: ESP_BLE_MESH_PROV_REGISTER_COMP_EVT, err_code 0
+I (1198) MESH_CLIENT: ESP_BLE_MESH_NODE_SET_UNPROV_DEV_NAME_COMP_EVT, Name: BLE Mesh, err_code 0
+W (1198) BLE_MESH: bt_mesh_prov_enable, Already
+I (1208) MESH_CLIENT: ESP_BLE_MESH_NODE_PROV_ENABLE_COMP_EVT, err_code -120
+I (1218) MESH_CLIENT: BLE Mesh Node initialized
+
+assert failed: xQueueReceive queue.c:1475 (( pxQueue ))
+
+
+Backtrace: 0x40081a32:0x3ffbba60 0x40090f71:0x3ffbba80 0x40096731:0x3ffbbaa0 0x4009179b:0x3ffbbbc0 0x400d821d:0x3ffbbc00 0x40171b73:0x3ffbbc50 0x400936b1:0x3ffbbc80
+
+
+
+
+ELF file SHA256: 784c4a5f3bb30146
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6172
+ho 0 tail 12 room 4
+load:0x40078000,len:15584
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+I (31) boot: ESP-IDF v5.1.1-dirty 2nd stage bootloader
+I (31) boot: compile time Dec  9 2023 15:22:29
+I (31) boot: Multicore bootloader
+I (33) boot: chip revision: v3.1
+I (36) boot.esp32: SPI Speed      : 40MHz
+I (40) boot.esp32: SPI Mode       : DIO
+I (43) boot.esp32: SPI Flash Size : 2MB
+I (47) boot: Enabling RNG early entropy source...
+I (51) boot: Partition Table:
+I (54) boot: ## Label            Usage          Type ST Offset   Length
+I (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (73) boot:  2 factory          factory app      00 00 00010000 00100000
+I (80) boot: End of partition table
+I (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=28578h (165240) map

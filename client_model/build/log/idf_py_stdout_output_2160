@@ -1,0 +1,259 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6172
+ho 0 tail 12 room 4
+load:0x40078000,len:15584
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+I (31) boot: ESP-IDF v5.1.1-dirty 2nd stage bootloader
+I (31) boot: compile time Dec  9 2023 15:22:29
+I (31) boot: Multicore bootloader
+I (33) boot: chip revision: v3.1
+I (36) boot.esp32: SPI Speed      : 40MHz
+I (40) boot.esp32: SPI Mode       : DIO
+I (43) boot.esp32: SPI Flash Size : 2MB
+I (47) boot: Enabling RNG early entropy source...
+I (51) boot: Partition Table:
+I (54) boot: ## Label            Usage          Type ST Offset   Length
+I (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (73) boot:  2 factory          factory app      00 00 00010000 00100000
+I (80) boot: End of partition table
+I (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=28578h (165240) map
+I (150) esp_image: segment 1: paddr=000385a0 vaddr=3ffbdb60 size=04d18h ( 19736) load
+I (158) esp_image: segment 2: paddr=0003d2c0 vaddr=40080000 size=02d58h ( 11608) load
+I (163) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a39f0h (670192) map
+I (406) esp_image: segment 4: paddr=000e3a18 vaddr=40082d58 size=15610h ( 87568) load
+I (455) boot: Loaded app from partition at offset 0x10000
+I (455) boot: Disabling RNG early entropy source...
+I (464) cpu_start: Multicore app
+I (465) cpu_start: Pro cpu up.
+I (465) cpu_start: Starting app cpu, entry point is 0x40081388
+I (0) cpu_start: App cpu up.
+I (479) cpu_start: Pro cpu start user code
+I (479) cpu_start: cpu freq: 160000000 Hz
+I (479) cpu_start: Application information:
+I (481) cpu_start: Project name:     client_model
+I (485) cpu_start: App version:      bedab08-dirty
+I (490) cpu_start: Compile time:     Dec 21 2023 21:50:09
+I (495) cpu_start: ELF file SHA256:  f1ae2bf092cede9a...
+I (500) cpu_start: ESP-IDF:          v5.1.1-dirty
+I (504) cpu_start: Min chip rev:     v0.0
+I (508) cpu_start: Max chip rev:     v3.99 
+I (512) cpu_start: Chip rev:         v3.1
+I (516) heap_init: Initializing. RAM available for dynamic allocation:
+I (522) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM
+I (527) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM
+I (532) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM
+I (537) heap_init: At 3FFCA060 len 00015FA0 (87 KiB): DRAM
+I (543) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (548) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (553) heap_init: At 40098368 len 00007C98 (31 KiB): IRAM
+I (560) spi_flash: detected chip: generic
+I (562) spi_flash: flash io: dio
+W (565) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.
+I (578) coexist: coex firmware version: 80b0d89
+I (582) app_start: Starting scheduler on CPU0
+I (586I (586) app_start: Starting scheduler on CPU1
+) main_task: Started on CPU0
+I (596) main_task: Calling app_main()
+I (596) MAIN: Initializing...
+I (626) BTDM_INIT: BT controller compile version [946b762]
+I (626) BTDM_INIT: Bluetooth MAC: a0:a3:b3:2b:73:0e
+I (636) phy_init: phy_version 4670,719f9f6,Feb 18 2021,17:07:07
+W (1136) BLE_MESH: bt_mesh_proxy_server_prov_disable, Already
+I (1166) MESH_CLIENT: ESP_BLE_MESH_NODE_PROV_COMPLETE_EVT
+I (1166) MESH_CLIENT: net_idx: 0x0000, addr: 0x0022
+I (1166) MESH_CLIENT: flags: 0x00, iv_index: 0x00000000
+I (1176) MESH_CLIENT: Device provisioned
+I (1176) MESH_CLIENT: ESP_BLE_MESH_PROV_REGISTER_COMP_EVT, err_code 0
+I (1186) MESH_CLIENT: ESP_BLE_MESH_NODE_SET_UNPROV_DEV_NAME_COMP_EVT, Name: BLE Mesh, err_code 0
+W (1186) BLE_MESH: bt_mesh_prov_enable, Already
+I (1196) MESH_CLIENT: ESP_BLE_MESH_NODE_PROV_ENABLE_COMP_EVT, err_code -120
+I (1206) MESH_CLIENT: BLE Mesh Node initialized
+I (1206) main_task: Returned from app_main()
+I (2506) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (2506) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (2506) MESH_CLIENT: 69 64 5f 33 00 60 b7 41 00 00 18 42 00 00 80 41 
+W (2516) PARSED_DATA: Device Name = id_3
+W (2516) PARSED_DATA: Temperature = 22.921875
+W (2516) PARSED DATA: Warning low temperature = 38.000000
+W (2526) PARSED DATA: Warning high temperature = 16.000000
+I (2526) MESH_CLIENT: Set message to change base line!
+I (2556) MESH_CLIENT: Send message opcode 0xc102e5 success!
+I (12416) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (12416) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (12416) MESH_CLIENT: 69 64 5f 33 00 00 b7 41 00 00 18 42 00 00 80 41 
+W (12426) PARSED_DATA: Device Name = id_3
+W (12426) PARSED_DATA: Temperature = 22.875000
+W (12426) PARSED DATA: Warning low temperature = 38.000000
+W (12436) PARSED DATA: Warning high temperature = 16.000000
+I (12446) MESH_CLIENT: Set message to change base line!
+I (12466) MESH_CLIENT: Send message opcode 0xc102e5 success!
+I (22346) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (22346) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (22346) MESH_CLIENT: 69 64 5f 33 00 e0 b6 41 00 00 18 42 00 00 80 41 
+W (22356) PARSED_DATA: Device Name = id_3
+W (22356) PARSED_DATA: Temperature = 22.859375
+W (22366) PARSED DATA: Warning low temperature = 38.000000
+W (22366) PARSED DATA: Warning high temperature = 16.000000
+I (22376) MESH_CLIENT: Set message to change base line!
+I (22396) MESH_CLIENT: Send message opcode 0xc102e5 success!
+I (32296) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (32296) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (32296) MESH_CLIENT: 69 64 5f 33 00 00 b7 41 00 00 18 42 00 00 80 41 
+W (32306) PARSED_DATA: Device Name = id_3
+W (32306) PARSED_DATA: Temperature = 22.875000
+W (32306) PARSED DATA: Warning low temperature = 38.000000
+W (32316) PARSED DATA: Warning high temperature = 16.000000
+I (32326) MESH_CLIENT: Set message to change base line!
+I (32346) MESH_CLIENT: Send message opcode 0xc102e5 success!
+I (42236) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (42236) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (42236) MESH_CLIENT: 69 64 5f 33 00 e0 b6 41 00 00 18 42 00 00 80 41 
+W (42246) PARSED_DATA: Device Name = id_3
+W (42246) PARSED_DATA: Temperature = 22.859375
+W (42246) PARSED DATA: Warning low temperature = 38.000000
+W (42256) PARSED DATA: Warning high temperature = 16.000000
+I (42266) MESH_CLIENT: Set message to change base line!
+I (42286) MESH_CLIENT: Send message opcode 0xc102e5 success!
+I (52186) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (52186) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (52186) MESH_CLIENT: 69 64 5f 33 00 00 b7 41 00 00 18 42 00 00 80 41 
+W (52196) PARSED_DATA: Device Name = id_3
+W (52196) PARSED_DATA: Temperature = 22.875000
+W (52196) PARSED DATA: Warning low temperature = 38.000000
+W (52206) PARSED DATA: Warning high temperature = 16.000000
+I (52216) MESH_CLIENT: Set message to change base line!
+I (52236) MESH_CLIENT: Send message opcode 0xc102e5 success!
+I (62136) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (62136) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (62136) MESH_CLIENT: 69 64 5f 33 00 60 b6 41 00 00 18 42 00 00 80 41 
+W (62146) PARSED_DATA: Device Name = id_3
+W (62146) PARSED_DATA: Temperature = 22.796875
+W (62146) PARSED DATA: Warning low temperature = 38.000000
+W (62156) PARSED DATA: Warning high temperature = 16.000000
+I (62166) MESH_CLIENT: Set message to change base line!
+I (62186) MESH_CLIENT: Send message opcode 0xc102e5 success!
+I (72076) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (72076) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (72076) MESH_CLIENT: 69 64 5f 33 00 60 b6 41 00 00 18 42 00 00 80 41 
+W (72086) PARSED_DATA: Device Name = id_3
+W (72086) PARSED_DATA: Temperature = 22.796875
+W (72086) PARSED DATA: Warning low temperature = 38.000000
+W (72096) PARSED DATA: Warning high temperature = 16.000000
+I (72106) MESH_CLIENT: Set message to change base line!
+I (72126) MESH_CLIENT: Send message opcode 0xc102e5 success!
+I (82036) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (82036) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (82036) MESH_CLIENT: 69 64 5f 33 00 e0 b5 41 00 00 18 42 00 00 80 41 
+W (82046) PARSED_DATA: Device Name = id_3
+W (82046) PARSED_DATA: Temperature = 22.734375
+W (82046) PARSED DATA: Warning low temperature = 38.000000
+W (82056) PARSED DATA: Warning high temperature = 16.000000
+I (82066) MESH_CLIENT: Set message to change base line!
+I (82086) MESH_CLIENT: Send message opcode 0xc102e5 success!
+I (91976) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (91976) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (91976) MESH_CLIENT: 69 64 5f 33 00 e0 b5 41 00 00 18 42 00 00 80 41 
+W (91986) PARSED_DATA: Device Name = id_3
+W (91986) PARSED_DATA: Temperature = 22.734375
+W (91986) PARSED DATA: Warning low temperature = 38.000000
+W (91996) PARSED DATA: Warning high temperature = 16.000000
+I (92006) MESH_CLIENT: Set message to change base line!
+I (92026) MESH_CLIENT: Send message opcode 0xc102e5 success!
+I (101916) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (101916) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (101916) MESH_CLIENT: 69 64 5f 33 00 e0 b5 41 00 00 18 42 00 00 80 41 
+W (101926) PARSED_DATA: Device Name = id_3
+W (101926) PARSED_DATA: Temperature = 22.734375
+W (101936) PARSED DATA: Warning low temperature = 38.000000
+W (101936) PARSED DATA: Warning high temperature = 16.000000
+I (101946) MESH_CLIENT: Set message to change base line!
+I (101966) MESH_CLIENT: Send message opcode 0xc102e5 success!
+I (111876) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (111876) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (111876) MESH_CLIENT: 69 64 5f 33 00 a0 b5 41 00 00 18 42 00 00 80 41 
+W (111886) PARSED_DATA: Device Name = id_3
+W (111886) PARSED_DATA: Temperature = 22.703125
+W (111896) PARSED DATA: Warning low temperature = 38.000000
+W (111896) PARSED DATA: Warning high temperature = 16.000000
+I (111906) MESH_CLIENT: Set message to change base line!
+I (111946) MESH_CLIENT: Send message opcode 0xc102e5 success!
+I (121816) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (121816) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (121816) MESH_CLIENT: 69 64 5f 33 00 60 b5 41 00 00 18 42 00 00 80 41 
+W (121826) PARSED_DATA: Device Name = id_3
+W (121826) PARSED_DATA: Temperature = 22.671875
+W (121836) PARSED DATA: Warning low temperature = 38.000000
+W (121836) PARSED DATA: Warning high temperature = 16.000000
+I (121846) MESH_CLIENT: Set message to change base line!
+I (121866) MESH_CLIENT: Send message opcode 0xc102e5 success!
+I (131756) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (131756) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (131756) MESH_CLIENT: 69 64 5f 33 00 60 b5 41 00 00 18 42 00 00 80 41 
+W (131766) PARSED_DATA: Device Name = id_3
+W (131766) PARSED_DATA: Temperature = 22.671875
+W (131776) PARSED DATA: Warning low temperature = 38.000000
+W (131776) PARSED DATA: Warning high temperature = 16.000000
+I (131786) MESH_CLIENT: Set message to change base line!
+I (131806) MESH_CLIENT: Send message opcode 0xc102e5 success!
+I (141696) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (141696) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (141696) MESH_CLIENT: 69 64 5f 33 00 60 b5 41 00 00 18 42 00 00 80 41 
+W (141706) PARSED_DATA: Device Name = id_3
+W (141706) PARSED_DATA: Temperature = 22.671875
+W (141716) PARSED DATA: Warning low temperature = 38.000000
+W (141716) PARSED DATA: Warning high temperature = 16.000000
+I (141726) MESH_CLIENT: Set message to change base line!
+I (141746) MESH_CLIENT: Send message opcode 0xc102e5 success!
+I (151636) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (151636) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (151636) MESH_CLIENT: 69 64 5f 33 00 40 b5 41 00 00 18 42 00 00 80 41 
+W (151646) PARSED_DATA: Device Name = id_3
+W (151646) PARSED_DATA: Temperature = 22.656250
+W (151656) PARSED DATA: Warning low temperature = 38.000000
+W (151656) PARSED DATA: Warning high temperature = 16.000000
+I (151666) MESH_CLIENT: Set message to change base line!
+I (151686) MESH_CLIENT: Send message opcode 0xc102e5 success!
+I (161596) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (161596) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (161596) MESH_CLIENT: 69 64 5f 33 00 20 b5 41 00 00 18 42 00 00 80 41 
+W (161606) PARSED_DATA: Device Name = id_3
+W (161606) PARSED_DATA: Temperature = 22.640625
+W (161616) PARSED DATA: Warning low temperature = 38.000000
+W (161616) PARSED DATA: Warning high temperature = 16.000000
+I (161626) MESH_CLIENT: Set message to change base line!
+I (161646) MESH_CLIENT: Send message opcode 0xc102e5 success!
+I (171536) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (171536) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (171536) MESH_CLIENT: 69 64 5f 33 00 20 b5 41 00 00 18 42 00 00 80 41 
+W (171546) PARSED_DATA: Device Name = id_3
+W (171546) PARSED_DATA: Temperature = 22.640625
+W (171556) PARSED DATA: Warning low temperature = 38.000000
+W (171556) PARSED DATA: Warning high temperature = 16.000000
+I (171566) MESH_CLIENT: Set message to change base line!
+I (171586) MESH_CLIENT: Send message opcode 0xc102e5 success!
+I (181496) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (181496) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (181496) MESH_CLIENT: 69 64 5f 33 00 e0 b4 41 00 00 18 42 00 00 80 41 
+W (181506) PARSED_DATA: Device Name = id_3
+W (181506) PARSED_DATA: Temperature = 22.609375
+W (181516) PARSED DATA: Warning low temperature = 38.000000
+W (181516) PARSED DATA: Warning high temperature = 16.000000
+I (181526) MESH_CLIENT: Set message to change base line!
+I (181546) MESH_CLIENT: Send message opcode 0xc102e5 success!
+I (191436) MESH_CLIENT: OP_STATUS -- Message received: 0xc202e5
+I (191436) MESH_CLIENT: src: 0x0023, dst: 0xc001, ttl: 5
+I (191436) MESH_CLIENT: 69 64 5f 33 00 a0 b4 41 00 00 18 42 00 00 80 41 
+W (191446) PARSED_DATA: Device Name = id_3
+W (191446) PARSED_DATA: Temperature = 22.578125
+W (191456) PARSED DATA: Warning low temperature = 38.000000
+W (191456) PARSED DATA: Warning high temperature = 16.000000
+I (191466) MESH_CLIENT: Set message to change base line!
+I (191486) MESH_CLIENT: Send message opcode 0xc102e5 success!

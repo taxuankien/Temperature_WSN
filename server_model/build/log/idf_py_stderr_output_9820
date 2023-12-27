@@ -1,0 +1,105 @@
+[0;33m--- WARNING: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM5 instead...[0m
+[0;33m--- idf_monitor on \\.\COM5 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x40081604: call_start_cpu1 at D:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:154
+[0m
+[0;33m0x40150ac6: task_wdt_timeout_handling at D:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/task_wdt/task_wdt.c:461 (discriminator 3)
+[0m
+[0;33m0x40150c72: task_wdt_isr at D:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/task_wdt/task_wdt.c:585
+[0m
+[0;33m0x40083219: _xt_lowint1 at D:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/xtensa_vectors.S:1236
+[0m
+[0;33m0x4000bfed: _xtos_set_intlevel in ROM
+[0m
+[0;33m0x40095d6f: vPortClearInterruptMaskFromISR at D:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:568
+ (inlined by) vPortExitCritical at D:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:532
+[0m
+[0;33m0x400d8f8f: ds18b20_reset at D:/Espressif/frameworks/WSN_project/server_model/src/ds18b20.c:141
+[0m
+[0;33m0x400d91d7: search at D:/Espressif/frameworks/WSN_project/server_model/src/ds18b20.c:414
+[0m
+[0;33m0x400d84af: getTempAddresses at D:/Espressif/frameworks/WSN_project/server_model/main/main.c:53
+[0m
+[0;33m0x400d861a: app_main at D:/Espressif/frameworks/WSN_project/server_model/main/main.c:169 (discriminator 2)
+[0m
+[0;33m0x401755ab: main_task at D:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos/app_startup.c:208 (discriminator 13)
+[0m
+[0;33m0x40095a89: vPortTaskWrapper at D:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40150ac6: task_wdt_timeout_handling at D:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/task_wdt/task_wdt.c:461 (discriminator 3)
+[0m
+[0;33m0x40150c72: task_wdt_isr at D:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/task_wdt/task_wdt.c:585
+[0m
+[0;33m0x40083219: _xt_lowint1 at D:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/xtensa_vectors.S:1236
+[0m
+[0;33m0x4000bfed: _xtos_set_intlevel in ROM
+[0m
+[0;33m0x40094fa6: vPortClearInterruptMaskFromISR at D:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:568
+ (inlined by) xTaskGetSchedulerState at D:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos/FreeRTOS-Kernel/tasks.c:5063
+[0m
+[0;33m0x40093a6d: xQueueSemaphoreTake at D:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos/FreeRTOS-Kernel/queue.c:1662
+[0m
+[0;33m0x40098a24: esp_log_impl_lock_timeout at D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/log_freertos.c:48
+[0m
+[0;33m0x40175eae: esp_log_writev at D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/log.c:192
+[0m
+[0;33m0x400989b5: esp_log_write at D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/log.c:210
+[0m
+[0;33m0x400d920e: search at D:/Espressif/frameworks/WSN_project/server_model/src/ds18b20.c:428
+[0m
+[0;33m0x400d84af: getTempAddresses at D:/Espressif/frameworks/WSN_project/server_model/main/main.c:53
+[0m
+[0;33m0x400d861a: app_main at D:/Espressif/frameworks/WSN_project/server_model/main/main.c:169 (discriminator 2)
+[0m
+[0;33m0x401755ab: main_task at D:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos/app_startup.c:208 (discriminator 13)
+[0m
+[0;33m0x40095a89: vPortTaskWrapper at D:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40150ac6: task_wdt_timeout_handling at D:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/task_wdt/task_wdt.c:461 (discriminator 3)
+[0m
+[0;33m0x40150c72: task_wdt_isr at D:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/task_wdt/task_wdt.c:585
+[0m
+[0;33m0x40083219: _xt_lowint1 at D:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/xtensa_vectors.S:1236
+[0m
+[0;33m0x400d7a53: uart_ll_get_txfifo_len at D:/Espressif/frameworks/esp-idf-v5.1.1/components/hal/esp32/include/hal/uart_ll.h:313 (discriminator 1)
+ (inlined by) uart_tx_char at D:/Espressif/frameworks/esp-idf-v5.1.1/components/vfs/vfs_uart.c:164 (discriminator 1)
+[0m
+[0;33m0x400d822f: uart_write at D:/Espressif/frameworks/esp-idf-v5.1.1/components/vfs/vfs_uart.c:217
+[0m
+[0;33m0x400d70b7: console_write at D:/Espressif/frameworks/esp-idf-v5.1.1/components/vfs/vfs_console.c:73
+[0m
+[0;33m0x400d6c7e: esp_vfs_write at D:/Espressif/frameworks/esp-idf-v5.1.1/components/vfs/vfs.c:445 (discriminator 4)
+[0m
+[0;33m0x4000bd83: _write_r in ROM
+[0m
+[0;33m0x4000117d: __swrite in ROM
+[0m
+[0;33m0x400592fe: __sflush_r in ROM
+[0m
+[0;33m0x4005937a: _fflush_r in ROM
+[0m
+[0;33m0x4015f11f: __sfvwrite_r at /builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/fvwrite.c:251
+[0m
+[0;33m0x4016ffc7: __sprint_r at /builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/vfprintf.c:429
+ (inlined by) __sprint_r at /builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/vfprintf.c:399
+[0m
+[0;33m0x401686c2: _vfprintf_r at /builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1777 (discriminator 1)
+[0m
+[0;33m0x4016882d: vprintf at /builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/vprintf.c:34 (discriminator 5)
+[0m
+[0;33m0x40175ec9: esp_log_writev at D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/log.c:200
+[0m
+[0;33m0x400989b5: esp_log_write at D:/Espressif/frameworks/esp-idf-v5.1.1/components/log/log.c:210
+[0m
+[0;33m0x400d84a8: getTempAddresses at D:/Espressif/frameworks/WSN_project/server_model/main/main.c:52
+[0m
+[0;33m0x400d861a: app_main at D:/Espressif/frameworks/WSN_project/server_model/main/main.c:169 (discriminator 2)
+[0m
+[0;33m0x401755ab: main_task at D:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos/app_startup.c:208 (discriminator 13)
+[0m
+[0;33m0x40095a89: vPortTaskWrapper at D:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0m

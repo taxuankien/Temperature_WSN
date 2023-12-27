@@ -226,13 +226,20 @@ static void ble_mesh_custom_sensor_client_model_cb(esp_ble_mesh_model_cb_event_t
         case ESP_BLE_MESH_CLIENT_MODEL_RECV_PUBLISH_MSG_EVT:
             switch (param->client_recv_publish_msg.opcode) {
                 case ESP_BLE_MESH_CUSTOM_SENSOR_MODEL_OP_STATUS:
+                    // ble_mesh_custom_sensor_client_model_message_set(device_sensor_data);
                     ESP_LOGI(TAG, "OP_STATUS -- Message received: 0x%06lx", param->client_recv_publish_msg.opcode);
                     ESP_LOGI(TAG, "src: 0x%04x, dst: 0x%04x, ttl: %d", param->client_recv_publish_msg.ctx->addr, param->client_recv_publish_msg.ctx->recv_dst, param->client_recv_publish_msg.ctx->recv_ttl);
                     ESP_LOG_BUFFER_HEX(TAG, param->client_recv_publish_msg.msg, param->client_recv_publish_msg.length);
 
                     //! Fazer alguma coisa nesse get ao inves de só printar o valor
                     model_sensor_data_t received_data;
+                    received_data = *(model_sensor_data_t *)param->client_recv_publish_msg.msg;
                     parse_received_data(param, &received_data);
+                    
+                    if(((int)(received_data.high_bsline * 10) != (int)(device_sensor_data.high_bsline *10)) || ((int)(received_data.low_bsline *10)!= (int)(device_sensor_data.low_bsline* 10))){
+                        ESP_LOGI(TAG, "High: %f, Low: %f!", received_data.high_bsline, received_data.low_bsline);
+                        ble_mesh_custom_sensor_client_model_message_set(device_sensor_data,(uint16_t)param->client_recv_publish_msg.ctx->addr);
+                    }
                 break;
 
                 default:
@@ -359,7 +366,7 @@ esp_err_t ble_mesh_device_init_client(void) {
 }
 
 
-esp_err_t ble_mesh_custom_sensor_client_model_message_set(model_sensor_data_t set_data) {
+esp_err_t ble_mesh_custom_sensor_client_model_message_set(model_sensor_data_t set_data, uint16_t addr) {
     esp_ble_mesh_msg_ctx_t ctx = {0};
     uint32_t opcode;
     esp_err_t err;
@@ -369,8 +376,8 @@ esp_err_t ble_mesh_custom_sensor_client_model_message_set(model_sensor_data_t se
     ctx.net_idx = 0;
     ctx.app_idx = 0;
     // ctx.addr = ESP_BLE_MESH_ADDR_ALL_NODES;
-    ctx.addr = ESP_BLE_MESH_GROUP_PUB_ADDR;
-    ctx.send_ttl = 3;
+    ctx.addr = addr;
+    ctx.send_ttl = 5;
     ctx.send_rel = false;
 
     err = esp_ble_mesh_client_model_send_msg(custom_sensor_client.model, &ctx, opcode,

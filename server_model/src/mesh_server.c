@@ -9,13 +9,15 @@
 #include "esp_bt_device.h"
 #include "esp_ble_mesh_defs.h"
 
+#include "esp_timer.h"
+
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
 static const char* TAG = "MESH_SERVER";
 
 static uint8_t dev_uuid[16] = { 0xdd, 0xdd };   /**< Device UUID */
-
+int64_t time = 0;
 
 static esp_ble_mesh_cfg_srv_t config_server = {
     .relay = ESP_BLE_MESH_RELAY_ENABLED,
@@ -23,8 +25,8 @@ static esp_ble_mesh_cfg_srv_t config_server = {
     .default_ttl = 7,
     .friend_state = ESP_BLE_MESH_FRIEND_NOT_SUPPORTED,
     /* 3 transmissions with 20ms interval */
-    .net_transmit = ESP_BLE_MESH_TRANSMIT(2, 20),
-    .relay_retransmit = ESP_BLE_MESH_TRANSMIT(2, 20),
+    .net_transmit = ESP_BLE_MESH_TRANSMIT(0, 10),
+    .relay_retransmit = ESP_BLE_MESH_TRANSMIT(0, 10),
 };
 
 static esp_ble_mesh_model_t root_models[] = {
@@ -61,6 +63,7 @@ static esp_ble_mesh_prov_t provision = {
 };
 
 static bool is_server_provisioning = false;
+static bool check = false;
 
 /**
  * @brief Provisioning routine callback function
@@ -101,7 +104,7 @@ static void parse_received_data(esp_ble_mesh_model_cb_param_t *recv_param, model
 
 bool is_server_provisioned(void)
 {
-    return is_server_provisioning;
+    return is_server_provisioning && check;
 }
 
 void server_send_to_client(model_sensor_data_t server_model_state)
@@ -144,7 +147,9 @@ static void ble_mesh_provisioning_cb(esp_ble_mesh_prov_cb_event_t event,
         break;
         
         case ESP_BLE_MESH_NODE_PROV_ENABLE_COMP_EVT:
+            
             ESP_LOGI(TAG, "ESP_BLE_MESH_NODE_PROV_ENABLE_COMP_EVT, err_code %d", param->node_prov_enable_comp.err_code);
+            check = (param->node_prov_enable_comp.err_code == -120)?true:false;
         break;
         
         case ESP_BLE_MESH_NODE_PROV_LINK_OPEN_EVT:
@@ -191,6 +196,7 @@ static void ble_mesh_config_server_cb(esp_ble_mesh_cfg_server_cb_event_t event,
 
             //* Application key bound to Model
             case ESP_BLE_MESH_MODEL_OP_MODEL_APP_BIND:
+                check = true;
                 ESP_LOGI(TAG, "ESP_BLE_MESH_MODEL_OP_MODEL_APP_BIND");
                 ESP_LOGI(TAG, "elem_addr 0x%04x, app_idx 0x%04x, cid 0x%04x, mod_id 0x%06x",
                     param->value.state_change.mod_app_bind.element_addr,
@@ -250,9 +256,10 @@ static void ble_mesh_custom_sensor_server_model_cb(esp_ble_mesh_model_cb_event_t
                 break;
 
                 case ESP_BLE_MESH_CUSTOM_SENSOR_MODEL_OP_SET:
+                    ESP_LOGI("TIME", "%lld", esp_timer_get_time() - time);
                     ESP_LOGI(TAG, "OP_SET -- Received HEX message: ");
                     ESP_LOG_BUFFER_HEX(TAG, (uint8_t*)param->model_operation.msg, param->model_operation.length);
-
+                    
                     //* Salva os dados recebidos no State do Model
                     parse_received_data(param, (model_sensor_data_t*)&param->model_operation.model->user_data);
                 break;
@@ -268,7 +275,9 @@ static void ble_mesh_custom_sensor_server_model_cb(esp_ble_mesh_model_cb_event_t
             if (param->model_send_comp.err_code) {
                 ESP_LOGE(TAG, "Failed to send message 0x%06lx", param->model_send_comp.opcode);
             } else {
+                
                 ESP_LOGI(TAG, "%s -- SEND_COMPLETE -- Send message opcode 0x%08lx success", __func__, param->model_send_comp.opcode);
+                time = esp_timer_get_time();
             }
         break;
 
@@ -281,6 +290,7 @@ static void ble_mesh_custom_sensor_server_model_cb(esp_ble_mesh_model_cb_event_t
 static void parse_received_data(esp_ble_mesh_model_cb_param_t *recv_param, model_sensor_data_t *parsed_data) {
     if (recv_param->client_recv_publish_msg.length < sizeof(parsed_data)) {
         ESP_LOGE(TAG, "Invalid received message lenght: %d", recv_param->client_recv_publish_msg.length);
+
         return;
     }
 
@@ -290,8 +300,10 @@ static void parse_received_data(esp_ble_mesh_model_cb_param_t *recv_param, model
     ESP_LOGW("PARSED_DATA", "Temperature = %f", parsed_data->temperature);
     ESP_LOGW("PARSED DATA", "Warning low temperature = %f", parsed_data->low_bsline);
     ESP_LOGW("PARSED DATA", "Warning high temperature = %f", parsed_data->high_bsline);
-
-    xQueueSendToBack(ble_mesh_received_data_queue, parsed_data, portMAX_DELAY);
+    
+    memcpy((void *)& _server_model_state.high_bsline, (void * )&parsed_data->high_bsline , sizeof(parsed_data->high_bsline));
+    memcpy((void *)& _server_model_state.low_bsline, (void * )&parsed_data->low_bsline, sizeof(parsed_data->low_bsline) );
+    // xQueueSendToBack(ble_mesh_received_data_queue, parsed_data, portMAX_DELAY);
 }
 
 

@@ -1,0 +1,95 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] cmd.exe /C "cd /D D:\Espressif\frameworks\WSN_project\server_model\build\bootloader\esp-idf\esptool_py && D:\Espressif\python_env\idf5.1_py3.11_env\Scripts\python.exe D:/Espressif/frameworks/esp-idf-v5.1.1/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 D:/Espressif/frameworks/WSN_project/server_model/build/bootloader/bootloader.bin"
+Bootloader binary size 0x6480 bytes. 0xb80 bytes (10%) free.
+[2/8] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/__/src/mesh_server.c.obj
+D:/Espressif/frameworks/WSN_project/server_model/src/mesh_server.c: In function 'server_send_to_client':
+D:/Espressif/frameworks/WSN_project/server_model/src/mesh_server.c:119:150: warning: passing argument 5 of 'esp_ble_mesh_server_model_send_msg' from incompatible pointer type [-Wincompatible-pointer-types]
+  119 |     esp_err_t err = esp_ble_mesh_server_model_send_msg(custom_models, &_ctx, ESP_BLE_MESH_CUSTOM_SENSOR_MODEL_OP_STATUS, sizeof(server_model_state), &server_model_state);
+      |                                                                                                                                                      ^~~~~~~~~~~~~~~~~~~
+      |                                                                                                                                                      |
+      |                                                                                                                                                      model_sensor_data_t *
+In file included from D:/Espressif/frameworks/WSN_project/server_model/include/mesh_server.h:9,
+                 from D:/Espressif/frameworks/WSN_project/server_model/src/mesh_server.c:1:
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/bt/esp_ble_mesh/api/core/include/esp_ble_mesh_networking_api.h:101:72: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'model_sensor_data_t *'
+  101 |                                              uint16_t length, uint8_t *data);
+      |                                                               ~~~~~~~~~^~~~
+[3/8] Linking C static library esp-idf\main\libmain.a
+[4/8] Generating ld/sections.ld
+[5/8] Linking CXX executable server_model.elf
+[6/8] Generating binary image from built executable
+esptool.py v4.7.dev1
+Creating esp32 image...
+Merged 25 ELF sections
+Successfully created esp32 image.
+Generated D:/Espressif/frameworks/WSN_project/server_model/build/server_model.bin
+[7/8] cmd.exe /C "cd /D D:\Espressif\frameworks\WSN_project\server_model\build\esp-idf\esptool_py && D:\Espressif\python_env\idf5.1_py3.11_env\Scripts\python.exe D:/Espressif/frameworks/esp-idf-v5.1.1/components/partition_table/check_sizes.py --offset 0x8000 partition --type app D:/Espressif/frameworks/WSN_project/server_model/build/partition_table/partition-table.bin D:/Espressif/frameworks/WSN_project/server_model/build/server_model.bin"
+server_model.bin binary size 0xf0df0 bytes. Smallest app partition is 0x100000 bytes. 0xf210 bytes (6%) free.
+[7/8] cmd.exe /C "cd /D D:\Espressif\frameworks\esp-idf-v5.1.1\components\esptool_py && D:\Espressif\tools\cmake\3.24.0\bin\cmake.exe -D IDF_PATH=D:/Espressif/frameworks/esp-idf-v5.1.1 -D SERIAL_TOOL=D:/Espressif/python_env/idf5.1_py3.11_env/Scripts/python.exe;;D:/Espressif/frameworks/esp-idf-v5.1.1/components/esptool_py/esptool/esptool.py;--chip;esp32 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WORKING_DIRECTORY=D:/Espressif/frameworks/WSN_project/server_model/build -P D:/Espressif/frameworks/esp-idf-v5.1.1/components/esptool_py/run_serial_tool.cmake"
+esptool.py --chip esp32 -p COM5 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 server_model.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.7.dev1
+Serial port COM5
+Connecting....
+Chip is ESP32-D0WD-V3 (revision v3.1)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: b0:a7:32:28:b6:50
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x00100fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Compressed 25728 bytes to 16620...
+Writing at 0x00001000... (50 %)
+Writing at 0x0000734f... (100 %)
+Wrote 25728 bytes (16620 compressed) at 0x00001000 in 0.5 seconds (effective 411.3 kbit/s)...
+Hash of data verified.
+Compressed 986608 bytes to 576439...
+Writing at 0x00010000... (2 %)
+Writing at 0x0001be99... (5 %)
+Writing at 0x0002b7a1... (8 %)
+Writing at 0x00037ba3... (11 %)
+Writing at 0x00042ec6... (13 %)
+Writing at 0x000486dd... (16 %)
+Writing at 0x0004e096... (19 %)
+Writing at 0x000536c3... (22 %)
+Writing at 0x0005967a... (25 %)
+Writing at 0x0005f4e3... (27 %)
+Writing at 0x00065008... (30 %)
+Writing at 0x0006b7c7... (33 %)
+Writing at 0x000733e7... (36 %)
+Writing at 0x0007964f... (38 %)
+Writing at 0x0007f4f5... (41 %)
+Writing at 0x00085151... (44 %)
+Writing at 0x0008aa68... (47 %)
+Writing at 0x00090309... (50 %)
+Writing at 0x00095ef2... (52 %)
+Writing at 0x0009ca85... (55 %)
+Writing at 0x000a2b89... (58 %)
+Writing at 0x000a8b27... (61 %)
+Writing at 0x000aeb0b... (63 %)
+Writing at 0x000b4cab... (66 %)
+Writing at 0x000babac... (69 %)
+Writing at 0x000c0d77... (72 %)
+Writing at 0x000c6919... (75 %)
+Writing at 0x000cc3c7... (77 %)
+Writing at 0x000d2621... (80 %)
+Writing at 0x000da7c9... (83 %)
+Writing at 0x000e2ad0... (86 %)
+Writing at 0x000e8cf9... (88 %)
+Writing at 0x000ee325... (91 %)
+Writing at 0x000f4089... (94 %)
+Writing at 0x000f9cc0... (97 %)
+Writing at 0x000ffb03... (100 %)
+Wrote 986608 bytes (576439 compressed) at 0x00010000 in 13.3 seconds (effective 594.9 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 717.4 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

@@ -32,8 +32,11 @@ esp_err_t ble_mesh_device_init_client(void);
 /**
  * @brief Custom Sensor Client Model SET message that
  *        publishes data to ESP_BLE_MESH_GROUP_PUB_ADDR
+ *
  */ 
-esp_err_t ble_mesh_custom_sensor_client_model_message_set(model_sensor_data_t set_data);
+extern model_sensor_data_t device_sensor_data;
+extern model_sensor_data_t received_data;
+esp_err_t ble_mesh_custom_sensor_client_model_message_set(model_sensor_data_t set_data, uint16_t addr);
 
 
 /**

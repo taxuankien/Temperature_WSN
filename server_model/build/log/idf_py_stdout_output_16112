@@ -1,0 +1,450 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6172
+ho 0 tail 12 room 4
+load:0x40078000,len:15584
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+I (31) boot: ESP-IDF v5.1.1-dirty 2nd stage bootloader
+I (31) boot: compile time Dec 26 2023 17:12:17
+I (31) boot: Multicore bootloader
+I (33) boot: chip revision: v3.1
+I (36) boot.esp32: SPI Speed      : 40MHz
+I (40) boot.esp32: SPI Mode       : DIO
+I (43) boot.esp32: SPI Flash Size : 2MB
+I (47) boot: Enabling RNG early entropy source...
+I (51) boot: Partition Table:
+I (54) boot: ## Label            Usage          Type ST Offset   Length
+I (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (73) boot:  2 factory          factory app      00 00 00010000 00100000
+I (80) boot: End of partition table
+I (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2a2f0h (172784) map
+I (153) esp_image: segment 1: paddr=0003a318 vaddr=3ff80000 size=00004h (     4) load
+I (153) esp_image: segment 2: paddr=0003a324 vaddr=3ffbdb60 size=04e10h ( 19984) load
+I (165) esp_image: segment 3: paddr=0003f13c vaddr=40080000 size=00edch (  3804) load
+I (167) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a73d4h (685012) map
+I (419) esp_image: segment 5: paddr=000e73fc vaddr=40080edc size=199b8h (104888) load
+I (476) boot: Loaded app from partition at offset 0x10000
+I (476) boot: Disabling RNG early entropy source...
+I (486) cpu_start: Multicore app
+I (486) cpu_start: Pro cpu up.
+I (487) cpu_start: Starting app cpu, entry point is 0x40081604
+I (0) cpu_start: App cpu up.
+I (500) cpu_start: Pro cpu start user code
+I (500) cpu_start: cpu freq: 160000000 Hz
+I (501) cpu_start: Application information:
+I (502) cpu_start: Project name:     server_model
+I (507) cpu_start: App version:      bedab08-dirty
+I (511) cpu_start: Compile time:     Dec 26 2023 17:11:40
+I (516) cpu_start: ELF file SHA256:  fa8adc098093ff45...
+I (521) cpu_start: ESP-IDF:          v5.1.1-dirty
+I (526) cpu_start: Min chip rev:     v0.0
+I (530) cpu_start: Max chip rev:     v3.99 
+I (534) cpu_start: Chip rev:         v3.1
+I (538) heap_init: Initializing. RAM available for dynamic allocation:
+I (544) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM
+I (549) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM
+I (554) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM
+I (559) heap_init: At 3FFCA198 len 00015E68 (87 KiB): DRAM
+I (564) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (570) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (575) heap_init: At 4009A894 len 0000576C (21 KiB): IRAM
+I (582) spi_flash: detected chip: generic
+I (584) spi_flash: flash io: dio
+W (587) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.
+I (600) coexist: coex firmware version: 80b0d89
+I (604) app_start: Starting scheduler on CPU0
+I (608)I (608) app_start: Starting scheduler on CPU1
+ main_task: Started on CPU0
+I (618) main_task: Calling app_main()
+I (618) MESH SERVER: Initializing...
+I (688) MESH SERVER: 1
+I (688) MESH SERVER: 3
+I (708) MESH SERVER: 4
+I (708) MESH SERVER: 2
+I (728) MESH SERVER: Sensor initialized successfully
+I (728) BTDM_INIT: BT controller compile version [946b762]
+I (728) BTDM_INIT: Bluetooth MAC: b0:a7:32:28:b6:52
+I (728) phy_init: phy_version 4670,719f9f6,Feb 18 2021,17:07:07
+W (728) phy_init: failed to load RF calibration data (0x1102), falling back to full calibration
+I (1338) MESH_SERVER: ESP_BLE_MESH_PROV_REGISTER_COMP_EVT, err_code 0
+I (1338) MESH_SERVER: ESP_BLE_MESH_NODE_SET_UNPROV_DEV_NAME_COMP_EVT, Name: BLE Mesh, err_code 0
+I (1348) MESH_SERVER: BLE Mesh Node initialized!
+I (1348) main_task: Returned from app_main()
+I (1358) MESH_SERVER: ESP_BLE_MESH_NODE_PROV_ENABLE_COMP_EVT, err_code 0
+I (23668) MESH_SERVER: ESP_BLE_MESH_NODE_PROV_LINK_OPEN_EVT, bearer PB-GATT
+W (24798) BLE_MESH: No Health Server context provided
+W (26338) BLE_MESH: No Health Server context provided
+I (26368) MESH_SERVER: ESP_BLE_MESH_NODE_PROV_LINK_CLOSE_EVT, bearer PB-GATT
+I (26368) MESH_SERVER: ESP_BLE_MESH_NODE_PROV_COMPLETE_EVT
+I (26368) MESH_SERVER: net_idx: 0x0000, addr: 0x0026
+I (26378) MESH_SERVER: flags: 0x00, iv_index: 0x00000000
+I (26378) MESH_SERVER: Device provisioned
+W (27458) BT_HCI: hcif disc complete: hdl 0x0, rsn 0x13
+W (33368) BLE_MESH: No matching TX context for ack
+I (36888) MESH_SERVER: ESP_BLE_MESH_MODEL_OP_APP_KEY_ADD
+I (36888) MESH_SERVER: net_idx 0x0000, app_idx 0x0000
+I (36888) AppKey: 9b 85 58 49 f6 aa ad 5b 72 b9 7e b0 e3 7a 4a 35 
+I (48818) MESH_SERVER: ESP_BLE_MESH_MODEL_OP_MODEL_APP_BIND
+I (48818) MESH_SERVER: elem_addr 0x0026, app_idx 0x0000, cid 0x02e5, mod_id 0x001414
+I (48818) MESH_SERVER: Application key bound to model 0x001414
+I (52368) MESH SERVER: LCD display success! Average Temp: 22.6 
+I (52388) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (52698) TIME: 308885
+I (52698) MESH_SERVER: OP_SET -- Received HEX message: 
+I (52708) MESH_SERVER: 00 00 00 00 00 00 00 00 00 00 80 41 00 00 18 42 
+W (52708) PARSED_DATA: Device Name = 
+W (52708) PARSED_DATA: Temperature = 0.000000
+W (52708) PARSED DATA: Warning low temperature = 16.000000
+W (52718) PARSED DATA: Warning high temperature = 38.000000
+I (52848) MESH SERVER: One-shot timer called, time since boot: 52276919 us
+I (56378) MESH SERVER: LCD display success! Average Temp: 22.5 
+I (56398) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (56858) MESH SERVER: One-shot timer called, time since boot: 62279501 us
+W (57838) BT_HCI: hcif disc complete: hdl 0x0, rsn 0x8
+I (60378) MESH SERVER: LCD display success! Average Temp: 22.5 
+I (60398) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (60858) MESH SERVER: One-shot timer called, time since boot: 72280936 us
+I (64378) MESH SERVER: LCD display success! Average Temp: 22.5 
+I (64398) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (64858) MESH SERVER: One-shot timer called, time since boot: 82283679 us
+I (68378) MESH SERVER: LCD display success! Average Temp: 22.5 
+I (68398) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (68868) MESH SERVER: One-shot timer called, time since boot: 92285928 us
+I (72378) MESH SERVER: LCD display success! Average Temp: 22.5 
+I (72398) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (72868) MESH SERVER: One-shot timer called, time since boot: 102288250 us
+I (76388) MESH SERVER: LCD display success! Average Temp: 22.5 
+I (76408) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (76868) MESH SERVER: One-shot timer called, time since boot: 112289643 us
+I (80388) MESH SERVER: LCD display success! Average Temp: 22.4 
+I (80408) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (80868) MESH SERVER: One-shot timer called, time since boot: 122292033 us
+I (84388) MESH SERVER: LCD display success! Average Temp: 22.4 
+I (84408) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (84878) MESH SERVER: One-shot timer called, time since boot: 132294632 us
+I (88388) MESH SERVER: LCD display success! Average Temp: 22.4 
+I (88408) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (88878) MESH SERVER: One-shot timer called, time since boot: 142296846 us
+I (92398) MESH SERVER: LCD display success! Average Temp: 22.4 
+I (92418) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (92878) MESH SERVER: One-shot timer called, time since boot: 152298279 us
+I (96398) MESH SERVER: LCD display success! Average Temp: 22.4 
+I (96418) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (96878) MESH SERVER: One-shot timer called, time since boot: 162300594 us
+I (100398) MESH SERVER: LCD display success! Average Temp: 22.4 
+I (100418) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (100878) MESH SERVER: One-shot timer called, time since boot: 172302896 us
+I (104408) MESH SERVER: LCD display success! Average Temp: 22.4 
+I (104428) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (104888) MESH SERVER: One-shot timer called, time since boot: 182305215 us
+I (108408) MESH SERVER: LCD display success! Average Temp: 22.4 
+I (108428) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (108888) MESH SERVER: One-shot timer called, time since boot: 192307058 us
+I (112408) MESH SERVER: LCD display success! Average Temp: 22.4 
+I (112428) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (112888) MESH SERVER: One-shot timer called, time since boot: 202309374 us
+I (116408) MESH SERVER: LCD display success! Average Temp: 22.4 
+I (116428) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (116898) MESH SERVER: One-shot timer called, time since boot: 212311887 us
+I (120418) MESH SERVER: LCD display success! Average Temp: 22.5 
+I (120438) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (120898) MESH SERVER: One-shot timer called, time since boot: 222314358 us
+I (124418) MESH SERVER: LCD display success! Average Temp: 22.5 
+I (124438) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (124898) MESH SERVER: One-shot timer called, time since boot: 232315848 us
+I (128428) MESH SERVER: LCD display success! Average Temp: 22.5 
+I (128448) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (128898) MESH SERVER: One-shot timer called, time since boot: 242318187 us
+I (132418) MESH SERVER: LCD display success! Average Temp: 22.5 
+I (132438) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (132898) MESH SERVER: One-shot timer called, time since boot: 252320500 us
+I (136428) MESH SERVER: LCD display success! Average Temp: 22.4 
+I (136448) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (136908) MESH SERVER: One-shot timer called, time since boot: 262322837 us
+I (140428) MESH SERVER: LCD display success! Average Temp: 22.4 
+I (140448) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (140908) MESH SERVER: One-shot timer called, time since boot: 272324647 us
+I (144428) MESH SERVER: LCD display success! Average Temp: 22.4 
+I (144448) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (144908) MESH SERVER: One-shot timer called, time since boot: 282326953 us
+I (148428) MESH SERVER: LCD display success! Average Temp: 22.4 
+I (148448) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (148908) MESH SERVER: One-shot timer called, time since boot: 292329263 us
+I (152428) MESH SERVER: LCD display success! Average Temp: 22.5 
+I (152448) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (152918) MESH SERVER: One-shot timer called, time since boot: 302332089 us
+I (156438) MESH SERVER: LCD display success! Average Temp: 22.4 
+I (156458) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (156918) MESH SERVER: One-shot timer called, time since boot: 312333416 us
+I (160448) MESH SERVER: LCD display success! Average Temp: 22.5 
+I (160488) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (160918) MESH SERVER: One-shot timer called, time since boot: 322335745 us
+I (164438) MESH SERVER: LCD display success! Average Temp: 22.5 
+I (164458) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (164918) MESH SERVER: One-shot timer called, time since boot: 332338042 us
+I (168448) MESH SERVER: LCD display success! Average Temp: 22.5 
+I (168468) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (168928) MESH SERVER: One-shot timer called, time since boot: 342340370 us
+I (172448) MESH SERVER: LCD display success! Average Temp: 22.6 
+I (172468) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (172928) MESH SERVER: One-shot timer called, time since boot: 352342195 us
+I (176448) MESH SERVER: LCD display success! Average Temp: 22.6 
+I (176468) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (176928) MESH SERVER: One-shot timer called, time since boot: 362344494 us
+I (180448) MESH SERVER: LCD display success! Average Temp: 22.7 
+I (180468) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (180928) MESH SERVER: One-shot timer called, time since boot: 372346848 us
+I (184458) MESH SERVER: LCD display success! Average Temp: 22.7 
+I (184478) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (184938) MESH SERVER: One-shot timer called, time since boot: 382349355 us
+I (188458) MESH SERVER: LCD display success! Average Temp: 22.7 
+I (188478) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (188938) MESH SERVER: One-shot timer called, time since boot: 392350945 us
+I (192458) MESH SERVER: LCD display success! Average Temp: 22.8 
+I (192478) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (192938) MESH SERVER: One-shot timer called, time since boot: 402353250 us
+I (196458) MESH SERVER: LCD display success! Average Temp: 22.8 
+I (196478) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (196938) MESH SERVER: One-shot timer called, time since boot: 412355579 us
+I (200468) MESH SERVER: LCD display success! Average Temp: 22.8 
+I (200488) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (200948) MESH SERVER: One-shot timer called, time since boot: 422357942 us
+I (204468) MESH SERVER: LCD display success! Average Temp: 22.8 
+I (204488) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (204948) MESH SERVER: One-shot timer called, time since boot: 432359733 us
+I (208468) MESH SERVER: LCD display success! Average Temp: 22.8 
+I (208488) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (208948) MESH SERVER: One-shot timer called, time since boot: 442362064 us
+I (212468) MESH SERVER: LCD display success! Average Temp: 22.8 
+I (212488) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (212948) MESH SERVER: One-shot timer called, time since boot: 452364396 us
+I (216478) MESH SERVER: LCD display success! Average Temp: 22.8 
+I (216498) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (216958) MESH SERVER: One-shot timer called, time since boot: 462366718 us
+I (220478) MESH SERVER: LCD display success! Average Temp: 22.8 
+I (220498) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (220958) MESH SERVER: One-shot timer called, time since boot: 472368502 us
+I (224488) MESH SERVER: LCD display success! Average Temp: 22.9 
+I (224508) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (224958) MESH SERVER: One-shot timer called, time since boot: 482370855 us
+I (228478) MESH SERVER: LCD display success! Average Temp: 22.8 
+I (228498) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (228968) MESH SERVER: One-shot timer called, time since boot: 492373180 us
+I (232488) MESH SERVER: LCD display success! Average Temp: 22.8 
+I (232508) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (232968) MESH SERVER: One-shot timer called, time since boot: 502375486 us
+I (236488) MESH SERVER: LCD display success! Average Temp: 22.8 
+I (236508) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (236968) MESH SERVER: One-shot timer called, time since boot: 512377228 us
+I (240498) MESH SERVER: LCD display success! Average Temp: 22.7 
+I (240518) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (24ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6172
+ho 0 tail 12 room 4
+load:0x40078000,len:15584
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+I (31) boot: ESP-IDF v5.1.1-dirty 2nd stage bootloader
+I (31) boot: compile time Dec 26 2023 17:12:17
+I (31) boot: Multicore bootloader
+I (33) boot: chip revision: v3.1
+I (36) boot.esp32: SPI Speed      : 40MHz
+I (40) boot.esp32: SPI Mode       : DIO
+I (43) boot.esp32: SPI Flash Size : 2MB
+I (47) boot: Enabling RNG early entropy source...
+I (51) boot: Partition Table:
+I (54) boot: ## Label            Usage          Type ST Offset   Length
+I (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (73) boot:  2 factory          factory app      00 00 00010000 00100000
+I (80) boot: End of partition table
+I (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2a2f0h (172784) map
+I (153) esp_image: segment 1: paddr=0003a318 vaddr=3ff80000 size=00004h (     4) load
+I (153) esp_image: segment 2: paddr=0003a324 vaddr=3ffbdb60 size=04e10h ( 19984) load
+I (165) esp_image: segment 3: paddr=0003f13c vaddr=40080000 size=00edch (  3804) load
+I (167) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a73d4h (685012) map
+I (419) esp_image: segment 5: paddr=000e73fc vaddr=40080edc size=199b8h (104888) load
+I (476) boot: Loaded app from partition at offset 0x10000
+I (476) boot: Disabling RNG early entropy source...
+I (486) cpu_start: Multicore app
+I (486) cpu_start: Pro cpu up.
+I (487) cpu_start: Starting app cpu, entry point is 0x40081604
+I (0) cpu_start: App cpu up.
+I (500) cpu_start: Pro cpu start user code
+I (501) cpu_start: cpu freq: 160000000 Hz
+I (501) cpu_start: Application information:
+I (502) cpu_start: Project name:     server_model
+I (507) cpu_start: App version:      bedab08-dirty
+I (511) cpu_start: Compile time:     Dec 26 2023 17:11:40
+I (516) cpu_start: ELF file SHA256:  fa8adc098093ff45...
+I (521) cpu_start: ESP-IDF:          v5.1.1-dirty
+I (526) cpu_start: Min chip rev:     v0.0
+I (530) cpu_start: Max chip rev:     v3.99 
+I (534) cpu_start: Chip rev:         v3.1
+I (538) heap_init: Initializing. RAM available for dynamic allocation:
+I (544) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM
+I (549) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM
+I (554) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM
+I (559) heap_init: At 3FFCA198 len 00015E68 (87 KiB): DRAM
+I (564) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (570) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (575) heap_init: At 4009A894 len 0000576C (21 KiB): IRAM
+I (582) spi_flash: detected chip: generic
+I (584) spi_flash: flash io: dio
+W (587) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.
+I (600) coexist: coex firmware version: 80b0d89
+I (604) app_start: Starting scheduler on CPU0
+I (608)I (608) app_start: Starting scheduler on CPU1
+ main_task: Started on CPU0
+I (618) main_task: Calling app_main()
+I (618) MESH SERVER: Initializing...
+I (708) MESH SERVER: 1
+I (708) MESH SERVER: 3
+I (728) MESH SERVER: 4
+I (728) MESH SERVER: 2
+I (748) MESH SERVER: Sensor initialized successfully
+I (748) BTDM_INIT: BT controller compile version [946b762]
+I (748) BTDM_INIT: Bluetooth MAC: b0:a7:32:28:b6:52
+I (748) phy_init: phy_version 4670,719f9f6,Feb 18 2021,17:07:07
+W (1278) BLE_MESH: bt_mesh_proxy_server_prov_disable, Already
+I (1308) MESH_SERVER: ESP_BLE_MESH_NODE_PROV_COMPLETE_EVT
+I (1308) MESH_SERVER: net_idx: 0x0000, addr: 0x0026
+I (1308) MESH_SERVER: flags: 0x00, iv_index: 0x00000000
+I (1318) MESH_SERVER: Device provisioned
+I (1318) MESH_SERVER: ESP_BLE_MESH_PROV_REGISTER_COMP_EVT, err_code 0
+I (1328) MESH_SERVER: ESP_BLE_MESH_NODE_SET_UNPROV_DEV_NAME_COMP_EVT, Name: BLE Mesh, err_code 0
+W (1328) BLE_MESH: bt_mesh_prov_enable, Already
+I (1338) MESH_SERVER: ESP_BLE_MESH_NODE_PROV_ENABLE_COMP_EVT, err_code -120
+I (1348) MESH_SERVER: BLE Mesh Node initialized!
+I (1348) main_task: Returned from app_main()
+I (4888) MESH SERVER: LCD display success! Average Temp: 22.7 
+I (4908) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (5268) TIME: 352986
+I (5268) MESH_SERVER: OP_SET -- Received HEX message: 
+I (5268) MESH_SERVER: 00 00 00 00 00 00 00 00 00 00 80 41 00 00 18 42 
+W (5268) PARSED_DATA: Device Name = 
+W (5268) PARSED_DATA: Temperature = 0.000000
+W (5278) PARSED DATA: Warning low temperature = 16.000000
+W (5278) PARSED DATA: Warning high temperature = 38.000000
+I (5368) MESH SERVER: One-shot timer called, time since boot: 4796919 us
+I (8898) MESH SERVER: LCD display success! Average Temp: 22.6 
+I (8918) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (9378) MESH SERVER: One-shot timer called, time since boot: 14799305 us
+I (12898) MESH SERVER: LCD display success! Average Temp: 22.6 
+I (12918) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (13378) MESH SERVER: One-shot timer called, time since boot: 24801110 us
+I (16898) MESH SERVER: LCD display success! Average Temp: 22.5 
+I (16918) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (17378) MESH SERVER: One-shot timer called, time since boot: 34803482 us
+I (20898) MESH SERVER: LCD display success! Average Temp: 22.5 
+I (20918) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (21388) MESH SERVER: One-shot timer called, time since boot: 44806140 us
+I (24898) MESH SERVER: LCD display success! Average Temp: 22.5 
+I (24918) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (25388) MESH SERVER: One-shot timer called, time since boot: 54808507 us
+I (28908) MESH SERVER: LCD display success! Average Temp: 22.5 
+I (28928) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (29388) MESH SERVER: One-shot timer called, time since boot: 64809848 us
+I (32908) MESH SERVER: LCD display success! Average Temp: 22.5 
+I (32928) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (33388) MESH SERVER: One-shot timer called, time since boot: 74812185 us
+I (36908) MESH SERVER: LCD display success! Average Temp: 22.5 
+I (36928) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (37398) MESH SERVER: One-shot timer called, time since boot: 84814546 us
+I (40918) MESH SERVER: LCD display success! Average Temp: 22.5 
+I (40938) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (41398) MESH SERVER: One-shot timer called, time since boot: 94816873 us
+I (44918) MESH SERVER: LCD display success! Average Temp: 22.5 
+I (44938) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (45398) MESH SERVER: One-shot timer called, time since boot: 104818588 us
+I (48918) MESH SERVER: LCD display success! Average Temp: 22.5 
+I (48938) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (49398) MESH SERVER: One-shot timer called, time since boot: 114820928 us
+I (52918) MESH SERVER: LCD display success! Average Temp: 22.5 
+I (52938) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (53408) MESH SERVER: One-shot timer called, time since boot: 124823268 us
+I (56928) MESH SERVER: LCD display success! Average Temp: 22.4 
+I (56968) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (57408) MESH SERVER: One-shot timer called, time since boot: 134825882 us
+I (60928) MESH SERVER: LCD display success! Average Temp: 22.4 
+I (60948) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (61408) MESH SERVER: One-shot timer called, time since boot: 144827329 us
+I (64928) MESH SERVER: LCD display success! Average Temp: 22.4 
+I (64948) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (65408) MESH SERVER: One-shot timer called, time since boot: 154829693 us
+I (68928) MESH SERVER: LCD display success! Average Temp: 22.3 
+I (68948) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (69418) MESH SERVER: One-shot timer called, time since boot: 164832047 us
+I (72938) MESH SERVER: LCD display success! Average Temp: 22.3 
+I (72958) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (73418) MESH SERVER: One-shot timer called, time since boot: 174834389 us
+I (76938) MESH SERVER: LCD display success! Average Temp: 22.3 
+I (76958) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (77418) MESH SERVER: One-shot timer called, time since boot: 184836134 us
+I (80938) MESH SERVER: LCD display success! Average Temp: 22.3 
+I (80958) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (81418) MESH SERVER: One-shot timer called, time since boot: 194838470 us
+I (84938) MESH SERVER: LCD display success! Average Temp: 22.3 
+I (84958) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (85418) MESH SERVER: One-shot timer called, time since boot: 204840788 us
+I (88938) MESH SERVER: LCD display success! Average Temp: 22.3 
+I (88958) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (89428) MESH SERVER: One-shot timer called, time since boot: 214843665 us
+I (92948) MESH SERVER: LCD display success! Average Temp: 22.3 
+I (92968) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (93428) MESH SERVER: One-shot timer called, time since boot: 224844907 us
+I (96948) MESH SERVER: LCD display success! Average Temp: 22.2 
+I (96968) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (97428) MESH SERVER: One-shot timer called, time since boot: 234847236 us
+I (100948) MESH SERVER: LCD display success! Average Temp: 22.3 
+I (100968) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (101438) MESH SERVER: One-shot timer called, time since boot: 244849584 us
+I (104958) MESH SERVER: LCD display success! Average Temp: 22.2 
+I (104978) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (105438) MESH SERVER: One-shot timer called, time since boot: 254851948 us
+I (108958) MESH SERVER: LCD display success! Average Temp: 22.2 
+I (108978) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (109438) MESH SERVER: One-shot timer called, time since boot: 264853677 us
+I (112958) MESH SERVER: LCD display success! Average Temp: 22.2 
+I (112978) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (113438) MESH SERVER: One-shot timer called, time since boot: 274856028 us
+I (116958) MESH SERVER: LCD display success! Average Temp: 22.2 
+I (116978) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (117448) MESH SERVER: One-shot timer called, time since boot: 284858392 us
+I (120968) MESH SERVER: LCD display success! Average Temp: 22.2 
+I (120988) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (121448) MESH SERVER: One-shot timer called, time since boot: 294861053 us
+I (124968) MESH SERVER: LCD display success! Average Temp: 22.2 
+I (124988) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (125448) MESH SERVER: One-shot timer called, time since boot: 304862453 us
+I (128968) MESH SERVER: LCD display success! Average Temp: 22.2 
+I (128988) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (129448) MESH SERVER: One-shot timer called, time since boot: 314864740 us
+I (132968) MESH SERVER: LCD display success! Average Temp: 22.2 
+I (132988) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (133458) MESH SERVER: One-shot timer called, time since boot: 324867103 us
+I (136978) MESH SERVER: LCD display success! Average Temp: 22.2 
+I (136998) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (137458) MESH SERVER: One-shot timer called, time since boot: 334869451 us
+I (140978) MESH SERVER: LCD display success! Average Temp: 22.1 
+I (141018) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (141458) MESH SERVER: One-shot timer called, time since boot: 344871125 us
+I (144978) MESH SERVER: LCD display success! Average Temp: 22.1 
+I (144998) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (145458) MESH SERVER: One-shot timer called, time since boot: 354873481 us
+I (148978) MESH SERVER: LCD display success! Average Temp: 22.1 
+I (148998) MESH_SERVER: ble_mesh_custom_sensor_server_model_cb -- SEND_COMPLETE -- Send message opcode 0x00c202e5 success
+I (14

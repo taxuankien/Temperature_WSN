@@ -1,0 +1,67 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6172
+ho 0 tail 12 room 4
+load:0x40078000,len:15584
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+I (31) boot: ESP-IDF v5.1.1-dirty 2nd stage bootloader
+I (31) boot: compile time Dec 26 2023 17:12:17
+I (31) boot: Multicore bootloader
+I (33) boot: chip revision: v3.1
+I (36) boot.esp32: SPI Speed      : 40MHz
+I (40) boot.esp32: SPI Mode       : DIO
+I (43) boot.esp32: SPI Flash Size : 2MB
+I (47) boot: Enabling RNG early entropy source...
+I (51) boot: Partition Table:
+I (54) boot: ## Label            Usage          Type ST Offset   Length
+I (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (73) boot:  2 factory          factory app      00 00 00010000 00100000
+I (80) boot: End of partition table
+I (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2a310h (172816) map
+I (153) esp_image: segment 1: paddr=0003a338 vaddr=3ff80000 size=00004h (     4) load
+I (153) esp_image: segment 2: paddr=0003a344 vaddr=3ffbdb60 size=04e10h ( 19984) load
+I (165) esp_image: segment 3: paddr=0003f15c vaddr=40080000 size=00ebch (  3772) load
+I (167) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a7384h (684932) map
+I (419) esp_image: segment 5: paddr=000e73ac vaddr=40080ebc size=199d8h (104920) load
+I (476) boot: Loaded app from partition at offset 0x10000
+I (476) boot: Disabling RNG early entropy source...
+I (486) cpu_start: Multicore app
+I (486) cpu_start: Pro cpu up.
+I (487) cpu_start: Starting app cpu, entry point is 0x40081604
+I (0) cpu_start: App cpu up.
+I (503) cpu_start: Pro cpu start user code
+I (503) cpu_start: cpu freq: 160000000 Hz
+I (503) cpu_start: Application information:
+I (505) cpu_start: Project name:     server_model
+I (509) cpu_start: App version:      bedab08-dirty
+I (514) cpu_start: Compile time:     Dec 26 2023 17:11:40
+I (519) cpu_start: ELF file SHA256:  02911ad2384dd11f...
+I (524) cpu_start: ESP-IDF:          v5.1.1-dirty
+I (528) cpu_start: Min chip rev:     v0.0
+I (532) cpu_start: Max chip rev:     v3.99 
+I (536) cpu_start: Chip rev:         v3.1
+I (540) heap_init: Initializing. RAM available for dynamic allocation:
+I (546) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM
+I (551) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM
+I (556) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM
+I (561) heap_init: At 3FFCA1A0 len 00015E60 (87 KiB): DRAM
+I (566) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (572) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (577) heap_init: At 4009A894 len 0000576C (21 KiB): IRAM
+I (584) spi_flash: detected chip: generic
+I (586) spi_flash: flash io: dio
+W (589) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.
+I (602) coexist: coex firmware version: 80b0d89
+I (606) app_start: Starting scheduler on CPU0
+I (610)I (610) app_start: Starting scheduler on CPU1
+ main_task: Started on CPU0
+I (620) main_task: Calling app_main()
+I (620) MESH SERVER: Initializing...
+I (710) MESH SERVER: I2C initialized successfully

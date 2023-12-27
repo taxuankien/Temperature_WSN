@@ -12,7 +12,14 @@
 #define TAG "MAIN"
 
 static uint8_t ticks = 0;
-model_sensor_data_t device_sensor_data;
+QueueHandle_t ble_mesh_received_data_queue = NULL;
+
+// struct luu du lieu nhan tu sever va dung de set nguong nhiet do
+model_sensor_data_t device_sensor_data = {
+    .high_bsline = 38,
+    .low_bsline = 16,
+};
+
 
 static void temp_sensor_task(void *arg) {
     ESP_LOGI(TAG, "Temperature sensor main task initializing...");
@@ -28,20 +35,15 @@ static void temp_sensor_task(void *arg) {
     ESP_LOGI(TAG, "Temperature sensor main task is running...");
     while(1) {
         vTaskDelay(1000 / portTICK_PERIOD_MS);
-
-        // if (xSemaphoreTake(xSemaphore, portMAX_DELAY ) == pdTRUE ) {
-            // sgp30_IAQ_measure(&main_sensor);
-            // xSemaphoreGive(xSemaphore);
-        // }
         
-        if ((ticks++ >= 3) && (is_client_provisioned())) {
-        // if (ticks++ >= 5) {
+        {
+
             ESP_LOGI(TAG, "LOW: %.1f,  HIGH: %.1f",  low_baseline, high_baseline);
             device_sensor_data.low_bsline = low_baseline;
             device_sensor_data.high_bsline = high_baseline;
             // strcpy(device_sensor_data.device_name, "TEST");
 
-            ble_mesh_custom_sensor_client_model_message_set(device_sensor_data);
+            // ble_mesh_custom_sensor_client_model_message_set(device_sensor_data);
             // ble_mesh_custom_sensor_client_model_message_get();
 
             ticks = 0;
@@ -79,6 +81,7 @@ void app_main(void) {
     if (err) {
         ESP_LOGE(TAG, "Bluetooth mesh init failed (err %d)", err);
     }
+
 
     // xTaskCreate(temp_sensor_task, "temp_sensor_main_task", 1024 * 2, (void *)0, 15, NULL);
 

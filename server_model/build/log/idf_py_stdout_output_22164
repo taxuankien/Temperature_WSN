@@ -1,0 +1,35 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] cmd.exe /C "cd /D D:\Espressif\frameworks\WSN_project\server_model\build\bootloader\esp-idf\esptool_py && D:\Espressif\python_env\idf5.1_py3.11_env\Scripts\python.exe D:/Espressif/frameworks/esp-idf-v5.1.1/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 D:/Espressif/frameworks/WSN_project/server_model/build/bootloader/bootloader.bin"
+Bootloader binary size 0x6480 bytes. 0xb80 bytes (10%) free.
+[2/8] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/__/src/mesh_server.c.obj
+D:/Espressif/frameworks/WSN_project/server_model/src/mesh_server.c: In function 'server_send_to_client':
+D:/Espressif/frameworks/WSN_project/server_model/src/mesh_server.c:119:150: warning: passing argument 5 of 'esp_ble_mesh_server_model_send_msg' from incompatible pointer type [-Wincompatible-pointer-types]
+  119 |     esp_err_t err = esp_ble_mesh_server_model_send_msg(custom_models, &_ctx, ESP_BLE_MESH_CUSTOM_SENSOR_MODEL_OP_STATUS, sizeof(server_model_state), &server_model_state);
+      |                                                                                                                                                      ^~~~~~~~~~~~~~~~~~~
+      |                                                                                                                                                      |
+      |                                                                                                                                                      model_sensor_data_t *
+In file included from D:/Espressif/frameworks/WSN_project/server_model/include/mesh_server.h:9,
+                 from D:/Espressif/frameworks/WSN_project/server_model/src/mesh_server.c:1:
+D:/Espressif/frameworks/esp-idf-v5.1.1/components/bt/esp_ble_mesh/api/core/include/esp_ble_mesh_networking_api.h:101:72: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'model_sensor_data_t *'
+  101 |                                              uint16_t length, uint8_t *data);
+      |                                                               ~~~~~~~~~^~~~
+[3/8] Linking C static library esp-idf\main\libmain.a
+[4/8] Generating ld/sections.ld
+[5/8] Linking CXX executable server_model.elf
+[6/8] Generating binary image from built executable
+esptool.py v4.7.dev1
+Creating esp32 image...
+Merged 25 ELF sections
+Successfully created esp32 image.
+Generated D:/Espressif/frameworks/WSN_project/server_model/build/server_model.bin
+[7/8] cmd.exe /C "cd /D D:\Espressif\frameworks\WSN_project\server_model\build\esp-idf\esptool_py && D:\Espressif\python_env\idf5.1_py3.11_env\Scripts\python.exe D:/Espressif/frameworks/esp-idf-v5.1.1/components/partition_table/check_sizes.py --offset 0x8000 partition --type app D:/Espressif/frameworks/WSN_project/server_model/build/partition_table/partition-table.bin D:/Espressif/frameworks/WSN_project/server_model/build/server_model.bin"
+server_model.bin binary size 0xf0de0 bytes. Smallest app partition is 0x100000 bytes. 0xf220 bytes (6%) free.
+[7/8] cmd.exe /C "cd /D D:\Espressif\frameworks\esp-idf-v5.1.1\components\esptool_py && D:\Espressif\tools\cmake\3.24.0\bin\cmake.exe -D IDF_PATH=D:/Espressif/frameworks/esp-idf-v5.1.1 -D SERIAL_TOOL=D:/Espressif/python_env/idf5.1_py3.11_env/Scripts/python.exe;;D:/Espressif/frameworks/esp-idf-v5.1.1/components/esptool_py/esptool/esptool.py;--chip;esp32 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WORKING_DIRECTORY=D:/Espressif/frameworks/WSN_project/server_model/build -P D:/Espressif/frameworks/esp-idf-v5.1.1/components/esptool_py/run_serial_tool.cmake"
+esptool.py --chip esp32 -p COM6 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 server_model.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.7.dev1
+Serial port COM6
+
+A fatal error occurred: Could not open COM6, the port doesn't exist
+FAILED: CMakeFiles/flash D:/Espressif/frameworks/WSN_project/server_model/build/CMakeFiles/flash 
+cmd.exe /C "cd /D D:\Espressif\frameworks\esp-idf-v5.1.1\components\esptool_py && D:\Espressif\tools\cmake\3.24.0\bin\cmake.exe -D IDF_PATH=D:/Espressif/frameworks/esp-idf-v5.1.1 -D SERIAL_TOOL=D:/Espressif/python_env/idf5.1_py3.11_env/Scripts/python.exe;;D:/Espressif/frameworks/esp-idf-v5.1.1/components/esptool_py/esptool/esptool.py;--chip;esp32 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WORKING_DIRECTORY=D:/Espressif/frameworks/WSN_project/server_model/build -P D:/Espressif/frameworks/esp-idf-v5.1.1/components/esptool_py/run_serial_tool.cmake"
+ninja: build stopped: subcommand failed.
