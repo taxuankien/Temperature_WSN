@@ -1,0 +1,1086 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7084
+ho 0 tail 12 room 4
+load:0x40078000,len:15584
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+[0;32mI (31) boot: ESP-IDF v5.1.1-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Dec 16 2023 11:30:01[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v1.0[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0a6c8h ( 42696) map[0m
+[0;32mI (120) esp_image: segment 1: paddr=0001a6f0 vaddr=3ff80000 size=00004h (     4) load[0m
+[0;32mI (120) esp_image: segment 2: paddr=0001a6fc vaddr=3ffb0000 size=02200h (  8704) load[0m
+[0;32mI (130) esp_image: segment 3: paddr=0001c904 vaddr=40080000 size=03714h ( 14100) load[0m
+[0;32mI (140) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17818h ( 96280) map[0m
+[0;32mI (178) esp_image: segment 5: paddr=00037840 vaddr=40083714 size=0a0a0h ( 41120) load[0m
+[0;32mI (202) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (202) boot: Disabling RNG early entropy source...[0m
+[0;32mI (213) cpu_start: Multicore app[0m
+[0;32mI (214) cpu_start: Pro cpu up.[0m
+[0;32mI (214) cpu_start: Starting app cpu, entry point is 0x4008133c[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (232) cpu_start: Pro cpu start user code[0m
+[0;32mI (232) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (232) cpu_start: Application information:[0m
+[0;32mI (236) cpu_start: Project name:     ds18b20_test[0m
+[0;32mI (242) cpu_start: App version:      bc353b2-dirty[0m
+[0;32mI (247) cpu_start: Compile time:     Dec 16 2023 11:29:49[0m
+[0;32mI (253) cpu_start: ELF file SHA256:  07961d3078c1c1b4...[0m
+[0;32mI (259) cpu_start: ESP-IDF:          v5.1.1-dirty[0m
+[0;32mI (265) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (269) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (274) cpu_start: Chip rev:         v1.0[0m
+[0;32mI (279) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (286) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (292) heap_init: At 3FFB2AC0 len 0002D540 (181 KiB): DRAM[0m
+[0;32mI (299) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (305) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (311) heap_init: At 4008D7B4 len 0001284C (74 KiB): IRAM[0m
+[0;32mI (319) spi_flash: detected chip: generic[0m
+[0;32mI (322) spi_flash: flash io: dio[0m
+[0;33mW (326) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (340) app_start: Starting scheduler on CPU0[0m
+[0;32mI (344) app_start: Starting scheduler on CPU1[0m
+[0;32mI (344) main_task: Started on CPU0[0m
+[0;32mI (354) main_task: Calling app_main()[0m
+[0;32mI (434) main_task: Returned from app_main()[0m
+[0;32mI (1184) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (1934) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (2684) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (3434) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (3434) EXAMPLE: Temperature Average: 20.688
+[0m
+[0;32mI (4184) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (4934) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (5684) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (6434) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (6434) EXAMPLE: Temperature Average: 20.688
+[0m
+[0;32mI (7184) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (7934) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (8684) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (9434) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (9434) EXAMPLE: Temperature Average: 20.688
+[0m
+[0;32mI (10184) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (10934) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (11684) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (12434) EXAMPLE: Temperature: 20.750
+[0m
+[0;32mI (12434) EXAMPLE: Temperature Average: 20.703
+[0m
+[0;32mI (13184) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (13934) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (14684) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (15434) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (15434) EXAMPLE: Temperature Average: 20.688
+[0m
+[0;32mI (16184) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (16934) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (17684) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (18434) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (18434) EXAMPLE: Temperature Average: 20.688
+[0m
+[0;32mI (19184) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (19934) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (20684) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (21434) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (21434) EXAMPLE: Temperature Average: 20.688
+[0m
+[0;32mI (22184) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (22934) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (23684) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (24434) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (24434) EXAMPLE: Temperature Average: 20.688
+[0m
+[0;32mI (25184) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (25934) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (26684) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (27434) EXAMPLE: Temperature: 20.750
+[0m
+[0;32mI (27434) EXAMPLE: Temperature Average: 20.703
+[0m
+[0;32mI (28184) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (28934) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (29684) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (30434) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (30434) EXAMPLE: Temperature Average: 20.688
+[0m
+[0;32mI (31184) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (31934) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (32684) EXAMPLE: Temperature: 20.750
+[0m
+[0;32mI (33434) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (33434) EXAMPLE: Temperature Average: 20.703
+[0m
+[0;32mI (34184) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (34934) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (35684) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (36434) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (36434) EXAMPLE: Temperature Average: 20.688
+[0m
+[0;32mI (37184) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (37934) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (38684) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (39434) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (39434) EXAMPLE: Temperature Average: 20.688
+[0m
+[0;32mI (40184) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (40934) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (41684) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (42434) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (42434) EXAMPLE: Temperature Average: 20.688
+[0m
+[0;32mI (43184) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (43934) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (44684) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (45434) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (45434) EXAMPLE: Temperature Average: 20.688
+[0m
+[0;32mI (46184) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (46934) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (47684) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (48434) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (48434) EXAMPLE: Temperature Average: 20.688
+[0m
+[0;32mI (49184) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (49934) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (50684) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (51434) EXAMPLE: Temperature: 20.750
+[0m
+[0;32mI (51434) EXAMPLE: Temperature Average: 20.703
+[0m
+[0;32mI (52184) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (52934) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (53684) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (54434) EXAMPLE: Temperature: 20.750
+[0m
+[0;32mI (54434) EXAMPLE: Temperature Average: 20.703
+[0m
+[0;32mI (55184) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (55934) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (56684) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (57434) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (57434) EXAMPLE: Temperature Average: 20.688
+[0m
+[0;32mI (58184) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (58934) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (59684) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (60434) EXAMPLE: Temperature: 20.750
+[0m
+[0;32mI (60434) EXAMPLE: Temperature Average: 20.703
+[0m
+[0;32mI (61184) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (61934) EXAMPLE: Temperature: 20.750
+[0m
+[0;32mI (62684) EXAMPLE: Temperature: 20.750
+[0m
+[0;32mI (63434) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (63434) EXAMPLE: Temperature Average: 20.719
+[0m
+[0;32mI (64184) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (64934) EXAMPLE: Temperature: 20.750
+[0m
+[0;32mI (65684) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (66434) EXAMPLE: Temperature: 20.750
+[0m
+[0;32mI (66434) EXAMPLE: Temperature Average: 20.719
+[0m
+[0;32mI (67184) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (67934) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (68684) EXAMPLE: Temperature: 20.750
+[0m
+[0;32mI (69434) EXAMPLE: Temperature: 20.750
+[0m
+[0;32mI (69434) EXAMPLE: Temperature Average: 20.719
+[0m
+[0;32mI (70184) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (70934) EXAMPLE: Temperature: 20.750
+[0m
+[0;32mI (71684) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (72434) EXAMPLE: Temperature: 20.750
+[0m
+[0;32mI (72434) EXAMPLE: Temperature Average: 20.719
+[0m
+[0;32mI (73184) EXAMPLE: Temperature: 20.750
+[0m
+[0;32mI (73934) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (74684) EXAMPLE: Temperature: 20.750
+[0m
+[0;32mI (75434) EXAMPLE: Temperature: 20.750
+[0m
+[0;32mI (75434) EXAMPLE: Temperature Average: 20.734
+[0m
+[0;32mI (76184) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (76934) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (77684) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (78434) EXAMPLE: Temperature: 20.750
+[0m
+[0;32mI (78434) EXAMPLE: Temperature Average: 20.703
+[0m
+[0;32mI (79184) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (79934) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (80684) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (81434) EXAMPLE: Temperature: 20.750
+[0m
+[0;32mI (81434) EXAMPLE: Temperature Average: 20.703
+[0m
+[0;32mI (82184) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (82934) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (83684) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (84434) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (84434) EXAMPLE: Temperature Average: 20.688
+[0m
+[0;32mI (85184) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (85934) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (86684) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (87434) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (87434) EXAMPLE: Temperature Average: 20.688
+[0m
+[0;32mI (88184) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (88934) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (89684) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (90434) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (90434) EXAMPLE: Temperature Average: 20.688
+[0m
+[0;32mI (91184) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (91934) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (92684) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (93434) EXAMPLE: Temperature: 20.750
+[0m
+[0;32mI (93434) EXAMPLE: Temperature Average: 20.703
+[0m
+[0;32mI (94184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (94934) EXAMPLE: Temperature: 85.000
+[0m
+[0;32mI (95684) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (96434) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (96434) EXAMPLE: Temperature Average: 31.594
+[0m
+[0;32mI (97184) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (97934) EXAMPLE: Temperature: 20.688
+[0m
+[0;32mI (98684) EXAMPLE: Temperature: 85.000
+[0m
+[0;32mI (99434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (99434) EXAMPLE: Temperature Average: 31.594
+[0m
+[0;32mI (100184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (100934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (101684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (102434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (102434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (103184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (103934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (104684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (105434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (105434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (106184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (106934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (107684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (108434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (108434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (109184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (109934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (110684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (111434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (111434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (112184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (112934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (113684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (114434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (114434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (115184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (115934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (116684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (117434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (117434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (118184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (118934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (119684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (120434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (120434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (121184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (121934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (122684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (123434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (123434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (124184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (124934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (125684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (126434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (126434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (127184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (127934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (128684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (129434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (129434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (130184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (130934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (131684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (132434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (132434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (133184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (133934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (134684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (135434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (135434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (136184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (136934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (137684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (138434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (138434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (139184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (139934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (140684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (141434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (141434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (142184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (142934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (143684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (144434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (144434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (145184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (145934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (146684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (147434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (147434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (148184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (148934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (149684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (150434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (150434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (151184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (151934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (152684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (153434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (153434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (154184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (154934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (155684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (156434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (156434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (157184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (157934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (158684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (159434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (159434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (160184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (160934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (161684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (162434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (162434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (163184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (163934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (164684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (165434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (165434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (166184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (166934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (167684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (168434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (168434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (169184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (169934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (170684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (171434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (171434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (172184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (172934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (173684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (174434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (174434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (175184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (175934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (176684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (177434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (177434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (178184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (178934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (179684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (180434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (180434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (181184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (181934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (182684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (183434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (183434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (184184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (184934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (185684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (186434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (186434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (187184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (187934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (188684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (189434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (189434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (190184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (190934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (191684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (192434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (192434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (193184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (193934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (194684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (195434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (195434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (196184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (196934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (197684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (198434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (198434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (199184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (199934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (200684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (201434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (201434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (202184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (202934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (203684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (204434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (204434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (205184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (205934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (206684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (207434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (207434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (208184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (208934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (209684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (210434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (210434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (211184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (211934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (212684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (213434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (213434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (214184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (214934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (215684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (216434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (216434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (217184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (217934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (218684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (219434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (219434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (220184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (220934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (221684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (222434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (222434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (223184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (223934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (224684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (225434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (225434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (226184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (226934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (227684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (228434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (228434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (229184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (229934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (230684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (231434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (231434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (232184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (232934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (233684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (234434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (234434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (235184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (235934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (236684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (237434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (237434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (238184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (238934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (239684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (240434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (240434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (241184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (241934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (242684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (243434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (243434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (244184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (244934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (245684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (246434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (246434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (247184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (247934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (248684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (249434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (249434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (250184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (250934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (251684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (252434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (252434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (253184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (253934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (254684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (255434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (255434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (256184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (256934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (257684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (258434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (258434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (259184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (259934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (260684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (261434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (261434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (262184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (262934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (263684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (264434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (264434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (265184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (265934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (266684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (267434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (267434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (268184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (268934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (269684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (270434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (270434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (271184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (271934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (272684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (273434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (273434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (274184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (274934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (275684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (276434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (276434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (277184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (277934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (278684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (279434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (279434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (280184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (280934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (281684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (282434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (282434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (283184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (283934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (284684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (285434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (285434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (286184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (286934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (287684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (288434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (288434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (289184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (289934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (290684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (291434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (291434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (292184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (292934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (293684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (294434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (294434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (295184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (295934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (296684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (297434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (297434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (298184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (298934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (299684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (300434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (300434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (301184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (301934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (302684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (303434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (303434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (304184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (304934) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (305684) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (306434) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (306434) EXAMPLE: Temperature Average: 0.000
+[0m
+[0;32mI (307184) EXAMPLE: Temperature: 0.000
+[0m
+[0;32mI (307934) EXAMPLE: Temperature: 0.00
