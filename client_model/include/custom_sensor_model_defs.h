@@ -27,7 +27,7 @@
  * @brief Device Main Data Structure
  */
 typedef struct __attribute__((packed)) {
-    char device_name[6];
+    char device_name[4];
     
     /**< Temperature sensor Data */
     float temperature;  
@@ -35,7 +35,7 @@ typedef struct __attribute__((packed)) {
     float high_bsline;
 
     /**< Feedback answers */
-    uint8_t feedback;   /*!< Each bit corresponds to an answer: (NEW_DATA | X | X | TEMP_COMF | HIGH_TEMP | SOUND_COMF | LIGHT_COMF | LIGHTNESS) */
+    // bool feedback;   /*!< Each bit corresponds to an answer: (NEW_DATA | X | X | TEMP_COMF | HIGH_TEMP | SOUND_COMF | LIGHT_COMF | LIGHTNESS) */
 } model_sensor_data_t;
 
 

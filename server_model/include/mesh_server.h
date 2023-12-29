@@ -14,7 +14,7 @@
 
 #include "freertos/queue.h"
 
-extern QueueHandle_t ble_mesh_received_data_queue;
+// extern QueueHandle_t ble_mesh_received_data_queue;
 
 extern model_sensor_data_t _server_model_state;
 
