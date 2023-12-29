@@ -383,7 +383,7 @@ esp_err_t ble_mesh_device_init_server(void) {
     }
 
     //* Set device name 
-    esp_ble_mesh_set_unprovisioned_device_name(BLE_MESH_DEVICE_NAME);
+    esp_ble_mesh_set_unprovisioned_device_name(_server_model_state.device_name);
 
     //* Enable provisioning
     esp_ble_mesh_node_prov_enable(ESP_BLE_MESH_PROV_ADV | ESP_BLE_MESH_PROV_GATT);
