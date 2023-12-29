@@ -290,7 +290,6 @@ static void ble_mesh_custom_sensor_server_model_cb(esp_ble_mesh_model_cb_event_t
 static void parse_received_data(esp_ble_mesh_model_cb_param_t *recv_param, model_sensor_data_t *parsed_data) {
     if (recv_param->client_recv_publish_msg.length < sizeof(parsed_data)) {
         ESP_LOGE(TAG, "Invalid received message lenght: %d", recv_param->client_recv_publish_msg.length);
-
         return;
     }
 

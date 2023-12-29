@@ -28,6 +28,9 @@
 #define MAX_KEY_LENGTH 100
 #define MAX_VALUE_LENGTH 100
 int check, node, lastValue, k = 3;
+
+QueueHandle_t queue;
+
 // Label:
 // Định nghĩa cấu trúc cho đối tượng JSON
 typedef struct {
@@ -208,35 +211,44 @@ void app_main(void){
     ESP_ERROR_CHECK(example_connect()); // Connect WiFi
     
     mqtt_app_start();
-    for (int i = 0; i < k; i++){ 
-        char esp[30];
-        sprintf(esp, "esp%d", i);
+    queue = xQueueCreate(5, sizeof(model_sensor_data_t)); 
+    // for (int i = 0; i < k; i++){ 
+    //     char esp[30];
+    //     sprintf(esp, "esp%d", i);
 
-        strcpy(data[i].device_name , esp);
-        data[i].low_bsline = 0;
-        data[i].high_bsline = 100;
-        data[i].temperature = 10*(i+1);
-    }
-
+    //     strcpy(data[i].device_name , esp);
+    //     data[i].low_bsline = 0;
+    //     data[i].high_bsline = 100;
+    //     data[i].temperature = 10*(i+1);
+    // }
+    model_sensor_data_t rxBuffer;
     while (1){ 
          ESP_LOGI(" "," ");
-        for (int i = 0; i < k; i++)
-        {
-            if(check == 1 && lastValue < node){
-                 for (int x = lastValue; x < node; x++){ 
-                    char esp[30];
-                    sprintf(esp, "esp%d", x);
-                    strcpy(data[x].device_name , esp);
-                    data[x].low_bsline = 0;
-                    data[x].high_bsline = 100;
-                    data[x].temperature = 10*(x+1);
-                }
-                check = 0;
+          if( xQueueReceive(queue, &(rxBuffer), (TickType_t)5))
+            {
+                int number = atoi(rxBuffer.device_name);
+                char payload[30] ;
+                snprintf(payload, sizeof(payload), "{temperature%d:%f}", number,rxBuffer.temperature);
+                esp_mqtt_client_publish(client1, "v1/devices/me/telemetry"  , payload, 0, 1, 0);
             }
-            char key[30];
-            sprintf(key, "{temperature%d:%f}", i+1, data[i].temperature);
-            esp_mqtt_client_publish(client1, "v1/devices/me/telemetry"  , key, 0, 1, 0);
-        }
+        // for (int i = 0; i < k; i++)
+        // {
+        //     if(check == 1 && lastValue < node){
+        //          for (int x = lastValue; x < node; x++){ 
+        //             char esp[30];
+        //             sprintf(esp, "esp%d", x);
+        //             strcpy(data[x].device_name , esp);
+        //             data[x].low_bsline = 0;
+        //             data[x].high_bsline = 100;
+        //             data[x].temperature = 10*(x+1);
+        //         }
+        //         check = 0;
+        //     }
+        //     char key[30];
+        //     if((data[i].device_name))
+        //     sprintf(key, "{temperature%d:%f}", i+1, data[i].temperature);
+        //     esp_mqtt_client_publish(client1, "v1/devices/me/telemetry"  , key, 0, 1, 0);
+        // }
         
         // char payload1[30] ;
         // snprintf(payload1, sizeof(payload1), "{temperature1:%f}", data1.temperature);
