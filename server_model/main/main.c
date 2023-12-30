@@ -22,7 +22,7 @@ esp_timer_handle_t periodic_timer;
 
 // QueueHandle_t ble_mesh_received_data_queue = NULL;
 model_sensor_data_t _server_model_state = {
-    .device_name = "id_3",
+    .device_name = "1",
 };
 
 void LCD_display(float a){

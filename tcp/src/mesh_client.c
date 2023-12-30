@@ -235,13 +235,14 @@ static void ble_mesh_custom_sensor_client_model_cb(esp_ble_mesh_model_cb_event_t
                     //! Fazer alguma coisa nesse get ao inves de só printar o valor
                     model_sensor_data_t received_data;
                     received_data = *(model_sensor_data_t *)param->client_recv_publish_msg.msg;
+                    xQueueSend(queue, (void*)&received_data, (TickType_t)10);
                     parse_received_data(param, &received_data);
                     
                     if(((int)(received_data.high_bsline * 10) != (int)(device_sensor_data.high_bsline *10)) || ((int)(received_data.low_bsline *10)!= (int)(device_sensor_data.low_bsline* 10))){
                         ESP_LOGI(TAG, "High: %f, Low: %f!", received_data.high_bsline, received_data.low_bsline);
                         ble_mesh_custom_sensor_client_model_message_set(device_sensor_data,(uint16_t)param->client_recv_publish_msg.ctx->addr);
                     }
-                    xQueueSend(queue, (void*)&received_data, (TickType_t)10);
+                    
                 break;
 
                 default:
