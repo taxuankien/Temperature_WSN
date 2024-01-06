@@ -101,26 +101,6 @@ void freeJsonObject(JsonObject *jsonObjects) {
 }
 
 
-// model_sensor_data_t data1 = {
-//     .device_name = "v1/devices/me/telemetry",
-//     .temperature = 20
-// };
-
-// model_sensor_data_t data2 = {
-//     .device_name = "v1/devices/me/telemetry",
-//     .temperature = 30
-// };
-
-// model_sensor_data_t data3 = {
-//     .device_name = "v1/devices/me/telemetry",
-//     .temperature = 40
-// };
-
-// model_sensor_data_t data4 = {
-//     .low_bsline = 0,
-//     .high_bsline = 100
-// };
-
 JsonObject jsonObjects;   
 esp_mqtt_client_handle_t client1;
 static const char *TAG = "MQTT";
@@ -155,25 +135,15 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
         ESP_LOGI(TAG,"DATA = %.*s\n", event->data_len, event->data);
 
         parseJson((char *)event->data, &jsonObjects);
-        //float val = atof(jsonObjects.value);
-        double val;
-        sscanf((char*)jsonObjects.value, "%lf", &val);
-        int count = 0;
-        // for (int i = 0; i < k; i++)
-        // {
-        //     if(!strcmp(jsonObjects.key, "LowLimit")) data[i].low_bsline = val;
-        //     else if(!strcmp(jsonObjects.key, "AmountOfNode")){
-        //         count = (int) val;
-        //         check = 1;
-        //     } 
-        //     else data[i].high_bsline = val;
-        //     //ESP_LOGI(TAG,"LowLimit = %lf\n", data[i].low_bsline);
-        //     //ESP_LOGI(TAG,"HighLimit = %lf\n", data[i].high_bsline);
-        // }
-        if(check == 1){
-            lastValue = k;
-            k = count;
-            node = count;
+
+        if(!strcmp(jsonObjects.key, "LowLimit")){
+            sscanf((char*)jsonObjects.value, "%f", &device_sensor_data.low_bsline);
+            ESP_LOGI(TAG,"LowLimit = %lf\n", device_sensor_data.low_bsline);
+        }
+
+        if(!strcmp(jsonObjects.key, "HighLimit")){
+            sscanf((char*)jsonObjects.value, "%f", &device_sensor_data.high_bsline);
+            ESP_LOGI(TAG,"HighLimit = %lf\n", device_sensor_data.high_bsline);
         }
         break;
     default:
@@ -194,6 +164,21 @@ static void mqtt_app_start(void){
     esp_mqtt_client_start(client);
 }
 
+void mqqt_sending(void *arg){
+    model_sensor_data_t rxBuffer;
+    while (1){ 
+        // ESP_LOGI(" "," ");
+        if( xQueueReceive(queue, &(rxBuffer), (TickType_t)5)){   
+                ESP_LOGI(TAG, "Startup..");
+                int number = atoi(rxBuffer.device_name);
+                char payload[30] ;
+                snprintf(payload, sizeof(payload), "{temperature%d:%f}", number,rxBuffer.temperature);
+                esp_mqtt_client_publish(client1, "v1/devices/me/telemetry"  , payload, 0, 1, 0);
+        }
+
+        // vTaskDelay(500/portTICK_PERIOD_MS);
+    }
+}
 void app_main(void){
     esp_err_t err;
     queue = xQueueCreate(5, sizeof(model_sensor_data_t)); 
@@ -220,74 +205,14 @@ void app_main(void){
     if (err) {
         ESP_LOGE(TAG, "Bluetooth mesh init failed (err %d)", err);
     }
-    // vTaskDelay(10000/portTICK_PERIOD_MS);
-    // while(!is_client_provisioned()){
-    //     vTaskDelay(1000/portTICK_PERIOD_MS);
-    // }
-    ESP_ERROR_CHECK(esp_netif_init());
-    ESP_ERROR_CHECK(esp_event_loop_create_default());
-    ESP_ERROR_CHECK(example_connect()); // Connect WiFi
+    
+    // ESP_ERROR_CHECK(esp_netif_init());
+    // ESP_ERROR_CHECK(esp_event_loop_create_default());
+    // ESP_ERROR_CHECK(example_connect()); // Connect WiFi
     // vTaskDelay(1000/portTICK_PERIOD_MS);
     
-    
-    
-    mqtt_app_start();
-
-   
-    
-    // for (int i = 0; i < k; i++){ 
-    //     char esp[30];
-    //     sprintf(esp, "esp%d", i);
-
-    //     strcpy(data[i].device_name , esp);
-    //     data[i].low_bsline = 0;
-    //     data[i].high_bsline = 100;
-    //     data[i].temperature = 10*(i+1);
-    // }
-    model_sensor_data_t rxBuffer;
-    while (1){ 
-         ESP_LOGI(" "," ");
-          if( xQueueReceive(queue, &(rxBuffer), (TickType_t)5))
-            {   
-                ESP_LOGI(TAG, "Startup..");
-                int number = atoi(rxBuffer.device_name);
-                char payload[30] ;
-                snprintf(payload, sizeof(payload), "{temperature%d:%f}", number,rxBuffer.temperature);
-                esp_mqtt_client_publish(client1, "v1/devices/me/telemetry"  , payload, 0, 1, 0);
-            }
-        // for (int i = 0; i < k; i++)
-        // {
-        //     if(check == 1 && lastValue < node){
-        //          for (int x = lastValue; x < node; x++){ 
-        //             char esp[30];
-        //             sprintf(esp, "esp%d", x);
-        //             strcpy(data[x].device_name , esp);
-        //             data[x].low_bsline = 0;
-        //             data[x].high_bsline = 100;
-        //             data[x].temperature = 10*(x+1);
-        //         }
-        //         check = 0;
-        //     }
-        //     char key[30];
-        //     if((data[i].device_name))
-        //     sprintf(key, "{temperature%d:%f}", i+1, data[i].temperature);
-            // esp_mqtt_client_publish(client1, "v1/devices/me/telemetry"  , key, 0, 1, 0);
-        // }
-        
-        // char payload1[30] ;
-        // snprintf(payload1, sizeof(payload1), "{temperature1:%f}", data1.temperature);
-        // esp_mqtt_client_publish(client1, "v1/devices/me/telemetry"  , payload1, 0, 1, 0);
-
-        // char payload2[30];
-        // snprintf(payload2, sizeof(payload2), "{temperature2:%f}", data2.temperature);
-        // esp_mqtt_client_publish(client1, "v1/devices/me/telemetry" , payload2, 0, 1, 0);
-
-        // char payload3[30];
-        // snprintf(payload3, sizeof(payload3), "{temperature3:%f}", data3.temperature);
-        // esp_mqtt_client_publish(client1, "v1/devices/me/telemetry" , payload3, 0, 1, 0);
-
-        vTaskDelay(500/portTICK_PERIOD_MS);
-    }
+    // mqtt_app_start();
+    // xTaskCreatePinnedToCore(&mqqt_sending, "main task", 1024 * 2, (void *)0, 0, NULL, (int)1);
 }
 
 

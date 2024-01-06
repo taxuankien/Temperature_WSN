@@ -113,7 +113,8 @@ void server_send_to_client(model_sensor_data_t server_model_state)
     _ctx.send_ttl = 5;
     _ctx.addr = 0xc001;   
     // _ctx.addr = 0x000d;          //gateway
-    // _ctx.recv_dst = 0x0058;         // me
+    // _ctx.recv_dst = 0x0058;   
+          // me
     _ctx.srv_send = 0;
 
     esp_err_t err = esp_ble_mesh_server_model_send_msg(custom_models, &_ctx, ESP_BLE_MESH_CUSTOM_SENSOR_MODEL_OP_STATUS, sizeof(server_model_state), &server_model_state);
@@ -294,13 +295,13 @@ static void parse_received_data(esp_ble_mesh_model_cb_param_t *recv_param, model
     }
 
     parsed_data = (model_sensor_data_t *)recv_param->client_recv_publish_msg.msg;
-
-    ESP_LOGW("PARSED_DATA", "Device Name = %s", parsed_data->device_name);
-    ESP_LOGW("PARSED_DATA", "Temperature = %f", parsed_data->temperature);
+    ESP_LOGI("PLR","%d",count);
+    // ESP_LOGW("PARSED_DATA", "Device Name = %s", parsed_data->device_name);
+    // ESP_LOGW("PARSED_DATA", "Temperature = %f", parsed_data->temperature);
     ESP_LOGW("PARSED DATA", "Warning low temperature = %f", parsed_data->low_bsline);
     ESP_LOGW("PARSED DATA", "Warning high temperature = %f", parsed_data->high_bsline);
     
-    memcpy((void *)& _server_model_state.high_bsline, (void * )&parsed_data->high_bsline , sizeof(parsed_data->high_bsline));
+    // memcpy((void *)& _server_model_state.high_bsline, (void * )&parsed_data->high_bsline , sizeof(parsed_data->high_bsline));
     memcpy((void *)& _server_model_state.low_bsline, (void * )&parsed_data->low_bsline, sizeof(parsed_data->low_bsline) );
     // xQueueSendToBack(ble_mesh_received_data_queue, parsed_data, portMAX_DELAY);
 }

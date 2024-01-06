@@ -10,6 +10,7 @@
 #include "esp_ble_mesh_defs.h"
 
 #define TAG     "MESH_CLIENT"
+uint16_t count=0;
 
 static uint8_t dev_uuid[16] = {0xdd, 0xdd};     //Device UUID
 
@@ -235,11 +236,13 @@ static void ble_mesh_custom_sensor_client_model_cb(esp_ble_mesh_model_cb_event_t
                     model_sensor_data_t received_data;
                     received_data = *(model_sensor_data_t *)param->client_recv_publish_msg.msg;
                     parse_received_data(param, &received_data);
-                    
-                    if(((int)(received_data.high_bsline * 10) != (int)(device_sensor_data.high_bsline *10)) || ((int)(received_data.low_bsline *10)!= (int)(device_sensor_data.low_bsline* 10))){
+                    device_sensor_data.temperature = (float)count;
+                    if(((int)(received_data.high_bsline * 10) != (int)(device_sensor_data.high_bsline *10)) || ((int)(received_data.low_bsline *10)!= (int)(device_sensor_data.low_bsline* 10))|| count == 1000){
                         ESP_LOGI(TAG, "High: %f, Low: %f!", received_data.high_bsline, received_data.low_bsline);
+                        vTaskDelay(3000/portTICK_PERIOD_MS);
                         ble_mesh_custom_sensor_client_model_message_set(device_sensor_data,(uint16_t)param->client_recv_publish_msg.ctx->addr);
                     }
+                    count++;
                 break;
 
                 default:
