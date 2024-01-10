@@ -77,7 +77,7 @@ float get_average_temp(void){
     ESP_LOGD(TAG, "Temperature: %f\n",temp);
     // vTaskDelay(1/ portTICK_RATE_MS);
     i++;
-    if ((xTaskGetTickCount() - startTime) >= pdMS_TO_TICKS(3000)) {
+    if ((xTaskGetTickCount() - startTime) >= pdMS_TO_TICKS(2250)) {
       break;
     }
   }
@@ -86,22 +86,16 @@ float get_average_temp(void){
 }
 
 void temperature_sensing(){
-    TickType_t xLastWakeTime;
-    const TickType_t freq = 4000;
     uint64_t time = 0;
-    while(!is_server_provisioned()){
-        vTaskDelay(500/portTICK_PERIOD_MS);
-    }
     
-    
-    // lcd_clear();
-	// ESP_ERROR_CHECK(esp_timer_start_periodic(periodic_timer, 10000000));
+    lcd_clear();
 	while (1){
         // xLastWakeTime = xTaskGetTickCount();
         if(is_server_provisioned() && check){
             check = 0;
             // esp_bluedroid_enable();
-            ESP_ERROR_CHECK(esp_timer_start_once(oneshot_timer,10000000)); 
+            time = esp_timer_get_time();
+            ESP_ERROR_CHECK(esp_timer_start_once(oneshot_timer,4000000 - time)); 
             _server_model_state.temperature = get_average_temp();
             
             ESP_LOGD(TAG, "Sending ....., time since boot: %lld us", esp_timer_get_time());
@@ -124,17 +118,12 @@ void temperature_sensing(){
 
 }
 
-static void periodic_timer_callback(void *arg){
-    ESP_LOGD(TAG, "Periodic timer called, time since boot: %lld us", esp_timer_get_time());
-}
-
 static void oneshot_timer_callback(void *arg){
 	int64_t time_since_boot = esp_timer_get_time();
     check = 1;
     
 	ESP_LOGI(TAG, "One-shot timer called, time since boot: %lld us", time_since_boot);
     esp_timer_stop(oneshot_timer);
-    saveDataToFlash(1, "check");
     saveDataToFlash(_server_model_state.high_bsline, "high_lim");
     saveDataToFlash(_server_model_state.low_bsline, "low_lim");
 	esp_deep_sleep_start();
@@ -142,48 +131,14 @@ static void oneshot_timer_callback(void *arg){
     // vTaskResume(MainTask);
 }
 
-// static void read_received_items(void *arg) {
-//     ESP_LOGI(TAG, "Task initializing..");
-
-//     model_sensor_data_t _received_data;
-    
-
-//     while (1) {
-//         vTaskDelay(500 / portTICK_PERIOD_MS);
-        
-//         if (xQueueReceive(ble_mesh_received_data_queue, &_received_data, 1000 / portTICK_PERIOD_MS) == pdPASS) {
-//             ESP_LOGI("PARSED DATA", "Warning low = %f", _received_data.low_bsline);
-//             ESP_LOGI("PARSED DATA", "Warning high = %f", _received_data.high_bsline);
-        
-//             // _server_model_state.high_bsline = _received_data.high_bsline;
-//             // _server_model_state.low_bsline = _received_data.high_bsline;
-//             memcpy((void *)& _server_model_state.high_bsline, (void * )&_received_data.high_bsline , sizeof(_received_data.high_bsline));
-//             memcpy((void *)& _server_model_state.low_bsline, (void * )&_received_data.low_bsline, sizeof(_received_data.high_bsline) );
-//         }
-//     }   
-// } 
-
-static void server_send_status(){
-    // uint8_t tick = 3;
-    // ESP_LOGI(TAG, "STATUS message is sending.");
-
-    while (1){
-        
-
-        
-        // vTaskDelay(100/ portTICK_PERIOD_MS);
-    }
-}
 
 // Hàm để lưu dữ liệu vào flash
 void saveDataToFlash(float data, const char *key) {
-
-
     // Mở kết nối NVS
     nvs_handle_t my_handle;
     esp_err_t ret;
     ret = nvs_open("nvs", NVS_READWRITE, &my_handle);
-    // if (ret != ESP_OK) return;
+    if (ret != ESP_OK) return;
 
     // Lưu dữ liệu vào flash
     ret = nvs_set_blob(my_handle, key, (void*)&data, sizeof(float));
@@ -192,7 +147,6 @@ void saveDataToFlash(float data, const char *key) {
     } else {
         // printf("Lỗi khi lưu dữ liệu vào flash\n");
     }
-    // Đóng kết nối NVS
     nvs_close(my_handle);
 }
 
@@ -234,7 +188,7 @@ void app_main(void) {
     ESP_ERROR_CHECK(i2c_master_init());
     
 	
-    lcd_init();
+    // lcd_init();
     
     ESP_LOGD(TAG, "I2C initialized successfully");
 	ds18b20_init(5);
@@ -255,33 +209,16 @@ void app_main(void) {
     
 	};
 
-    
-
 
 	ESP_ERROR_CHECK(esp_timer_create(&oneshot_timer_args, &oneshot_timer));
-    
-	const esp_timer_create_args_t periodic_timer_args = {
-            .callback = &periodic_timer_callback,
-            /* name is optional, but may help identify the timer when debugging */
-            .name = "periodic"
-    };
 
-    
-    ESP_ERROR_CHECK(esp_timer_create(&periodic_timer_args, &periodic_timer));
-    
-
-	ESP_ERROR_CHECK(esp_sleep_enable_timer_wakeup(5000000));
-    // temperature_sensing();
-    // nvs_open("nvs", NVS_READWRITE, &limit_check);
-    // check = nvs_find_key(limit_check, "high_lim", NULL);
-    // nvs_close(limit_check);
+	ESP_ERROR_CHECK(esp_sleep_enable_timer_wakeup(16000000));
 
     _server_model_state.high_bsline = readDataFromFlash("high_lim");
     _server_model_state.low_bsline  = readDataFromFlash("low_lim");
 
 	// server_send_status();
     xTaskCreatePinnedToCore(&temperature_sensing, "main task", 1024 * 2, (void *)0, 1, &MainTask, (int)1);
-    xTaskCreatePinnedToCore(&server_send_status, "idle task", 1024 * 2, (void *)0, 0, NULL, (int)1);
     // xTaskCreate(read_received_items, "setting message", 1024 * 2, (void *)0, 1, NULL);
 
 }

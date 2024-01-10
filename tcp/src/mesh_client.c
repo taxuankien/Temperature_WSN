@@ -227,7 +227,7 @@ static void ble_mesh_custom_sensor_client_model_cb(esp_ble_mesh_model_cb_event_t
         case ESP_BLE_MESH_CLIENT_MODEL_RECV_PUBLISH_MSG_EVT:
             switch (param->client_recv_publish_msg.opcode) {
                 case ESP_BLE_MESH_CUSTOM_SENSOR_MODEL_OP_STATUS:
-                    
+                    ble_mesh_custom_sensor_client_model_message_set(device_sensor_data, ESP_BLE_MESH_GROUP_PUB_ADDR);
                     // vTaskDelay(100/portTICK_PERIOD_MS);
                     // ble_mesh_custom_sensor_client_model_message_set(device_sensor_data,(uint16_t)param->client_recv_publish_msg.ctx->addr);
                     ESP_LOGI(TAG, "OP_STATUS -- Message received: 0x%06lx", param->client_recv_publish_msg.opcode);
@@ -246,8 +246,6 @@ static void ble_mesh_custom_sensor_client_model_cb(esp_ble_mesh_model_cb_event_t
                         count = 0;
                         ble_mesh_custom_sensor_client_model_message_set(device_sensor_data, ESP_BLE_MESH_GROUP_PUB_ADDR);
                     }
-                    vTaskDelay(2000/portTICK_PERIOD_MS);
-                    ble_mesh_custom_sensor_client_model_message_set(device_sensor_data, ESP_BLE_MESH_GROUP_PUB_ADDR);
                     count++;
                 break;
 
