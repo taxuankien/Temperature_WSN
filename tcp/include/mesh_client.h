@@ -36,6 +36,8 @@ esp_err_t ble_mesh_device_init_client(void);
  */ 
 extern model_sensor_data_t device_sensor_data;
 extern model_sensor_data_t received_data;
+extern QueueHandle_t queue;
+
 esp_err_t ble_mesh_custom_sensor_client_model_message_set(model_sensor_data_t set_data, uint16_t addr);
 
 

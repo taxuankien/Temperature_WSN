@@ -113,7 +113,8 @@ void server_send_to_client(model_sensor_data_t server_model_state)
     _ctx.send_ttl = 5;
     _ctx.addr = 0xc001;   
     // _ctx.addr = 0x000d;          //gateway
-    // _ctx.recv_dst = 0x0058;         // me
+    // _ctx.recv_dst = 0x0058;   
+          // me
     _ctx.srv_send = 0;
 
     esp_err_t err = esp_ble_mesh_server_model_send_msg(custom_models, &_ctx, ESP_BLE_MESH_CUSTOM_SENSOR_MODEL_OP_STATUS, sizeof(server_model_state), &server_model_state);
@@ -290,13 +291,12 @@ static void ble_mesh_custom_sensor_server_model_cb(esp_ble_mesh_model_cb_event_t
 static void parse_received_data(esp_ble_mesh_model_cb_param_t *recv_param, model_sensor_data_t *parsed_data) {
     if (recv_param->client_recv_publish_msg.length < sizeof(parsed_data)) {
         ESP_LOGE(TAG, "Invalid received message lenght: %d", recv_param->client_recv_publish_msg.length);
-
         return;
     }
 
     parsed_data = (model_sensor_data_t *)recv_param->client_recv_publish_msg.msg;
-
-    ESP_LOGW("PARSED_DATA", "Device Name = %s", parsed_data->device_name);
+    // ESP_LOGI("PLR","%d",count);
+    // ESP_LOGW("PARSED_DATA", "Device Name = %s", parsed_data->device_name);
     ESP_LOGW("PARSED_DATA", "Temperature = %f", parsed_data->temperature);
     ESP_LOGW("PARSED DATA", "Warning low temperature = %f", parsed_data->low_bsline);
     ESP_LOGW("PARSED DATA", "Warning high temperature = %f", parsed_data->high_bsline);
