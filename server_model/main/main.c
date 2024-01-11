@@ -23,6 +23,8 @@ DeviceAddress tempSensors[1];
 TaskHandle_t MainTask = NULL;
 esp_timer_handle_t oneshot_timer;
 esp_timer_handle_t periodic_timer;
+
+gpio_num_t ledWaring={GPIO_PIN_33, GPIO_PIN_4, GPIO_PIN_15};
 uint16_t count=0;
 uint8_t check =1;
 
@@ -34,17 +36,42 @@ model_sensor_data_t _server_model_state = {
 float readDataFromFlash(const char *key);
 void saveDataToFlash(float data, const char *key);
 
+void initWarningLed(){
+    for(int i = 0; i < 3; i++){
+        rtc_gpio_init(ledWaring[i]);
+        rtc_gpio_set_direction(ledWaring[i], OUTPUT);
+        rtc_gpio_hold_en(ledWaring[i])
+    }
+}
+
 void LCD_display(float a){
 	
 	char str[15];
 	lcd_clear();
-	lcd_put_cur(0, 0);
-	lcd_send_string("Temperature is:");
+	lcd_set_cursor(0, 0);
+	lcd_write_string("Temperature is:");
 	
-	lcd_put_cur(1, 0);
+	lcd_set_cursor(1, 0);
 	sprintf(str, "%.1f", a);
-	lcd_send_string(str);
-	
+	lcd_write_string(str);
+	}
+
+void setLedWarningLevel(uint8_t redLed, uint8_t greenLed, uint8_t yellowLed){
+    rtc_gpio_set_level(ledWaring[0], redLed);
+    rtc_gpio_set_level(ledWaring[1], greenLed);
+    rtc_gpio_set_level(ledWaring[2], yellowLed);
+}
+
+void warningLed(model_sensor_data_t data){
+    if (data.temperature < data.low_bsline){
+        setLedWarningLevel(0, 0, 1);
+    }
+    else if(data.temperature > data.high_bsline){
+        setLedWarningLevel(1, 0, 0);
+    }
+    else{
+        setLedWarningLevel(, 1, 0);
+    }
 }
 
 void getTempAddresses(DeviceAddress *tempSensorAddresses) {
@@ -97,6 +124,8 @@ void temperature_sensing(){
             time = esp_timer_get_time();
             ESP_ERROR_CHECK(esp_timer_start_once(oneshot_timer,4000000 - time)); 
             _server_model_state.temperature = get_average_temp();
+
+            warningLed(_server_model_state);
             
             ESP_LOGD(TAG, "Sending ....., time since boot: %lld us", esp_timer_get_time());
             // time = esp_timer_get_time();
@@ -104,7 +133,7 @@ void temperature_sensing(){
             vTaskDelay(6000/portTICK_PERIOD_MS);
             // ESP_LOGI(TAG, "Sent!!, count: %d ", count);
             // vTaskDelay(1000/portTICK_PERIOD_MS);
-            // LCD_display(_server_model_state.temperature);
+            LCD_display(_server_model_state.temperature);
             // ESP_LOGI(TAG, "LCD display success! Average Temp: %.1f ", _server_model_state.temperature);
             
             
