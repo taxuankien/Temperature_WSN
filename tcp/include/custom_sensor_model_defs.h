@@ -27,7 +27,7 @@
  * @brief Device Main Data Structure
  */
 typedef struct __attribute__((packed)) {
-    char device_name[6];
+    char device_name[4];
     
     /**< Temperature sensor Data */
     float temperature;  

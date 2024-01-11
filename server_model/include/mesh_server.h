@@ -14,9 +14,10 @@
 
 #include "freertos/queue.h"
 
-extern QueueHandle_t ble_mesh_received_data_queue;
+// extern QueueHandle_t ble_mesh_received_data_queue;
 
 extern model_sensor_data_t _server_model_state;
+extern uint16_t count;
 
 /**
  * @brief Initializes BLE Mesh stack, initializing Models and it's callback functions
