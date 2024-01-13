@@ -101,7 +101,7 @@ void temperature_sensing(){
             ESP_LOGD(TAG, "Sending ....., time since boot: %lld us", esp_timer_get_time());
             // time = esp_timer_get_time();
             server_send_to_client(_server_model_state);
-            vTaskDelay(6000/portTICK_PERIOD_MS);
+            vTaskDelay(1000/portTICK_PERIOD_MS);
             // ESP_LOGI(TAG, "Sent!!, count: %d ", count);
             // vTaskDelay(1000/portTICK_PERIOD_MS);
             // LCD_display(_server_model_state.temperature);
