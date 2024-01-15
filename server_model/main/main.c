@@ -70,7 +70,7 @@ void warningLed(model_sensor_data_t data){
         setLedWarningLevel(1, 0, 0);
     }
     else{
-        setLedWarningLevel(, 1, 0);
+        setLedWarningLevel(0, 1, 0);
     }
 }
 
@@ -214,7 +214,7 @@ void app_main(void) {
     }
     ESP_ERROR_CHECK(err);
 
-    ESP_ERROR_CHECK(i2c_master_init());
+    // ESP_ERROR_CHECK(i2c_master_init());
     
 	
     // lcd_init();
@@ -234,7 +234,7 @@ void app_main(void) {
     
     const esp_timer_create_args_t oneshot_timer_args = {
 		.callback = &oneshot_timer_callback,
-		.name = "light sleep",
+		.name = "deep sleep",
     
 	};
 

@@ -1,4 +1,4 @@
-#include "liquid_crystal.h"
+#include "LCD1602.h"
 
 // When the display powers up, it is configured as follows:
 //

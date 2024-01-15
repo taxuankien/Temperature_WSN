@@ -2,4 +2,7 @@
 /server_model/build
 /.vscode
 /tcp/build
+/hello_world
+/ds18b20
+/ds18b20_test
 
