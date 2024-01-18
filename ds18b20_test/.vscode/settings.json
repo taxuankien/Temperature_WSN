@@ -1,8 +1,0 @@
-{
-  "files.associations": {
-    "task.h": "c",
-    "gpio.h": "c",
-    "gpio_pins.h": "c",
-    "esp_system.h": "c"
-  }
-}

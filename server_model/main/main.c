@@ -216,7 +216,7 @@ void app_main(void) {
     }
     ESP_ERROR_CHECK(err);
 
-    ESP_ERROR_CHECK(i2c_master_init());
+    // ESP_ERROR_CHECK(i2c_master_init());
     
 	
     // lcd_init();

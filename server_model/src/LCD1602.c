@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include <driver/i2c.h>
 #include <esp_log.h>
 #include <freertos/FreeRTOS.h>
@@ -5,6 +6,9 @@
 #include "sdkconfig.h"
 #include <stdio.h>
 #include "unistd.h"
+=======
+#include "LCD1602.h"
+>>>>>>> 72b2b5dc06560d4c42a6163a2561d825faf98741
 
 #define SLAVE_ADDRESS_LCD	0x27
 #define SDA_IO              GPIO_NUM_21
