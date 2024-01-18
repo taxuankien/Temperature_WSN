@@ -26,61 +26,25 @@
 #include "esp_log.h"
 #include "esp_sleep.h"
 #include "esp_timer.h"
+#include "driver/rtc_io.h"
 float get_average_temp(void);
 void getTempAddresses(DeviceAddress *tempSensorAddresses);
 #define TAG "EXAMPLE"
 const int DS_PIN = 26; //GPIO where you connected ds18b20
 DeviceAddress tempSensors[1];
-
+gpio_num_t ledWaring = 25;
 void mainTask(void *pvParameters){
-  ds18b20_init(DS_PIN);
-  getTempAddresses(tempSensors);
-  ds18b20_setResolution(tempSensors,1,12);
+  rtc_gpio_init(ledWaring);
+  rtc_gpio_set_direction(ledWaring, GPIO_MODE_OUTPUT);
   while (1) {
-    float temp = get_average_temp();
-    ESP_LOGI(TAG, "Temperature Average: %0.3f\n",temp);
+    rtc_gpio_set_level(ledWaring, 1);
+    rtc_gpio_hold_en(ledWaring);
     esp_sleep_enable_timer_wakeup(5 * 1000000);
-    esp_light_sleep_start();
+    esp_deep_sleep_start();
   }
 }
 void app_main()
 {
     nvs_flash_init();
     xTaskCreatePinnedToCore(&mainTask, "mainTask", 2048, NULL, 5, NULL, 0);
-}
-
-float get_average_temp(void){
-  float temp_average = 0;
-  int i = 0;
-  TickType_t startTime = xTaskGetTickCount();
-  while(1){
-    float temp = ds18b20_get_temp();
-    temp_average += temp;
-    ESP_LOGI(TAG, "Temperature: %0.3f\n",temp);
-    vTaskDelay(1/ portTICK_RATE_MS);
-    i++;
-    if ((xTaskGetTickCount() - startTime) >= pdMS_TO_TICKS(3000)) {
-      break;
-    }
-  }
-  temp_average = temp_average / i;
-  return temp_average;
-}
-
-void getTempAddresses(DeviceAddress *tempSensorAddresses) {
-	unsigned int numberFound = 0;
-	reset_search();
-	while (search(tempSensorAddresses[numberFound],true)) {
-		numberFound++;
-		if (numberFound == 1) break;
-	}
-	while (numberFound != 1) {
-		numberFound = 0;
-		reset_search();
-		while (search(tempSensorAddresses[numberFound],true)) {
-			numberFound++;
-			if (numberFound == 1) break;
-		}
-	}
-	return;
 }

@@ -1,7 +1,7 @@
 {
     "version":            "1",
     "project_name":       "ds18b20_test",
-    "project_version":    "bc353b2-dirty",
+    "project_version":    "3d56135-dirty",
     "project_path":       "D:/ESP_Project/Temperature_WSN/ds18b20_test",
     "idf_path":           "D:/esp8266/esp32BleMesh/myMesh/Espressif/frameworks/esp-idf-v5.1.1",
     "build_dir":          "D:/ESP_Project/Temperature_WSN/ds18b20_test/build",
@@ -790,7 +790,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "D:/ESP_Project/Temperature_WSN/ds18b20_test/build/esp-idf/main/libmain.a",
-            "sources": [ "D:/ESP_Project/Temperature_WSN/ds18b20_test/main/ds18b20_test.c", "D:/ESP_Project/Temperature_WSN/ds18b20_test/main/ds18b20.c" ],
+            "sources": [ "D:/ESP_Project/Temperature_WSN/ds18b20_test/main/ds18b20_test.c", "D:/ESP_Project/Temperature_WSN/ds18b20_test/main/ds18b20.c", "D:/ESP_Project/Temperature_WSN/ds18b20_test/main/LCD1602.c" ],
             "include_dirs": [ "." ]
         },
         "mbedtls": {

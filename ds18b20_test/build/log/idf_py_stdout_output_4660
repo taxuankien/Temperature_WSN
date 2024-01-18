@@ -1,0 +1,213 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7084
+ho 0 tail 12 room 4
+load:0x40078000,len:15584
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+[0;32mI (31) boot: ESP-IDF v5.1.1-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jan  6 2024 13:01:37[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.0[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=08c64h ( 35940) map[0m
+[0;32mI (118) esp_image: segment 1: paddr=00018c8c vaddr=3ffb0000 size=02150h (  8528) load[0m
+[0;32mI (121) esp_image: segment 2: paddr=0001ade4 vaddr=40080000 size=05234h ( 21044) load[0m
+[0;32mI (133) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=0fb38h ( 64312) map[0m
+[0;32mI (156) esp_image: segment 4: paddr=0002fb60 vaddr=40085234 size=06dc4h ( 28100) load[0m
+[0;32mI (174) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (174) boot: Disabling RNG early entropy source...[0m
+[0;32mI (186) cpu_start: Multicore app[0m
+[0;32mI (186) cpu_start: Pro cpu up.[0m
+[0;32mI (186) cpu_start: Starting app cpu, entry point is 0x400810e8[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (204) cpu_start: Pro cpu start user code[0m
+[0;32mI (204) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (204) cpu_start: Application information:[0m
+[0;32mI (209) cpu_start: Project name:     ds18b20_test[0m
+[0;32mI (214) cpu_start: App version:      bf3cdc1-dirty[0m
+[0;32mI (220) cpu_start: Compile time:     Jan  8 2024 11:28:13[0m
+[0;32mI (226) cpu_start: ELF file SHA256:  56939511e8973f9f...[0m
+[0;32mI (232) cpu_start: ESP-IDF:          v5.1.1-dirty[0m
+[0;32mI (237) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (242) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (247) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (252) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (259) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (265) heap_init: At 3FFB29E0 len 0002D620 (181 KiB): DRAM[0m
+[0;32mI (271) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (277) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (284) heap_init: At 4008C000 len 00014000 (80 KiB): IRAM[0m
+[0;32mI (291) spi_flash: detected chip: generic[0m
+[0;32mI (295) spi_flash: flash io: dio[0m
+[0;33mW (298) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (312) app_start: Starting scheduler on CPU0[0m
+[0;32mI (317) app_start: Starting scheduler on CPU1[0m
+[0;32mI (317) main_task: Started on CPU0[0m
+[0;32mI (327) main_task: Calling app_main()[0m
+[0;32mI (327) RTC: Current time in Vietnam: 1969-12-31 17:00:00[0m
+[0;32mI (1327) RTC: Current time in Vietnam: 1969-12-31 17:00:01[0m
+[0;32mI (2327) RTC: Current time in Vietnam: 1969-12-31 17:00:02[0m
+[0;32mI (3327) RTC: Current time in Vietnam: 1969-12-31 17:00:03[0m
+[0;32mI (4327) RTC: Current time in Vietnam: 1969-12-31 17:00:04[0m
+[0;32mI (5327) RTC: Current time in Vietnam: 1969-12-31 17:00:05[0m
+[0;32mI (6327) RTC: Current time in Vietnam: 1969-12-31 17:00:06[0m
+[0;32mI (7327) RTC: Current time in Vietnam: 1969-12-31 17:00:07[0m
+[0;32mI (8327) RTC: Current time in Vietnam: 1969-12-31 17:00:08[0m
+[0;32mI (9327) RTC: Current time in Vietnam: 1969-12-31 17:00:09[0m
+[0;32mI (10327) RTC: Current time in Vietnam: 1969-12-31 17:00:10[0m
+[0;32mI (11327) RTC: Current time in Vietnam: 1969-12-31 17:00:11[0m
+[0;32mI (12327) RTC: Current time in Vietnam: 1969-12-31 17:00:12[0m
+[0;32mI (13327) RTC: Current time in Vietnam: 1969-12-31 17:00:13[0m
+[0;32mI (14327) RTC: Current time in Vietnam: 1969-12-31 17:00:14[0m
+[0;32mI (15327) RTC: Current time in Vietnam: 1969-12-31 17:00:15[0m
+[0;32mI (16327) RTC: Current time in Vietnam: 1969-12-31 17:00:16[0m
+[0;32mI (17327) RTC: Current time in Vietnam: 1969-12-31 17:00:17[0m
+[0;32mI (18327) RTC: Current time in Vietnam: 1969-12-31 17:00:18[0m
+[0;32mI (19327) RTC: Current time in Vietnam: 1969-12-31 17:00:19[0m
+[0;32mI (20327) RTC: Current time in Vietnam: 1969-12-31 17:00:20[0m
+[0;32mI (21327) RTC: Current time in Vietnam: 1969-12-31 17:00:21[0m
+[0;32mI (22327) RTC: Current time in Vietnam: 1969-12-31 17:00:22[0m
+[0;32mI (23327) RTC: Current time in Vietnam: 1969-12-31 17:00:23[0m
+[0;32mI (24327) RTC: Current time in Vietnam: 1969-12-31 17:00:24[0m
+[0;32mI (25327) RTC: Current time in Vietnam: 1969-12-31 17:00:25[0m
+[0;32mI (26327) RTC: Current time in Vietnam: 1969-12-31 17:00:26[0m
+[0;32mI (27327) RTC: Current time in Vietnam: 1969-12-31 17:00:27[0m
+[0;32mI (28327) RTC: Current time in Vietnam: 1969-12-31 17:00:28[0m
+[0;32mI (29327) RTC: Current time in Vietnam: 1969-12-31 17:00:29[0m
+[0;32mI (30327) RTC: Current time in Vietnam: 1969-12-31 17:00:30[0m
+[0;32mI (31327) RTC: Current time in Vietnam: 1969-12-31 17:00:31[0m
+[0;32mI (32327) RTC: Current time in Vietnam: 1969-12-31 17:00:32[0m
+[0;32mI (33327) RTC: Current time in Vietnam: 1969-12-31 17:00:33[0m
+[0;32mI (34327) RTC: Current time in Vietnam: 1969-12-31 17:00:34[0m
+[0;32mI (35327) RTC: Current time in Vietnam: 1969-12-31 17:00:35[0m
+[0;32mI (36327) RTC: Current time in Vietnam: 1969-12-31 17:00:36[0m
+[0;32mI (37327) RTC: Current time in Vietnam: 1969-12-31 17:00:37[0m
+[0;32mI (38327) RTC: Current time in Vietnam: 1969-12-31 17:00:38[0m
+[0;32mI (39327) RTC: Current time in Vietnam: 1969-12-31 17:00:39[0m
+[0;32mI (40327) RTC: Current time in Vietnam: 1969-12-31 17:00:40[0m
+[0;32mI (41327) RTC: Current time in Vietnam: 1969-12-31 17:00:41[0m
+[0;32mI (42327) RTC: Current time in Vietnam: 1969-12-31 17:00:42[0m
+[0;32mI (43327) RTC: Current time in Vietnam: 1969-12-31 17:00:43[0m
+[0;32mI (44327) RTC: Current time in Vietnam: 1969-12-31 17:00:44[0m
+[0;32mI (45327) RTC: Current time in Vietnam: 1969-12-31 17:00:45[0m
+[0;32mI (46327) RTC: Current time in Vietnam: 1969-12-31 17:00:46[0m
+[0;32mI (47327) RTC: Current time in Vietnam: 1969-12-31 17:00:47[0m
+[0;32mI (48327) RTC: Current time in Vietnam: 1969-12-31 17:00:48[0m
+[0;32mI (49327) RTC: Current time in Vietnam: 1969-12-31 17:00:49[0m
+[0;32mI (50327) RTC: Current time in Vietnam: 1969-12-31 17:00:50[0m
+[0;32mI (51327) RTC: Current time in Vietnam: 1969-12-31 17:00:51[0m
+[0;32mI (52327) RTC: Current time in Vietnam: 1969-12-31 17:00:52[0m
+[0;32mI (53327) RTC: Current time in Vietnam: 1969-12-31 17:00:53[0m
+[0;32mI (54327) RTC: Current time in Vietnam: 1969-12-31 17:00:54[0m
+[0;32mI (55327) RTC: Current time in Vietnam: 1969-12-31 17:00:55[0m
+[0;32mI (56327) RTC: Current time in Vietnam: 1969-12-31 17:00:56[0m
+[0;32mI (57327) RTC: Current time in Vietnam: 1969-12-31 17:00:57[0m
+[0;32mI (58327) RTC: Current time in Vietnam: 1969-12-31 17:00:58[0m
+[0;32mI (59327) RTC: Current time in Vietnam: 1969-12-31 17:00:59[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7084
+ho 0 tail 12 room 4
+load:0x40078000,len:15584
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+[0;32mI (31) boot: ESP-IDF v5.1.1-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jan  6 2024 13:01:37[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.0[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=08c64h ( 35940) map[0m
+[0;32mI (118) esp_image: segment 1: paddr=00018c8c vaddr=3ffb0000 size=02150h (  8528) load[0m
+[0;32mI (121) esp_image: segment 2: paddr=0001ade4 vaddr=40080000 size=05234h ( 21044) load[0m
+[0;32mI (133) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=0fb38h ( 64312) map[0m
+[0;32mI (156) esp_image: segment 4: paddr=0002fb60 vaddr=40085234 size=06dc4h ( 28100) load[0m
+[0;32mI (174) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (174) boot: Disabling RNG early entropy source...[0m
+[0;32mI (186) cpu_start: Multicore app[0m
+[0;32mI (186) cpu_start: Pro cpu up.[0m
+[0;32mI (186) cpu_start: Starting app cpu, entry point is 0x400810e8[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (204) cpu_start: Pro cpu start user code[0m
+[0;32mI (204) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (204) cpu_start: Application information:[0m
+[0;32mI (209) cpu_start: Project name:     ds18b20_test[0m
+[0;32mI (214) cpu_start: App version:      bf3cdc1-dirty[0m
+[0;32mI (220) cpu_start: Compile time:     Jan  8 2024 11:28:13[0m
+[0;32mI (226) cpu_start: ELF file SHA256:  56939511e8973f9f...[0m
+[0;32mI (232) cpu_start: ESP-IDF:          v5.1.1-dirty[0m
+[0;32mI (237) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (242) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (247) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (252) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (259) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (265) heap_init: At 3FFB29E0 len 0002D620 (181 KiB): DRAM[0m
+[0;32mI (271) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (277) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (284) heap_init: At 4008C000 len 00014000 (80 KiB): IRAM[0m
+[0;32mI (291) spi_flash: detected chip: generic[0m
+[0;32mI (295) spi_flash: flash io: dio[0m
+[0;33mW (298) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (312) app_start: Starting scheduler on CPU0[0m
+[0;32mI (317) app_start: Starting scheduler on CPU1[0m
+[0;32mI (317) main_task: Started on CPU0[0m
+[0;32mI (327) main_task: Calling app_main()[0m
+[0;32mI (327) RTC: Current time in Vietnam: 1969-12-31 17:00:00[0m
+[0;32mI (1327) RTC: Current time in Vietnam: 1969-12-31 17:00:01[0m
+[0;32mI (2327) RTC: Current time in Vietnam: 1969-12-31 17:00:02[0m
+[0;32mI (3327) RTC: Current time in Vietnam: 1969-12-31 17:00:03[0m
+[0;32mI (4327) RTC: Current time in Vietnam: 1969-12-31 17:00:04[0m
+[0;32mI (5327) RTC: Current time in Vietnam: 1969-12-31 17:00:05[0m
+[0;32mI (6327) RTC: Current time in Vietnam: 1969-12-31 17:00:06[0m
+[0;32mI (7327) RTC: Current time in Vietnam: 1969-12-31 17:00:07[0m
+[0;32mI (8327) RTC: Current time in Vietnam: 1969-12-31 17:00:08[0m
+[0;32mI (9327) RTC: Current time in Vietnam: 1969-12-31 17:00:09[0m
+[0;32mI (10327) RTC: Current time in Vietnam: 1969-12-31 17:00:10[0m
+[0;32mI (11327) RTC: Current time in Vietnam: 1969-12-31 17:00:11[0m
+[0;32mI (12327) RTC: Current time in Vietnam: 1969-12-31 17:00:12[0m
+[0;32mI (13327) RTC: Current time in Vietnam: 1969-12-31 17:00:13[0m
+[0;32mI (14327) RTC: Current time in Vietnam: 1969-12-31 17:00:14[0m
+[0;32mI (15327) RTC: Current time in Vietnam: 1969-12-31 17:00:15[0m
+[0;32mI (16327) RTC: Current time in Vietnam: 1969-12-31 17:00:16[0m
+[0;32mI (17327) RTC: Current time in Vietnam: 1969-12-31 17:00:17[0m
+[0;32mI (18327) RTC: Current time in Vietnam: 1969-12-31 17:00:18[0m
+[0;32mI (19327) RTC: Current time in Vietnam: 1969-12-31 17:00:19[0m
+[0;32mI (20327) RTC: Current time in Vietnam: 1969-12-31 17:00:20[0m
+[0;32mI (21327) RTC: Current time in Vietnam: 1969-12-31 17:00:21[0m
+[0;32mI (22327) RTC: Current time in Vietnam: 1969-12-31 17:00:22[0m
+[0;32mI (23327) RTC: Current time in Vietnam: 1969-12-31 17:00:23[0m
+[0;32mI (24327) RTC: Current time in Vietnam: 1969-12-31 17:00:24[0m
+[0;32mI (25327) RTC: Current time in Vietnam: 1969-12-31 17:00:25[0m
+[0;32mI (26327) RTC: Current time in Vietnam: 1969-12-31 17:00:26[0m
+[0;32mI (27327) RTC: Current time in Vietnam: 1969-12-31 17:00:27[0m
+[0;32mI (28327) RTC: Current time in Vietnam: 1969-12-31 17:00:28[0m
+[0;32mI (29327) RTC: Current time in Vietnam: 1969-12-31 17:00:29[0m
+[0;32mI (30327) RTC: Current time in Vietnam: 1969-12-31 17:00:30[0m

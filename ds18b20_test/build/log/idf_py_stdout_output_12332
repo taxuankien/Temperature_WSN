@@ -1,0 +1,7 @@
+[0/1] Re-running CMake...
+-- ccache will be used for faster recompilation
+-- Building ESP-IDF components for target esp32
+-- Configuring incomplete, errors occurred!
+See also "D:/ESP_Project/Temperature_WSN/ds18b20_test/build/CMakeFiles/CMakeOutput.log".
+FAILED: build.ninja 
+D:\esp8266\esp32BleMesh\myMesh\Espressif\tools\cmake\3.24.0\bin\cmake.exe --regenerate-during-build -SD:\ESP_Project\Temperature_WSN\ds18b20_test -BD:\ESP_Project\Temperature_WSN\ds18b20_test\build

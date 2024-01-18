@@ -18,13 +18,13 @@
 #include "LCD1602.h"
 
 static const char* TAG = "MESH SERVER";
-const int DS_PIN = 26; //GPIO where you connected ds18b20
+const int DS_PIN = 15; // GPIO where you connected ds18b20
 DeviceAddress tempSensors[1];
 TaskHandle_t MainTask = NULL;
 esp_timer_handle_t oneshot_timer;
 esp_timer_handle_t periodic_timer;
 
-gpio_num_t ledWaring={GPIO_PIN_33, GPIO_PIN_4, GPIO_PIN_15};
+gpio_num_t ledWaring[3] = {25, 26, 27};
 uint16_t count=0;
 uint8_t check =1;
 
@@ -39,8 +39,7 @@ void saveDataToFlash(float data, const char *key);
 void initWarningLed(){
     for(int i = 0; i < 3; i++){
         rtc_gpio_init(ledWaring[i]);
-        rtc_gpio_set_direction(ledWaring[i], OUTPUT);
-        rtc_gpio_hold_en(ledWaring[i])
+        rtc_gpio_set_direction(ledWaring[i], GPIO_MODE_OUTPUT);
     }
 }
 
@@ -48,18 +47,21 @@ void LCD_display(float a){
 	
 	char str[15];
 	lcd_clear();
-	lcd_set_cursor(0, 0);
-	lcd_write_string("Temperature is:");
-	
-	lcd_set_cursor(1, 0);
-	sprintf(str, "%.1f", a);
-	lcd_write_string(str);
-	}
+    lcd_put_cur(0, 0);
+    lcd_send_string("Temperature is:");
+
+    lcd_put_cur(1, 0);
+    sprintf(str, "%.1f", a);
+    lcd_send_string(str);
+}
 
 void setLedWarningLevel(uint8_t redLed, uint8_t greenLed, uint8_t yellowLed){
-    rtc_gpio_set_level(ledWaring[0], redLed);
-    rtc_gpio_set_level(ledWaring[1], greenLed);
-    rtc_gpio_set_level(ledWaring[2], yellowLed);
+    rtc_gpio_set_level(ledWaring[0], redLed);
+    rtc_gpio_hold_en(ledWaring[0]);
+    rtc_gpio_set_level(ledWaring[1], greenLed);
+    rtc_gpio_hold_en(ledWaring[1]);
+    rtc_gpio_set_level(ledWaring[2], yellowLed);
+    rtc_gpio_hold_en(ledWaring[2]);
 }
 
 void warningLed(model_sensor_data_t data){
@@ -70,7 +72,7 @@ void warningLed(model_sensor_data_t data){
         setLedWarningLevel(1, 0, 0);
     }
     else{
-        setLedWarningLevel(, 1, 0);
+        setLedWarningLevel(0, 1, 0);
     }
 }
 
@@ -115,7 +117,7 @@ float get_average_temp(void){
 void temperature_sensing(){
     uint64_t time = 0;
     
-    lcd_clear();
+    // lcd_clear();
 	while (1){
         // xLastWakeTime = xTaskGetTickCount();
         if(is_server_provisioned() && check){
@@ -133,7 +135,7 @@ void temperature_sensing(){
             vTaskDelay(6000/portTICK_PERIOD_MS);
             // ESP_LOGI(TAG, "Sent!!, count: %d ", count);
             // vTaskDelay(1000/portTICK_PERIOD_MS);
-            LCD_display(_server_model_state.temperature);
+            // LCD_display(_server_model_state.temperature);
             // ESP_LOGI(TAG, "LCD display success! Average Temp: %.1f ", _server_model_state.temperature);
             
             
@@ -234,7 +236,7 @@ void app_main(void) {
     
     const esp_timer_create_args_t oneshot_timer_args = {
 		.callback = &oneshot_timer_callback,
-		.name = "light sleep",
+		.name = "deep sleep",
     
 	};
 
