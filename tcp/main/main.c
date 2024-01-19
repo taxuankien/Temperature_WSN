@@ -11,6 +11,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "freertos/semphr.h"
+#include "freertos/event_groups.h"
 #include "freertos/queue.h"
 #include "lwip/sockets.h"
 #include "lwip/dns.h"
@@ -23,13 +24,22 @@
 #include "esp_ble_mesh_defs.h"
 #include "mesh_client.h"
 // Access Token của device Temp trên Thingsboard
-#define ACCESS_TOKEN "6n009mfxxuq4sc4fisu7"
+#define ACCESS_TOKEN "VArxbVvDhxEDhpWre49N"
 
 #define MAX_KEY_LENGTH 100
 #define MAX_VALUE_LENGTH 100
+#define MAX_DEVICE_NUM  20
+#define MQTT_FLAG   (1<<3)
+#define TIME_FLAG   (1<<2)
+
+
 int check, node, lastValue, k = 3;
 
 QueueHandle_t queue;
+EventGroupHandle_t xEventBits;
+data_state_t received_data_state[MAX_DEVICE_NUM];
+int current_device_num = 0;
+
 model_sensor_data_t device_sensor_data = {
     .high_bsline = 38,
     .low_bsline = 16,
@@ -152,6 +162,7 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
     }
 }
 
+
 static void mqtt_app_start(void){
     esp_mqtt_client_config_t mqtt_cfg = {
         .broker.address.uri = "mqtt://mqtt.thingsboard.cloud:1883",
@@ -164,23 +175,101 @@ static void mqtt_app_start(void){
     esp_mqtt_client_start(client);
 }
 
-void mqqt_sending(void *arg){
-    model_sensor_data_t rxBuffer;
-    while (1){ 
-        // ESP_LOGI(" "," ");
-        if( xQueueReceive(queue, &(rxBuffer), (TickType_t)5)){   
-                ESP_LOGI(TAG, "Startup..");
-                int number = atoi(rxBuffer.device_name);
-                char payload[30] ;
-                snprintf(payload, sizeof(payload), "{temperature%d:%f}", number,rxBuffer.temperature);
-                esp_mqtt_client_publish(client1, "v1/devices/me/telemetry"  , payload, 0, 1, 0);
-        }
+void state_update(model_sensor_data_t data){
+    int deviceIdx = atoi(data.device_name);
+    if(!received_data_state[deviceIdx].active){
+        current_device_num ++;
+    }
+    received_data_state[deviceIdx].active = true;
+    received_data_state[deviceIdx].receiv = true;
+    received_data_state[deviceIdx].lim_changed = ((int)(data.high_bsline * 10) != (int)(device_sensor_data.high_bsline * 10)||(int)(data.low_bsline * 10) != (int)(device_sensor_data.low_bsline * 10))?true:false;
+}
 
-        // vTaskDelay(500/portTICK_PERIOD_MS);
+
+
+void mqtt_sending(){
+    model_sensor_data_t rxBuffer;
+    TickType_t time;
+    char payload[30] ;
+    int number = 0;
+    
+    while( xQueueReceive(queue, &(rxBuffer), (TickType_t)5)){   
+            ESP_LOGI(TAG, "Startup..");
+            number = atoi(rxBuffer.device_name);
+            snprintf(payload, sizeof(payload), "{temperature%d:%f}", number,rxBuffer.temperature);
+            esp_mqtt_client_publish(client1, "v1/devices/me/telemetry"  , payload, 0, 1, 0);
+            state_update(rxBuffer); 
+                
+    }  
+    xEventGroupSetBits(xEventBits, MQTT_FLAG); 
+}
+
+void main_task(void *arg){
+    TickType_t time;
+    while (1)
+    {   if(is_client_provisioned()){
+            time = xTaskGetTickCount();
+            ble_mesh_custom_sensor_client_model_message_get();
+            vTaskDelayUntil(&time, 1000/portTICK_PERIOD_MS);
+            mqtt_sending();
+            vTaskDelayUntil(&time, 19000/portTICK_PERIOD_MS);
+        }
+        else
+            vTaskDelay(20000/portTICK_PERIOD_MS);
+    }
+    
+}
+
+void state_process(void *arg){
+    int total_message ;
+    char payload[30] ;
+    TickType_t time;
+    EventBits_t uxBits;
+    bool limit_check = false;
+
+    while(1){
+        time = xTaskGetTickCount();
+        uxBits = xEventGroupWaitBits(xEventBits, MQTT_FLAG, pdTRUE, pdTRUE, (TickType_t)100);
+        if((uxBits & MQTT_FLAG) != 0){
+            total_message = 0;
+            for(int i = 0; i < MAX_DEVICE_NUM; i++){
+                switch (received_data_state[i].active)
+                {
+                case true:
+                    switch(received_data_state[i].receiv){
+                    case true:
+                        total_message++;
+                        if(received_data_state[i].lim_changed){
+                            limit_check = true;
+                            
+                        }
+                        break;
+                    default:
+                        snprintf(payload, sizeof(payload), "{temperature%d:-1}", i);
+                        esp_mqtt_client_publish(client1, "v1/devices/me/telemetry"  , payload, 0, 1, 0);
+                        break;
+                    }
+                    break;
+                default:
+                    break;
+                }
+                
+                received_data_state[i].receiv = false;
+            }
+            if(limit_check){
+                ble_mesh_custom_sensor_client_model_message_set(device_sensor_data, 0xC000);
+                limit_check = false;
+            }
+            ESP_LOGW(TAG, "Total received messages: %d / device: %d", total_message, current_device_num);
+            vTaskDelayUntil(&time, 20000/portTICK_PERIOD_MS);
+        }
     }
 }
+
+
 void app_main(void){
     esp_err_t err;
+    TickType_t tick;
     queue = xQueueCreate(5, sizeof(model_sensor_data_t)); 
 
     ESP_LOGI(TAG, "[APP] Startup..");
@@ -201,18 +290,21 @@ void app_main(void){
         err = nvs_flash_init();
     }
 
-    err = ble_mesh_device_init_client();
+   
+    
+    xEventBits = xEventGroupCreate();
+
+    ESP_ERROR_CHECK(esp_netif_init());
+    ESP_ERROR_CHECK(esp_event_loop_create_default());
+    ESP_ERROR_CHECK(example_connect()); // Connect WiFi
+     err = ble_mesh_device_init_client();
     if (err) {
         ESP_LOGE(TAG, "Bluetooth mesh init failed (err %d)", err);
     }
     
-    // ESP_ERROR_CHECK(esp_netif_init());
-    // ESP_ERROR_CHECK(esp_event_loop_create_default());
-    // ESP_ERROR_CHECK(example_connect()); // Connect WiFi
-    // vTaskDelay(1000/portTICK_PERIOD_MS);
-    
-    // mqtt_app_start();
-    // xTaskCreatePinnedToCore(&mqqt_sending, "main task", 1024 * 2, (void *)0, 0, NULL, (int)1);
+    mqtt_app_start();
+    xTaskCreatePinnedToCore(&main_task, "main task", 3072, NULL, 2, NULL, (int)1);
+    xTaskCreatePinnedToCore(&state_process, "state processing", 2048, (void*)0, 0, NULL, (int)1);
 }
 
 

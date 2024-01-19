@@ -104,7 +104,7 @@ void lcd_put_cur(int row, int col)
 
 void lcd_send_string (char *str)
 {
-	while (*str) lcd_send_data (*str++);
+	while (*str != '\0') lcd_send_data (*str++);
 }
 
 void lcd_clear(void)
