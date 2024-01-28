@@ -14,5 +14,11 @@ Main features of the sensor node:
 3. Controlling LED lights based on temperature thresholds.
 4. Sleeping to power-saving
 5. Changing the temperature threshold from the interface/gateway.
+   
 Here is an illustrative image of a sensor node.
+<<<<<<< HEAD
 ![Sensor node] (sensor_node.jpg)
+=======
+
+<img src="sensor_node.jpg" width="500" alt="sensor node">
+>>>>>>> net
