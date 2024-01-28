@@ -258,7 +258,10 @@ static void ble_mesh_custom_sensor_server_model_cb(esp_ble_mesh_model_cb_event_t
                     //("TIME", "%lld", esp_timer_get_time() - time);
                     ESP_LOGI(TAG, "OP_SET -- Received HEX message: ");
                     ESP_LOG_BUFFER_HEX(TAG, (uint8_t*)param->model_operation.msg, param->model_operation.length);
-                    
+                    xEventGroupSetBitsFromISR(
+                              xEventBits,   /* The event group being updated. */
+                              RX_FLAG, /* The bits being set. */
+                              pdFALSE);
                     //* Salva os dados recebidos no State do Model
                     parse_received_data(param, (model_sensor_data_t*)&param->model_operation.model->user_data);
                 break;

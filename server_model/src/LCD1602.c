@@ -85,6 +85,7 @@ void lcd_init (void)
 	usleep(1000);
 	lcd_send_cmd (0x0C); //Display on/off control --> D = 1, C and B = 0. (Cursor and blink, last two bits)
 	usleep(2000);
+	lcd_send_cmd (0x01);
 }
 
 void lcd_put_cur(int row, int col)

@@ -37,8 +37,9 @@ int check, node, lastValue, k = 3;
 
 QueueHandle_t queue;
 EventGroupHandle_t xEventBits;
-data_state_t received_data_state[MAX_DEVICE_NUM];
+data_state_t received_data_state[MAX_DEVICE_NUM] = {0};
 int current_device_num = 0;
+bool limit_check = false;
 
 model_sensor_data_t device_sensor_data = {
     .high_bsline = 38,
@@ -176,6 +177,7 @@ static void mqtt_app_start(void){
 }
 
 void state_update(model_sensor_data_t data){
+    ESP_LOGW(TAG, "state update!!!!!\n");
     int deviceIdx = atoi(data.device_name);
     if(!received_data_state[deviceIdx].active){
         current_device_num ++;
@@ -206,13 +208,16 @@ void mqtt_sending(){
 
 void main_task(void *arg){
     TickType_t time;
+
     while (1)
     {   if(is_client_provisioned()){
             time = xTaskGetTickCount();
+    
             ble_mesh_custom_sensor_client_model_message_get();
-            vTaskDelayUntil(&time, 1000/portTICK_PERIOD_MS);
+
+            vTaskDelay(1000/portTICK_PERIOD_MS); 
             mqtt_sending();
-            vTaskDelayUntil(&time, 19000/portTICK_PERIOD_MS);
+            vTaskDelayUntil(&time, 20000/portTICK_PERIOD_MS);
         }
         else
             vTaskDelay(20000/portTICK_PERIOD_MS);
@@ -225,7 +230,7 @@ void state_process(void *arg){
     char payload[30] ;
     TickType_t time;
     EventBits_t uxBits;
-    bool limit_check = false;
+    
 
     while(1){
         time = xTaskGetTickCount();
@@ -233,33 +238,27 @@ void state_process(void *arg){
         if((uxBits & MQTT_FLAG) != 0){
             total_message = 0;
             for(int i = 0; i < MAX_DEVICE_NUM; i++){
-                switch (received_data_state[i].active)
-                {
-                case true:
-                    switch(received_data_state[i].receiv){
-                    case true:
-                        total_message++;
-                        if(received_data_state[i].lim_changed){
-                            limit_check = true;
-                            
-                        }
-                        break;
-                    default:
-                        snprintf(payload, sizeof(payload), "{temperature%d:-1}", i);
-                        esp_mqtt_client_publish(client1, "v1/devices/me/telemetry"  , payload, 0, 1, 0);
-                        break;
-                    }
-                    break;
-                default:
+                if(received_data_state[i].lim_changed){
+                    ble_mesh_custom_sensor_client_model_message_set(device_sensor_data, 0xC000);
+                    ESP_LOGI(TAG, "New limit sent!");
                     break;
                 }
-                
+            }
+            for(int i = 0; i < MAX_DEVICE_NUM; i++){
+                if(received_data_state[i].receiv & received_data_state[i].active){
+                    total_message++;
+                }
+                else if (received_data_state[i].active == true && received_data_state[i].receiv == false)
+                {
+                    snprintf(payload, sizeof(payload), "{temperature%d:-1}", i);
+                    esp_mqtt_client_publish(client1, "v1/devices/me/telemetry"  , payload, 0, 1, 0);
+                }
                 received_data_state[i].receiv = false;
             }
-            if(limit_check){
-                ble_mesh_custom_sensor_client_model_message_set(device_sensor_data, 0xC000);
-                limit_check = false;
-            }
+            // if(limit_check){
+            //     ble_mesh_custom_sensor_client_model_message_set(device_sensor_data, 0xC000);
+            //     limit_check = false;
+            // }
             ESP_LOGW(TAG, "Total received messages: %d / device: %d", total_message, current_device_num);
             vTaskDelayUntil(&time, 20000/portTICK_PERIOD_MS);
         }

@@ -37,7 +37,7 @@ SemaphoreHandle_t xSemaphore;
 
 // QueueHandle_t ble_mesh_received_data_queue = NULL;
 model_sensor_data_t _server_model_state = {
-    .device_name = "2",
+    .device_name = "1",
 };
 
 float readDataFromFlash(const char *key);
@@ -126,7 +126,7 @@ float get_temp(void){
 
 void board_operaton(){
     EventBits_t uxBits;
-    LCD_display(_server_model_state.temperature);
+    
     warningLed(_server_model_state);
     saveDataToFlash(_server_model_state.high_bsline, "high_lim");
     saveDataToFlash(_server_model_state.low_bsline, "low_lim");
@@ -180,13 +180,14 @@ void main_task(void *args){
         tick = xTaskGetTickCount();
         uxBits = xEventGroupWaitBits(xEventBits, RX_FLAG, pdTRUE, pdTRUE, 50/portTICK_PERIOD_MS);
         if((uxBits & RX_FLAG) != 0){
-
+            
             _server_model_state.temperature = get_temp();
+            vTaskDelay(10/portTICK_PERIOD_MS);
             server_send_to_client(_server_model_state);
             
-            vTaskDelayUntil(&tick, 1000 /portTICK_PERIOD_MS);
+            vTaskDelayUntil(&tick, 3000 /portTICK_PERIOD_MS);
+            LCD_display(_server_model_state.temperature);
             board_operaton();
-            vTaskDelayUntil(&tick, 1000 /portTICK_PERIOD_MS);
             ESP_LOGI(TAG, "sleep");
             esp_deep_sleep_start();
             
@@ -237,7 +238,7 @@ void app_main(void) {
     xEventBits = xEventGroupCreate();
     xSemaphore = xSemaphoreCreateBinary();
     
-    esp_sleep_enable_timer_wakeup(16000000);
+    esp_sleep_enable_timer_wakeup(15000000);
     
     xTaskCreatePinnedToCore(&main_task, "main task", 1024 * 2, NULL, 1, NULL, (int)1);
 
