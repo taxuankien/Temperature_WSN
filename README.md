@@ -3,10 +3,10 @@ The project is designed to create a wireless sensor network for temperature moni
 ## Overview
 The project utilizes Bluetooth Mesh to establish a wireless sensor network. The sensor nodes employ ESP32 Bluetooth modules to read and store sensor values, as well as communicate with the gateway within the network.
 # Hardware 
-Esp32 Dev Module
-Ds18b20 Temperature sensor
-LCD1602
-Red/Yellow/Green Led
+- Esp32 Dev Module
+- Ds18b20 Temperature sensor
+- LCD1602
+- Red/Yellow/Green Led
 # Features
 Main features of the sensor node:
 1. Reading environmental temperature and sending data to the Thingsboard interface.
