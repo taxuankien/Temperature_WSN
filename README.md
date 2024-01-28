@@ -15,4 +15,4 @@ Main features of the sensor node:
 4. Sleeping to power-saving
 5. Changing the temperature threshold from the interface/gateway.
 Here is an illustrative image of a sensor node.
-![sensor node] (https://github.com/taxuankien/Temperature_WSN/blob/net/sensor_node.jpg)https://github.com/taxuankien/Temperature_WSN/blob/net/sensor_node.jpg)
+![sensor node](sensor_node.jpg)
