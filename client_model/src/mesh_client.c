@@ -12,8 +12,9 @@
 #define TAG     "MESH_CLIENT"
 
 static uint8_t dev_uuid[16] = {0xdd, 0xdd};     //Device UUID
-uint16_t count = 0;
+bool start = 0;
 static bool is_provisioning = false;
+model_sensor_data_t received_data;
 
 
 static esp_ble_mesh_cfg_srv_t  config_server = {
@@ -25,6 +26,13 @@ static esp_ble_mesh_cfg_srv_t  config_server = {
     /* 3 transmissions with 20ms interval */
     .net_transmit = ESP_BLE_MESH_TRANSMIT(2, 20),
     .relay_retransmit = ESP_BLE_MESH_TRANSMIT(2, 20),
+    .heartbeat_sub = {
+    	.src = 0x0032,
+		.dst = 0xC001,
+		.count = 0xFFFF,
+		.min_hops = 0x01,
+		.max_hops = 0x7F,
+	}
 };
 
 static const esp_ble_mesh_client_op_pair_t custom_model_op_pair[] = {
@@ -122,7 +130,7 @@ static void parse_received_data(esp_ble_mesh_model_cb_param_t *recv_param, model
 
 bool is_client_provisioned(void)
 {
-    return is_provisioning;
+    return is_provisioning & start;
 }
 
 static void prov_complete(uint16_t net_idx, uint16_t addr, uint8_t flags, uint32_t iv_index) {
@@ -141,6 +149,7 @@ static void ble_mesh_provisioning_cb(esp_ble_mesh_prov_cb_event_t event,
         
         case ESP_BLE_MESH_NODE_PROV_ENABLE_COMP_EVT:
             ESP_LOGI(TAG, "ESP_BLE_MESH_NODE_PROV_ENABLE_COMP_EVT, err_code %d", param->node_prov_enable_comp.err_code);
+            start = (param->node_prov_enable_comp.err_code == -120)?1:0;
         break;
         
         case ESP_BLE_MESH_NODE_PROV_LINK_OPEN_EVT:
@@ -165,7 +174,10 @@ static void ble_mesh_provisioning_cb(esp_ble_mesh_prov_cb_event_t event,
         case ESP_BLE_MESH_NODE_SET_UNPROV_DEV_NAME_COMP_EVT:
             ESP_LOGI(TAG, "ESP_BLE_MESH_NODE_SET_UNPROV_DEV_NAME_COMP_EVT, Name: %s, err_code %d", BLE_MESH_DEVICE_NAME, param->node_set_unprov_dev_name_comp.err_code);
         break;
-        
+
+		case ESP_BLE_MESH_HEARTBEAT_MESSAGE_RECV_EVT:
+			ESP_LOGI(TAG, "HB message Received: %d\n", param->heartbeat_msg_recv.hops);
+		break;
         default:
         break;
     }
@@ -227,7 +239,7 @@ static void ble_mesh_custom_sensor_client_model_cb(esp_ble_mesh_model_cb_event_t
         case ESP_BLE_MESH_CLIENT_MODEL_RECV_PUBLISH_MSG_EVT:
             switch (param->client_recv_publish_msg.opcode) {
                 case ESP_BLE_MESH_CUSTOM_SENSOR_MODEL_OP_STATUS:
-                    ble_mesh_custom_sensor_client_model_message_set(device_sensor_data, ESP_BLE_MESH_GROUP_PUB_ADDR);
+                    // ble_mesh_custom_sensor_client_model_message_set(device_sensor_data, ESP_BLE_MESH_GROUP_PUB_ADDR);
                     // vTaskDelay(100/portTICK_PERIOD_MS);
                     // ble_mesh_custom_sensor_client_model_message_set(device_sensor_data,(uint16_t)param->client_recv_publish_msg.ctx->addr);
                     ESP_LOGI(TAG, "OP_STATUS -- Message received: 0x%06lx", param->client_recv_publish_msg.opcode);
@@ -235,18 +247,11 @@ static void ble_mesh_custom_sensor_client_model_cb(esp_ble_mesh_model_cb_event_t
                     ESP_LOG_BUFFER_HEX(TAG, param->client_recv_publish_msg.msg, param->client_recv_publish_msg.length);
 
                     //! Fazer alguma coisa nesse get ao inves de só printar o valor
-                    model_sensor_data_t received_data;
+                    
                     received_data = *(model_sensor_data_t *)param->client_recv_publish_msg.msg;
-                    xQueueSend(queue, (void*)&received_data, (TickType_t)10);
+                    
+                    xQueueSendToBack(queue, (void*)&received_data, (TickType_t)10);
                     parse_received_data(param, &received_data);
-                    device_sensor_data.temperature = count;
-                    if(((int)(received_data.high_bsline * 10) != (int)(device_sensor_data.high_bsline *10)) || ((int)(received_data.low_bsline *10)!= (int)(device_sensor_data.low_bsline* 10))|| count ==300){
-                        ESP_LOGI(TAG, "High: %f, Low: %f!", received_data.high_bsline, received_data.low_bsline);
-                        device_sensor_data.temperature = count;
-                        count = 0;
-                        ble_mesh_custom_sensor_client_model_message_set(device_sensor_data, ESP_BLE_MESH_GROUP_PUB_ADDR);
-                    }
-                    count++;
                 break;
 
                 default:

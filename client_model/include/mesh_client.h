@@ -33,7 +33,14 @@ esp_err_t ble_mesh_device_init_client(void);
  * @brief Custom Sensor Client Model SET message that
  *        publishes data to ESP_BLE_MESH_GROUP_PUB_ADDR
  *
- */ 
+ */
+typedef struct data_state 
+{
+    bool active;
+    bool receiv;
+    bool lim_changed;
+} data_state_t;
+ 
 extern model_sensor_data_t device_sensor_data;
 extern model_sensor_data_t received_data;
 extern QueueHandle_t queue;

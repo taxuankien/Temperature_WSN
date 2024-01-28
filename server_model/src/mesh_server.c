@@ -14,6 +14,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
+#define RX_FLAG (1 << 2)
 static const char* TAG = "MESH_SERVER";
 
 static uint8_t dev_uuid[16] = { 0xdd, 0xdd };   /**< Device UUID */
@@ -24,9 +25,10 @@ static esp_ble_mesh_cfg_srv_t config_server = {
     .beacon = ESP_BLE_MESH_BEACON_ENABLED,
     .default_ttl = 7,
     .friend_state = ESP_BLE_MESH_FRIEND_NOT_SUPPORTED,
-    /* 3 transmissions with 20ms interval */
-    .net_transmit = ESP_BLE_MESH_TRANSMIT(0, 10),
-    .relay_retransmit = ESP_BLE_MESH_TRANSMIT(0, 10),
+    /* 3 transmissions with 10ms interval */
+    .net_transmit = ESP_BLE_MESH_TRANSMIT(2, 10),
+    .relay_retransmit = ESP_BLE_MESH_TRANSMIT(2, 10),
+    
 };
 
 static esp_ble_mesh_model_t root_models[] = {
@@ -106,6 +108,7 @@ bool is_server_provisioned(void)
 {
     return is_server_provisioning && check;
 }
+
 
 void server_send_to_client(model_sensor_data_t server_model_state)
 {
@@ -243,24 +246,22 @@ static void ble_mesh_custom_sensor_server_model_cb(esp_ble_mesh_model_cb_event_t
                     } else {
                         ESP_LOGW(TAG, "OP_GET -- Opcode 0x%06lx  -- empty message", param->model_operation.opcode);
                     }
+                    xEventGroupSetBitsFromISR(
+                              xEventBits,   /* The event group being updated. */
+                              RX_FLAG, /* The bits being set. */
+                              pdFALSE);
+                    
 
-                    //* Responde com o estado atual do Model (OP_STATUS)
-                    // model_sensor_data_t response = *(model_sensor_data_t *)param->model_operation.model->user_data;
-
-                    // esp_err_t err = esp_ble_mesh_server_model_send_msg(param->model_operation.model, param->model_operation.ctx, 
-                    //                 ESP_BLE_MESH_CUSTOM_SENSOR_MODEL_OP_STATUS, sizeof(response), (uint8_t *)&response);
-                    // if (err) {
-                    //     ESP_LOGE(TAG, "%s -- Failed to send response with OPCODE 0x%06x", __func__, ESP_BLE_MESH_CUSTOM_SENSOR_MODEL_OP_STATUS);
-                    // }
-                    // _server_model_state.temperature ++;
-                    // server_send_to_client(_server_model_state);
                 break;
 
                 case ESP_BLE_MESH_CUSTOM_SENSOR_MODEL_OP_SET:
-                    ESP_LOGI("TIME", "%lld", esp_timer_get_time() - time);
+                    //("TIME", "%lld", esp_timer_get_time() - time);
                     ESP_LOGI(TAG, "OP_SET -- Received HEX message: ");
                     ESP_LOG_BUFFER_HEX(TAG, (uint8_t*)param->model_operation.msg, param->model_operation.length);
-                    
+                    xEventGroupSetBitsFromISR(
+                              xEventBits,   /* The event group being updated. */
+                              RX_FLAG, /* The bits being set. */
+                              pdFALSE);
                     //* Salva os dados recebidos no State do Model
                     parse_received_data(param, (model_sensor_data_t*)&param->model_operation.model->user_data);
                 break;
@@ -278,7 +279,7 @@ static void ble_mesh_custom_sensor_server_model_cb(esp_ble_mesh_model_cb_event_t
             } else {
                 
                 ESP_LOGI(TAG, "%s -- SEND_COMPLETE -- Send message opcode 0x%08lx success", __func__, param->model_send_comp.opcode);
-                time = esp_timer_get_time();
+                //time = esp_timer_get_time();
             }
         break;
 

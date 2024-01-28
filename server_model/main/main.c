@@ -11,20 +11,29 @@
 #include "nvs.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+#include "freertos/event_groups.h"
 #include "driver/gpio.h"
 #include "driver/rtc_io.h"
 
 #include "ds18b20.h"
 #include "LCD1602.h"
 
-static const char* TAG = "MESH SERVER";
-const int DS_PIN = 26; //GPIO where you connected ds18b20
+#define TAG     "MESH SERVER"
+#define DS_PIN   15 //GPIO where you connected ds18b20
+#define BOARD_FLAG  (1 << 3)
+#define TEMP_FLAG   (1 << 1)
+#define RX_FLAG     (1 << 2)
+#define TX_FLAG     (1)
+
 DeviceAddress tempSensors[1];
 TaskHandle_t MainTask = NULL;
-esp_timer_handle_t oneshot_timer;
-esp_timer_handle_t periodic_timer;
+EventGroupHandle_t xEventBits;
+
+gpio_num_t ledWaring[3] = {25, 26, 27};
 uint16_t count=0;
 uint8_t check =1;
+uint64_t time_to_restart;
+SemaphoreHandle_t xSemaphore;
 
 // QueueHandle_t ble_mesh_received_data_queue = NULL;
 model_sensor_data_t _server_model_state = {
@@ -36,17 +45,52 @@ void saveDataToFlash(float data, const char *key);
 
 void LCD_display(float a){
 	
-	char str[15];
+	char str[16] = " ";
 	lcd_clear();
 	lcd_put_cur(0, 0);
-	lcd_send_string("Temperature is:");
+    sprintf(str, "Node %s       ", _server_model_state.device_name);
+	lcd_send_string(str);
 	
 	lcd_put_cur(1, 0);
-	sprintf(str, "%.1f", a);
+	sprintf(str, "Temp:%.1f     ", a);
 	lcd_send_string(str);
 	
 }
 
+void setLedWarningLevel(uint8_t redLed, uint8_t greenLed, uint8_t yellowLed){
+    rtc_gpio_set_level(ledWaring[0], redLed);
+    rtc_gpio_hold_en(ledWaring[0]);
+    rtc_gpio_set_level(ledWaring[1], greenLed);
+    rtc_gpio_hold_en(ledWaring[1]);
+    rtc_gpio_set_level(ledWaring[2], yellowLed);
+    rtc_gpio_hold_en(ledWaring[2]);
+}
+
+void initWarningLed(){
+    for(int i = 0; i < 3; i++){
+        rtc_gpio_init(ledWaring[i]);
+        rtc_gpio_set_direction(ledWaring[i], GPIO_MODE_OUTPUT);
+    }
+}
+
+void disableWarningLed(){
+    for(int i = 0; i < 3; i++){
+        rtc_gpio_hold_dis(ledWaring[i]);
+    }
+}
+
+void warningLed(model_sensor_data_t data){
+    disableWarningLed();
+    if (data.temperature < data.low_bsline){
+        setLedWarningLevel(1, 0, 0);
+    }
+    else if(data.temperature > data.high_bsline){
+        setLedWarningLevel(0, 1, 0);
+    }
+    else if (data.temperature <= data.high_bsline && data.temperature >= data.low_bsline){
+        setLedWarningLevel(0, 0, 1);
+    }
+}
 void getTempAddresses(DeviceAddress *tempSensorAddresses) {
 	unsigned int numberFound = 0;
 	reset_search();
@@ -67,70 +111,27 @@ void getTempAddresses(DeviceAddress *tempSensorAddresses) {
 	}
 }
 
-float get_average_temp(void){
-  float temp_average = 0;
-  int i = 0;
-  TickType_t startTime = xTaskGetTickCount();
-  while(1){
-    float temp = ds18b20_get_temp();
-    temp_average += temp;
-    ESP_LOGD(TAG, "Temperature: %f\n",temp);
-    // vTaskDelay(1/ portTICK_RATE_MS);
-    i++;
-    if ((xTaskGetTickCount() - startTime) >= pdMS_TO_TICKS(2250)) {
-      break;
-    }
-  }
-  temp_average = temp_average / i;
-  return temp_average;
+float get_temp(void){
+    float temp = 0;
+    int i = 0;
+    EventBits_t uxBits;
+
+    xSemaphoreTake( xSemaphore, ( TickType_t ) 10 );
+    temp = ds18b20_get_temp();
+    ESP_LOGW(TAG, "Temperature: %f\n",temp);
+    uxBits = xEventGroupSetBits(xEventBits, TEMP_FLAG);
+    xSemaphoreGive( xSemaphore );
+    return temp;
 }
 
-void temperature_sensing(){
-    uint64_t time = 0;
+void board_operaton(){
+    EventBits_t uxBits;
     
-    lcd_clear();
-	while (1){
-        // xLastWakeTime = xTaskGetTickCount();
-        if(is_server_provisioned() && check){
-            check = 0;
-            // esp_bluedroid_enable();
-            time = esp_timer_get_time();
-            ESP_ERROR_CHECK(esp_timer_start_once(oneshot_timer,4000000 - time)); 
-            _server_model_state.temperature = get_average_temp();
-            
-            ESP_LOGD(TAG, "Sending ....., time since boot: %lld us", esp_timer_get_time());
-            // time = esp_timer_get_time();
-            server_send_to_client(_server_model_state);
-            vTaskDelay(6000/portTICK_PERIOD_MS);
-            // ESP_LOGI(TAG, "Sent!!, count: %d ", count);
-            // vTaskDelay(1000/portTICK_PERIOD_MS);
-            // LCD_display(_server_model_state.temperature);
-            // ESP_LOGI(TAG, "LCD display success! Average Temp: %.1f ", _server_model_state.temperature);
-            
-            
-            // vTaskSuspend(MainTask);
-            count = count + 1;
-        }
-        else{
-            vTaskDelay(100/portTICK_PERIOD_MS);
-        }
-	}
-
-}
-
-static void oneshot_timer_callback(void *arg){
-	int64_t time_since_boot = esp_timer_get_time();
-    check = 1;
-    
-	ESP_LOGI(TAG, "One-shot timer called, time since boot: %lld us", time_since_boot);
-    esp_timer_stop(oneshot_timer);
+    warningLed(_server_model_state);
     saveDataToFlash(_server_model_state.high_bsline, "high_lim");
     saveDataToFlash(_server_model_state.low_bsline, "low_lim");
-	esp_deep_sleep_start();
-    vTaskDelay(1000/portTICK_PERIOD_MS);
-    // vTaskResume(MainTask);
+    
 }
-
 
 // Hàm để lưu dữ liệu vào flash
 void saveDataToFlash(float data, const char *key) {
@@ -169,10 +170,37 @@ float readDataFromFlash(const char *key) {
     return data;
 }
 
+
+void main_task(void *args){
+    EventBits_t uxBits;
+    TickType_t tick;
+
+    
+    while(1){
+        tick = xTaskGetTickCount();
+        uxBits = xEventGroupWaitBits(xEventBits, RX_FLAG, pdTRUE, pdTRUE, 50/portTICK_PERIOD_MS);
+        if((uxBits & RX_FLAG) != 0){
+            
+            _server_model_state.temperature = get_temp();
+            vTaskDelay(10/portTICK_PERIOD_MS);
+            server_send_to_client(_server_model_state);
+            
+            vTaskDelayUntil(&tick, 3000 /portTICK_PERIOD_MS);
+            LCD_display(_server_model_state.temperature);
+            board_operaton();
+            ESP_LOGI(TAG, "sleep");
+            esp_deep_sleep_start();
+            
+        }
+        
+    }
+}
+
 void app_main(void) {
     esp_err_t err;
     esp_err_t check;
     nvs_handle_t nvs_limit;
+    uint64_t time;
     float limit_check = 0;
     ESP_LOGI(TAG, "Initializing...");
 
@@ -188,37 +216,30 @@ void app_main(void) {
     ESP_ERROR_CHECK(i2c_master_init());
     
 	
-    // lcd_init();
+    lcd_init();
     
+    initWarningLed();
     ESP_LOGD(TAG, "I2C initialized successfully");
-	ds18b20_init(5);
+	ds18b20_init(DS_PIN);
     ESP_LOGI(TAG, "1");
-    // getTempAddresses(tempSensors);
+    getTempAddresses(tempSensors);
     ESP_LOGI(TAG, "2");
     ds18b20_setResolution(tempSensors,1,12);
 	ESP_LOGI(TAG, "Sensor initialized successfully");
-    // err = ble_mesh_device_init_server();
+    
     err = ble_mesh_device_init_server();
     if (err) {
         ESP_LOGE(TAG, "Bluetooth mesh init failed (err 0x%06x)", err);
     }
     
-    const esp_timer_create_args_t oneshot_timer_args = {
-		.callback = &oneshot_timer_callback,
-		.name = "light sleep",
-    
-	};
-
-
-	ESP_ERROR_CHECK(esp_timer_create(&oneshot_timer_args, &oneshot_timer));
-
-	ESP_ERROR_CHECK(esp_sleep_enable_timer_wakeup(16000000));
-
     _server_model_state.high_bsline = readDataFromFlash("high_lim");
     _server_model_state.low_bsline  = readDataFromFlash("low_lim");
 
-	// server_send_status();
-    xTaskCreatePinnedToCore(&temperature_sensing, "main task", 1024 * 2, (void *)0, 1, &MainTask, (int)1);
-    // xTaskCreate(read_received_items, "setting message", 1024 * 2, (void *)0, 1, NULL);
+    xEventBits = xEventGroupCreate();
+    xSemaphore = xSemaphoreCreateBinary();
+    
+    esp_sleep_enable_timer_wakeup(15000000);
+    
+    xTaskCreatePinnedToCore(&main_task, "main task", 1024 * 2, NULL, 1, NULL, (int)1);
 
 }
